@@ -4,7 +4,7 @@ import { Configuration } from "webpack";
 import { BuildEnv, buildPath } from "./config/build/type/config";
 
 const paths: buildPath = {
-  entry: path.resolve(__dirname, "src", "index.ts"),
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   build: path.resolve(__dirname, "build"),
   template: path.resolve(__dirname, "public", "index.html"),
 };
