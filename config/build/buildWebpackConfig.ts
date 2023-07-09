@@ -6,7 +6,7 @@ import { buildResolve } from "./buildResolve";
 import { BuildOption } from "./type/config";
 
 export const buildWebpackConfig = (buildOption: BuildOption): Configuration => {
-  const { mode, paths } = buildOption;
+  const { mode, paths, isDev } = buildOption;
   return {
     mode,
     entry: paths.entry,
@@ -17,7 +17,7 @@ export const buildWebpackConfig = (buildOption: BuildOption): Configuration => {
     },
     plugins: buildPlugin(paths),
     module: {
-      rules: buildLoader(),
+      rules: buildLoader(isDev),
     },
     resolve: buildResolve(),
     devtool: mode === "development" ? "inline-source-map" : false,

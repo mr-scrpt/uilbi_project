@@ -15,4 +15,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  &_test {
+    color: red;
+  }
 }
