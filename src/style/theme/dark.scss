@@ -1,0 +1,14 @@
+.theme.theme{
+  &_dark{
+    --color-primary: #04ff04;
+    --color-secondary: #0e0e75;
+    --color-tertiary: #1d1d1d;
+
+
+
+
+    --bg-color: var(--color-secondary);
+
+  }
+
+}

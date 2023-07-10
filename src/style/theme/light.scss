@@ -1,0 +1,14 @@
+.theme.theme{
+  &_light{
+    --color-primary: #022bb2;
+    --color-secondary: #e8e8ea;
+    --color-tertiary: #044980;
+
+
+
+    --bg-color: var(--color-secondary);
+
+  }
+
+}
+
