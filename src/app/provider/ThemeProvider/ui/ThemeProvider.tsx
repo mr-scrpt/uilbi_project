@@ -1,6 +1,6 @@
 import { FC, useMemo, useState } from "react";
-import { LOCAL_STORAGE_KEY, ThemeContext } from "./ThemeContext"
-import { ThemeEnum } from "./type";
+import { LOCAL_STORAGE_KEY, ThemeContext } from "../lib/ThemeContext"
+import { ThemeEnum } from "../type";
 
 const themeDefault = localStorage.getItem(LOCAL_STORAGE_KEY) as ThemeEnum || ThemeEnum.LIGHT
 

@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { ThemeContextInterface } from './type'
+import { ThemeContextInterface } from '../type'
 export const ThemeContext = createContext<ThemeContextInterface>({})
 
 
