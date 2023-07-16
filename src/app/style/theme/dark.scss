@@ -1,14 +1,16 @@
 .theme.theme{
   &_dark{
-    --color-primary: #04ff04;
-    --color-secondary: #0e0e75;
-    --color-tertiary: #1d1d1d;
+
+    --color-primary: #049604;
+    --color-secondary: #04ff04;
+    --color-primary-inverted: #0232c2;
+    --color-secondary-inverted: #0449e0;
+
+    --bg-color: #090949;
+    --bg-color-inverted: #e8e8ea;
 
 
-
-
-    --bg-color: var(--color-secondary);
-
+    --color-theme-switch: #0000cd;
   }
 
 }

@@ -7,8 +7,25 @@ const typescriptLoader = {
   exclude: /node_modules/,
 };
 
+const svgLoader = {
+  test: /\.svg$/,
+  use: ["@svgr/webpack"],
+}
+
+const imgLoader = {
+  test: /\.(png|jpe?g|gif)$/i,
+  type: 'asset/resource'
+}
+
+
+// const fontLoader = {
+//   test: /\.(woff|woff2|eot|ttf|otf)$/i,
+//   use: ["file-loader"],
+// }
+
 const scssLoader = (isDev: boolean) => ({
   test: /\.s[ac]ss$/i,
+  type: 'javascript/auto',
   use: [
     isDev ? "style-loader" : MiniCssExtractPlugin.loader,
     {
@@ -27,5 +44,11 @@ const scssLoader = (isDev: boolean) => ({
 });
 
 export const buildLoader = (isDev: boolean): RuleSetRule[] => {
-  return [typescriptLoader, scssLoader(isDev)];
+  return [
+    imgLoader,
+    typescriptLoader,
+    scssLoader(isDev),
+    // fontLoader,
+    svgLoader,
+  ];
 };

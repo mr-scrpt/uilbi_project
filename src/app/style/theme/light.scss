@@ -1,14 +1,17 @@
 .theme.theme{
   &_light{
-    --color-primary: #022bb2;
-    --color-secondary: #e8e8ea;
-    --color-tertiary: #044980;
 
+    --color-primary: #0232c2;
+    --color-secondary: #0449e0;
+    --color-primary-inverted: #049604;
+    --color-secondary-inverted: #04ff04;
 
+    --bg-color: #e8e8ea;
+    --bg-color-inverted: #090949;
 
-    --bg-color: var(--color-secondary);
+    --color-theme-switch: #ffff00;
 
   }
-
 }
+
 

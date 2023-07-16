@@ -1,0 +1,47 @@
+
+.button{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.size_s {
+  .text {
+    font-size: 12px;
+  }
+}
+
+.size_m {
+  .text {
+    font-size: 16px;
+  }
+}
+
+.size_l {
+  .text {
+    font-size: 18px;
+  }
+}
+
+.size_xl {
+  .text {
+    font-size: 22px;
+  }
+}
+
+.view_primary{
+  color: var(--color-primary);
+}
+
+.view_secondary{
+  color: var(--color-primary-inverted);
+}
+
+.text {
+
+}
+.icon {
+  width: 50px;
+  height: 50px;
+}
