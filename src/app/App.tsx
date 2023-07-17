@@ -3,16 +3,25 @@ import { useTheme } from 'app/provider/ThemeProvider';
 import { classNames } from 'shared/lib/classNames';
 import { AppRouter } from './provider/router';
 import { Navbar } from 'widget/Navbar';
-import IconList from 'shared/asset/icon/theme-light.svg'
+import cls from './App.module.scss';
+import IconTest from 'shared/asset/icon/theme-dark.svg'
 
 const App = () => {
   const { theme } = useTheme()
-  const classApp = classNames('app', ['theme', theme], {})
+  const classApp = classNames(cls.app, ['theme', theme], {})
 
   return (
     <div className={classApp}>
-    <IconList/>
-    <Navbar/>
+      <IconTest/>
+
+      <div className={cls.inner}>
+        <Navbar className={cls.boxNavbar}/>
+
+        <div className={cls.boxContent}>
+        </div>
+
+        <div className={cls.boxFooter}></div>
+      </div>
 
       <AppRouter />
     </div>

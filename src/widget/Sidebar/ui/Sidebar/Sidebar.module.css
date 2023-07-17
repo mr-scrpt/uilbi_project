@@ -1,0 +1,8 @@
+.sidebar {
+  &__inner{}
+
+}
+
+.sidebar.sidebar_collapsed {
+}
+

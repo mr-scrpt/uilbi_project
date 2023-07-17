@@ -1,0 +1,26 @@
+.app {
+  font: var(--font-m);
+  background: var(--bg-color);
+  color: var(--color-primary);
+  min-height: 100vh;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxNavbar {
+  width: 100%;
+  height: var(--navbar-height);
+}
+
+.boxContent {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.boxFooter {
+  width: 100%;
+  height: var(--footer-height);
+}

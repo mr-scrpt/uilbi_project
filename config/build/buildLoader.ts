@@ -7,21 +7,18 @@ const typescriptLoader = {
   exclude: /node_modules/,
 };
 
-const svgLoader = {
-  test: /\.svg$/,
-  use: ["@svgr/webpack"],
-}
 
 const imgLoader = {
   test: /\.(png|jpe?g|gif)$/i,
   type: 'asset/resource'
 }
 
+const svgLoader = {
+  test: /\.svg$/i,
+  issuer: /\.[jt]sx?$/,
+  use: ['@svgr/webpack'],
+}
 
-// const fontLoader = {
-//   test: /\.(woff|woff2|eot|ttf|otf)$/i,
-//   use: ["file-loader"],
-// }
 
 const scssLoader = (isDev: boolean) => ({
   test: /\.s[ac]ss$/i,
@@ -46,9 +43,8 @@ const scssLoader = (isDev: boolean) => ({
 export const buildLoader = (isDev: boolean): RuleSetRule[] => {
   return [
     imgLoader,
+    svgLoader,
     typescriptLoader,
     scssLoader(isDev),
-    // fontLoader,
-    svgLoader,
   ];
 };
