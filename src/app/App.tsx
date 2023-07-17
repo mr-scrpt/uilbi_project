@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames';
 import { AppRouter } from './provider/router';
 import { Navbar } from 'widget/Navbar';
 import cls from './App.module.scss';
-import IconTest from 'shared/asset/icon/theme-dark.svg'
+// import IconTest from 'shared/asset/icon/theme-dark.svg'
 
 const App = () => {
   const { theme } = useTheme()
@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className={classApp}>
-      <IconTest/>
+      {/* <IconTest/> */}
 
       <div className={cls.inner}>
         <Navbar className={cls.boxNavbar}/>

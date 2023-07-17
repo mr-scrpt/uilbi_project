@@ -7,24 +7,24 @@ import cls from './Navbar.module.scss'
 export const Navbar = (props : NavbarProps) => {
   const {className} = props
 
-  const classNavbar = classNames(
+  const clsNavbar = classNames(
       cls.navbar,
       [className]
   )
 
-  const classInner = classNames(
+  const clsInner = classNames(
       cls.inner
   )
 
-  const classThemeSwitcher = classNames(cls.themeSwitcher)
+  const clsThemeSwitcher = classNames(cls.themeSwitcher)
 
-  const classMenu = classNames(cls.menu)
+  const clsMenu = classNames(cls.menu)
 
   return (
-    <div className={classNavbar}>
-      <div className={classInner}>
-      <ThemeSwitcher className={classThemeSwitcher}/>
-      <div className={classMenu}>
+    <div className={clsNavbar}>
+      <div className={clsInner}>
+      <ThemeSwitcher className={clsThemeSwitcher}/>
+      <div className={clsMenu}>
         <LinkApp to={'/'} view={LinkViewEnum.SECONDARY}>Главная</LinkApp>
         <LinkApp to={'/about'} view={LinkViewEnum.SECONDARY}>О сайте</LinkApp>
       </div>

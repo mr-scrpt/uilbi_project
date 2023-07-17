@@ -1,7 +1,8 @@
 import { HTMLAttributes } from "react";
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  className?: string;
+  classButton?: string;
+  classIcon?: string;
   view?: string;
   size?: string;
   icon?: string;

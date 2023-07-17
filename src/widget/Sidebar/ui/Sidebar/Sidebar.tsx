@@ -9,16 +9,16 @@ export const Sidebar:FC<SidebarProps> = (props) => {
   const {className} = props
   const [collapsed, setCollapsed] = useState(false)
 
-  const classSidebar = classNames(cls.sidebar, [className], {
+  const clsSidebar = classNames(cls.sidebar, [className], {
     [cls.sidebar_collapsed]: collapsed
-    })
+  })
 
   const toggleHandlet = () => {
     setCollapsed(!collapsed)
   }
 
   return (
-    <div className={classSidebar}>
+    <div className={clsSidebar}>
       <div className={cls.inner}>
 
       <div className={cls.boxNav}></div>
