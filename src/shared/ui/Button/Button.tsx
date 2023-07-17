@@ -9,7 +9,7 @@ import { IconPositionEnum } from 'shared/ui/Button/type/iconPosition.enum'
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
-    classButton,
+    className,
     classIcon,
     children,
     view = ButtonViewEnum.PRIMARY,
@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = (props) => {
     ...etc
   } = props
 
-  const clsButton = classNames(cls.button, [classButton], {
+  const clsButton = classNames(cls.button, [className], {
     [cls.view_primary]: view === ButtonViewEnum.PRIMARY,
     [cls.view_secondary]: view === ButtonViewEnum.SECONDARY,
 
@@ -38,7 +38,7 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <button className={clsButton} {...etc}>
       {icon && iconPosition === IconPositionEnum.LEFT &&
-        <Icon classIcon={clsIcon} icon={icon}></Icon>
+        <Icon className={clsIcon} icon={icon}></Icon>
       }
       {children &&
         <span className={clsText}>
@@ -46,7 +46,7 @@ export const Button: FC<ButtonProps> = (props) => {
         </span>
       }
       {icon && iconPosition === IconPositionEnum.RIGHT &&
-        <Icon classIcon={clsIcon} icon={icon}></Icon>
+        <Icon className={clsIcon} icon={icon}></Icon>
       }
 
     </button>

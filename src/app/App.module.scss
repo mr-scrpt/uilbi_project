@@ -7,7 +7,9 @@
 
 .inner {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  min-height: 100vh;
 }
 
 .boxNavbar {
@@ -15,9 +17,14 @@
   height: var(--navbar-height);
 }
 
-.boxContent {
+
+.boxMain {
+  height: 100%;
   flex-grow: 1;
   padding: 15px;
+}
+.boxSidebar {
+  width: var(--sidebar-width);
 }
 
 .boxFooter {

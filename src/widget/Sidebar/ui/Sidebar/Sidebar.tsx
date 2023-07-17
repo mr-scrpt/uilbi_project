@@ -10,7 +10,7 @@ export const Sidebar:FC<SidebarProps> = (props) => {
   const [collapsed, setCollapsed] = useState(false)
 
   const clsSidebar = classNames(cls.sidebar, [className], {
-    [cls.sidebar_collapsed]: collapsed
+    [cls.collapsed]: collapsed
   })
 
   const toggleHandlet = () => {
@@ -21,10 +21,12 @@ export const Sidebar:FC<SidebarProps> = (props) => {
     <div className={clsSidebar}>
       <div className={cls.inner}>
 
-      <div className={cls.boxNav}></div>
-      <div className={cls.boxControl}>
-        <Button onClick={toggleHandlet}>Toggle</Button>
-      </div>
+        <div className={cls.boxNav}>Nav</div>
+
+        <div className={cls.boxControl}>
+          <Button onClick={toggleHandlet}>Toggle</Button>
+        </div>
+
       </div>
     </div>
   )

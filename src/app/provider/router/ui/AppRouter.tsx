@@ -1,9 +1,12 @@
-import { Suspense } from "react"
+import { FC, Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import { routeConfig } from "shared/config/configRouter/configRouter"
+import { RouterProps } from "../type/props.type"
 
-export const AppRouter = () => {
+export const AppRouter:FC<RouterProps> = (props) => {
+  const {classRouter} = props
   return (
+    <div className={classRouter}>
     <Suspense fallback="Loading...">
         <Routes>
         {
@@ -17,5 +20,6 @@ export const AppRouter = () => {
         }
         </Routes>
     </Suspense>
+    </div>
   )
 }

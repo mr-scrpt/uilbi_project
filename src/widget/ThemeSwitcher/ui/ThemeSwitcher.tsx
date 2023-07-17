@@ -19,7 +19,6 @@ export const ThemeSwitcher:FC<ThemeSwitcherProps> = (props) => {
 
   const clsIcon = classNames(cls.icon)
 
-console.log(clsIcon)
   const icon = theme === ThemeEnum.DARK? IconEnum.THEME_DARK: IconEnum.THEME_LIGHT
 
   return (
@@ -27,13 +26,12 @@ console.log(clsIcon)
       <div className={clsInner}>
         <Button
           onClick={themeToggle}
-          classButton={clsButton}
+          className={clsButton}
           classIcon={clsIcon}
           size={ButtonSizeEnum.XL}
           icon={icon}
           iconPosition={IconPositionEnum.RIGHT}
         >
-        text
         </Button>
       </div>
     </div>

@@ -6,13 +6,12 @@ import { IconEnum } from "./type/icon.enum"
 
 export const Icon: FC<IconProps> = (props) => {
 
-  const { classIcon, icon, ...etc } = props
+  const { className, icon, ...etc } = props
 
-  const clsIcon = classNames(cls.icon, [classIcon], {
+  const clsIcon = classNames(cls.icon, [className], {
     [cls.icon_theme]: icon === IconEnum.THEME_LIGHT || icon === IconEnum.THEME_DARK,
     [cls.icon_theme_light]: icon === IconEnum.THEME_LIGHT,
     [cls.icon_theme_dark]: icon === IconEnum.THEME_DARK,
-
   })
 
   return (

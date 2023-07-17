@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames';
 import { AppRouter } from './provider/router';
 import { Navbar } from 'widget/Navbar';
 import cls from './App.module.scss';
+import { Sidebar } from 'widget/Sidebar';
 // import IconTest from 'shared/asset/icon/theme-dark.svg'
 
 const App = () => {
@@ -17,13 +18,14 @@ const App = () => {
       <div className={cls.inner}>
         <Navbar className={cls.boxNavbar}/>
 
-        <div className={cls.boxContent}>
+        <div className={cls.boxMain}>
+          <Sidebar className={cls.boxSidebar}/>
+          <AppRouter className={cls.boxContent}/>
         </div>
 
-        <div className={cls.boxFooter}></div>
+        <div className={cls.boxFooter}>footer</div>
       </div>
 
-      <AppRouter />
     </div>
   );
 };
