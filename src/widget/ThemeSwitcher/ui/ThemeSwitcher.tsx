@@ -9,9 +9,11 @@ import { ThemeEnum } from "app/provider/ThemeProvider/type"
 import { IconPositionEnum } from "shared/ui/Button/type/iconPosition.enum"
 
 export const ThemeSwitcher:FC<ThemeSwitcherProps> = (props) => {
+  const { className } = props
+
   const { themeToggle, theme } = useTheme()
 
-  const clsMain = classNames(cls.main)
+  const clsThemeSwitcher  = classNames(cls.themeSwitcher, [className])
 
   const clsInner = classNames(cls.inner)
 
@@ -22,7 +24,7 @@ export const ThemeSwitcher:FC<ThemeSwitcherProps> = (props) => {
   const icon = theme === ThemeEnum.DARK? IconEnum.THEME_DARK: IconEnum.THEME_LIGHT
 
   return (
-    <div className={clsMain}>
+    <div className={clsThemeSwitcher}>
       <div className={clsInner}>
         <Button
           onClick={themeToggle}

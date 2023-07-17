@@ -5,18 +5,23 @@ import { AppRouter } from './provider/router';
 import { Navbar } from 'widget/Navbar';
 import cls from './App.module.scss';
 import { Sidebar } from 'widget/Sidebar';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
+
+
+
+const Component = () => {
+}
 
 const App = () => {
   const { theme } = useTheme()
 
   const [collapsed, setCollapsed] = useState(false)
 
-  console.log('collapsed', collapsed)
 
   const toggleHandler = () => {
     setCollapsed(prev => !prev)
   }
+
 
   const classApp = classNames(cls.app, ['theme', theme], {})
 
@@ -26,10 +31,11 @@ const App = () => {
 
   })
 
-  // console.log('sidebar cls', clsSidebar)
+
 
   return (
     <div className={classApp}>
+    <Suspense fallback="transslation">
 
       <div className={cls.inner}>
         <Navbar className={cls.boxNavbar}/>
@@ -41,6 +47,7 @@ const App = () => {
 
         <div className={cls.boxFooter}>footer</div>
       </div>
+      </Suspense>
 
     </div>
   );
