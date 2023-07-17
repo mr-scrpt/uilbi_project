@@ -5,12 +5,18 @@
 .inner {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .boxNav {
   display: flex;
   flex-grow: 1;
 
+}
+
+.boxFooter {
+
+  /* height: 50px; */
 }
 
 .collapsed {

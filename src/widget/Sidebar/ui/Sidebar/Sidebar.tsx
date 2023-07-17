@@ -19,15 +19,17 @@ export const Sidebar:FC<SidebarProps> = (props) => {
 
   return (
     <div className={clsSidebar}>
+
       <div className={cls.inner}>
 
         <div className={cls.boxNav}>Nav</div>
 
-        <div className={cls.boxControl}>
+        <div className={cls.boxFooter}>
           <Button onClick={toggleHandlet}>Toggle</Button>
         </div>
 
       </div>
+
     </div>
   )
 }

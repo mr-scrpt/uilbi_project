@@ -19,12 +19,17 @@
 
 
 .boxMain {
-  height: 100%;
   flex-grow: 1;
-  padding: 15px;
+  display: flex;
+
+  // padding: 15px;
 }
 .boxSidebar {
   width: var(--sidebar-width);
+}
+
+.boxContent {
+  flex-grow: 1;
 }
 
 .boxFooter {

@@ -4,9 +4,9 @@ import { routeConfig } from "shared/config/configRouter/configRouter"
 import { RouterProps } from "../type/props.type"
 
 export const AppRouter:FC<RouterProps> = (props) => {
-  const {classRouter} = props
+  const {className} = props
   return (
-    <div className={classRouter}>
+    <div className={className}>
     <Suspense fallback="Loading...">
         <Routes>
         {
