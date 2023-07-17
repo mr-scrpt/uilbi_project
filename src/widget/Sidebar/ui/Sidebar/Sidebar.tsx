@@ -1,21 +1,17 @@
-import { FC, useState } from "react"
+import { FC } from "react"
 import { classNames } from "shared/lib/classNames"
 import { Button } from "shared/ui/Button"
 
+import { ThemeSwitcher } from 'widget/ThemeSwitcher';
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from "./type/props.type"
 
 export const Sidebar:FC<SidebarProps> = (props) => {
-  const {className} = props
-  const [collapsed, setCollapsed] = useState(false)
+  const {className, toggleHandler} = props
 
-  const clsSidebar = classNames(cls.sidebar, [className], {
-    [cls.collapsed]: collapsed
-  })
+  const clsSidebar = classNames(cls.sidebar, [className])
 
-  const toggleHandlet = () => {
-    setCollapsed(!collapsed)
-  }
+  const clsThemeSwitcher = classNames(cls.themeSwitcher)
 
   return (
     <div className={clsSidebar}>
@@ -25,7 +21,8 @@ export const Sidebar:FC<SidebarProps> = (props) => {
         <div className={cls.boxNav}>Nav</div>
 
         <div className={cls.boxFooter}>
-          <Button onClick={toggleHandlet}>Toggle</Button>
+          <Button onClick={toggleHandler}>Toggle</Button>
+          <ThemeSwitcher className={clsThemeSwitcher}/>
         </div>
 
       </div>

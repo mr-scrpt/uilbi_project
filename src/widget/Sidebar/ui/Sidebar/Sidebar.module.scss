@@ -1,4 +1,5 @@
 .sidebar {
+  background-color: var(--bg-color-inverted) ;
 
 }
 
@@ -6,6 +7,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .boxNav {
@@ -15,10 +17,14 @@
 }
 
 .boxFooter {
+  display: flex;
+  justify-content: center;
+  gap:15px;
 
   /* height: 50px; */
 }
 
-.collapsed {
-}
+/* .collapsed { */
+/*   padding: 10px; */
+/* } */
 

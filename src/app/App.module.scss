@@ -12,10 +12,11 @@
   min-height: 100vh;
 }
 
-.boxNavbar {
+.boxNavbarOpen {
   width: 100%;
   height: var(--navbar-height);
 }
+
 
 
 .boxMain {
@@ -25,7 +26,19 @@
   // padding: 15px;
 }
 .boxSidebar {
-  width: var(--sidebar-width);
+  padding: 0;
+  display: flex;
+
+  transition: width 0.25s;
+  background-color: red;
+}
+
+.boxSidebar_open{
+  width: var(--sidebar-width-open);
+}
+
+.boxSidebar_collapse{
+  width: var(--sidebar-width-collapsed);
 }
 
 .boxContent {
