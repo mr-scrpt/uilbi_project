@@ -19,6 +19,26 @@ const svgLoader = {
   use: ['@svgr/webpack'],
 }
 
+const babelLoader = {
+  test: /\.(js|jsx|ts|tsx)$/,
+  exclude: /node_modules/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ['@babel/preset-env'],
+      "plugins": [
+        [
+          "i18next-extract",
+          {
+            locales: ['ru', 'en'],
+            keyAsDefaultValue: true
+          }
+        ],
+      ]
+    }
+  }
+}
+
 
 const scssLoader = (isDev: boolean) => ({
   test: /\.s[ac]ss$/i,
@@ -30,9 +50,9 @@ const scssLoader = (isDev: boolean) => ({
       options: {
         modules: {
           auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
-          localIdentName: isDev
-            ? "[path][name]_[local]"
-            : "[hash:base64:6]",
+            localIdentName: isDev
+              ? "[path][name]_[local]"
+              : "[hash:base64:6]",
         },
       },
     },
@@ -44,6 +64,7 @@ export const buildLoader = (isDev: boolean): RuleSetRule[] => {
   return [
     imgLoader,
     svgLoader,
+    babelLoader,
     typescriptLoader,
     scssLoader(isDev),
   ];
