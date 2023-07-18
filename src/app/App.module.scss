@@ -1,14 +1,16 @@
 .app {
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--color-primary);
   min-height: 100vh;
+
+  color: var(--color-primary);
+  background: var(--bg-color);
+
+  font: var(--font-m);
 }
 
 .inner {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
+
   min-height: 100vh;
 }
 
@@ -20,16 +22,19 @@
 
 
 .boxMain {
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
 
   // padding: 15px;
 }
+
 .boxSidebar {
-  padding: 0;
   display: flex;
 
+  padding: 0;
+
   transition: width 0.25s;
+
   // background-color: red;
 }
 

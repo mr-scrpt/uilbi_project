@@ -10,18 +10,14 @@
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: contain;
-
   mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-
   mask-position: 50%;
-  -webkit-mask-position: 50%;
-
   mask-size: contain;
-  -webkit-mask-size: contain;
 }
-.icon:empty:after {
+
+.icon:empty::after {
   visibility: hidden;
+
   content: '\00A0';
 }
 
@@ -31,18 +27,23 @@
 
   vertical-align: middle;
 }
+
 /* Icon svg example */
+
 /* Не задаются размеры - блок icon не используется отдельно */
+
 /* Используется в качестве вспомогательного, декоративного элемента */
+
 /* Размеры получает через блок родителя, например button */
 
 .icon.icon_twitter {
   // background-image: url('/img/regular/icon/icon_twitter.svg');
 }
+
 .icon.icon_theme {
-  // background-image: url('../../asset/icon/user_new.png');  // Используйте правильный относительный путь
-  mask-image: url('../../asset/icon/theme-light.svg');  // Используйте правильный относительный путь
-  -webkit-mask-image: url('../../asset/icon/theme-light.svg');
+  // background-image: url('../../asset/icon/user_new.png');  // Используйте правильный относительный путь  // Используйте правильный относительный путь
+  mask-image: url('../../asset/icon/theme-light.svg');
+
   &_light {
     background-color: var(--color-theme-switch);
   }
