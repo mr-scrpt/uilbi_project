@@ -4,4 +4,3 @@ export enum ButtonSizeEnum {
   L = 'l',
   XL = 'xl',
 }
-

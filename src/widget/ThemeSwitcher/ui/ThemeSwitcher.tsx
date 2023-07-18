@@ -1,27 +1,27 @@
-import { useTheme } from "app/provider/ThemeProvider"
-import { FC } from "react"
-import { classNames } from "shared/lib/classNames"
-import { Button, ButtonSizeEnum } from "shared/ui/Button"
-import { ThemeSwitcherProps } from "../type/props.type"
+import { useTheme } from 'app/provider/ThemeProvider';
+import { FC } from 'react';
+import { classNames } from 'shared/lib/classNames';
+import { Button, ButtonSizeEnum } from 'shared/ui/Button';
 import { IconEnum } from 'shared/ui/Icon/type/icon.enum';
-import cls from './ThemeSwitcher.module.scss'
-import { ThemeEnum } from "app/provider/ThemeProvider/type"
-import { IconPositionEnum } from "shared/ui/Button/type/iconPosition.enum"
+import { ThemeEnum } from 'app/provider/ThemeProvider/type';
+import { IconPositionEnum } from 'shared/ui/Button/type/iconPosition.enum';
+import cls from './ThemeSwitcher.module.scss';
+import { ThemeSwitcherProps } from '../type/props.type';
 
 export const ThemeSwitcher:FC<ThemeSwitcherProps> = (props) => {
-  const { className } = props
+  const { className } = props;
 
-  const { themeToggle, theme } = useTheme()
+  const { themeToggle, theme } = useTheme();
 
-  const clsThemeSwitcher  = classNames(cls.themeSwitcher, [className])
+  const clsThemeSwitcher = classNames(cls.themeSwitcher, [className]);
 
-  const clsInner = classNames(cls.inner)
+  const clsInner = classNames(cls.inner);
 
-  const clsButton = classNames(cls.button)
+  const clsButton = classNames(cls.button);
 
-  const clsIcon = classNames(cls.icon)
+  const clsIcon = classNames(cls.icon);
 
-  const icon = theme === ThemeEnum.DARK? IconEnum.THEME_DARK: IconEnum.THEME_LIGHT
+  const icon = theme === ThemeEnum.DARK ? IconEnum.THEME_DARK : IconEnum.THEME_LIGHT;
 
   return (
     <div className={clsThemeSwitcher}>
@@ -33,10 +33,8 @@ export const ThemeSwitcher:FC<ThemeSwitcherProps> = (props) => {
           size={ButtonSizeEnum.XL}
           icon={icon}
           iconPosition={IconPositionEnum.RIGHT}
-        >
-        </Button>
+        />
       </div>
     </div>
-  )
-
-}
+  );
+};
