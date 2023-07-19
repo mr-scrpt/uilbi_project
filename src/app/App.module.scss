@@ -16,28 +16,22 @@
   height: var(--navbar-height);
 }
 
-
-
 .boxMain {
   display: flex;
   flex-grow: 1;
-
-  // padding: 15px;
 }
 
 .boxSidebar {
   display: flex;
   padding: 0;
   transition: width 0.25s;
-
-  // background-color: red;
 }
 
-.boxSidebar_open{
+.boxSidebar_open {
   width: var(--sidebar-width-open);
 }
 
-.boxSidebar_collapse{
+.boxSidebar_collapse {
   width: var(--sidebar-width-collapsed);
 }
 

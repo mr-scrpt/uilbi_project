@@ -5790,6 +5790,13 @@
   "resolved" "https://registry.npmjs.org/style-search/-/style-search-0.1.0.tgz"
   "version" "0.1.0"
 
+"stylelint-config-clean-order@^5.0.1":
+  "integrity" "sha512-zKLXjTgrkZqiml0VXv7Syl11XLpzRErW+1/qSEjIQ+aHAFjGuRq6Uwal9OzxtDHvpoIhlc4wCYjougWDuLN5aA=="
+  "resolved" "https://registry.npmjs.org/stylelint-config-clean-order/-/stylelint-config-clean-order-5.0.1.tgz"
+  "version" "5.0.1"
+  dependencies:
+    "stylelint-order" "^6.0.2"
+
 "stylelint-config-property-sort-order-smacss@^9.1.0":
   "integrity" "sha512-TijYeDoDgHAFjpn9NnziQrmUCGrm2AM4e1HzsdI2mCWBRkQRuewc343YqDwdFgQ5eHoMZ3JRL02i72W3vktuDA=="
   "resolved" "https://registry.npmjs.org/stylelint-config-property-sort-order-smacss/-/stylelint-config-property-sort-order-smacss-9.1.0.tgz"
@@ -5845,7 +5852,7 @@
     "postcss-selector-parser" "^6.0.13"
     "postcss-value-parser" "^4.2.0"
 
-"stylelint@^14.0.0 || ^15.0.0", "stylelint@^14.5.1 || ^15.0.0", "stylelint@^15.10.1", "stylelint@^15.5.0":
+"stylelint@^14.0.0 || ^15.0.0", "stylelint@^14.5.1 || ^15.0.0", "stylelint@^15.10.1", "stylelint@^15.5.0", "stylelint@>=14":
   "integrity" "sha512-CYkzYrCFfA/gnOR+u9kJ1PpzwG10WLVnoxHDuBA/JiwGqdM9+yx9+ou6SE/y9YHtfv1mcLo06fdadHTOx4gBZQ=="
   "resolved" "https://registry.npmjs.org/stylelint/-/stylelint-15.10.1.tgz"
   "version" "15.10.1"
