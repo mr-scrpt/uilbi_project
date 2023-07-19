@@ -4,12 +4,12 @@
 
 .inner {
   display: flex;
+  gap: 15px;
   align-items: center;
 
   height: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  gap: 15px;
 }
 
 .themeSwitcher {
@@ -18,9 +18,9 @@
 
 .menu {
   display: flex;
-  align-items: center;
   flex-grow: 1;
-  justify-content: flex-end;
   gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
 }
 

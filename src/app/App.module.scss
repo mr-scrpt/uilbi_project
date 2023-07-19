@@ -1,16 +1,13 @@
 .app {
   min-height: 100vh;
-
+  font: var(--font-m);
   color: var(--color-primary);
   background: var(--bg-color);
-
-  font: var(--font-m);
 }
 
 .inner {
   display: flex;
   flex-flow: column wrap;
-
   min-height: 100vh;
 }
 
@@ -30,9 +27,7 @@
 
 .boxSidebar {
   display: flex;
-
   padding: 0;
-
   transition: width 0.25s;
 
   // background-color: red;

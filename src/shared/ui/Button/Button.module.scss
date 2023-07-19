@@ -1,14 +1,13 @@
-
-.button{
+.button {
   display: flex;
+  align-items: center;
   width: 100px;
   height: 100px;
-  align-items: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
 
+  color: red;
 }
-
 
 .size_s {
   .text {
@@ -34,19 +33,13 @@
   }
 }
 
-.view_primary{
+.view_primary {
   color: var(--color-primary);
 }
 
-.view_secondary{
+.view_secondary {
   color: var(--color-primary-inverted);
-
-
 }
-
-
-
-
 
 .icon {
   width: 50px;

@@ -6,7 +6,6 @@
 .inner {
   display: flex;
   flex-direction: column;
-
   width: 100%;
   height: 100%;
 }
@@ -19,9 +18,9 @@
 
 .boxFooter {
   display: flex;
+  gap:15px;
   align-items: center;
   justify-content: center;
-  gap:15px;
 
   /* height: 50px; */
 }
