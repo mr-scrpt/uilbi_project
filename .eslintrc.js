@@ -47,6 +47,7 @@ module.exports = {
         html: false,
       },
     ],
+    'no-console': 'off',
   },
   globals: {
     __IS_DEV__: true,

@@ -1,0 +1,25 @@
+.errorPage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: auto;
+}

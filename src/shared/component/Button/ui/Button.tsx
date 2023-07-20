@@ -8,7 +8,7 @@ import { ButtonViewEnum } from '../type/view.enum'
 
 import { ButtonSizeEnum } from '../type/size.enum'
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
     className,
     classIcon,
@@ -17,6 +17,7 @@ export const Button: FC<ButtonProps> = (props) => {
     size = ButtonSizeEnum.M,
     icon,
     iconPosition = IconPositionEnum.LEFT,
+    type,
     ...etc
   } = props
 
@@ -36,7 +37,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const clsIcon = classNames(cls.icon, [classIcon])
 
   return (
-    <button type="button" className={clsButton} {...etc}>
+    <button type={type} className={clsButton} {...etc}>
       {icon && iconPosition === IconPositionEnum.LEFT && (
         <Icon className={clsIcon} icon={icon} />
       )}
