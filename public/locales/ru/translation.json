@@ -1,6 +1,6 @@
 {
   "welcome": "Привет из translation.json",
-  "button_translate": "Перевести",
+  "button-translate": "Перевести",
 
   "menu-top-link-main": "Главная",
   "menu-top-link-about": "О нас",

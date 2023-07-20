@@ -47,8 +47,8 @@
 
 .icon.icon_theme {
   // background-image: url('../../asset/icon/user_new.png');  // Используйте правильный относительный путь  // Используйте правильный относительный путь
-  -webkit-mask-image: url('../../asset/icon/theme-light.svg');
-  mask-image: url('../../asset/icon/theme-light.svg');
+  -webkit-mask-image: url('../../../asset/icon/theme-light.svg');
+  mask-image: url('../../../asset/icon/theme-light.svg');
 
   &_light {
     background-color: var(--color-theme-switch);

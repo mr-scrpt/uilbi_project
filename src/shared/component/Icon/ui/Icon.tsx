@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames'
-import { IconProps } from './type/icon.props'
+import { IconProps } from '../type/icon.props'
 import cls from './Icon.module.scss'
-import { IconEnum } from './type/icon.enum'
+import { IconEnum } from '../type/icon.enum'
 
 export const Icon: FC<IconProps> = (props) => {
   const { className, icon, ...etc } = props

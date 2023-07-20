@@ -1,5 +1,6 @@
 {
   "about-page-title": "about-page-title",
+  "button-translate": "button-translate",
   "button_translate": "button_translate",
   "dddd": "dddd",
   "footer": "footer",
@@ -7,5 +8,9 @@
   "main-page-title": "main-page-title",
   "menu-top-link-about": "menu-top-link-about",
   "menu-top-link-main": "menu-top-link-main",
+  "page-about-title": "page-about-title",
+  "page-main-title": "page-main-title",
+  "page-not-found-title": "page-not-found-title",
+  "page_not_found_title": "page_not_found_title",
   "side-bar-toggle": "side-bar-toggle"
 }
