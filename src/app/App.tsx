@@ -1,6 +1,5 @@
 import './style/index.scss'
 import { useTheme } from 'app/provider/ThemeProvider'
-import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/classNames'
 import { Navbar } from 'widget/Navbar'
@@ -19,8 +18,6 @@ function App() {
     setCollapsed((prev) => !prev)
   }
 
-  const { t } = useTranslation()
-
   const classApp = classNames(cls.app, ['theme', theme], {})
 
   const clsSidebar = classNames(cls.boxSidebar, [], {
@@ -33,12 +30,11 @@ function App() {
       <Suspense fallback="transslation">
         <div className={cls.inner}>
           <Navbar className={cls.boxNavbar} />
-          {t('dddd')}
           <div className={cls.boxMain}>
             <Sidebar className={clsSidebar} toggleHandler={toggleHandler} />
             <AppRouter className={cls.boxContent} />
           </div>
-          <div className={cls.boxFooter}>{t('footer')}</div>
+          <div className={cls.boxFooter}></div>
         </div>
       </Suspense>
     </div>

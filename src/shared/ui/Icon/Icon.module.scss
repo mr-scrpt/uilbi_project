@@ -11,8 +11,14 @@
   background-position: 50%;
   background-size: contain;
 
+  -webkit-mask-position: 50%;
+
   mask-position: 50%;
+  -webkit-mask-repeat: no-repeat;
+
   mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+
   mask-size: contain;
 }
 
@@ -41,6 +47,7 @@
 
 .icon.icon_theme {
   // background-image: url('../../asset/icon/user_new.png');  // Используйте правильный относительный путь  // Используйте правильный относительный путь
+  -webkit-mask-image: url('../../asset/icon/theme-light.svg');
   mask-image: url('../../asset/icon/theme-light.svg');
 
   &_light {
@@ -51,5 +58,3 @@
     background-color: var(--color-theme-switch);
   }
 }
-
-
