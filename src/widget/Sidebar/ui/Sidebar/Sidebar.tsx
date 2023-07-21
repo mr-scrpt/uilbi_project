@@ -5,6 +5,7 @@ import { Button } from 'shared/component/Button'
 import { LangSwitcher } from 'widget/LangSwitcher'
 
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
+import LightIcon from 'shared/asset/icon/theme-dark.svg'
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
 
@@ -21,6 +22,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     <div className={clsSidebar}>
       <div className={cls.inner}>
         <div className={cls.boxNav}>Nav</div>
+        <LightIcon />
 
         <div className={cls.boxFooter}>
           <Button onClick={toggleHandler}>{t('side-bar-toggle')}</Button>

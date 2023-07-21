@@ -1,4 +1,4 @@
-import { classNames } from './classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 describe('classNames', () => {
   test('with only first param', () => {
@@ -33,7 +33,7 @@ describe('classNames', () => {
     ).toBe('someClass modsclass')
   })
 
-  test('with mods params first true, second false, third undefined, five true', () => {
+  test('with mods first true, second false, third undefined, five true', () => {
     expect(
       classNames('someClass', [], {
         modsclass: true,
