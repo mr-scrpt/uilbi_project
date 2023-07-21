@@ -23,7 +23,7 @@ export const BugButton: FC<BugButtonProps> = (props) => {
 
   const clsBugButton = classNames(cls.bugButton, [className], {})
 
-  const { t } = useTranslation()
+  const { t } = useTranslation('error_list')
 
   return (
     <div className={clsBugButton}>
