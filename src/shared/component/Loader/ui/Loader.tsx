@@ -11,6 +11,7 @@ export const Loader: FC<LoaderProps> = (props) => {
   const clsDotSecond = classNames(cls.dotSecond, [cls.dot])
   const clsDotThird = classNames(cls.dotThird, [cls.dot])
   const clsDotFourth = classNames(cls.dotFourth, [cls.dot])
+
   return (
     <div className={clsLoader}>
       <div className={cls.inner}>
