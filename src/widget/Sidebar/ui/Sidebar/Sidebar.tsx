@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 import { Button } from 'shared/component/Button'
@@ -15,17 +15,36 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const { t } = useTranslation()
 
   const clsSidebar = classNames(cls.sidebar, [className])
+  const clsButton = classNames(cls.button, ['button_collapse'])
+  console.log('className', className)
 
   const clsThemeSwitcher = classNames(cls.themeSwitcher)
+  const [testvar, setTestvar] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('click')
+    }, 1000)
+  }, [testvar])
+
+  const handlerClick = () => {
+    setTestvar(true)
+  }
 
   return (
     <div className={clsSidebar}>
       <div className={cls.inner}>
         <div className={cls.boxNav}>Nav</div>
-        <LightIcon />
+        <LightIcon onClick={handlerClick} />
 
         <div className={cls.boxFooter}>
-          <Button onClick={toggleHandler}>{t('side-bar-toggle')}</Button>
+          <Button
+            className={clsButton}
+            onClick={toggleHandler}
+            data-testid="button"
+          >
+            {t('side-bar-toggle')}
+          </Button>
           <ThemeSwitcher className={clsThemeSwitcher} />
           <LangSwitcher />
         </div>

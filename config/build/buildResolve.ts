@@ -1,5 +1,5 @@
-import { ResolveOptions } from 'webpack';
-import { BuildPath } from './type/config';
+import { ResolveOptions } from 'webpack'
+import { BuildPath } from './type/config'
 
 export const buildResolve = (paths: BuildPath): ResolveOptions => ({
   mainFiles: ['index'],
@@ -7,4 +7,4 @@ export const buildResolve = (paths: BuildPath): ResolveOptions => ({
   preferAbsolute: true,
   modules: [paths.src, 'node_modules'],
   alias: {},
-});
+})

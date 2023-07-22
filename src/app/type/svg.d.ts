@@ -1,5 +1,4 @@
-import React from 'react'
-
+// Не импортировать реакт иначе будет ошибка типов
 declare module '*.svg' {
   const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>
   export default content

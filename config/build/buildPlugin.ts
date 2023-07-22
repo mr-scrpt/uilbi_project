@@ -11,11 +11,11 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BuildOption } from './type/config'
 
 export const buildPlugin = ({
-  paths,
+  appPath,
   isDev,
 }: BuildOption): WebpackPluginInstance[] => [
   new HtmlWebpackPlugin({
-    template: paths.template,
+    template: appPath.template,
   }),
 
   new ProgressPlugin(),
