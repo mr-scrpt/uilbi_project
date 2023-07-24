@@ -13,6 +13,7 @@ const config: StorybookConfig = {
     'storybook-theme-css-vars',
     '@storybook/addon-viewport',
     'storybook-react-context',
+    'storybook-react-i18next',
   ],
   framework: {
     name: '@storybook/react-webpack5',

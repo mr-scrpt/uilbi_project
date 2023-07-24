@@ -12,18 +12,6 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  // argTypes: {
-  //   size: {
-  //     table: {
-  //       defaultValue: { summary: ButtonSizeEnum.L },
-  //       type: { summary: 'string' },
-  //     },
-  //     control: {
-  //       type: 'radio',
-  //       accept: 'l',
-  //     },
-  //   },
-  // },
 } satisfies Meta<typeof Button>
 
 export default meta

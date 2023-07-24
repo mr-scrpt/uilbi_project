@@ -21,6 +21,7 @@ export function Navbar(props: NavbarProps) {
         <div className={clsMenu}>
           <LinkApp to="/" view={LinkViewEnum.SECONDARY}>
             {t('menu-top-link-main')}
+            {/* Test */}
           </LinkApp>
           <LinkApp to="/about" view={LinkViewEnum.SECONDARY}>
             {t('menu-top-link-about')}

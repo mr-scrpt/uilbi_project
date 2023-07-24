@@ -1,11 +1,10 @@
 // .storybook/preview.tsx
 
-import React from 'react'
-
 import { Preview } from '@storybook/react'
 import { StyleDecorator } from 'shared/config/storybook/decorator/style.decorator'
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+// import 'shared/config/i18n/i18n'
 
 const preview: Preview = {
   decorators: [StyleDecorator],

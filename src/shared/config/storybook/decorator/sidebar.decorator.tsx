@@ -8,9 +8,7 @@ const clsSidebarOpen = classNames(cls.boxSidebar, [], {
 })
 
 export const SidebarOpenDecorator: Decorator = (StoryComponent) => (
-  <div style={{ background: 'red' }} className={clsSidebarOpen}>
-    <StoryComponent className={clsSidebarOpen} />
-  </div>
+  <StoryComponent className={clsSidebarOpen} />
 )
 
 const clsSidebarCollapse = classNames(cls.boxSidebar, [], {

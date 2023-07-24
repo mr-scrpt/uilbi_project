@@ -3,6 +3,7 @@ import { scssLoader } from '../build/loader/scssLoader'
 import { appPath } from '../build/type/appPath'
 import path from 'node:path'
 import { svgLoader } from '../build/loader/svgLoader'
+import { babelLoader } from '../build/loader/babelLoader'
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const buildToLoader = scssLoader(true)
@@ -12,19 +13,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module?.rules?.push(buildToLoader)
 
-  // config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-  //   if (/svg/.test(rule.test as string)) {
-  //     return { ...rule, exclude: /\.svg$/i }
-  //   }
-  //
-  //   return rule
-  // })
-  //
-  // config.module.rules.push({
-  //   test: /\.svg$/i,
-  //   issuer: /\.[jt]sx?$/,
-  //   use: ['@svgr/webpack'],
-  // })
   const pathToInlineSvg = path.resolve(
     __dirname,
     '../../src/shared/asset/icon/'
@@ -36,6 +24,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   fileLoaderRule.exclude = pathToInlineSvg
 
   rules.push(svgLoader)
+  // rules.push(babelLoader)
 
   return config
 }
