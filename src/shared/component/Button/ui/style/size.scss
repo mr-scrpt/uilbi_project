@@ -1,0 +1,50 @@
+/* Размеры кнопок */
+/* S - Начало */
+.size_s {
+  font-size: 13px;
+  line-height: 28px;
+  border-radius: 30px;
+}
+
+.size_s .text {
+  margin: 0 15px;
+}
+/* S - КОНЕЦ */
+
+/* M - Начало */
+.size_m {
+  font-size: 13px;
+  line-height: 32px;
+  border-radius: 40px;
+}
+
+.size_m .text {
+  margin: 0 25px;
+}
+/* M - КОНЕЦ */
+
+/* L - Начало */
+.size_l {
+  font-size: 14px;
+  line-height: 38px;
+  border-radius: 50px;
+}
+
+.size_l .text {
+  margin: 0 35px;
+}
+
+/* L - КОНЕЦ */
+
+/* XL - Начало */
+.size_xl {
+  font-size: 16px;
+  line-height: 44px;
+  border-radius: 60px;
+}
+
+.size_xl .text {
+  margin: 0 55px;
+}
+
+/* L - КОНЕЦ */

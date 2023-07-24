@@ -14,4 +14,7 @@ module.exports = {
     'stylelint-config-clean-order',
     'stylelint-config-recommended-scss',
   ],
+  rules: {
+    'no-descending-specificity': null,
+  },
 }

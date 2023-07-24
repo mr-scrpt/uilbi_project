@@ -6,6 +6,7 @@ import { Navbar } from 'widget/Navbar'
 import { Sidebar } from 'widget/Sidebar'
 import { Suspense, useState } from 'react'
 import cls from './App.module.scss'
+import clsTheme from './style/theme/index.module.scss'
 
 import { AppRouter } from './provider/router'
 
@@ -18,7 +19,10 @@ function App() {
     setCollapsed((prev) => !prev)
   }
 
-  const classApp = classNames(cls.app, ['theme', theme], {})
+  const clsApp = classNames(cls.app, [clsTheme.theme, cls.app_geometry], {
+    [clsTheme.theme_light]: theme === 'theme_light',
+    [clsTheme.theme_dark]: theme === 'theme_dark',
+  })
 
   const clsSidebar = classNames(cls.boxSidebar, [], {
     [cls.boxSidebar_collapse]: collapsed,
@@ -26,7 +30,7 @@ function App() {
   })
 
   return (
-    <div className={classApp}>
+    <div className={clsApp}>
       <Suspense fallback="transslation">
         <div className={cls.inner}>
           <Navbar className={cls.boxNavbar} />

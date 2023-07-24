@@ -1,0 +1,31 @@
+.button {
+  touch-action: manipulation;
+  user-select: none;
+
+  position: relative;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  outline: 0;
+
+  & .button__text {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* HOVER */
+  &:hover {
+    cursor: pointer;
+  }
+}

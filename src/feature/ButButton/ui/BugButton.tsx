@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import { ButtonViewEnum } from 'shared/component/Button/type/view.enum'
 import { classNames } from 'shared/lib/classNames'
 import { Button } from 'shared/component/Button'
 import { useTranslation } from 'react-i18next'
@@ -27,7 +28,7 @@ export const BugButton: FC<BugButtonProps> = (props) => {
 
   return (
     <div className={clsBugButton}>
-      <Button type="button" view="secondary" onClick={genError}>
+      <Button type="button" view={ButtonViewEnum.SECONDARY} onClick={genError}>
         {t('error-gen-error-button')}
       </Button>
     </div>

@@ -1,5 +1,6 @@
 import { RuleSetRule } from 'webpack'
 import { scssLoader } from './loader/scssLoader'
+import { svgLoader } from './loader/svgLoader'
 
 const typescriptLoader = {
   test: /\.tsx?$/,
@@ -10,12 +11,6 @@ const typescriptLoader = {
 const imgLoader = {
   test: /\.(png|jpe?g|gif)$/i,
   type: 'asset/resource',
-}
-
-const svgLoader = {
-  test: /\.svg$/i,
-  issuer: /\.[jt]sx?$/,
-  use: ['@svgr/webpack'],
 }
 
 const babelLoader = {

@@ -1,0 +1,38 @@
+/* Gradient */
+:root {
+  --gradient-standart: linear-gradient(
+    90deg,
+    #025fa7 0,
+    #1682d4 25%,
+    #00b0d0 50%,
+    #09d3f6 75%,
+    #42e3ff 100%
+  );
+
+  --gradient-alternative: linear-gradient(
+    90deg,
+    rgba(77, 2, 167, 1) 0%,
+    rgba(138, 22, 212, 1) 25%,
+    rgba(179, 0, 208, 1) 50%,
+    rgba(226, 9, 246, 1) 75%,
+    rgba(255, 66, 176, 1) 100%
+  );
+  --gradient-button: linear-gradient(
+    90deg,
+    #025fa7 0,
+    #1682d4 25%,
+    #00b0d0 50%,
+    #09d3f6 75%,
+    #42e3ff 100%,
+    #42e3ff 150%
+  );
+
+  -gradient-vertical: linear-gradient(
+    // 90deg,
+    #025fa7 0,
+    #1682d4 25%,
+    #00b0d0 50%,
+    #09d3f6 75%,
+    #42e3ff 100%
+  );
+}

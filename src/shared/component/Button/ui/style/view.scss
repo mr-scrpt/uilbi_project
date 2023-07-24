@@ -1,0 +1,81 @@
+@import 'app/style/mixin';
+/* View */
+.view_primary {
+  @include ts(background-position-x);
+
+  background: var(--gradient-standart);
+  background-position-x: 50%;
+  background-size: 150%;
+
+  & .text {
+    color: var(--color-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  &:hover {
+    background-position-x: 0%;
+  }
+}
+
+.view_secondary {
+  @include ts(background-position-x);
+
+  background: var(--gradient-alternative);
+  background-position-x: 50%;
+  background-size: 150%;
+  // border: 1px solid transparent;
+  // background: $color_light;
+
+  & .text {
+    color: var(--color-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    // color: $color_primary;
+  }
+  &:hover {
+    background-position-x: 0%;
+    // border-color: $color_secondary;
+  }
+}
+
+.view_tertiary {
+  // background: var(--color-bg-inverted);
+  background: red;
+  border: 2px solid var(--color-secondary);
+
+  & .text {
+    @include ts(color);
+
+    color: var(--color-secondary);
+  }
+
+  &:hover {
+    background: blue;
+
+    & .text {
+      @include ts(color);
+
+      color: yellow;
+    }
+  }
+}
+
+.view_transparent {
+  @include ts(border-color);
+
+  background: transparent;
+  border: 2px solid var(--color-primary);
+
+  &:hover {
+    border-color: var(--color-primary-inverted);
+    & .text {
+      color: var(--color-primary-inverted);
+    }
+  }
+  & .text {
+    @include ts(color);
+
+    color: var(--color-primary);
+  }
+}

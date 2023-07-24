@@ -16,7 +16,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
   const clsSidebar = classNames(cls.sidebar, [className])
   const clsButton = classNames(cls.button, ['button_collapse'])
-  console.log('className', className)
+  console.log('clsSidebar', clsSidebar)
 
   const clsThemeSwitcher = classNames(cls.themeSwitcher)
   const [testvar, setTestvar] = useState(false)

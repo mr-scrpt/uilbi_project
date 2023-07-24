@@ -1,0 +1,19 @@
+/* ЗАТУХАНИЕ */
+@mixin ts($obj, $obj2: 'empty', $obj3: 'empty') {
+  $th: var(--time-transition);
+
+  transition: $obj $th;
+
+  @if $obj2 != 'empty' {
+    transition:
+      $obj $th,
+      $obj2 $th;
+  }
+
+  @if $obj3 != 'empty' {
+    transition:
+      $obj $th,
+      $obj2 $th,
+      $obj3 $th;
+  }
+}
