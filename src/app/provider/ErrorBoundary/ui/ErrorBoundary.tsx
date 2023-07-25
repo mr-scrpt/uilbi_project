@@ -26,7 +26,7 @@ export class ErrorBoundary extends Component<
     if (hasError) {
       // You can render any custom fallback UI
       return (
-        <Suspense fallback={<div>translete</div>}>
+        <Suspense fallback="">
           <ErrorPage />
         </Suspense>
       )

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { classNames } from 'shared/lib/classNames'
 import { Sidebar } from './Sidebar'
 
-import cls from '/src/app/App.module.scss'
+import cls from '../../../../app/App.module.scss'
 
 const meta = {
   title: 'Widget/Sidebar',

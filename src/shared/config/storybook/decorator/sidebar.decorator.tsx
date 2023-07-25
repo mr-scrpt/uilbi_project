@@ -1,7 +1,7 @@
+import { Decorator } from '@storybook/react'
 import { classNames } from 'shared/lib/classNames'
 
-import cls from '/src/app/App.module.scss'
-import { Decorator } from '@storybook/react'
+import cls from '../../../../app/App.module.scss'
 
 const clsSidebarOpen = classNames(cls.boxSidebar, [], {
   [cls.boxSidebar_open]: true,

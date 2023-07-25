@@ -17,7 +17,6 @@ export const Button: FC<ButtonProps> = (props) => {
     size = ButtonSizeEnum.L,
     icon,
     iconPosition = IconPositionEnum.LEFT,
-    type,
     ...etc
   } = props
 
@@ -36,10 +35,10 @@ export const Button: FC<ButtonProps> = (props) => {
 
   const clsText = classNames(cls.text)
 
-  const clsIcon = classNames(cls.icon, [classIcon])
+  const clsIcon = classNames('', [classIcon])
 
   return (
-    <button type={type} className={clsButton} {...etc}>
+    <button type="button" className={clsButton} {...etc}>
       {icon && iconPosition === IconPositionEnum.LEFT && (
         <Icon className={clsIcon} icon={icon} />
       )}

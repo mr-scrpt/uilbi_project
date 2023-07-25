@@ -16,7 +16,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
   const clsSidebar = classNames(cls.sidebar, [className])
   const clsButton = classNames(cls.button, ['button_collapse'])
-  console.log('clsSidebar', clsSidebar)
 
   const clsThemeSwitcher = classNames(cls.themeSwitcher)
   const [testvar, setTestvar] = useState(false)
@@ -34,7 +33,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <div className={clsSidebar}>
       <div className={cls.inner}>
-        <div className={cls.boxNav}>Nav</div>
+        <div className={cls.boxNav}>{t('Nav')}</div>
         <LightIcon onClick={handlerClick} />
 
         <div className={cls.boxFooter}>

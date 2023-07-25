@@ -18,74 +18,54 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const View_Primary: Story = {
+export const ViewPrimary: Story = {
   args: {
     view: ButtonViewEnum.PRIMARY,
     children: 'Button',
   },
 }
 
-export const View_Secondary: Story = {
+export const ViewSecondary: Story = {
   args: {
     view: ButtonViewEnum.SECONDARY,
     children: 'Button',
   },
 }
-export const View_Tertiary: Story = {
+export const ViewTertiary: Story = {
   args: {
     view: ButtonViewEnum.TERTIARY,
     children: 'Button',
   },
 }
 
-export const View_transparent: Story = {
+export const Viewtransparent: Story = {
   args: {
     view: ButtonViewEnum.TRANSPARENT,
     children: 'Button',
   },
 }
 
-export const Size_S: Story = {
+export const SizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     children: 'Button',
   },
 }
-export const Size_M: Story = {
+export const SizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     children: 'Button',
   },
 }
-export const Size_L: Story = {
+export const SizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     children: 'Button',
   },
 }
-export const Size_XL: Story = {
+export const SizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     children: 'Button',
   },
 }
-
-// export const Secondary: Story = {
-//   args: {
-//     children: 'Button',
-//   },
-// }
-//
-// export const Large: Story = {
-//   args: {
-//     size: 'large',
-//     label: 'Button',
-//   },
-// }
-//
-// export const Small: Story = {
-//   args: {
-//     size: 'small',
-//     label: 'Button',
-//   },
-// }

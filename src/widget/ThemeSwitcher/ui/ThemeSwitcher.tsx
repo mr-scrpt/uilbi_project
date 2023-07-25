@@ -1,10 +1,13 @@
 import { useTheme } from 'app/provider/ThemeProvider'
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames'
-import { Button, ButtonSizeEnum } from 'shared/component/Button'
+import {
+  Button,
+  ButtonSizeEnum,
+  IconPositionEnum,
+} from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon/type/icon.enum'
 import { ThemeEnum } from 'app/provider/ThemeProvider/type'
-import { IconPositionEnum } from 'shared/component/Button'
 import cls from './ThemeSwitcher.module.scss'
 import { ThemeSwitcherProps } from '../type/props.type'
 

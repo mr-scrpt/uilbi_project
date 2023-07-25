@@ -1,10 +1,16 @@
 // .storybook/preview.tsx
 
 import { Preview } from '@storybook/react'
-import { StyleDecorator } from 'shared/config/storybook/decorator/style.decorator'
-
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-// import 'shared/config/i18n/i18n'
+
+import { StyleDecorator } from '../../src/shared/config/storybook/decorator/style.decorator'
+// import { TranslationDecorator } from '../../src/shared/config/storybook/decorator/translation.decorator'
+
+const classApp = 'src-app-App-module_app'
+const classTheme = 'src-app-style-theme-index-module_theme'
+const classGeometry = 'src-app-App-module_app_geometry'
+const classLight = 'src-app-style-theme-index-module_theme_dark'
+const classDark = 'src-app-style-theme-index-module_theme_light'
 
 const preview: Preview = {
   decorators: [StyleDecorator],
@@ -12,10 +18,8 @@ const preview: Preview = {
     theme: {
       selector: '.src-app-style-theme-index-module_theme',
       dataAttr: 'class',
-      nameLightTheme:
-        'src-app-App-module_app src-app-style-theme-index-module_theme src-app-App-module_app_geometry src-app-style-theme-index-module_theme_dark',
-      nameDarkTheme:
-        'src-app-App-module_app src-app-style-theme-index-module_theme src-app-App-module_app_geometry src-app-style-theme-index-module_theme_light',
+      nameLightTheme: `${classApp} ${classGeometry} ${classTheme} ${classLight}`,
+      nameDarkTheme: `${classApp} ${classGeometry} ${classTheme} ${classDark}`,
     },
     backgrounds: {
       values: [

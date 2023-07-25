@@ -2,9 +2,9 @@ import { Decorator } from '@storybook/react'
 import { classNames } from 'shared/lib/classNames'
 
 import 'app/style/index.scss'
-import cls from '/src/app/App.module.scss'
+import cls from '../../../../app/App.module.scss'
 
-import clsTheme from '/src/app/style/theme/index.module.scss'
+import clsTheme from '../../../../app/style/theme/index.module.scss'
 import './storybook.scss'
 
 const clsApp = classNames(
@@ -16,7 +16,6 @@ const clsApp = classNames(
   }
 )
 
-// export const StyleDecorator = (story: () => Preview) => story();
 export const StyleDecorator: Decorator = (StoryComponent) => (
   <div className={clsApp}>
     <StoryComponent />
