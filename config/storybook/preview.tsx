@@ -4,7 +4,7 @@ import { Preview } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import { StyleDecorator } from '../../src/shared/config/storybook/decorator/style.decorator'
-// import { TranslationDecorator } from '../../src/shared/config/storybook/decorator/translation.decorator'
+import { TranslationDecorator } from '../../src/shared/config/storybook/decorator/translation.decorator'
 
 const classApp = 'src-app-App-module_app'
 const classTheme = 'src-app-style-theme-index-module_theme'
@@ -13,7 +13,7 @@ const classLight = 'src-app-style-theme-index-module_theme_dark'
 const classDark = 'src-app-style-theme-index-module_theme_light'
 
 const preview: Preview = {
-  decorators: [StyleDecorator],
+  decorators: [StyleDecorator, TranslationDecorator],
   parameters: {
     theme: {
       selector: '.src-app-style-theme-index-module_theme',
