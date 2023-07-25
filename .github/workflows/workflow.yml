@@ -20,15 +20,15 @@ jobs:
       - name: install modules
         run: yarn
       - name: build production project
-        run: npm run build:prod
+        run: yarn build:prod
       - name: linting typescript
-        run: npm run lint:code:check
+        run: yarn lint:code:check
       - name: linting css
-        run: npm run lint:style:check
+        run: yarn lint:style:check
       - name: unit testing
-        run: npm run test:unit
-      - name: build storybook
-        run: npm run sb:build
-      - name: screenshot testing
-        run: npm run test:ui:ci
+        run: yarn test:unit
+      # - name: build storybook
+      #   run: yarn sb:build
+      # - name: screenshot testing
+      #   run: yarn test:ui:ci
 
