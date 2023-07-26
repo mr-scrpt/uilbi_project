@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface ThemeProviderProps {
-  children: React.ReactNode;
+  children: ReactNode
 }
