@@ -22,18 +22,24 @@ jobs:
 
       - name: build production project
         run: yarn build:prod
+
       - name: linting typescript
         run: yarn lint:code:check
+
       - name: linting css
         run: yarn lint:style:check
+
       - name: unit testing
         run: yarn test:unit
 
       - name: build storybook
         run: yarn sb:build
-      #
-      # - name: screenshot testing
-      #   run: yarn test:ui:ci
+
+      - name: screenshot approve for script
+        run: yarn test:ui:approve
+
+      - name: screenshot testing
+        run: yarn test:ui:ci
 
       # - name: Archive code coverage results
       #   uses: actions/upload-artifact@v3
