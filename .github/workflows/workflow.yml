@@ -35,12 +35,12 @@ jobs:
       - name: screenshot testing
         run: yarn test:ui:ci
 
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: screen
-          path: .loki/
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: screen
+      # - name: Archive code coverage results
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: screen
+      #     path: .loki/
+      # - name: Download a single artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: screen
