@@ -13,6 +13,21 @@ const classLight = 'src-app-style-theme-index-module_theme_dark'
 const classDark = 'src-app-style-theme-index-module_theme_light'
 
 const preview: Preview = {
+  // globalTypes: {
+  //   locale: {
+  //     name: 'Locale',
+  //     description: 'Internationalization locale',
+  //     defaultValue: 'en',
+  //     toolbar: {
+  //       icon: 'globe',
+  //       items: [
+  //         { value: 'en', title: 'English' },
+  //         { value: 'ru', title: 'Rus' },
+  //       ],
+  //       showName: false,
+  //     },
+  //   },
+  // },
   decorators: [StyleDecorator, TranslationDecorator],
   parameters: {
     theme: {
