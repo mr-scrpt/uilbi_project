@@ -31,6 +31,16 @@ jobs:
       #
       - name: build storybook
         run: yarn sb:build
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: screen
+          path: output/
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: screen
+
       - name: screenshot testing
         run: yarn test:ui:ci
 
