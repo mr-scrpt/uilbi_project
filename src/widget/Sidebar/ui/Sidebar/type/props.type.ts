@@ -1,6 +1,7 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react'
 
-export interface SidebarProps extends HTMLAttributes<HTMLDivElement>{
-  className?: string;
-  toggleHandler?: ()=> void;
+export interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string
+  collapsed?: boolean
+  toggleHandler?: () => void
 }

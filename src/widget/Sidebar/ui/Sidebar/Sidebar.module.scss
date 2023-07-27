@@ -3,10 +3,20 @@
 }
 
 .inner {
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
   width: 100%;
   height: 100%;
+}
+
+.control {
+  // position: absolute;
+  // top: 20px;
+  // right: 0;
+  // transform: translateX(100%);
 }
 
 .boxNav {
@@ -25,6 +35,14 @@
 
 .button {
   padding: 0;
+}
+
+.icon_collapsed {
+  background-color: var(--color-primary);
+}
+
+.icon_uncollapsed {
+  background-color: var(--color-secondary);
 }
 
 /* .collapsed { */

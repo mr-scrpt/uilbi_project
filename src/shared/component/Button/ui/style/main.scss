@@ -5,7 +5,7 @@
   position: relative;
 
   display: inline-flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -17,7 +17,7 @@
 
   outline: 0;
 
-  & .button__text {
+  & .text {
     position: relative;
     overflow: hidden;
     display: inline-block;

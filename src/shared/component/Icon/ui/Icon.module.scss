@@ -58,3 +58,16 @@
     background-color: var(--color-theme-switch);
   }
 }
+
+.icon.icon_burger {
+  -webkit-mask-image: url('../../../asset/icon/icon-menu-burger.svg');
+  mask-image: url('../../../asset/icon/icon-menu-burger.svg');
+
+  &_collapsed {
+    background-color: var(--color-primary);
+  }
+
+  &_expanded {
+    background-color: var(--color-secondary);
+  }
+}

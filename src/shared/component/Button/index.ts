@@ -1,3 +1,5 @@
 export { Button } from './ui/Button'
 export { ButtonSizeEnum } from './type/size.enum'
-export { IconPositionEnum } from './type/iconPosition.enum'
+export { ButtonViewEnum } from './type/view.enum'
+export { ButtonIconPositionEnum } from './type/buttonIconPosition.enum'
+export { ButtonShapeEnum } from './type/shape.enum'

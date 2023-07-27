@@ -1,14 +1,12 @@
-.theme.theme{
-  &_light{
+.theme.theme {
+  &_light {
     --color-primary: #0232c2;
     --color-secondary: #0449e0;
     --color-primary-inverted: #049604;
     --color-secondary-inverted: #04ff04;
+    --color-shadow: rgba(0, 0, 0, 0.1);
     --bg-color: #e8e8ea;
     --bg-color-inverted: #090949;
     --color-theme-switch: #ff0;
-
   }
 }
-
-

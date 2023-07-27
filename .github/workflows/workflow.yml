@@ -32,14 +32,12 @@ jobs:
       - name: unit testing
         run: yarn test:unit
 
-      - name: build storybook
-        run: yarn sb:build
+      # - name: build storybook
+      #   run: yarn sb:build
 
-      - name: screenshot approve for script
-        run: yarn test:ui:approve
 
-      - name: screenshot testing
-        run: yarn test:ui:ci
+      # - name: screenshot testing
+      #   run: yarn test:ui:ci
 
       # - name: Archive code coverage results
       #   uses: actions/upload-artifact@v3

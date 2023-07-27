@@ -12,6 +12,11 @@ export const Icon: FC<IconProps> = (props) => {
       icon === IconEnum.THEME_LIGHT || icon === IconEnum.THEME_DARK,
     [cls.icon_theme_light]: icon === IconEnum.THEME_LIGHT,
     [cls.icon_theme_dark]: icon === IconEnum.THEME_DARK,
+
+    [cls.icon_burger]:
+      icon === IconEnum.BURGER_COLLAPSED || icon === IconEnum.BURGER_EXPANDED,
+    [cls.icon_burger_collapsed]: icon === IconEnum.BURGER_COLLAPSED,
+    [cls.icon_burger_expanded]: icon === IconEnum.BURGER_EXPANDED,
   })
 
   return <span className={clsIcon} {...etc} />

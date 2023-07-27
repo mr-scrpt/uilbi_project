@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames'
-import { Icon } from 'shared/component/Icon'
-import { IconPositionEnum } from '../type/iconPosition.enum'
+import { Icon, clsIcon } from 'shared/component/Icon'
+import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
 import { ButtonProps } from '../type/props.type'
 import cls from './style/Button.module.scss'
 import { ButtonViewEnum } from '../type/view.enum'
 
 import { ButtonSizeEnum } from '../type/size.enum'
+import { ButtonShapeEnum } from '../type/shape.enum'
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
@@ -15,8 +16,9 @@ export const Button: FC<ButtonProps> = (props) => {
     children,
     view = ButtonViewEnum.PRIMARY,
     size = ButtonSizeEnum.L,
+    shape = ButtonShapeEnum.MAIN,
     icon,
-    iconPosition = IconPositionEnum.LEFT,
+    iconPosition = ButtonIconPositionEnum.LEFT,
     ...etc
   } = props
 
@@ -31,20 +33,24 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls.size_m]: size === ButtonSizeEnum.M,
     [cls.size_s]: size === ButtonSizeEnum.S,
     [cls.size_xl]: size === ButtonSizeEnum.XL,
+
+    [cls.shape_main]: shape === ButtonShapeEnum.MAIN,
+    [cls.shape_next]: shape === ButtonShapeEnum.NEXT,
+    [cls.shape_flat]: shape === ButtonShapeEnum.FLAT,
   })
 
   const clsText = classNames(cls.text)
 
-  const clsIcon = classNames('', [classIcon])
+  const clsIconButton = classNames(cls.icon, [classIcon])
 
   return (
     <button type="button" className={clsButton} {...etc}>
-      {icon && iconPosition === IconPositionEnum.LEFT && (
-        <Icon className={clsIcon} icon={icon} />
+      {icon && iconPosition === ButtonIconPositionEnum.LEFT && (
+        <Icon className={clsIconButton} icon={icon} />
       )}
       {children && <span className={clsText}>{children}</span>}
-      {icon && iconPosition === IconPositionEnum.RIGHT && (
-        <Icon className={clsIcon} icon={icon} />
+      {icon && iconPosition === ButtonIconPositionEnum.RIGHT && (
+        <Icon className={clsIconButton} icon={icon} />
       )}
     </button>
   )

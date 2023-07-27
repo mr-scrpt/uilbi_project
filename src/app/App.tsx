@@ -35,7 +35,11 @@ function App() {
         <div className={cls.inner}>
           <Navbar className={cls.boxNavbar} />
           <div className={cls.boxMain}>
-            <Sidebar className={clsSidebar} toggleHandler={toggleHandler} />
+            <Sidebar
+              className={clsSidebar}
+              collapsed={collapsed}
+              toggleHandler={toggleHandler}
+            />
             <AppRouter className={cls.boxContent} />
           </div>
           <div className={cls.boxFooter}></div>

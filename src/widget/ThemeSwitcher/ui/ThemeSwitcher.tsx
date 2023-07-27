@@ -3,8 +3,9 @@ import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames'
 import {
   Button,
+  ButtonShapeEnum,
   ButtonSizeEnum,
-  IconPositionEnum,
+  ButtonViewEnum,
 } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon/type/icon.enum'
 import { ThemeEnum } from 'app/provider/ThemeProvider/type'
@@ -34,9 +35,10 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
           onClick={themeToggle}
           className={clsButton}
           classIcon={clsIcon}
+          shape={ButtonShapeEnum.FLAT}
+          view={ButtonViewEnum.TRANSPARENT}
           size={ButtonSizeEnum.XL}
           icon={icon}
-          iconPosition={IconPositionEnum.RIGHT}
         />
       </div>
     </div>
