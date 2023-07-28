@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 import { IconEnum } from 'shared/component/Icon'
 import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
+import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
+import { RoutePath } from 'shared/config/configRouter/configRouter'
 import {
   Button,
   ButtonShapeEnum,
@@ -12,7 +14,6 @@ import {
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
-import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className, collapsed, toggleHandler } = props
@@ -48,11 +49,15 @@ export const Sidebar: FC<SidebarProps> = (props) => {
           />
         </div>
         <div className={cls.boxNav}>
-          <LinkApp to="/" view={LinkViewEnum.SECONDARY} size={LinkSizeEnum.XL}>
+          <LinkApp
+            to={RoutePath.main}
+            view={LinkViewEnum.SECONDARY}
+            size={LinkSizeEnum.XL}
+          >
             {t('menu-top-link-main')}
           </LinkApp>
           <LinkApp
-            to="/about"
+            to={RoutePath.about}
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
           >
