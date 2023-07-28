@@ -1,6 +1,7 @@
 /* Размеры кнопок */
 /* S - Начало */
 .size_s {
+  height: var(--font-line-s-boost);
   font-size: var(--font-size-s);
   line-height: var(--font-line-s-boost);
 
@@ -14,6 +15,8 @@
 
 /* M - Начало */
 .size_m {
+  height: var(--font-line-m-boost);
+
   // font-size: 13px;
   // line-height: 32px;
   font-size: var(--font-size-m);
@@ -29,6 +32,7 @@
 
 /* L - Начало */
 .size_l {
+  height: var(--font-line-l-boost);
   // font-size: 14px;
   // line-height: 38px;
   font-size: var(--font-size-l);
@@ -45,6 +49,8 @@
 
 /* XL - Начало */
 .size_xl {
+  height: var(--font-line-xl-boost);
+
   // font-size: 16px;
   // line-height: 44px;
   font-size: var(--font-size-xl);

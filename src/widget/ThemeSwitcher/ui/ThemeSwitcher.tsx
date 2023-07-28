@@ -35,9 +35,9 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
           onClick={themeToggle}
           className={clsButton}
           classIcon={clsIcon}
-          shape={ButtonShapeEnum.FLAT}
+          shape={ButtonShapeEnum.NEXT}
           view={ButtonViewEnum.TRANSPARENT}
-          size={ButtonSizeEnum.XL}
+          size={ButtonSizeEnum.L}
           icon={icon}
         />
       </div>

@@ -12,6 +12,7 @@ import {
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
+import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className, collapsed, toggleHandler } = props
@@ -24,11 +25,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     [cls.footer_column]: collapsed,
     [cls.footer_row]: !collapsed,
   })
-
-  // const clsIcon = classNames('', [], {
-  //   [cls.icon_collapsed]: !collapsed,
-  //   [cls.icon_uncollapsed]: collapsed,
-  // })
 
   const clsThemeSwitcher = classNames(cls.themeSwitcher)
   const buttonIcon = collapsed
@@ -51,7 +47,18 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             icon={buttonIcon}
           />
         </div>
-        <div className={cls.boxNav}></div>
+        <div className={cls.boxNav}>
+          <LinkApp to="/" view={LinkViewEnum.SECONDARY} size={LinkSizeEnum.XL}>
+            {t('menu-top-link-main')}
+          </LinkApp>
+          <LinkApp
+            to="/about"
+            view={LinkViewEnum.SECONDARY}
+            size={LinkSizeEnum.XL}
+          >
+            {t('menu-top-link-about')}
+          </LinkApp>
+        </div>
         {/* <LightIcon onClick={handlerClick} /> */}
 
         <div className={clsFooter}>

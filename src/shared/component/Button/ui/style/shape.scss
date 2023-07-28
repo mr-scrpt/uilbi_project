@@ -99,6 +99,10 @@
     margin-right: 12px;
     margin-left: 6px;
   }
+  &.size_s .icon:not(:has(+ .text)) {
+    margin-right: 6px;
+    margin-left: 6px;
+  }
 
   &.size_m .icon:has(+ .text) {
     margin-right: 7px;
@@ -109,12 +113,23 @@
     margin-left: 7px;
   }
 
+  &.size_m .icon:not(:has(+ .text)) {
+    margin-right: 7px;
+    margin-left: 7px;
+  }
+
   &.size_l .icon:has(+ .text) {
     margin-right: 7.5px;
     margin-left: 15px;
   }
+
   &.size_l .text + .icon {
     margin-right: 15px;
+    margin-left: 7.5px;
+  }
+
+  &.size_l .icon:not(:has(+ .text)) {
+    margin-right: 7.5px;
     margin-left: 7.5px;
   }
 
@@ -122,8 +137,14 @@
     margin-right: 9px;
     margin-left: 18px;
   }
+
   &.size_xl .text + .icon {
     margin-right: 18px;
+    margin-left: 9px;
+  }
+
+  &.size_xl .icon:not(:has(+ .text)) {
+    margin-right: 9px;
     margin-left: 9px;
   }
 }
@@ -131,7 +152,8 @@
 .shape_flat {
   // Размеры
   &.size_s {
-    line-height: 13px;
+    // height: 13px;
+    // line-height: 13px;
     border-radius: 2px;
   }
 
@@ -139,9 +161,15 @@
     margin: 2px;
   }
 
+  &.size_s .icon:not(:has(+ .text)) {
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+
   // =========.....=========
   &.size_m {
-    line-height: 13px;
+    // height: 13px;
+    // line-height: 13px;
     border-radius: 4px;
   }
 
@@ -149,24 +177,39 @@
     margin: 3px;
   }
 
+  &.size_m .icon:not(:has(+ .text)) {
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+
   // =========.....=========
   &.size_l {
-    line-height: 14px;
+    // height: 14px;
+    // line-height: 14px;
     border-radius: 6px;
   }
 
   &.size_l .text {
     margin: 4px;
   }
+  &.size_l .icon:not(:has(+ .text)) {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
 
   // =========.....=========
   &.size_xl {
-    line-height: 16px;
+    // height: 16px;
+    // line-height: 16px;
     border-radius: 8px;
   }
 
   &.size_xl .text {
     margin: 5px;
+  }
+  &.size_xl .icon:not(:has(+ .text)) {
+    margin-right: 5px;
+    margin-left: 5px;
   }
 
   // Размеры с иконкой
