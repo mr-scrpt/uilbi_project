@@ -1,25 +1,27 @@
-import { renderWithTranslation } from 'shared/lib/test/renderWithTranslation'
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderComopletedComponent } from 'shared/lib/test/renderWithRouter/renderWithRouter'
 import { Sidebar } from './Sidebar'
 
 describe('Button', () => {
   test('should render', () => {
-    const { container } = renderWithTranslation(<Sidebar />)
+    const { container } = renderComopletedComponent(<Sidebar />)
+
+    screen.debug()
     expect(container.querySelector('.sidebar')).toBeInTheDocument()
   })
 
   test('open sidebar', () => {
     // TODO разобраться в тем, как проверить класс получаемый из пропсов
     // сейчас же компонент изолирован, а класс на поткрытие приходит из родителя
-    const { container } = renderWithTranslation(<Sidebar />)
-    screen.debug()
-    const button = container.querySelector('.button_collapse')
+    const { container } = renderComopletedComponent(<Sidebar />)
+    // screen.debug()
+    // const button = container.querySelector('.button_collapse')
     // const toggleBtn = screen.getByTestId('button')
-    // const sidebar = container.querySelector('.sidebar')
+    const sidebar = container.querySelector('.sidebar')
     // fireEvent.click(toggleBtn)
     // console.log('====>>>> sidebar contains', sidebar.classList)
     // screen.debug()
-    // expect(sidebar.classList.contains('sidebar')).toBe(true)
+    expect(sidebar.classList.contains('sidebar')).toBe(true)
   })
 
   // test('have custom class', () => {
