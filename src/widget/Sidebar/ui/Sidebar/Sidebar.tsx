@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 import { IconEnum } from 'shared/component/Icon'
+import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
 import {
   Button,
   ButtonShapeEnum,
@@ -11,7 +12,6 @@ import {
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
-import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
 
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className, collapsed, toggleHandler } = props
