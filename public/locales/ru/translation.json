@@ -1,11 +1,10 @@
 {
   "welcome": "Привет из translation.json",
-  "button-translate": "Перевести",
+  "button-translate": "English",
+  "button-translate-short": "EN",
 
   "menu-top-link-main": "Главная",
   "menu-top-link-about": "О нас",
 
-
   "side-bar-toggle": "Переключить"
 }
-

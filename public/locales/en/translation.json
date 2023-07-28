@@ -1,6 +1,7 @@
 {
   "welcome": "Welcome from translation.json",
-  "button-translate": "Translate",
+  "button-translate": "Russian",
+  "button-translate-short": "RU",
 
   "menu-top-link-main": "Home",
   "menu-top-link-about": "About",

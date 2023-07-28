@@ -24,11 +24,19 @@
   flex-grow: 1;
 }
 
-.boxFooter {
+.footer {
   display: flex;
   gap: 15px;
   align-items: center;
   justify-content: center;
+
+  &_row {
+    flex-direction: row;
+  }
+
+  &_column {
+    flex-direction: column;
+  }
 
   /* height: 50px; */
 }

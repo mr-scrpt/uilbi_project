@@ -11,6 +11,7 @@ import {
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
+import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
 
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className, collapsed, toggleHandler } = props
@@ -19,6 +20,10 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
   const clsSidebar = classNames(cls.sidebar, [className])
   const clsButton = classNames(cls.button)
+  const clsFooter = classNames(cls.footer, [], {
+    [cls.footer_column]: collapsed,
+    [cls.footer_row]: !collapsed,
+  })
 
   // const clsIcon = classNames('', [], {
   //   [cls.icon_collapsed]: !collapsed,
@@ -29,6 +34,10 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const buttonIcon = collapsed
     ? IconEnum.BURGER_COLLAPSED
     : IconEnum.BURGER_EXPANDED
+
+  const viewLangSwitcher = collapsed
+    ? LangSwitcherViewEnum.SHORT
+    : LangSwitcherViewEnum.FULL
 
   return (
     <div className={clsSidebar}>
@@ -45,9 +54,9 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <div className={cls.boxNav}></div>
         {/* <LightIcon onClick={handlerClick} /> */}
 
-        <div className={cls.boxFooter}>
+        <div className={clsFooter}>
           <ThemeSwitcher className={clsThemeSwitcher} />
-          {/* <LangSwitcher /> */}
+          <LangSwitcher view={viewLangSwitcher} />
         </div>
       </div>
     </div>

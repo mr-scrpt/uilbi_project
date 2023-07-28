@@ -77,13 +77,16 @@
   & .text {
     @include ts(color);
 
-    color: var(--color-primary);
+    color: var(--color-primary-inverted);
   }
 
   &_inverted {
     &:hover {
       // border-color: var(--color-primary-inverted);
       background: var(--color-shadow);
+    }
+    & .text {
+      color: var(--color-primary);
     }
   }
 }
