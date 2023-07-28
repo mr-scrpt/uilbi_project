@@ -12,7 +12,7 @@ const clsApp = classNames(
   [clsTheme.theme, cls.app_geometry, 'storybook-wrapper'],
   {
     [clsTheme.theme_light]: true,
-    // [clsTheme.theme_dark]: theme === 'theme_dark',
+    // [clsTheme.theme_dark]: true,
   }
 )
 

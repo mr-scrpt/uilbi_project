@@ -27,7 +27,11 @@ export const Button: FC<ButtonProps> = (props) => {
 
     [cls.view_secondary]: view === ButtonViewEnum.SECONDARY,
     [cls.view_tertiary]: view === ButtonViewEnum.TERTIARY,
-    [cls.view_transparent]: view === ButtonViewEnum.TRANSPARENT,
+    [cls.view_transparent]:
+      view === ButtonViewEnum.TRANSPARENT ||
+      ButtonViewEnum.TRANSPARENT_INVERTED,
+    [cls.view_transparent_inverted]:
+      view === ButtonViewEnum.TRANSPARENT_INVERTED,
 
     [cls.size_l]: size === ButtonSizeEnum.L,
     [cls.size_m]: size === ButtonSizeEnum.M,

@@ -47,6 +47,12 @@ export const ViewTransparent: Story = {
     children: 'Button',
   },
 }
+export const ViewTransparentInverted: Story = {
+  args: {
+    view: ButtonViewEnum.TRANSPARENT_INVERTED,
+    children: 'Button',
+  },
+}
 
 export const SizeSShapeMain: Story = {
   args: {

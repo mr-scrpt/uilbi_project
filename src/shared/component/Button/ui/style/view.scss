@@ -79,4 +79,10 @@
 
     color: var(--color-primary);
   }
+  &_inverted {
+    &:hover {
+      // border-color: var(--color-primary-inverted);
+      background: var(--color-shadow);
+    }
+  }
 }

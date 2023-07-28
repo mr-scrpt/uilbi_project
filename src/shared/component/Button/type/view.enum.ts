@@ -3,4 +3,5 @@ export enum ButtonViewEnum {
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
   TRANSPARENT = 'transparent',
+  TRANSPARENT_INVERTED = 'transparent_inverted',
 }
