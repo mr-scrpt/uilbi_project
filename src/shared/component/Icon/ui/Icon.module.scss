@@ -64,10 +64,10 @@
   mask-image: url('../../../asset/icon/icon-menu-burger.svg');
 
   &_collapsed {
-    background-color: var(--color-primary);
+    background-color: var(--color-tertiary);
   }
 
   &_expanded {
-    background-color: var(--color-secondary);
+    background-color: var(--color-active);
   }
 }

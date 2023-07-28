@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
-import { LinkApp, LinkViewEnum } from 'shared/component/LinkApp'
+import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'
 
@@ -19,11 +19,15 @@ export function Navbar(props: NavbarProps) {
     <div className={clsNavbar}>
       <div className={clsInner}>
         <div className={clsMenu}>
-          <LinkApp to="/" view={LinkViewEnum.SECONDARY}>
+          <LinkApp to="/" view={LinkViewEnum.SECONDARY} size={LinkSizeEnum.XL}>
             {t('menu-top-link-main')}
             {/* Test */}
           </LinkApp>
-          <LinkApp to="/about" view={LinkViewEnum.SECONDARY}>
+          <LinkApp
+            to="/about"
+            view={LinkViewEnum.SECONDARY}
+            size={LinkSizeEnum.XL}
+          >
             {t('menu-top-link-about')}
           </LinkApp>
         </div>

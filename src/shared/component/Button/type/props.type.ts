@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react'
 import { ButtonViewEnum } from './view.enum'
 import { ButtonSizeEnum } from './size.enum'
-import { IconPositionEnum } from './iconPosition.enum'
+import { ButtonIconPositionEnum } from './buttonIconPosition.enum'
 import { ButtonShapeEnum } from './shape.enum'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,5 +11,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSizeEnum
   shape?: ButtonShapeEnum
   icon?: string
-  iconPosition?: IconPositionEnum
+  iconPosition?: ButtonIconPositionEnum
 }

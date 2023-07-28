@@ -11,17 +11,17 @@
 }
 
 .size_s {
-  font-size: 12px;
+  font-size: var(--font-size-s);
 }
 
 .size_m {
-  font-size: 16px;
+  font-size: var(--font-size-m);
 }
 
 .size_l {
-  font-size: 18px;
+  font-size: var(--font-size-l);
 }
 
 .size_xl {
-  font-size: 22px;
+  font-size: var(--font-size-xl);
 }
