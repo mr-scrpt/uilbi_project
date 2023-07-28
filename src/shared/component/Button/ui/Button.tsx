@@ -21,6 +21,7 @@ export const Button: FC<ButtonProps> = (props) => {
     iconPosition = ButtonIconPositionEnum.LEFT,
     ...etc
   } = props
+  console.log('view', view)
 
   const clsButton = classNames(cls.button, [className], {
     [cls.view_primary]: view === ButtonViewEnum.PRIMARY,
@@ -28,8 +29,8 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls.view_secondary]: view === ButtonViewEnum.SECONDARY,
     [cls.view_tertiary]: view === ButtonViewEnum.TERTIARY,
     [cls.view_transparent]:
-      view === ButtonViewEnum.TRANSPARENT ||
-      ButtonViewEnum.TRANSPARENT_INVERTED,
+      view ===
+      (ButtonViewEnum.TRANSPARENT || ButtonViewEnum.TRANSPARENT_INVERTED),
     [cls.view_transparent_inverted]:
       view === ButtonViewEnum.TRANSPARENT_INVERTED,
 
