@@ -49,12 +49,15 @@
   padding: 0;
 }
 
+.icon {
+}
+
 .icon_collapsed {
-  background-color: var(--color-primary);
+  background-color: var(--color-tertiary);
 }
 
 .icon_uncollapsed {
-  background-color: var(--color-secondary);
+  background-color: var(--color-active);
 }
 
 /* .collapsed { */

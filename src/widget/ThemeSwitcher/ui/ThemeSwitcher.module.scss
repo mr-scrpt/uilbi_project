@@ -14,4 +14,12 @@
 .icon {
   width: 24px;
   height: 24px;
+
+  &_light {
+    background-color: var(--color-theme-switch);
+  }
+
+  &_dark {
+    background-color: var(--color-theme-switch);
+  }
 }

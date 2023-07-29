@@ -1,9 +1,12 @@
-import { LinkProps } from 'react-router-dom';
-import { LinkSizeEnum } from './size.enum';
-import { LinkViewEnum } from './view.enum';
+import { LinkProps } from 'react-router-dom'
+import { IconEnum } from 'shared/component/Icon'
+import { LinkSizeEnum } from './size.enum'
+import { LinkViewEnum } from './view.enum'
 
 export interface LinkAppProps extends LinkProps {
-  className?: string;
+  className?: string
+  classIcon?: string
   view?: LinkViewEnum
-  size?: LinkSizeEnum;
+  size?: LinkSizeEnum
+  icon?: IconEnum
 }

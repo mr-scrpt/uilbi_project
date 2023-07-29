@@ -8,15 +8,14 @@ export const Icon: FC<IconProps> = (props) => {
   const { className, icon, ...etc } = props
 
   const clsIcon = classNames(cls.icon, [className], {
-    [cls.icon_theme]:
-      icon === IconEnum.THEME_LIGHT || icon === IconEnum.THEME_DARK,
-    [cls.icon_theme_light]: icon === IconEnum.THEME_LIGHT,
-    [cls.icon_theme_dark]: icon === IconEnum.THEME_DARK,
+    [cls.icon_theme]: icon === IconEnum.THEME,
 
-    [cls.icon_burger]:
-      icon === IconEnum.BURGER_COLLAPSED || icon === IconEnum.BURGER_EXPANDED,
-    [cls.icon_burger_collapsed]: icon === IconEnum.BURGER_COLLAPSED,
-    [cls.icon_burger_expanded]: icon === IconEnum.BURGER_EXPANDED,
+    [cls.icon_burger]: icon === IconEnum.BURGER,
+
+    [cls.icon_menu]:
+      icon === IconEnum.MENU_HOME || icon === IconEnum.MENU_ABOUT,
+    [cls.icon_menu_home]: icon === IconEnum.MENU_HOME,
+    [cls.icon_menu_about]: icon === IconEnum.MENU_ABOUT,
   })
 
   return <span className={clsIcon} {...etc} />

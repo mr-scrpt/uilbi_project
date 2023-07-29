@@ -23,10 +23,14 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
 
   const clsButton = classNames(cls.button)
 
-  const clsIcon = classNames(cls.icon)
+  const clsIcon = classNames(cls.icon, [], {
+    [cls.icon_light]: theme === ThemeEnum.LIGHT,
+    [cls.icon_dark]: theme === ThemeEnum.DARK,
+  })
+  console.log('IconEnum.THEME', IconEnum.THEME)
 
-  const icon =
-    theme === ThemeEnum.DARK ? IconEnum.THEME_DARK : IconEnum.THEME_LIGHT
+  // const icon =
+  //   theme === ThemeEnum.DARK ? IconEnum.THEME_DARK : IconEnum.THEME_LIGHT
 
   return (
     <div className={clsThemeSwitcher}>
@@ -38,7 +42,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
           shape={ButtonShapeEnum.NEXT}
           view={ButtonViewEnum.TRANSPARENT}
           size={ButtonSizeEnum.L}
-          icon={icon}
+          icon={IconEnum.THEME}
         />
       </div>
     </div>

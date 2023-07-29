@@ -1,5 +1,34 @@
+@import 'app/style/mixin';
 .link {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+
+  padding: 0.1em 0.5em;
+
   text-decoration: none;
+
+  border-radius: 0.2em;
+}
+
+.icon {
+  @include ts(background);
+}
+
+.text {
+  @include ts(color);
+}
+
+.hovered.link {
+  background: var(--bg-color);
+}
+
+.hovered .text {
+  color: var(--color-primary);
+}
+
+.hovered .icon {
+  background-color: var(--color-primary);
 }
 
 .view_primary {
@@ -12,16 +41,32 @@
 
 .size_s {
   font-size: var(--font-size-s);
+  & .icon {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .size_m {
   font-size: var(--font-size-m);
+  & .icon {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .size_l {
   font-size: var(--font-size-l);
+  & .icon {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .size_xl {
   font-size: var(--font-size-xl);
+  & .icon {
+    width: 1em;
+    height: 1em;
+  }
 }

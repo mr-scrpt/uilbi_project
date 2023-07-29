@@ -28,9 +28,15 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   })
 
   const clsThemeSwitcher = classNames(cls.themeSwitcher)
-  const buttonIcon = collapsed
-    ? IconEnum.BURGER_COLLAPSED
-    : IconEnum.BURGER_EXPANDED
+
+  const clsIcon = classNames(cls.icon, [], {
+    [cls.icon_collapsed]: collapsed,
+    [cls.icon_uncollapsed]: !collapsed,
+  })
+
+  // const buttonIcon = collapsed
+  //   ? IconEnum.BURGER_COLLAPSED
+  //   : IconEnum.BURGER_EXPANDED
 
   const viewLangSwitcher = collapsed
     ? LangSwitcherViewEnum.SHORT
@@ -42,10 +48,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <div className={cls.control}>
           <Button
             className={clsButton}
+            classIcon={clsIcon}
             view={ButtonViewEnum.TRANSPARENT}
             shape={ButtonShapeEnum.FLAT}
             onClick={toggleHandler}
-            icon={buttonIcon}
+            icon={IconEnum.BURGER}
           />
         </div>
         <div className={cls.boxNav}>
@@ -53,6 +60,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             to={RoutePath.main}
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
+            icon={IconEnum.MENU_HOME}
           >
             {t('menu-top-link-main')}
           </LinkApp>
@@ -60,6 +68,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             to={RoutePath.about}
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
+            icon={IconEnum.MENU_ABOUT}
           >
             {t('menu-top-link-about')}
           </LinkApp>

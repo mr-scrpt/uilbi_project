@@ -21,7 +21,7 @@ export const Button: FC<ButtonProps> = (props) => {
     iconPosition = ButtonIconPositionEnum.LEFT,
     ...etc
   } = props
-  console.log('view', view)
+  console.log('inner button icon', icon)
 
   const clsButton = classNames(cls.button, [className], {
     [cls.view_primary]: view === ButtonViewEnum.PRIMARY,

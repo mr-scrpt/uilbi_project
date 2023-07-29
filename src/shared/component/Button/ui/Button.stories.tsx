@@ -143,7 +143,7 @@ export const ShapeMainWithIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -152,7 +152,7 @@ export const ShapeMainWithIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -161,7 +161,7 @@ export const ShapeMainWithIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -170,7 +170,7 @@ export const ShapeMainWithIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -179,7 +179,7 @@ export const ShapeNextWithIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -188,7 +188,7 @@ export const ShapeNextWithIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -197,7 +197,7 @@ export const ShapeNextWithIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -206,7 +206,7 @@ export const ShapeNextWithIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -217,7 +217,7 @@ export const ShapeFlatWithIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -226,7 +226,7 @@ export const ShapeFlatWithIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -235,7 +235,7 @@ export const ShapeFlatWithIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -244,7 +244,7 @@ export const ShapeFlatWithIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     children: 'Button',
   },
 }
@@ -255,7 +255,7 @@ export const ShapeMainWithIconRightSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -265,7 +265,7 @@ export const ShapeMainWithIconRightSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -275,7 +275,7 @@ export const ShapeMainWithIconRightSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -285,7 +285,7 @@ export const ShapeMainWithIconRightSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -295,7 +295,7 @@ export const ShapeNextWithIconRightSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -305,7 +305,7 @@ export const ShapeNextWithIconRightSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -315,7 +315,7 @@ export const ShapeNextWithIconRightSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -325,7 +325,7 @@ export const ShapeNextWithIconRightSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -337,7 +337,7 @@ export const ShapeFlatWithIconRightSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -347,7 +347,7 @@ export const ShapeFlatWithIconRightSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -357,7 +357,7 @@ export const ShapeFlatWithIconRightSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -367,7 +367,7 @@ export const ShapeFlatWithIconRightSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
     iconPosition: ButtonIconPositionEnum.RIGHT,
     children: 'Button',
   },
@@ -377,7 +377,7 @@ export const ShapeMainOnlyIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 
@@ -385,21 +385,21 @@ export const ShapeMainOnlyIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeMainOnlyIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeMainOnlyIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.MAIN,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 
@@ -408,7 +408,7 @@ export const ShapeNextOnlyIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 
@@ -416,21 +416,21 @@ export const ShapeNextOnlyIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeNextOnlyIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeNextOnlyIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.NEXT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 
@@ -439,7 +439,7 @@ export const ShapeFlatOnlyIconSizeS: Story = {
   args: {
     size: ButtonSizeEnum.S,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 
@@ -447,20 +447,20 @@ export const ShapeFlatNextIconSizeM: Story = {
   args: {
     size: ButtonSizeEnum.M,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeFlatNextIconSizeL: Story = {
   args: {
     size: ButtonSizeEnum.L,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
 export const ShapeFlatOnlyIconSizeXL: Story = {
   args: {
     size: ButtonSizeEnum.XL,
     shape: ButtonShapeEnum.FLAT,
-    icon: IconEnum.BURGER_EXPANDED,
+    icon: IconEnum.BURGER,
   },
 }
