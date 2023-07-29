@@ -36,12 +36,13 @@ jobs:
         if: always()
         run: yarn test:unit
 
-      # - name: build storybook
-      #   run: yarn sb:build
+      - name: build storybook
+        if: always()
+        run: yarn sb:build
 
-
-      # - name: screenshot testing
-      #   run: yarn test:ui:ci
+      - name: screenshot testing
+        if: always()
+        run: yarn test:ui:ci
 
       # - name: Archive code coverage results
       #   uses: actions/upload-artifact@v3
