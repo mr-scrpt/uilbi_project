@@ -3,7 +3,12 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 import { IconEnum } from 'shared/component/Icon'
 import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
-import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
+import {
+  LinkApp,
+  LinkSizeEnum,
+  LinkViewEnum,
+  LinkModeEnum,
+} from 'shared/component/LinkApp'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 import {
   Button,
@@ -34,13 +39,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     [cls.icon_uncollapsed]: !collapsed,
   })
 
-  // const buttonIcon = collapsed
-  //   ? IconEnum.BURGER_COLLAPSED
-  //   : IconEnum.BURGER_EXPANDED
-
   const viewLangSwitcher = collapsed
     ? LangSwitcherViewEnum.SHORT
     : LangSwitcherViewEnum.FULL
+
+  const linkMode = collapsed ? LinkModeEnum.ICON : LinkModeEnum.DEFAULT
 
   return (
     <div className={clsSidebar}>
@@ -61,6 +64,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
             icon={IconEnum.MENU_HOME}
+            mode={linkMode}
           >
             {t('menu-top-link-main')}
           </LinkApp>
@@ -69,6 +73,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
             icon={IconEnum.MENU_ABOUT}
+            mode={linkMode}
           >
             {t('menu-top-link-about')}
           </LinkApp>

@@ -3,8 +3,10 @@
 import { Preview } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-import { StyleDecorator } from '../../src/shared/config/storybook/decorator/style.decorator'
-import { TranslationDecorator } from '../../src/shared/config/storybook/decorator/translation.decorator'
+import {
+  StyleDecorator,
+  TranslationDecorator,
+} from '../../src/shared/config/storybook/decorator'
 
 const classApp = 'src-app-App-module_app'
 const classTheme = 'src-app-style-theme-index-module_theme'

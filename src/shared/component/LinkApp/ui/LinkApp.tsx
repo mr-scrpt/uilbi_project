@@ -6,6 +6,7 @@ import { LinkAppProps } from '../type/props.type'
 import cls from './LinkApp.module.scss'
 import { LinkViewEnum } from '../type/view.enum'
 import { LinkSizeEnum } from '../type/size.enum'
+import { LinkModeEnum } from '../type/mode.enum'
 
 export const LinkApp: FC<LinkAppProps> = (props) => {
   const [hovered, setHovered] = useState(false)
@@ -18,6 +19,7 @@ export const LinkApp: FC<LinkAppProps> = (props) => {
     view = LinkViewEnum.PRIMARY,
     size = LinkSizeEnum.M,
     icon,
+    mode = LinkModeEnum.DEFAULT,
     ...etc
   } = props
 
@@ -35,17 +37,21 @@ export const LinkApp: FC<LinkAppProps> = (props) => {
   const clsIconButton = classNames(cls.icon, [classIcon])
   const clsText = classNames(cls.text)
 
+  const showIcon =
+    icon && (mode === LinkModeEnum.DEFAULT || mode === LinkModeEnum.ICON)
+  const showText =
+    children && (mode === LinkModeEnum.DEFAULT || mode === LinkModeEnum.TEXT)
+
   return (
     <Link
       to={to}
       className={classLink}
-      {...etc}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      {...etc}
     >
-      {icon && <Icon icon={icon} className={clsIconButton} />}
-
-      <div className={clsText}>{children}</div>
+      {showIcon && <Icon icon={icon} className={clsIconButton} />}
+      {showText && <div className={clsText}>{children}</div>}
     </Link>
   )
 }

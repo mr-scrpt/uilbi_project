@@ -8,7 +8,7 @@ export interface componentRenderOptions {
   route?: string
 }
 
-export const renderComopletedComponent = (
+export const RenderComopletedComponent = (
   component: ReactNode,
   options: componentRenderOptions = {}
 ) => {

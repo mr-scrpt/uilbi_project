@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { classNames } from 'shared/lib/classNames'
+import { RouterDecorator } from 'shared/config/storybook/decorator'
 import { Sidebar } from './Sidebar'
 
 import cls from '../../../../app/App.module.scss'
@@ -12,6 +13,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
+  decorators: [RouterDecorator],
 } satisfies Meta<typeof Sidebar>
 
 export default meta

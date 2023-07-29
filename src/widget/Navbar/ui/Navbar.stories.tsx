@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { classNames } from 'shared/lib/classNames'
 import { Navbar } from './Navbar'
-import { RouterDecorator } from '../../../shared/config/storybook/decorator/router.decorator'
+import { RouterDecorator } from '../../../shared/config/storybook/decorator'
 
 import cls from '../../../app/App.module.scss'
 

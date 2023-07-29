@@ -1,0 +1,1 @@
+export { RenderComopletedComponent } from './renderComopletedComponent'
