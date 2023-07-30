@@ -1,3 +1,4 @@
 export interface NavbarProps {
-  className?: string;
+  className?: string
+  onOpenModal: () => void
 }

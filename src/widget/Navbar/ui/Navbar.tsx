@@ -6,9 +6,9 @@ import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'
 
 export function Navbar(props: NavbarProps) {
-  const { className } = props
+  const { className, onOpenModal } = props
 
-  const { t } = useTranslation()
+  const { t } = useTranslation('menu_main')
 
   const clsNavbar = classNames(cls.navbar, [className])
 
@@ -25,8 +25,9 @@ export function Navbar(props: NavbarProps) {
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
             icon={IconEnum.MENU_HOME}
+            onClick={onOpenModal}
           >
-            {t('menu-top-link-main')}
+            {t('menu-main-link-reg')}
           </LinkApp>
           <LinkApp
             to="/about"
@@ -34,7 +35,7 @@ export function Navbar(props: NavbarProps) {
             size={LinkSizeEnum.XL}
             icon={IconEnum.MENU_ABOUT}
           >
-            {t('menu-top-link-about')}
+            {t('menu-main-link-login')}
           </LinkApp>
         </div>
       </div>

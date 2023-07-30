@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames'
-import { Icon, clsIcon } from 'shared/component/Icon'
+import { Icon } from 'shared/component/Icon'
 import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
 import { ButtonProps } from '../type/props.type'
 import cls from './style/Button.module.scss'

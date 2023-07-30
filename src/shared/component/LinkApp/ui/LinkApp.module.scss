@@ -1,5 +1,7 @@
 @import 'app/style/mixin';
 .link {
+  @include ts(background);
+
   display: flex;
   gap: 0.5em;
   align-items: center;

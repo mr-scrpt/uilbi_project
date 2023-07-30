@@ -1,0 +1,57 @@
+@import 'app/style/mixin';
+.modal {
+  @include ts(opacity, transform);
+
+  pointer-events: none;
+
+  position: fixed;
+  z-index: var(--level-b1);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &_opened {
+    pointer-events: auto;
+    z-index: var(--level-5);
+    opacity: 1;
+    & .box {
+      transform: scale(1);
+    }
+  }
+
+  &_closed {
+    opacity: 0;
+    & .box {
+      transform: scale(0.3);
+    }
+  }
+}
+
+.inner {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--bg-transparent-primary);
+  // background: black;
+}
+
+.box {
+  @include ts(transform);
+
+  position: relative;
+
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+
+  background: var(--bg-color-inverted);
+  border-radius: var(--radius-size-l);
+  box-shadow: var(--shadow-primary);
+}

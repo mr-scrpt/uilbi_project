@@ -1,4 +1,5 @@
 {
+  "Login": "Login",
   "Nav": "Nav",
   "about-page-title": "about-page-title",
   "button-translate": "button-translate",
@@ -9,13 +10,20 @@
   "footer": "footer",
   "hello": "hello",
   "main-page-title": "main-page-title",
+  "menu-main-link-login": "menu-main-link-login",
+  "menu-main-link-reg": "menu-main-link-reg",
+  "menu-navigation-link-about": "",
+  "menu-navigation-link-main": "",
   "menu-top-link-about": "menu-top-link-about",
+  "menu-top-link-login": "",
   "menu-top-link-main": "menu-top-link-main",
+  "menu-top-link-reg": "",
   "message-error-page": "message-error-page",
   "page-about-title": "page-about-title",
   "page-error-reloade": "page-error-reloade",
   "page-main-title": "page-main-title",
   "page-not-found-title": "page-not-found-title",
   "page_not_found_title": "page_not_found_title",
-  "side-bar-toggle": "side-bar-toggle"
+  "side-bar-toggle": "side-bar-toggle",
+  "test-content-to-modal": "test-content-to-modal"
 }

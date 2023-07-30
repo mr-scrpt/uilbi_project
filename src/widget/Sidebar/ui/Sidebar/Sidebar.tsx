@@ -23,7 +23,7 @@ import { SidebarProps } from './type/props.type'
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className, collapsed, toggleHandler } = props
 
-  const { t } = useTranslation()
+  const { t } = useTranslation('menu_navigation')
 
   const clsSidebar = classNames(cls.sidebar, [className])
   const clsButton = classNames(cls.button)
@@ -66,7 +66,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             icon={IconEnum.MENU_HOME}
             mode={linkMode}
           >
-            {t('menu-top-link-main')}
+            {t('menu-navigation-link-main')}
           </LinkApp>
           <LinkApp
             to={RoutePath.about}
@@ -75,7 +75,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             icon={IconEnum.MENU_ABOUT}
             mode={linkMode}
           >
-            {t('menu-top-link-about')}
+            {t('menu-navigation-link-about')}
           </LinkApp>
         </div>
         {/* <LightIcon onClick={handlerClick} /> */}
