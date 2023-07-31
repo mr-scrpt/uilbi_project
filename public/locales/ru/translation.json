@@ -3,5 +3,6 @@
   "button-translate": "English",
   "button-translate-short": "EN",
 
-  "side-bar-toggle": "Переключить"
+  "side-bar-toggle": "Переключить",
+  "test-content-to-modal": "Тест контент для модального окна"
 }

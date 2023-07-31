@@ -1,16 +1,15 @@
-import './style/index.scss'
 import { useTheme } from 'app/provider/ThemeProvider'
-
+import { Suspense, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Modal } from 'shared/component/Modal'
 import { classNames } from 'shared/lib/classNames'
 import { Navbar } from 'widget/Navbar'
 import { Sidebar } from 'widget/Sidebar'
-import { Suspense, useEffect, useState } from 'react'
-import { Modal } from 'shared/component/Modal'
-import cls from './App.module.scss'
-import clsTheme from './style/theme/index.module.scss'
 
+import cls from './App.module.scss'
 import { AppRouter } from './provider/router'
+import './style/index.scss'
+import clsTheme from './style/theme/index.module.scss'
 
 function App() {
   const { theme } = useTheme()
@@ -18,15 +17,15 @@ function App() {
   const [collapsed, setCollapsed] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const { t } = useTranslation()
-
-  useEffect(() => {
-    console.log('click', isModalOpen)
+  const closerModal = useCallback(() => {
+    setIsModalOpen(!isModalOpen)
   }, [isModalOpen])
 
-  const toggleHandler = () => {
-    setCollapsed((prev) => !prev)
-  }
+  const { t } = useTranslation()
+
+  const toggleHandler = useCallback(() => {
+    setCollapsed(!collapsed)
+  }, [collapsed])
 
   const clsApp = classNames(cls.app, [clsTheme.theme, cls.app_geometry], {
     [clsTheme.theme_light]: theme === 'theme_light',
@@ -41,6 +40,9 @@ function App() {
   return (
     <div className={clsApp}>
       <Suspense fallback="transslation">
+        <Modal isOpen={isModalOpen} onClose={closerModal}>
+          {t('test-content-to-modal')}
+        </Modal>
         <div className={cls.inner}>
           <Navbar
             className={cls.boxNavbar}
@@ -52,9 +54,6 @@ function App() {
               collapsed={collapsed}
               toggleHandler={toggleHandler}
             />
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-              {t('test-content-to-modal')}
-            </Modal>
             <AppRouter className={cls.boxContent} />
           </div>
           <div className={cls.boxFooter}></div>
