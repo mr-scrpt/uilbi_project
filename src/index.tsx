@@ -11,7 +11,7 @@ import 'shared/config/i18n/i18n'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
-  <StoreProvider>
+  <StoreProvider preloadedState={{ counter: { value: 13 } }}>
     <BrowserRouter>
       <ErrorBoundary>
         <ThemeProvider initialTheme={ThemeEnum.DARK}>

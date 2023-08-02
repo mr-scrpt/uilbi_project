@@ -1,22 +1,22 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
-import { IconEnum } from 'shared/component/Icon'
-import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
-import {
-  LinkApp,
-  LinkSizeEnum,
-  LinkViewEnum,
-  LinkModeEnum,
-} from 'shared/component/LinkApp'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
 import {
   Button,
   ButtonShapeEnum,
   ButtonViewEnum,
 } from 'shared/component/Button'
-
+import { IconEnum } from 'shared/component/Icon'
+import {
+  LinkApp,
+  LinkModeEnum,
+  LinkSizeEnum,
+  LinkViewEnum,
+} from 'shared/component/LinkApp'
+import { RoutePath } from 'shared/config/configRouter/configRouter'
+import { classNames } from 'shared/lib/classNames'
+import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
+
 import cls from './Sidebar.module.scss'
 import { SidebarProps } from './type/props.type'
 

@@ -21,3 +21,7 @@ export const counterSlice = createSlice({
 export const { actions: counterAction } = counterSlice
 
 export const { reducer: counterReducer } = counterSlice
+
+// console.log('reducer', counterSlice.reducer)
+
+// export type CounterReducer = ReturnType<typeof counterReducer>

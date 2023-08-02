@@ -1,10 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { counterReducer } from 'entity/Counter'
+import { PreloadedState, configureStore } from '@reduxjs/toolkit'
 
-export const createStore = () =>
+import { PreloadeStateType } from '../type/state.type'
+import { rootReducer } from './rootReducer'
+
+export const createStore = (
+  preloadedState?: PreloadedState<PreloadeStateType>
+) =>
   configureStore({
-    reducer: {
-      counter: counterReducer,
-    },
+    reducer: rootReducer,
     devTools: __IS_DEV__,
+    preloadedState,
   })
