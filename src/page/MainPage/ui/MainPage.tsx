@@ -1,7 +1,9 @@
-import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
-import { useTranslation } from 'react-i18next'
+import { Counter } from 'entity/Counter'
 import { BugButton } from 'feature/ButButton/ui/BugButton'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import { classNames } from 'shared/lib/classNames'
+
 import { MainPageProps } from '../type/props.type'
 import cls from './MainPage.module.scss'
 
@@ -16,6 +18,7 @@ const MainPage: FC<MainPageProps> = (props) => {
     <div className={clsMainPage}>
       <div className={clsInner}>
         <div className={clsTitle}>
+          <Counter />
           {t('page-main-title')}
 
           <BugButton />
