@@ -1,5 +1,4 @@
-import { fireEvent, getByText, userEvent } from '@storybook/testing-library'
-import { screen } from '@testing-library/react'
+import { userEvent } from '@storybook/testing-library'
 import { RenderComopletedComponent } from 'shared/lib/test/renderCompletedComponent'
 
 import { Counter } from './Counter'
