@@ -1,0 +1,60 @@
+@import 'app/style/mixin';
+
+/*Вью полей*/
+.input.view_primary {
+  @include ts(border-color);
+
+  color: var(--color-primary-inverted);
+  border: 2px solid var(--color-primary);
+
+  & .control {
+    color: var(--color-tertiary);
+  }
+
+  & .control::placeholder {
+    color: var(--color-primary-inverted);
+  }
+}
+.input.view_primary.size_s {
+  border-radius: calc(var(--radius-size-s) * 2);
+}
+.input.view_primary.size_m {
+  border-radius: calc(var(--radius-size-m) * 2);
+}
+.input.view_primary.size_l {
+  border-radius: calc(var(--radius-size-l) * 2);
+}
+.input.view_primary.size_xl {
+  border-radius: calc(var(--radius-size-xl) * 2);
+}
+
+.input.view_secondary {
+  @include ts(border-color);
+
+  border: 2px solid var(--color-secondary);
+
+  & .control {
+    color: var(--color-tertiary);
+  }
+
+  & .control::placeholder {
+    color: var(--color-primary-inverted);
+  }
+}
+.input.view_secondary.size_s {
+  border-radius: var(--radius-size-s);
+}
+.input.view_secondary.size_m {
+  border-radius: var(--radius-size-m);
+}
+.input.view_secondary.size_l {
+  border-radius: var(--radius-size-l);
+}
+.input.view_secondary.size_xl {
+  border-radius: var(--radius-size-xl);
+}
+// .input.size_s {}
+// .input.size_m {}
+// .input.size_l {}
+// .input.size_xl {}
+/*Вью полей КОНЕЦ*/

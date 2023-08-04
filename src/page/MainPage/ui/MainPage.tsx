@@ -2,6 +2,12 @@ import { Counter } from 'entity/Counter'
 import { BugButton } from 'feature/ButButton/ui/BugButton'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import {
+  Input,
+  InputSizeEnum,
+  InputStateEnum,
+  InputViewEnum,
+} from 'shared/component/Input'
 import { classNames } from 'shared/lib/classNames'
 
 import { MainPageProps } from '../type/props.type'
@@ -18,6 +24,11 @@ const MainPage: FC<MainPageProps> = (props) => {
     <div className={clsMainPage}>
       <div className={clsInner}>
         <div className={clsTitle}>
+          <Input
+            view={InputViewEnum.PRIMARY}
+            size={InputSizeEnum.L}
+            state={InputStateEnum.ERROR}
+          />
           <Counter />
           {t('page-main-title')}
 

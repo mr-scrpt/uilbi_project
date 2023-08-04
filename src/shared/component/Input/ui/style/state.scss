@@ -1,0 +1,54 @@
+/*Стэйт полей*/
+/*View Primary*/
+.input.view_primary.state_focus {
+  border-color: var(--color-active-400);
+}
+
+.input.view_primary.state_hover {
+  border-color: var(--color-tertiary);
+}
+
+.input.view_primary.state_error {
+  border-color: var(--color-attantion-400);
+}
+
+.input.view_primary.state_success {
+  border-color: var(--color-success-400);
+}
+
+.input.view_primary.state_disabled {
+  cursor: not-allowed;
+  background-color: var(--color-passive-400);
+  border-color: var(--color-passive-600);
+  .control {
+    cursor: not-allowed;
+  }
+}
+
+/*View Secondary*/
+.input.view_secondary.state_focus {
+  border-color: var(--color-active-600);
+}
+
+.input.view_secondary.state_hover {
+  border-color: var(--color-tertiary);
+}
+
+.input.view_secondary.state_error {
+  border-color: var(--color-attention-600);
+}
+
+.input.view_secondary.state_success {
+  border-color: var(--color-success-600);
+}
+
+.input.view_secondary.state_disabled {
+  cursor: not-allowed;
+  background-color: var(--color-passive-400);
+  border-color: var(--color-passive-600);
+  .control {
+    cursor: not-allowed;
+  }
+}
+
+/* Стэйт полей КОНЕЦ*/

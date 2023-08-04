@@ -1,5 +1,4 @@
-import { PreloadeStateType } from 'app/provider/StoreProvider'
-import { PartialStateType } from 'app/provider/StoreProvider/type/state.type'
+import { PartialStateType, PreloadeStateType } from 'app/provider/StoreProvider'
 
 import { getCounter } from './getCounter'
 

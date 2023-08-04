@@ -1,0 +1,83 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { InputSizeEnum } from '../type/size.enum'
+import { InputStateEnum } from '../type/state.enum'
+import { InputViewEnum } from '../type/view.enum'
+import { Input } from './Input'
+
+const meta = {
+  title: 'Shared/Input',
+  component: Input,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+} satisfies Meta<typeof Input>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const ViewPrimary: Story = {
+  args: {
+    view: InputViewEnum.PRIMARY,
+    children: 'Text',
+    placeholder: 'Placeholder',
+  },
+}
+
+export const ViewSecondary: Story = {
+  args: {
+    view: InputViewEnum.SECONDARY,
+    children: 'Text',
+    placeholder: 'Placeholder',
+  },
+}
+
+export const SizeS: Story = {
+  args: {
+    size: InputSizeEnum.S,
+    children: 'Text',
+    placeholder: 'Placeholder S',
+  },
+}
+
+export const SizeM: Story = {
+  args: {
+    size: InputSizeEnum.M,
+    children: 'Text',
+    placeholder: 'Placeholder M',
+  },
+}
+
+export const SizeL: Story = {
+  args: {
+    size: InputSizeEnum.L,
+    children: 'Text',
+    placeholder: 'Placeholder L',
+  },
+}
+
+export const SizeXL: Story = {
+  args: {
+    size: InputSizeEnum.XL,
+    children: 'Text',
+    placeholder: 'Placeholder XL',
+  },
+}
+
+export const StateError: Story = {
+  args: {
+    state: InputStateEnum.ERROR,
+    children: 'Text',
+    placeholder: 'Placeholder S',
+  },
+}
+
+export const StateSuccess: Story = {
+  args: {
+    state: InputStateEnum.SUCCESS,
+    children: 'Text',
+    placeholder: 'Placeholder S',
+  },
+}

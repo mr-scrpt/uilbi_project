@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
 import { Icon } from 'shared/component/Icon'
+import { classNames } from 'shared/lib/classNames'
+
 import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
 import { ButtonProps } from '../type/props.type'
-import cls from './style/Button.module.scss'
-import { ButtonViewEnum } from '../type/view.enum'
-
-import { ButtonSizeEnum } from '../type/size.enum'
 import { ButtonShapeEnum } from '../type/shape.enum'
+import { ButtonSizeEnum } from '../type/size.enum'
+import { ButtonViewEnum } from '../type/view.enum'
+import cls from './style/Button.module.scss'
 
 export const Button: FC<ButtonProps> = (props) => {
   const {

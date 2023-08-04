@@ -1,6 +1,9 @@
 import { render } from '@testing-library/react'
-import { RootStateType, StoreProvider } from 'app/provider/StoreProvider'
-import { PartialStateType } from 'app/provider/StoreProvider/type/state.type'
+import {
+  PartialStateType,
+  RootStateType,
+  StoreProvider,
+} from 'app/provider/StoreProvider'
 import { ReactNode } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { MemoryRouter } from 'react-router-dom'

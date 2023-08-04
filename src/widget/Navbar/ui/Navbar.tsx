@@ -1,12 +1,16 @@
+import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
+import { LoginModal } from 'feature/AuthByUserName/component/LoginModal/ui/LoginModal'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
+import { useDispatch } from 'react-redux'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
+import { classNames } from 'shared/lib/classNames'
+
 import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'
 
 export function Navbar(props: NavbarProps) {
-  const { className, onOpenModal } = props
+  const { className } = props
 
   const { t } = useTranslation('menu_main')
 
@@ -16,8 +20,18 @@ export function Navbar(props: NavbarProps) {
 
   const clsMenu = classNames(cls.menu)
 
+  const dispatch = useDispatch()
+  const openModal = () =>
+    dispatch(
+      modalAction.openModal({
+        name: ModalNameEnum.LOGIN,
+        state: ModalStatusEnum.OPEN,
+      })
+    )
+
   return (
     <div className={clsNavbar}>
+      <LoginModal />
       <div className={clsInner}>
         <div className={clsMenu}>
           <LinkApp
@@ -25,7 +39,7 @@ export function Navbar(props: NavbarProps) {
             view={LinkViewEnum.SECONDARY}
             size={LinkSizeEnum.XL}
             icon={IconEnum.MENU_HOME}
-            onClick={onOpenModal}
+            onClick={openModal}
           >
             {t('menu-main-link-reg')}
           </LinkApp>

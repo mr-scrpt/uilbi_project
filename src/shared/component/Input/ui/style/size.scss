@@ -1,0 +1,53 @@
+/* S - Начало*/
+.input.size_s {
+  font-size: var(--font-size-s);
+  line-height: var(--font-line-s);
+  // border-radius: 5px;
+}
+
+.input.size_s .control {
+  height: var(--font-line-s-boost);
+  padding: 0 10px;
+}
+/* S - КОНЕЦ*/
+
+/* M - Начало*/
+.input.size_m {
+  font-size: var(--font-size-m);
+  line-height: var(--font-line-m);
+
+  // border-radius: 5px;
+}
+
+.input.size_m .control {
+  height: var(--font-line-m-boost);
+  padding: 0 10px;
+}
+/* M - КОНЕЦ*/
+
+/* L - Начало*/
+.input.size_l {
+  font-size: var(--font-size-l);
+  line-height: var(--font-line-l);
+  // border-radius: 5px;
+}
+
+.input.size_l .control {
+  height: var(--font-line-l-boost);
+  padding: 0 10px;
+}
+/*L - КОНЕЦ*/
+
+/* XL - Начало*/
+.input.size_xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-line-xl);
+
+  // border-radius: 5px;
+}
+
+.input.size_xl .control {
+  height: var(--font-line-xl-boost);
+  padding: 0 10px;
+}
+/*XL - КОНЕЦ*/
