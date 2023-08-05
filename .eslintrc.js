@@ -72,6 +72,15 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'no-param-reassign': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        labelComponents: ['Label'],
+        labelAttributes: ['label'],
+        controlComponents: ['Input'],
+        depth: 3,
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

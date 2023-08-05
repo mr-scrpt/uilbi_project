@@ -2,3 +2,36 @@
   margin: 0;
   padding: 0;
 }
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fieldBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fieldRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.fieldName {
+  min-width: 100px;
+}
+
+.input {
+  // width: 100%;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}

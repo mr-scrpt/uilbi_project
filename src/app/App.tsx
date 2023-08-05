@@ -1,4 +1,5 @@
 import { useTheme } from 'app/provider/ThemeProvider'
+import { LoginModal } from 'feature/AuthByUserName'
 import { Suspense, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from 'shared/component/Modal'
@@ -15,11 +16,6 @@ function App() {
   const { theme } = useTheme()
 
   const [collapsed, setCollapsed] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const closerModal = useCallback(() => {
-    setIsModalOpen(!isModalOpen)
-  }, [isModalOpen])
 
   const { t } = useTranslation()
 
@@ -40,14 +36,10 @@ function App() {
   return (
     <div className={clsApp}>
       <Suspense fallback="transslation">
-        <Modal isOpen={isModalOpen} onClose={closerModal}>
-          {t('test-content-to-modal')}
-        </Modal>
+        <LoginModal />
+
         <div className={cls.inner}>
-          <Navbar
-            className={cls.boxNavbar}
-            onOpenModal={() => setIsModalOpen(true)}
-          />
+          <Navbar className={cls.boxNavbar} />
           <div className={cls.boxMain}>
             <Sidebar
               className={clsSidebar}

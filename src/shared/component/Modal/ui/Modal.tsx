@@ -1,4 +1,11 @@
-import { FC, KeyboardEvent, MouseEvent, useEffect, useRef } from 'react'
+import {
+  FC,
+  KeyboardEvent,
+  MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { Portal } from 'shared/component/Portal'
 import { classNames } from 'shared/lib/classNames'
 
@@ -6,14 +13,22 @@ import { ModalProps } from '../type/props.type'
 import cls from './Modal.module.scss'
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { className, children, isOpen, onClose, inElement } = props
+  const { className, children, isOpen, onClose, inElement, closeByEscape } =
+    props
   const overlay = useRef<HTMLDivElement>()
+
+  const [isMounted, setIsMounted] = useState(false)
+  useEffect(() => {
+    if (!isOpen) return
+    setIsMounted(true)
+  }, [isOpen])
 
   useEffect(() => {
     if (!isOpen) return
     if (!overlay.current) return
+    if (!closeByEscape) return
     overlay.current.focus()
-  }, [isOpen])
+  }, [isOpen, closeByEscape])
 
   const clsModal = classNames(cls.modal, [className], {
     [cls.modal_opened]: isOpen,
@@ -27,6 +42,7 @@ export const Modal: FC<ModalProps> = (props) => {
   const closeModal = () => {
     if (!isOpen) return
     if (!onClose) return
+    // if (!closeByEscape) return
     onClose()
   }
 
@@ -34,6 +50,8 @@ export const Modal: FC<ModalProps> = (props) => {
     if (e.key !== 'Escape') return
     onClose()
   }
+
+  if (!isMounted) return null
 
   return (
     <Portal element={inElement}>

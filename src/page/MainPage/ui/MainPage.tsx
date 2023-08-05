@@ -28,6 +28,7 @@ const MainPage: FC<MainPageProps> = (props) => {
             view={InputViewEnum.PRIMARY}
             size={InputSizeEnum.L}
             state={InputStateEnum.ERROR}
+            name="test"
           />
           <Counter />
           {t('page-main-title')}

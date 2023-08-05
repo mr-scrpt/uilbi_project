@@ -1,5 +1,4 @@
 import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
-import { LoginModal } from 'feature/AuthByUserName/component/LoginModal/ui/LoginModal'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { IconEnum } from 'shared/component/Icon'
@@ -31,7 +30,6 @@ export function Navbar(props: NavbarProps) {
 
   return (
     <div className={clsNavbar}>
-      <LoginModal />
       <div className={clsInner}>
         <div className={clsMenu}>
           <LinkApp

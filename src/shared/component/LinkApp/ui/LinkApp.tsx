@@ -1,12 +1,13 @@
 import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames'
 import { Icon } from 'shared/component/Icon'
-import { LinkAppProps } from '../type/props.type'
-import cls from './LinkApp.module.scss'
-import { LinkViewEnum } from '../type/view.enum'
-import { LinkSizeEnum } from '../type/size.enum'
+import { classNames } from 'shared/lib/classNames'
+
 import { LinkModeEnum } from '../type/mode.enum'
+import { LinkAppProps } from '../type/props.type'
+import { LinkSizeEnum } from '../type/size.enum'
+import { LinkViewEnum } from '../type/view.enum'
+import cls from './LinkApp.module.scss'
 
 export const LinkApp: FC<LinkAppProps> = (props) => {
   const [hovered, setHovered] = useState(false)

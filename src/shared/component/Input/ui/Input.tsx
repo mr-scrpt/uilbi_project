@@ -1,20 +1,28 @@
-import { FC, useEffect, useState } from 'react'
+import { ChangeEvent, FC, memo, useEffect, useRef, useState } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
+import { InputModeEnum } from '../type/mode.enum'
 import { InputProps } from '../type/props.type'
 import { InputSizeEnum } from '../type/size.enum'
 import { InputStateEnum } from '../type/state.enum'
 import { InputViewEnum } from '../type/view.enum'
 import cls from './style/Input.module.scss'
 
-export const Input: FC<InputProps> = (props) => {
+export const Input = memo((props: InputProps) => {
   const {
     className,
     view = InputViewEnum.PRIMARY,
     size = InputSizeEnum.L,
     state,
     placeholder,
+    name,
+    mode,
+    onChangeHandler,
+    value,
+    autoFocus,
   } = props
+  console.log('autoFocus in input', autoFocus)
+
   const [stateLocal, setStateLocal] = useState(state)
   const [stateHovered, setStateHovered] = useState(false)
   const [stateFocused, setStateFocused] = useState(false)
@@ -46,7 +54,16 @@ export const Input: FC<InputProps> = (props) => {
 
     [cls.state_hover]: stateHovered,
     [cls.state_focus]: stateFocused,
+
+    [cls.width_available]: mode === InputModeEnum.WIDTH_AVAILABLE,
   })
+
+  const clsBox = classNames(cls.box)
+  const clsControl = classNames(cls.control)
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChangeHandler?.(e.target.value)
+  }
 
   useEffect(() => {
     setStateLocal(state)
@@ -77,8 +94,12 @@ export const Input: FC<InputProps> = (props) => {
     setStateFocused(false)
   }
 
-  const clsBox = classNames(cls.box)
-  const clsControl = classNames(cls.control)
+  const currentRef = useRef<HTMLInputElement>()
+
+  useEffect(() => {
+    if (!autoFocus) return
+    currentRef.current?.focus()
+  }, [autoFocus])
 
   return (
     <span className={clsInput}>
@@ -91,8 +112,13 @@ export const Input: FC<InputProps> = (props) => {
           onMouseLeave={onClearStateHover}
           disabled={state === InputStateEnum.DISABLED}
           placeholder={placeholder}
+          name={name}
+          onChange={onChange}
+          value={value}
+          ref={currentRef}
+          // autoFocus={autoFocus}
         />
       </span>
     </span>
   )
-}
+})

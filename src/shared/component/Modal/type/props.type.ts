@@ -5,4 +5,5 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   isOpen: boolean
   onClose?: () => void
   inElement?: HTMLElement
+  closeByEscape?: boolean
 }
