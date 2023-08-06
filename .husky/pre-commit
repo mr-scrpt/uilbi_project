@@ -4,7 +4,3 @@
 yarn lint:code:check
 yarn lint:style:check
 yarn test:unit
-# yarn sb:build
-# yarn test:ui:ci
-
-
