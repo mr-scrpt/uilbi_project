@@ -21,6 +21,7 @@ type Story = StoryObj<typeof meta>
 export const ViewPrimary: Story = {
   args: {
     view: InputViewEnum.PRIMARY,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder',
   },
@@ -29,6 +30,7 @@ export const ViewPrimary: Story = {
 export const ViewSecondary: Story = {
   args: {
     view: InputViewEnum.SECONDARY,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder',
   },
@@ -37,6 +39,7 @@ export const ViewSecondary: Story = {
 export const SizeS: Story = {
   args: {
     size: InputSizeEnum.S,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder S',
   },
@@ -45,6 +48,7 @@ export const SizeS: Story = {
 export const SizeM: Story = {
   args: {
     size: InputSizeEnum.M,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder M',
   },
@@ -53,6 +57,7 @@ export const SizeM: Story = {
 export const SizeL: Story = {
   args: {
     size: InputSizeEnum.L,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder L',
   },
@@ -61,6 +66,7 @@ export const SizeL: Story = {
 export const SizeXL: Story = {
   args: {
     size: InputSizeEnum.XL,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder XL',
   },
@@ -69,6 +75,7 @@ export const SizeXL: Story = {
 export const StateError: Story = {
   args: {
     state: InputStateEnum.ERROR,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder S',
   },
@@ -77,6 +84,7 @@ export const StateError: Story = {
 export const StateSuccess: Story = {
   args: {
     state: InputStateEnum.SUCCESS,
+    name: 'name',
     children: 'Text',
     placeholder: 'Placeholder S',
   },
