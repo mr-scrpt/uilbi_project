@@ -1,8 +1,10 @@
-import { Decorator } from '@storybook/react'
-import { StoreProvider } from 'app/provider/StoreProvider'
+import { StoryFn } from '@storybook/react'
+import { PreloadeStateType, StoreProvider } from 'app/provider/StoreProvider'
 
-export const StoreDecorator: Decorator = (StoryComponent) => (
-  <StoreProvider>
-    <StoryComponent />
-  </StoreProvider>
-)
+export const StoreDecorator =
+  (state: PreloadeStateType) => (StoryComponent: StoryFn) =>
+    (
+      <StoreProvider preloadedState={state}>
+        <StoryComponent />
+      </StoreProvider>
+    )

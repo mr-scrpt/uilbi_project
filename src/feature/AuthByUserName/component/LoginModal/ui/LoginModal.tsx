@@ -1,9 +1,10 @@
 import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
 import { isModalOpen } from 'entity/Modal/model/selector/isModalOpen/isModalOpen'
 import { FC, useCallback, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Modal } from 'shared/component/Modal'
 import { classNames } from 'shared/lib/classNames'
+import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
 
 import { LoginForm } from '../../LoginForm/ui/LoginForm'
 import { LoginModalProps } from '../type/props.type'
@@ -12,7 +13,7 @@ import cls from './LoginModal.module.scss'
 export const LoginModal: FC<LoginModalProps> = (props) => {
   const { className } = props
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const addModal = useCallback(
     (name: string) =>
@@ -28,7 +29,6 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
     dispatch(
       modalAction.closeModal({
         name: ModalNameEnum.LOGIN,
-        state: ModalStatusEnum.CLOSE,
       })
     )
 

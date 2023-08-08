@@ -1,4 +1,5 @@
 {
   "message-error-page": "Error Page",
-  "error-gen-error-button": "Generate Error"
+  "error-gen-error-button": "Generate Error",
+  "api-error-login-message": "Login Error"
 }

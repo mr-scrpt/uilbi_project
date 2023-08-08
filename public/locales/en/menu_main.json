@@ -1,4 +1,5 @@
 {
   "menu-main-link-reg": "Register",
-  "menu-main-link-login": "Login"
+  "menu-main-link-login": "Login",
+  "menu-main-link-logout": "Logout"
 }

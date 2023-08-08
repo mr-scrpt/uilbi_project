@@ -1,9 +1,9 @@
-import webpack from 'webpack'
 import path from 'node:path'
+import webpack, { DefinePlugin } from 'webpack'
 
 import { scssLoader } from '../build/loader/scssLoader'
-import { appPath } from '../build/type/appPath'
 import { svgLoader } from '../build/loader/svgLoader'
+import { appPath } from '../build/type/appPath'
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const buildToLoader = scssLoader(true)
@@ -32,6 +32,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
   }
 
   rules?.push(svgLoader)
+
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: true,
+    })
+  )
 
   return config
 }

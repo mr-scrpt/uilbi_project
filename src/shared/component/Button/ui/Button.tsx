@@ -19,6 +19,7 @@ export const Button: FC<ButtonProps> = (props) => {
     shape = ButtonShapeEnum.MAIN,
     icon,
     iconPosition = ButtonIconPositionEnum.LEFT,
+    disabled,
     ...etc
   } = props
 
@@ -41,6 +42,8 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls.shape_main]: shape === ButtonShapeEnum.MAIN,
     [cls.shape_next]: shape === ButtonShapeEnum.NEXT,
     [cls.shape_flat]: shape === ButtonShapeEnum.FLAT,
+
+    [cls.state_disabled]: disabled,
   })
 
   const clsText = classNames(cls.text)
@@ -48,7 +51,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const clsIconButton = classNames(cls.icon, [classIcon])
 
   return (
-    <button type="button" className={clsButton} {...etc}>
+    <button type="button" className={clsButton} {...etc} disabled={disabled}>
       {icon && iconPosition === ButtonIconPositionEnum.LEFT && (
         <Icon className={clsIconButton} icon={icon} />
       )}

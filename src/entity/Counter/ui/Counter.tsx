@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Button } from 'shared/component/Button'
+import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
 
 import { getCounterValue } from '../model/selector/getCounterValue/getCounterValue'
 import { counterAction } from '../model/slice/counterSlice'
@@ -10,7 +11,7 @@ import cls from './Counter.module.scss'
 export const Counter: FC = () => {
   const count = useSelector(getCounterValue)
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const increment = () => dispatch(counterAction.increment())
   const decrement = () => dispatch(counterAction.decrement())
 

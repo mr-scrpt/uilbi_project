@@ -1,9 +1,11 @@
 import { useTheme } from 'app/provider/ThemeProvider'
+import { userAction } from 'entity/User'
 import { LoginModal } from 'feature/AuthByUserName'
-import { Suspense, useCallback, useState } from 'react'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from 'shared/component/Modal'
 import { classNames } from 'shared/lib/classNames'
+import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
 import { Navbar } from 'widget/Navbar'
 import { Sidebar } from 'widget/Sidebar'
 
@@ -16,6 +18,12 @@ function App() {
   const { theme } = useTheme()
 
   const [collapsed, setCollapsed] = useState(false)
+
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(userAction.initAuth())
+  }, [dispatch])
 
   const { t } = useTranslation()
 

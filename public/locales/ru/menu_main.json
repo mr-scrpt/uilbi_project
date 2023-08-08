@@ -1,4 +1,5 @@
 {
   "menu-main-link-reg": "Регистрация",
-  "menu-main-link-login": "Логин"
+  "menu-main-link-login": "Логин",
+  "menu-main-link-logout": "Выйти"
 }

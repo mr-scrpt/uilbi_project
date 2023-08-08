@@ -1,5 +1,5 @@
 {
   "message-error-page": "Страница с ошибкой",
-  "error-gen-error-button": "Сгенерировать ошибку"
+  "error-gen-error-button": "Сгенерировать ошибку",
+  "api-error-login-message": "Ошибка авторизации"
 }
-

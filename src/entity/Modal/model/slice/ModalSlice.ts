@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ModalType } from 'entity/Modal'
-import { ModalStatusEnum } from 'entity/Modal/type/modal.enum'
+import { ModalNameEnum, ModalStatusEnum } from 'entity/Modal/type/modal.enum'
 import { ModalStateType } from 'entity/Modal/type/state.type'
 
 const initialState: ModalStateType = {
@@ -15,14 +15,14 @@ export const modalSlice = createSlice({
       modalList.push(payload)
     },
 
-    openModal: (state, action: PayloadAction<ModalType>) => {
+    openModal: (state, action: PayloadAction<{ name: ModalNameEnum }>) => {
       state.modalList?.forEach((modal) => {
         if (modal.name === action.payload.name) {
           modal.state = ModalStatusEnum.OPEN
         }
       })
     },
-    closeModal: (state, action: PayloadAction<ModalType>) => {
+    closeModal: (state, action: PayloadAction<{ name: ModalNameEnum }>) => {
       state.modalList?.forEach((modal) => {
         if (modal.name === action.payload.name) {
           modal.state = ModalStatusEnum.CLOSE

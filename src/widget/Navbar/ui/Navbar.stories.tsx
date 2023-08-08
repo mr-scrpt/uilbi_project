@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { PreloadeStateType } from 'app/provider/StoreProvider'
 import { classNames } from 'shared/lib/classNames'
 
 import cls from '../../../app/App.module.scss'
@@ -15,7 +16,6 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  decorators: [RouterDecorator, StoreDecorator],
 } satisfies Meta<typeof Navbar>
 
 export default meta
@@ -27,4 +27,18 @@ export const Base: Story = {
   args: {
     className: clsNavbar,
   },
+  decorators: [RouterDecorator, StoreDecorator({} as PreloadeStateType)],
+}
+export const UserLoginned: Story = {
+  args: {
+    className: clsNavbar,
+  },
+  decorators: [
+    RouterDecorator,
+    StoreDecorator({
+      user: {
+        authData: {},
+      },
+    } as PreloadeStateType),
+  ],
 }

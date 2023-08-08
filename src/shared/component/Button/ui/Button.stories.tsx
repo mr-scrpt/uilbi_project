@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { IconEnum } from 'shared/component/Icon'
 
-import { Button } from './Button'
-import { ButtonViewEnum } from '../type/view.enum'
-import { ButtonSizeEnum } from '../type/size.enum'
-import { ButtonShapeEnum } from '../type/shape.enum'
 import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
+import { ButtonShapeEnum } from '../type/shape.enum'
+import { ButtonSizeEnum } from '../type/size.enum'
+import { ButtonViewEnum } from '../type/view.enum'
+import { Button } from './Button'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -50,6 +50,13 @@ export const ViewTransparent: Story = {
 export const ViewTransparentInverted: Story = {
   args: {
     view: ButtonViewEnum.TRANSPARENT_INVERTED,
+    children: 'Button',
+  },
+}
+
+export const StateDisabled: Story = {
+  args: {
+    disabled: true,
     children: 'Button',
   },
 }

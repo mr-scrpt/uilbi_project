@@ -25,6 +25,12 @@
   min-width: 100px;
 }
 
+.textError {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-line-xl);
+  color: var(--color-attention-600);
+}
+
 .input {
   // width: 100%;
 }
