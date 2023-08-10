@@ -1,5 +1,5 @@
 import { ModalType } from './modal.type'
 
-export interface ModalStateType {
+export interface ModalState {
   modalList: ModalType[]
 }

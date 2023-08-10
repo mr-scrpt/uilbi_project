@@ -1,8 +1,10 @@
+import { ReducersMapObject } from '@reduxjs/toolkit'
 import { ReactNode } from 'react'
 
-import { PreloadeStateType } from './state.type'
+import { ReducerPartial, StateSchema } from './state.type'
 
 export interface StoreProviderProps {
   children: ReactNode
-  preloadedState?: PreloadeStateType
+  preloadedState?: StateSchema
+  asyncReducer?: ReducersMapObject<StateSchema>
 }

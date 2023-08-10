@@ -1,13 +1,13 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {
   DefinePlugin,
   HotModuleReplacementPlugin,
   ProgressPlugin,
   WebpackPluginInstance,
 } from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+
 import { BuildOption } from './type/config'
 
 export const buildPlugin = ({
@@ -27,6 +27,11 @@ export const buildPlugin = ({
       __IS_DEV__: JSON.stringify(isDev),
     }),
   ]
+  // plugins.push(
+  //   new BundleAnalyzerPlugin({
+  //     openAnalyzer: false,
+  //   })
+  // )
 
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin())

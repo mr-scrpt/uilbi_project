@@ -1,3 +1,3 @@
-import { RootStateType } from 'app/provider/StoreProvider'
+import { StateSchema } from 'app/provider/StoreProvider'
 
-export const getLoginState = (state: RootStateType) => state.login
+export const getLoginState = (state: StateSchema) => state.login

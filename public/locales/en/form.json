@@ -1,6 +1,6 @@
 {
   "form-title-login-modal": "Login",
-  "form-field-label-title-name": "Your Name",
+  "form-field-label-title-login": "Your Login",
   "form-field-input-placeholder-login": "Enter your login",
   "form-field-label-title-password": "Your Password",
   "form-field-input-placeholder-password": "Enter your password"

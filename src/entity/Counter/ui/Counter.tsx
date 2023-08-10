@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button } from 'shared/component/Button'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
 import { getCounterValue } from '../model/selector/getCounterValue/getCounterValue'
 import { counterAction } from '../model/slice/counterSlice'

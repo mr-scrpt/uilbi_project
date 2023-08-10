@@ -1,13 +1,26 @@
-import { PreloadedState, configureStore } from '@reduxjs/toolkit'
+import {
+  PreloadedState,
+  ReducersMapObject,
+  configureStore,
+} from '@reduxjs/toolkit'
 
-import { PreloadeStateType } from '../type/state.type'
+import { ReducerPartial, StateSchema } from '../type/state.type'
+import { createReducerManager } from './reducerManager'
 import { rootReducer } from './rootReducer'
 
 export const createStore = (
-  preloadedState?: PreloadedState<PreloadeStateType>
-) =>
-  configureStore({
-    reducer: rootReducer,
+  preloadedState?: PreloadedState<StateSchema>,
+  asyncReducer?: ReducersMapObject<StateSchema>
+) => {
+  const reducerManager = createReducerManager(rootReducer, asyncReducer)
+  const store = configureStore({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState,
   })
+
+  // @ts-ignore
+  store.reducerManager = reducerManager
+
+  return store
+}

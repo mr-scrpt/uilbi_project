@@ -1,5 +1,5 @@
 export { modalReducer, modalSlice, modalAction } from './model/slice/ModalSlice'
-export { ModalStateType } from './type/state.type'
+export { ModalState } from './type/state.type'
 export { ModalType } from './type/modal.type'
 export { isModalOpen } from './model/selector/isModalOpen/isModalOpen'
 export { getModalList } from './model/selector/getModalList/getModalList'

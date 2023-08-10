@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ModalType } from 'entity/Modal'
 import { ModalNameEnum, ModalStatusEnum } from 'entity/Modal/type/modal.enum'
-import { ModalStateType } from 'entity/Modal/type/state.type'
+import { ModalState } from 'entity/Modal/type/state.type'
 
-const initialState: ModalStateType = {
+const initialState: ModalState = {
   modalList: [],
 }
 

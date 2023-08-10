@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { PreloadeStateType } from 'app/provider/StoreProvider'
+import { StateSchema } from 'app/provider/StoreProvider'
 import { StoreDecorator } from 'shared/config/storybook/decorator'
 
 import { LoginForm } from './LoginForm'
@@ -26,7 +26,7 @@ export const LoginFormMain: Story = {
         isLoading: false,
         error: null,
       },
-    } as PreloadeStateType),
+    } as StateSchema),
   ],
 }
 export const LoginFormWithError: Story = {
@@ -39,7 +39,7 @@ export const LoginFormWithError: Story = {
         isLoading: false,
         error: 'error message',
       },
-    } as PreloadeStateType),
+    } as StateSchema),
   ],
 }
 
@@ -53,6 +53,6 @@ export const LoginFormOnSendRequest: Story = {
         isLoading: true,
         error: null,
       },
-    } as PreloadeStateType),
+    } as StateSchema),
   ],
 }

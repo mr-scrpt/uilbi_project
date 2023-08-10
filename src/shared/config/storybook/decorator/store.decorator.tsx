@@ -1,10 +1,26 @@
+import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { StoryFn } from '@storybook/react'
-import { PreloadeStateType, StoreProvider } from 'app/provider/StoreProvider'
+import { StateSchema, StoreProvider } from 'app/provider/StoreProvider'
+import { loginReducer } from 'feature/AuthByUserName'
+
+const defaultAsyncReducer: DeepPartial<ReducersMapObject<StateSchema>> = {
+  login: loginReducer,
+}
 
 export const StoreDecorator =
-  (state: PreloadeStateType) => (StoryComponent: StoryFn) =>
+  (
+    state: StateSchema,
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+  ) =>
+  (StoryComponent: StoryFn) =>
     (
-      <StoreProvider preloadedState={state}>
+      <StoreProvider
+        preloadedState={state}
+        asyncReducer={{
+          ...(defaultAsyncReducer as ReducersMapObject<StateSchema>),
+          ...(asyncReducers as ReducersMapObject<StateSchema>),
+        }}
+      >
         <StoryComponent />
       </StoreProvider>
     )

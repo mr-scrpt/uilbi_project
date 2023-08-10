@@ -1,6 +1,6 @@
 {
   "form-title-login-modal": "Логин",
-  "form-field-label-title-name": "Ваше имя",
+  "form-field-label-title-login": "Ваш логин",
   "form-field-input-placeholder-login": "Введите ваше имя",
   "form-field-label-title-password": "Пароль",
   "form-field-input-placeholder-password": "Введите ваш пароль"

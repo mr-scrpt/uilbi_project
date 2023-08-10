@@ -1,7 +1,7 @@
 export { StoreProvider } from './ui/StoreProvider'
 export { createStore } from './config/configStore'
 export {
-  RootStateType,
-  PreloadeStateType,
-  PartialStateType,
+  StateSchema,
+  StateSchemaParital,
+  StateSchemaKeys,
 } from './type/state.type'

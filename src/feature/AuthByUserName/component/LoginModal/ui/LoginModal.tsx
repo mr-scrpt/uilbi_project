@@ -1,12 +1,13 @@
 import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
 import { isModalOpen } from 'entity/Modal/model/selector/isModalOpen/isModalOpen'
-import { FC, useCallback, useEffect } from 'react'
+import { FC, Suspense, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Modal } from 'shared/component/Modal'
 import { classNames } from 'shared/lib/classNames'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
+import { LoaderContent } from 'widget/LoaderContent'
 
-import { LoginForm } from '../../LoginForm/ui/LoginForm'
+import { LoginFormAsync } from '../../LoginForm'
 import { LoginModalProps } from '../type/props.type'
 import cls from './LoginModal.module.scss'
 
@@ -43,7 +44,9 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
       onClose={closeModal}
       closeByEscape={false}
     >
-      <LoginForm setFocus={isOpen} />
+      <Suspense fallback={<LoaderContent />}>
+        <LoginFormAsync setFocus={isOpen} />
+      </Suspense>
     </Modal>
   )
 }

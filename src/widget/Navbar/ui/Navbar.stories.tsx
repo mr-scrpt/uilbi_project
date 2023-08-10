@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PreloadeStateType } from 'app/provider/StoreProvider'
+import { StateSchema } from 'app/provider/StoreProvider'
 import { classNames } from 'shared/lib/classNames'
 
 import cls from '../../../app/App.module.scss'
@@ -27,7 +27,7 @@ export const Base: Story = {
   args: {
     className: clsNavbar,
   },
-  decorators: [RouterDecorator, StoreDecorator({} as PreloadeStateType)],
+  decorators: [RouterDecorator, StoreDecorator({} as StateSchema)],
 }
 export const UserLoginned: Story = {
   args: {
@@ -39,6 +39,6 @@ export const UserLoginned: Story = {
       user: {
         authData: {},
       },
-    } as PreloadeStateType),
+    } as StateSchema),
   ],
 }

@@ -1,4 +1,4 @@
-export interface AuthStateType {
+export interface AuthState {
   username: string
   password: string
   isLoading: boolean

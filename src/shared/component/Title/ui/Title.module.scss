@@ -1,0 +1,30 @@
+.title {
+  display: flex;
+}
+
+/* View */
+
+/* View primary */
+.title.view_primary {
+  .title__text {
+    font-weight: 500;
+    // text-transform: uppercase;
+
+    color: black;
+  }
+}
+
+/* View primary END */
+
+/* View secondary */
+.title.view_secondary {
+  .title__text {
+    @extend %text-gradient;
+
+    font-weight: 500;
+  }
+}
+
+/* View section END */
+
+/* View END */

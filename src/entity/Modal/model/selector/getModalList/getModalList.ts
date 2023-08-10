@@ -1,3 +1,3 @@
-import { RootStateType } from 'app/provider/StoreProvider'
+import { StateSchema } from 'app/provider/StoreProvider'
 
-export const getModalList = (state: RootStateType) => state.modal
+export const getModalList = (state: StateSchema) => state.modal

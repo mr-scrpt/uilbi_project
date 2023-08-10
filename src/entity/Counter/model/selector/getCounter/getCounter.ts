@@ -1,5 +1,5 @@
-import { RootStateType } from 'app/provider/StoreProvider'
+import { StateSchema } from 'app/provider/StoreProvider'
 
 import { CounterState } from '../../../type/state.type'
 
-export const getCounter = (state: RootStateType): CounterState => state.counter
+export const getCounter = (state: StateSchema): CounterState => state.counter

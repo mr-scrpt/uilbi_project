@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
-import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
 import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'

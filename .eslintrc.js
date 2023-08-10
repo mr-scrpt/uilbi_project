@@ -77,7 +77,7 @@ module.exports = {
       {
         labelComponents: ['Label'],
         labelAttributes: ['label'],
-        controlComponents: ['Input'],
+        controlComponents: ['CustomInput'],
         depth: 3,
       },
     ],

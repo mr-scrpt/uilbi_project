@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import {
-  PartialStateType,
-  RootStateType,
+  StateSchema,
+  StateSchemaParital,
   StoreProvider,
 } from 'app/provider/StoreProvider'
 import { ReactNode } from 'react'
@@ -11,7 +11,7 @@ import i18nForTest from 'shared/config/i18n/i18nForTest'
 
 export interface componentRenderOptions {
   route?: string
-  preloadedState?: PartialStateType
+  preloadedState?: StateSchemaParital
 }
 
 export const RenderComopletedComponent = (
@@ -20,7 +20,7 @@ export const RenderComopletedComponent = (
 ) => {
   const { route = '/', preloadedState } = options
   return render(
-    <StoreProvider preloadedState={preloadedState as RootStateType}>
+    <StoreProvider preloadedState={preloadedState as StateSchema}>
       <MemoryRouter initialEntries={[route]}>
         <I18nextProvider i18n={i18nForTest}>{component}</I18nextProvider>,
       </MemoryRouter>
