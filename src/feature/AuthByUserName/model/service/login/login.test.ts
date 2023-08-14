@@ -7,7 +7,7 @@ import { loginByUserName } from './login.thunk'
 
 jest.mock('axios')
 
-const mockAxios = jest.mocked(axios, true)
+const mockAxios = jest.mocked(axios)
 
 describe('getLoginError', () => {
   test('should post method been called', async () => {

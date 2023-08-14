@@ -1,1 +1,1 @@
-export { AsyncThunk } from './asyncThunk/asyncThunk.ts'
+export { AsyncThunk } from './asyncThunk/asyncThunk'

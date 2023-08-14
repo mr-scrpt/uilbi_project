@@ -40,7 +40,7 @@ describe('Login Slice', () => {
   })
 
   test('should be error', () => {
-    const error = null
+    const error: null = null
     const action = {
       type: loginByUserName.rejected.type,
       payload: 'some error',
