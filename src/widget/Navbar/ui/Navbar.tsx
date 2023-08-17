@@ -1,4 +1,4 @@
-import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
+import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { getUserAuthData, userAction } from 'entity/User'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -25,8 +25,9 @@ export const Navbar = memo((props: NavbarProps) => {
   const clsMenu = classNames(cls.menu)
 
   const dispatch = useAppDispatch()
+
   const openModal = () => {
-    console.log('dispatch openModal')
+    console.log('click open')
     dispatch(
       modalAction.openModal({
         name: ModalNameEnum.LOGIN,
