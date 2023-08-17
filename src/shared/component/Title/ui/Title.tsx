@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { TitleProps } from '../type/props.type'
@@ -6,7 +6,7 @@ import { TitleSizeEnum } from '../type/size.enum'
 import { TitleViewEnum } from '../type/view.enum'
 import cls from './style/Title.module.scss'
 
-export const Title: FC<TitleProps> = (props) => {
+export const Title = memo((props: TitleProps) => {
   const {
     className,
     children,
@@ -29,4 +29,4 @@ export const Title: FC<TitleProps> = (props) => {
       <span className={cls.text}>{children}</span>
     </span>
   )
-}
+})

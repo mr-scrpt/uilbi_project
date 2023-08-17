@@ -1,6 +1,7 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { CounterState } from 'entity/Counter'
 import { ModalState } from 'entity/Modal'
+import { ProfileState } from 'entity/Profile'
 import { UserState } from 'entity/User'
 import { AuthState } from 'feature/AuthByUserName'
 
@@ -18,6 +19,7 @@ export interface StateSchema {
   modal: ModalState
 
   login?: AuthState
+  profile?: ProfileState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
 export type ReducerPartial = DeepPartial<ReducersMapObject<StateSchema>>

@@ -1,17 +1,17 @@
-import { FC } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
 import {
   Button,
   ButtonShapeEnum,
   ButtonViewEnum,
 } from 'shared/component/Button'
+import { classNames } from 'shared/lib/classNames'
+
 import { LangSwitcherProps } from '../type/props.type'
-
-import cls from './LangSwitcher.module.scss'
 import { LangSwitcherViewEnum } from '../type/view.enum'
+import cls from './LangSwitcher.module.scss'
 
-export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
+export const LangSwitcher = memo((props: LangSwitcherProps) => {
   const { className, view = LangSwitcherViewEnum.FULL } = props
   const { t, i18n } = useTranslation()
 
@@ -37,4 +37,4 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
       </Button>
     </div>
   )
-}
+})

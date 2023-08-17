@@ -4,8 +4,10 @@ import { loginByUserName } from '../service/login/login.thunk'
 import { AuthState } from '../type/state.type'
 
 const initialState: AuthState = {
-  username: '',
-  password: '',
+  data: {
+    username: '',
+    password: '',
+  },
   isLoading: false,
   error: null,
 }
@@ -15,10 +17,10 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     setUserName: (state, { payload }: PayloadAction<string>) => {
-      state.username = payload
+      state.data.username = payload
     },
     setPassword: (state, { payload }: PayloadAction<string>) => {
-      state.password = payload
+      state.data.password = payload
     },
   },
   extraReducers: (builder) => {

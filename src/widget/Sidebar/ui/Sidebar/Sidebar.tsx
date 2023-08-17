@@ -1,29 +1,23 @@
-import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
+import { FC, memo, useState } from 'react'
 import {
   Button,
   ButtonShapeEnum,
   ButtonViewEnum,
 } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon'
-import {
-  LinkApp,
-  LinkModeEnum,
-  LinkSizeEnum,
-  LinkViewEnum,
-} from 'shared/component/LinkApp'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
+import { LinkModeEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
 import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
+import { SidebarListData } from 'widget/Sidebar/model/sidebarList.data'
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 
+import { SidebarProps } from '../../type/props.type'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
+import { SidebarMenu } from '../SidebarMenu/SidebarMenu'
 import cls from './Sidebar.module.scss'
-import { SidebarProps } from './type/props.type'
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar = memo((props: SidebarProps) => {
   const { className, collapsed, toggleHandler } = props
-
-  const { t } = useTranslation('menu_navigation')
 
   const clsSidebar = classNames(cls.sidebar, [className])
   const clsButton = classNames(cls.button)
@@ -58,26 +52,8 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             icon={IconEnum.BURGER}
           />
         </div>
-        <div className={cls.boxNav}>
-          <LinkApp
-            to={RoutePath.main}
-            view={LinkViewEnum.SECONDARY}
-            size={LinkSizeEnum.XL}
-            icon={IconEnum.MENU_HOME}
-            mode={linkMode}
-          >
-            {t('menu-navigation-link-main')}
-          </LinkApp>
-          <LinkApp
-            to={RoutePath.about}
-            view={LinkViewEnum.SECONDARY}
-            size={LinkSizeEnum.XL}
-            icon={IconEnum.MENU_ABOUT}
-            mode={linkMode}
-          >
-            {t('menu-navigation-link-about')}
-          </LinkApp>
-        </div>
+        <SidebarMenu mode={linkMode} className={cls.boxNav} />
+
         {/* <LightIcon onClick={handlerClick} /> */}
 
         <div className={clsFooter}>
@@ -87,4 +63,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </div>
     </div>
   )
-}
+})

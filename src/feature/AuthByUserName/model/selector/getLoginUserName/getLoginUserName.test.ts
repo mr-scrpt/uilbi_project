@@ -6,7 +6,9 @@ describe('getLoginError', () => {
   test('should return error', () => {
     const state: StateSchemaParital = {
       login: {
-        username: 'user',
+        data: {
+          username: 'user',
+        },
       },
     }
     expect(getLoginUserName(state as StateSchema)).toEqual('user')

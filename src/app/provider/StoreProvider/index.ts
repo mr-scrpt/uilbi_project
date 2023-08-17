@@ -5,3 +5,4 @@ export {
   StateSchemaParital,
   StateSchemaKeys,
 } from './type/state.type'
+export { AppDispatchType } from './type/dispatch.type'

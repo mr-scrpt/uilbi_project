@@ -21,8 +21,10 @@ export const LoginFormMain: Story = {
   decorators: [
     StoreDecorator({
       login: {
-        username: '123',
-        password: 'asd',
+        data: {
+          username: 'user',
+          password: 'password',
+        },
         isLoading: false,
         error: null,
       },
@@ -34,8 +36,11 @@ export const LoginFormWithError: Story = {
   decorators: [
     StoreDecorator({
       login: {
-        username: 'user with error',
-        password: 'password',
+        data: {
+          username: 'user',
+          password: 'password',
+        },
+
         isLoading: false,
         error: 'error message',
       },
@@ -48,8 +53,11 @@ export const LoginFormOnSendRequest: Story = {
   decorators: [
     StoreDecorator({
       login: {
-        username: 'user',
-        password: 'password',
+        data: {
+          username: 'user',
+          password: 'password',
+        },
+
         isLoading: true,
         error: null,
       },

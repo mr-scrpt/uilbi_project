@@ -8,23 +8,24 @@ describe('Login Slice', () => {
   test('should be set username', () => {
     const username = 'test name'
     const data = { username }
-    const state: DeepPartial<AuthState> = data
+    const state: DeepPartial<AuthState> = { data }
     const result = loginReducer(
       state as AuthState,
       loginAction.setUserName(username)
     )
-    expect(result).toEqual(data)
+    expect(result.data).toEqual(data)
   })
 
   test('should be set password', () => {
     const password = '1234'
     const data = { password }
-    const state: DeepPartial<AuthState> = data
+    const state: DeepPartial<AuthState> = { data }
     const result = loginReducer(
       state as AuthState,
       loginAction.setPassword(password)
     )
-    expect(result).toEqual(data)
+    console.log('result =>>', result)
+    expect(result.data).toEqual(data)
   })
 
   test('should be pending', () => {

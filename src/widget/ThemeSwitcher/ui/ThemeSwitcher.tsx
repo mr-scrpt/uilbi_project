@@ -1,6 +1,6 @@
 import { useTheme } from 'app/provider/ThemeProvider'
-import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { ThemeEnum } from 'app/provider/ThemeProvider/type'
+import { FC, memo } from 'react'
 import {
   Button,
   ButtonShapeEnum,
@@ -8,11 +8,12 @@ import {
   ButtonViewEnum,
 } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon/type/icon.enum'
-import { ThemeEnum } from 'app/provider/ThemeProvider/type'
-import cls from './ThemeSwitcher.module.scss'
-import { ThemeSwitcherProps } from '../type/props.type'
+import { classNames } from 'shared/lib/classNames'
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
+import { ThemeSwitcherProps } from '../type/props.type'
+import cls from './ThemeSwitcher.module.scss'
+
+export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { className } = props
 
   const { themeToggle, theme } = useTheme()
@@ -46,4 +47,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
       </div>
     </div>
   )
-}
+})

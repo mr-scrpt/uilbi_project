@@ -1,0 +1,25 @@
+import { FC, memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
+import { classNames } from 'shared/lib/classNames'
+
+import { SidebarItemProps } from '../../type/props.type'
+import cls from './SidebarItem.module.scss'
+
+export const SidebarItem = memo((props: SidebarItemProps) => {
+  const { className, to, icon, mode, text } = props
+  const { t } = useTranslation('menu_navigation')
+
+  const clsSidebarItem = classNames(cls.sidebarItem, [className], {})
+  return (
+    <LinkApp
+      to={to}
+      view={LinkViewEnum.SECONDARY}
+      size={LinkSizeEnum.XL}
+      icon={icon}
+      mode={mode}
+    >
+      {t(text)}
+    </LinkApp>
+  )
+})

@@ -1,5 +1,6 @@
 import { ModalNameEnum, ModalStatusEnum, modalAction } from 'entity/Modal'
 import { getUserAuthData, userAction } from 'entity/User'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { IconEnum } from 'shared/component/Icon'
@@ -10,7 +11,7 @@ import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'
 
-export function Navbar(props: NavbarProps) {
+export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
 
   const authData = useSelector(getUserAuthData)
@@ -75,4 +76,4 @@ export function Navbar(props: NavbarProps) {
       </div>
     </div>
   )
-}
+})

@@ -1,6 +1,7 @@
+import { AuthData } from './auth.data'
+
 export interface AuthState {
-  username: string
-  password: string
+  data: AuthData
   isLoading: boolean
   error: string
 }

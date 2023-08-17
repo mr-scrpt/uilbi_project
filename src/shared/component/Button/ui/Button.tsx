@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { Icon } from 'shared/component/Icon'
 import { classNames } from 'shared/lib/classNames'
 
@@ -9,7 +9,7 @@ import { ButtonSizeEnum } from '../type/size.enum'
 import { ButtonViewEnum } from '../type/view.enum'
 import cls from './style/Button.module.scss'
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = memo((props: ButtonProps) => {
   const {
     className,
     classIcon,
@@ -61,4 +61,4 @@ export const Button: FC<ButtonProps> = (props) => {
       )}
     </button>
   )
-}
+})

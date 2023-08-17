@@ -20,15 +20,6 @@
   // transform: translateX(100%);
 }
 
-.boxNav {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
-}
-
 .footer {
   display: flex;
   gap: 15px;
@@ -56,11 +47,11 @@
 }
 
 .icon_collapsed {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-attantion-400);
 }
 
 .icon_uncollapsed {
-  background-color: var(--color-active);
+  background-color: var(--color-active-400);
 }
 
 /* .collapsed { */

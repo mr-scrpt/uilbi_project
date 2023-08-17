@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
-import { classNames } from 'shared/lib/classNames'
 import { RouterDecorator } from 'shared/config/storybook/decorator'
-
-import { Sidebar } from './Sidebar'
+import { classNames } from 'shared/lib/classNames'
 
 import cls from '../../../../app/App.module.scss'
+import { Sidebar } from './Sidebar'
 
 const meta = {
   title: 'Widget/Sidebar',

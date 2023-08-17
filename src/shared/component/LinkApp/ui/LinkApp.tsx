@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from 'shared/component/Icon'
 import { classNames } from 'shared/lib/classNames'
@@ -9,7 +9,7 @@ import { LinkSizeEnum } from '../type/size.enum'
 import { LinkViewEnum } from '../type/view.enum'
 import cls from './LinkApp.module.scss'
 
-export const LinkApp: FC<LinkAppProps> = (props) => {
+export const LinkApp = memo((props: LinkAppProps) => {
   const [hovered, setHovered] = useState(false)
 
   const {
@@ -55,4 +55,4 @@ export const LinkApp: FC<LinkAppProps> = (props) => {
       {showText && <div className={clsText}>{children}</div>}
     </Link>
   )
-}
+})

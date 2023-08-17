@@ -4,5 +4,5 @@ import { getLoginState } from '../getLoginState/getAuthState'
 
 export const getLoginUserName = createSelector(
   getLoginState,
-  (login) => login?.username || ''
+  (login) => login?.data?.username || ''
 )
