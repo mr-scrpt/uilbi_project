@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { User, userAction } from 'entity/User'
 import { storageAuthData } from 'shared/lib/storage/LocalStorage'
@@ -9,13 +9,15 @@ import { LoginDataType } from './login.type'
 export const loginByUserName = createAsyncThunk<
   User,
   LoginDataType,
-  { rejectValue: string }
+  ThunkConfigType<string>
 >('login/loginByUsername', async (authData, thunkAPI) => {
+  const {
+    dispatch,
+    rejectWithValue,
+    extra: { api },
+  } = thunkAPI
   try {
-    const response = await axios.post<User>(
-      'http://localhost:8000/login',
-      authData
-    )
+    const response = await api.post<User>('/login', authData)
 
     if (!response.data) {
       throw new Error()
@@ -23,12 +25,12 @@ export const loginByUserName = createAsyncThunk<
 
     storageAuthData.setItem(response.data)
 
-    thunkAPI.dispatch(userAction.setAuth(response.data))
-    thunkAPI.dispatch(modalAction.closeModal({ name: ModalNameEnum.LOGIN }))
+    dispatch(userAction.setAuth(response.data))
+    dispatch(modalAction.closeModal({ name: ModalNameEnum.LOGIN }))
 
     return response.data
   } catch (e) {
     console.log(e)
-    return thunkAPI.rejectWithValue('api-error-login-message')
+    return rejectWithValue('api-error-login-message')
   }
 })

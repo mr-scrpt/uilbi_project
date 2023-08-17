@@ -25,12 +25,14 @@ export const Navbar = memo((props: NavbarProps) => {
   const clsMenu = classNames(cls.menu)
 
   const dispatch = useAppDispatch()
-  const openModal = () =>
+  const openModal = () => {
+    console.log('dispatch openModal')
     dispatch(
       modalAction.openModal({
         name: ModalNameEnum.LOGIN,
       })
     )
+  }
 
   const logout = () => {
     dispatch(userAction.logout())

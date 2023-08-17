@@ -16,6 +16,7 @@ export const modalSlice = createSlice({
     },
 
     openModal: (state, action: PayloadAction<{ name: ModalNameEnum }>) => {
+      console.log('open modal in aciton')
       state.modalList?.forEach((modal) => {
         if (modal.name === action.payload.name) {
           modal.state = ModalStatusEnum.OPEN
