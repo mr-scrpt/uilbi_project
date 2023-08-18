@@ -3,6 +3,7 @@ import {
   ReducersMapObject,
   configureStore,
 } from '@reduxjs/toolkit'
+import { $api } from 'shared/api/api'
 
 import { ReducerPartial, StateSchema } from '../type/state.type'
 import { createReducerManager } from './reducerManager'
@@ -17,6 +18,14 @@ export const createStore = (
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+          },
+        },
+      }),
   })
 
   // @ts-ignore
