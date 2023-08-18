@@ -18,11 +18,11 @@ describe('getLoginError', () => {
       })
     )
 
-    // const thunk = new AsyncThunk(loginByUserName)
-    // await thunk.callThunk({
-    //   username: 'test',
-    //   password: 'test',
-    // })
+    const thunk = new AsyncThunk(loginByUserName)
+    await thunk.callThunk({
+      username: 'test',
+      password: 'test',
+    })
 
     expect(mockAxios.post).toHaveBeenCalled()
   })
