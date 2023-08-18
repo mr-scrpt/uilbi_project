@@ -1,6 +1,6 @@
 import axios from 'axios'
-// import { ModalNameEnum, modalAction } from 'entity/Modal'
-// import { userAction } from 'entity/User'
+import { ModalNameEnum, modalAction } from 'entity/Modal'
+import { userAction } from 'entity/User'
 import { AsyncThunk } from 'shared/lib/test'
 
 import { loginByUserName } from './login.thunk'
@@ -98,5 +98,4 @@ describe('getLoginError', () => {
       modalAction.closeModal({ name: ModalNameEnum.LOGIN })
     )
   })
->>>>>>> 6266c13 (fix: login thunk test)
 })
