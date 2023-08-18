@@ -12,5 +12,5 @@ export interface LinkAppProps extends LinkProps {
   size?: LinkSizeEnum
   icon?: IconEnum
   mode?: LinkModeEnum
-  onClickHandler?: () => void
+  // onClick?: () => void
 }

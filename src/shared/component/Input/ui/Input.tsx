@@ -21,7 +21,6 @@ export const Input = memo((props: InputProps) => {
     value,
     autoFocus,
   } = props
-  console.log('autoFocus in input', autoFocus)
 
   const [stateLocal, setStateLocal] = useState(state)
   const [stateHovered, setStateHovered] = useState(false)

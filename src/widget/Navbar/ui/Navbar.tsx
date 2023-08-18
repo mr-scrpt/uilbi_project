@@ -3,6 +3,7 @@ import { getUserAuthData, userAction } from 'entity/User'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
@@ -27,7 +28,6 @@ export const Navbar = memo((props: NavbarProps) => {
   const dispatch = useAppDispatch()
 
   const openModal = () => {
-    console.log('click open')
     dispatch(
       modalAction.openModal({
         name: ModalNameEnum.LOGIN,
@@ -56,23 +56,21 @@ export const Navbar = memo((props: NavbarProps) => {
           )}
           {!authData && (
             <>
-              <LinkApp
-                to=""
-                view={LinkViewEnum.SECONDARY}
-                size={LinkSizeEnum.XL}
+              <Button
                 icon={IconEnum.MENU_HOME}
+                size={ButtonSizeEnum.S}
+                view={ButtonViewEnum.SECONDARY}
               >
                 {t('menu-main-link-reg')}
-              </LinkApp>
-              <LinkApp
-                to=""
-                view={LinkViewEnum.SECONDARY}
-                size={LinkSizeEnum.XL}
-                icon={IconEnum.MENU_ABOUT}
+              </Button>
+              <Button
                 onClick={openModal}
+                icon={IconEnum.MENU_HOME}
+                size={ButtonSizeEnum.S}
+                view={ButtonViewEnum.SECONDARY}
               >
                 {t('menu-main-link-login')}
-              </LinkApp>
+              </Button>
             </>
           )}
         </div>

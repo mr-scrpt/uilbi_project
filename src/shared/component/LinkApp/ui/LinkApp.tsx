@@ -21,6 +21,7 @@ export const LinkApp = memo((props: LinkAppProps) => {
     size = LinkSizeEnum.M,
     icon,
     mode = LinkModeEnum.DEFAULT,
+    onClick,
     ...etc
   } = props
 
@@ -35,6 +36,7 @@ export const LinkApp = memo((props: LinkAppProps) => {
 
     [cls.hovered]: hovered,
   })
+
   const clsIconButton = classNames(cls.icon, [classIcon])
   const clsText = classNames(cls.text)
 

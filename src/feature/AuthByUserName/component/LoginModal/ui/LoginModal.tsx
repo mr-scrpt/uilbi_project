@@ -24,7 +24,6 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
 
   useEffect(() => {
     addModal(ModalNameEnum.LOGIN)
-    console.log('modal add')
   }, [addModal])
 
   const closeModal = () =>
@@ -40,10 +39,6 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
   // useEffect(() => {
   //   dispatch(modalAction.openModal({ name: ModalNameEnum.LOGIN }))
   // }, [dispatch])
-
-  useEffect(() => {
-    console.log('opening ====>>>', isOpen)
-  }, [isOpen])
 
   const clsLoginModal = classNames(cls.modal, [className], {})
 

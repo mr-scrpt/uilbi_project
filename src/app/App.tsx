@@ -2,7 +2,6 @@ import { useTheme } from 'app/provider/ThemeProvider'
 import { userAction } from 'entity/User'
 import { LoginModal } from 'feature/AuthByUserName'
 import { Suspense, useCallback, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { Navbar } from 'widget/Navbar'
@@ -23,8 +22,6 @@ function App() {
   useEffect(() => {
     dispatch(userAction.initAuth())
   }, [dispatch])
-
-  const { t } = useTranslation()
 
   const toggleHandler = useCallback(() => {
     setCollapsed(!collapsed)

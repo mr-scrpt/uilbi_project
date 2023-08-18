@@ -14,7 +14,7 @@ export const loginByUserName = createAsyncThunk<
   const {
     dispatch,
     rejectWithValue,
-    extra: { api },
+    extra: { api, navigate },
   } = thunkAPI
   try {
     const response = await api.post<User>('/login', authData)
@@ -27,6 +27,7 @@ export const loginByUserName = createAsyncThunk<
 
     dispatch(userAction.setAuth(response.data))
     dispatch(modalAction.closeModal({ name: ModalNameEnum.LOGIN }))
+    // navigate('/about')
 
     return response.data
   } catch (e) {

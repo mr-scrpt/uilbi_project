@@ -13,6 +13,7 @@ import { BuildOption } from './type/config'
 export const buildPlugin = ({
   appPath,
   isDev,
+  apiURL,
 }: BuildOption): WebpackPluginInstance[] => {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -25,6 +26,7 @@ export const buildPlugin = ({
     }),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API_URL__: JSON.stringify(apiURL),
     }),
   ]
   // plugins.push(

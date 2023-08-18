@@ -8,12 +8,8 @@ export const Portal: FC<PortalProps> = (props) => {
   const [mounted, setMounted] = useState(false)
 
   const containerRef = useRef<HTMLElement | null>(null)
-  useEffect(() => {
-    console.log('portal mounted')
-  }, [])
 
   useEffect(() => {
-    console.log('in Portal', containerRef.current)
     setMounted(true)
     containerRef.current =
       element ||
