@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { ModalNameEnum, modalAction } from 'entity/Modal'
-import { userAction } from 'entity/User'
+// import { ModalNameEnum, modalAction } from 'entity/Modal'
+// import { userAction } from 'entity/User'
 import { AsyncThunk } from 'shared/lib/test'
 
 import { loginByUserName } from './login.thunk'

@@ -11,12 +11,12 @@ export const loginByUserName = createAsyncThunk<
   LoginDataType,
   { rejectValue: string }
 >('login/loginByUsername', async (authData, thunkAPI) => {
-  const {
-    dispatch,
-    extra: { api },
-    rejectWithValue,
-  } = thunkAPI
+  const { dispatch, rejectWithValue } = thunkAPI
   try {
+    // const response = await extra.api.post<User>(
+    //   'http://localhost:8000/login',
+    //   authData
+    // )
     const response = await axios.post<User>(
       'http://localhost:8000/login',
       authData
