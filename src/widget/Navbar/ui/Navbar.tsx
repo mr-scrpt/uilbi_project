@@ -3,6 +3,7 @@ import { getUserAuthData, userAction } from 'entity/User'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
@@ -41,35 +42,32 @@ export const Navbar = memo((props: NavbarProps) => {
       <div className={clsInner}>
         <div className={clsMenu}>
           {authData && (
-            <LinkApp
-              to="/"
-              view={LinkViewEnum.SECONDARY}
-              size={LinkSizeEnum.XL}
-              icon={IconEnum.MENU_HOME}
+            <Button
               onClick={logout}
+              view={ButtonViewEnum.SECONDARY}
+              size={ButtonSizeEnum.S}
             >
               {t('menu-main-link-logout')}
-            </LinkApp>
+            </Button>
           )}
           {!authData && (
             <>
-              <LinkApp
-                to=""
-                view={LinkViewEnum.SECONDARY}
-                size={LinkSizeEnum.XL}
+              <Button
+                view={ButtonViewEnum.SECONDARY}
+                size={ButtonSizeEnum.S}
                 icon={IconEnum.MENU_HOME}
               >
                 {t('menu-main-link-reg')}
-              </LinkApp>
-              <LinkApp
-                to=""
-                view={LinkViewEnum.SECONDARY}
-                size={LinkSizeEnum.XL}
-                icon={IconEnum.MENU_ABOUT}
+              </Button>
+
+              <Button
+                view={ButtonViewEnum.SECONDARY}
+                size={ButtonSizeEnum.S}
+                icon={IconEnum.MENU_HOME}
                 onClick={openModal}
               >
                 {t('menu-main-link-login')}
-              </LinkApp>
+              </Button>
             </>
           )}
         </div>

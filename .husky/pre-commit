@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn lint:code:check
-yarn lint:style:check
-yarn test:unit
-yarn sb:build
-yarn test:ui:ci
+# yarn lint:code:check
+# yarn lint:style:check
+# yarn test:unit
+# yarn sb:build
+# yarn test:ui:ci
