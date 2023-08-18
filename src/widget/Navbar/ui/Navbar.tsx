@@ -44,15 +44,13 @@ export const Navbar = memo((props: NavbarProps) => {
       <div className={clsInner}>
         <div className={clsMenu}>
           {authData && (
-            <LinkApp
-              to="/"
-              view={LinkViewEnum.SECONDARY}
-              size={LinkSizeEnum.XL}
-              icon={IconEnum.MENU_HOME}
+            <Button
               onClick={logout}
+              view={ButtonViewEnum.SECONDARY}
+              size={ButtonSizeEnum.S}
             >
               {t('menu-main-link-logout')}
-            </LinkApp>
+            </Button>
           )}
           {!authData && (
             <>
@@ -63,6 +61,7 @@ export const Navbar = memo((props: NavbarProps) => {
               >
                 {t('menu-main-link-reg')}
               </Button>
+
               <Button
                 onClick={openModal}
                 icon={IconEnum.MENU_HOME}

@@ -12,13 +12,9 @@ export const loginByUserName = createAsyncThunk<
   LoginDataType,
   ThunkConfigType<string>
 >('login/loginByUsername', async (authData, thunkAPI) => {
-  // const { dispatch, rejectWithValue } = thunkAPI
+  const { rejectWithValue, dispatch } = thunkAPI
   try {
     const response = await thunkAPI.extra.api.post<User>('/login', authData)
-    // const response = await axios.post<User>(
-    //   'http://localhost:8000/login',
-    //   authData
-    // )
 
     if (!response.data) {
       throw new Error()
@@ -26,13 +22,12 @@ export const loginByUserName = createAsyncThunk<
 
     storageAuthData.setItem(response.data)
 
-    thunkAPI.dispatch(userAction.setAuth(response.data))
-    thunkAPI.dispatch(modalAction.closeModal({ name: ModalNameEnum.LOGIN }))
-    // navigate('/about')
+    dispatch(userAction.setAuth(response.data))
+    dispatch(modalAction.closeModal({ name: ModalNameEnum.LOGIN }))
 
     return response.data
   } catch (e) {
     console.log(e)
-    return thunkAPI.rejectWithValue('api-error-login-message')
+    return rejectWithValue('api-error-login-message')
   }
 })
