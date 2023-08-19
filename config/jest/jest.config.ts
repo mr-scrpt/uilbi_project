@@ -7,7 +7,7 @@ import path from 'node:path'
 export default {
   globals: {
     __IS_DEV__: true,
-    // __API_URL__: '',
+    __API_URL__: '',
   },
   clearMocks: true,
   testEnvironment: 'jsdom',

@@ -2,8 +2,10 @@ import axios from 'axios'
 import { storageAuthData } from 'shared/lib/storage/LocalStorage'
 
 export const $api = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: __API_URL__,
   headers: {
     authorization: storageAuthData.getItem(),
   },
 })
+
+console.log('authorization', storageAuthData.getItem() || '')

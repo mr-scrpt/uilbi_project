@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import axios from 'axios'
 import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { User, userAction } from 'entity/User'
 import { storageAuthData } from 'shared/lib/storage/LocalStorage'
@@ -12,9 +11,9 @@ export const loginByUserName = createAsyncThunk<
   LoginDataType,
   ThunkConfigType<string>
 >('login/loginByUsername', async (authData, thunkAPI) => {
-  const { rejectWithValue, dispatch } = thunkAPI
+  const { rejectWithValue, dispatch, extra } = thunkAPI
   try {
-    const response = await thunkAPI.extra.api.post<User>('/login', authData)
+    const response = await extra.api.post<User>('/login', authData)
 
     if (!response.data) {
       throw new Error()
