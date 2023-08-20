@@ -20,10 +20,10 @@ export const RenderComopletedComponent = (
 ) => {
   const { route = '/', preloadedState } = options
   return render(
-    <StoreProvider preloadedState={preloadedState as StateSchema}>
-      <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter initialEntries={[route]}>
+      <StoreProvider preloadedState={preloadedState as StateSchema}>
         <I18nextProvider i18n={i18nForTest}>{component}</I18nextProvider>,
-      </MemoryRouter>
-    </StoreProvider>
+      </StoreProvider>
+    </MemoryRouter>
   )
 }
