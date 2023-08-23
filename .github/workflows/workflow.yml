@@ -11,45 +11,45 @@ jobs:
       matrix:
         node-version: [18.x]
 
-    steps:
-      # - uses: actions/checkout@v2
-      # - name: Staring Node.js ${{ matrix.node-version }}
-      #  uses: actions/setup-node@v1
-      #  with:
-      #    node-version: ${{ matrix.node-version }}
-      # - name: install modules
-      #  run: yarn
+    #steps:
+    # - uses: actions/checkout@v2
+    # - name: Staring Node.js ${{ matrix.node-version }}
+    #  uses: actions/setup-node@v1
+    #  with:
+    #    node-version: ${{ matrix.node-version }}
+    # - name: install modules
+    #  run: yarn
 
-      # - name: build production project
-      #   if: always()
-      #   run: yarn build:prod
+    # - name: build production project
+    #   if: always()
+    #   run: yarn build:prod
 
-      # - name: linting typescript
-      #  if: always()
-      #  run: yarn lint:code:check
+    # - name: linting typescript
+    #  if: always()
+    #  run: yarn lint:code:check
 
-      # - name: linting css
-      #   if: always()
-      #   run: yarn lint:style:check
+    # - name: linting css
+    #   if: always()
+    #   run: yarn lint:style:check
 
-      # - name: unit testing
-      #   if: always()
-      #   run: yarn test:unit
+    # - name: unit testing
+    #   if: always()
+    #   run: yarn test:unit
 
-      # - name: build storybook
-      #   if: always()
-      #   run: yarn sb:build
-      #
-      # - name: screenshot testing
-      #   if: always()
-      #   run: yarn test:ui:ci
+    # - name: build storybook
+    #   if: always()
+    #   run: yarn sb:build
+    #
+    # - name: screenshot testing
+    #   if: always()
+    #   run: yarn test:ui:ci
 
-      # - name: Archive code coverage results
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: screen
-      #     path: .loki/
-      # - name: Download a single artifact
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: screen
+    # - name: Archive code coverage results
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: screen
+    #     path: .loki/
+    # - name: Download a single artifact
+    #   uses: actions/download-artifact@v3
+    #   with:
+    #     name: screen
