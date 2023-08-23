@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button } from 'shared/component/Button'
@@ -12,10 +12,14 @@ export const Counter: FC = () => {
   const count = useSelector(getCounterValue)
 
   const dispatch = useAppDispatch()
+
   const increment = () => dispatch(counterAction.increment())
+
   const decrement = () => dispatch(counterAction.decrement())
 
   const { t } = useTranslation()
+  useEffect()
+  i
 
   return (
     <div>

@@ -11,7 +11,7 @@ describe('Counter.test', () => {
     })
 
     const element = container.getElementsByClassName(cls.title)[0]
-    const value = +element.textContent
+    const value = +element.textContent || 0
 
     expect(11).toEqual(value)
   })
@@ -26,7 +26,7 @@ describe('Counter.test', () => {
     const elementIncrement = container.getElementsByClassName(cls.increment)[0]
     await userEvent.click(elementIncrement)
 
-    const value = +element.textContent
+    const value = +element.textContent || 0
     expect(14).toEqual(value)
   })
 
@@ -40,7 +40,7 @@ describe('Counter.test', () => {
     const elementDecrement = container.getElementsByClassName(cls.decrement)[0]
     await userEvent.click(elementDecrement)
 
-    const value = +element.textContent
+    const value = +element.textContent || 0
     expect(12).toEqual(value)
   })
 })
