@@ -7,7 +7,7 @@ describe('getLoginError', () => {
     const state: StateSchemaParital = {
       login: {
         error: 'error',
-      },
+      } as StateSchema['login'],
     }
     expect(getLoginError(state as StateSchema)).toEqual('error')
   })

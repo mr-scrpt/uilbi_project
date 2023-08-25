@@ -1,24 +1,21 @@
-import {
-    PreloadedState,
-  ReducersMapObject,
-  configureStore,
-} from '@reduxjs/toolkit'
+import { PreloadedState, configureStore } from '@reduxjs/toolkit'
 import { $api } from 'shared/api/api'
 
-import { StateSchema } from '../type/state.type'
+import { NavigatorType } from '../type/navigator.type'
+import { ReducerListMapObject, StateSchema } from '../type/state.type'
 import { createReducerManager } from './reducerManager'
 import { rootReducer } from './rootReducer'
 
 export const createStore = (
   preloadedState?: PreloadedState<StateSchema>,
-  asyncReducer?: ReducersMapObject<StateSchema>,
+  asyncReducer?: ReducerListMapObject,
   navigate?: NavigatorType
 ) => {
   const reducerManager = createReducerManager(rootReducer, asyncReducer)
 
-
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    // @ts-ignore
+    reducer: reducerManager.reduce as ReducerListMapObject,
     devTools: __IS_DEV__,
     preloadedState,
 
@@ -33,6 +30,7 @@ export const createStore = (
       }),
   })
 
+  // @ts-ignore
   store.reducerManager = reducerManager
 
   return store

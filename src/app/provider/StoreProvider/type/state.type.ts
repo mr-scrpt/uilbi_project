@@ -22,6 +22,7 @@ export interface StateSchema {
   profile?: ProfileState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
-export type ReducerPartial = DeepPartial<ReducersMapObject<StateSchema>>
+export type ReducerListMapObject = ReducersMapObject<StateSchema>
+export type ReducerPartial = DeepPartial<ReducerListMapObject>
 
 export type StateSchemaKeys = keyof StateSchema

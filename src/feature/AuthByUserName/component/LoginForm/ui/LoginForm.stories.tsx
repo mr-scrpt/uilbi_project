@@ -26,7 +26,7 @@ export const LoginFormMain: Story = {
           password: 'password',
         },
         isLoading: false,
-        error: null,
+        error: '',
       },
     } as StateSchema),
   ],
@@ -59,7 +59,7 @@ export const LoginFormOnSendRequest: Story = {
         },
 
         isLoading: true,
-        error: null,
+        error: '',
       },
     } as StateSchema),
   ],

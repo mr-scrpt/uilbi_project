@@ -1,5 +1,7 @@
+import { DeepPartial } from '@reduxjs/toolkit'
 import { StateSchema, StateSchemaParital } from 'app/provider/StoreProvider'
 
+import { AuthData } from '../../type/auth.data'
 import { getLoginPassword } from './getLoginPassword'
 
 describe('getLoginError', () => {
@@ -7,7 +9,7 @@ describe('getLoginError', () => {
     const state: StateSchemaParital = {
       login: {
         data: { password: 'pass' },
-      },
+      } as StateSchema['login'],
     }
     expect(getLoginPassword(state as StateSchema)).toEqual('pass')
   })

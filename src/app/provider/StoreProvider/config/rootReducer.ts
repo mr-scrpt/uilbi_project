@@ -1,12 +1,11 @@
-import { ReducersMapObject } from '@reduxjs/toolkit'
 import { counterReducer } from 'entity/Counter'
 import { modalReducer } from 'entity/Modal'
 import { userReducer } from 'entity/User'
 
-import { StateSchema } from '../type/state.type'
+import { ReducerListMapObject } from '../type/state.type'
 
 //
-export const rootReducer: ReducersMapObject<StateSchema> = {
+export const rootReducer: ReducerListMapObject = {
   counter: counterReducer,
   user: userReducer,
   modal: modalReducer,
