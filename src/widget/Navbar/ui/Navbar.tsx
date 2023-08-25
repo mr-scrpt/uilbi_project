@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon'
-import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 

@@ -7,5 +7,3 @@ export const $api = axios.create({
     authorization: storageAuthData.getItem(),
   },
 })
-
-console.log('authorization', storageAuthData.getItem() || '')

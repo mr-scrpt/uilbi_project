@@ -7,13 +7,13 @@ describe('getLoginError', () => {
     const state: StateSchemaParital = {
       login: {
         error: 'error',
-      },
+      } as StateSchema['login'],
     }
     expect(getLoginError(state as StateSchema)).toEqual('error')
   })
 
   test('should work with empty state', () => {
     const state: StateSchemaParital = {}
-    expect(getLoginError(state as StateSchema)).toEqual(null)
+    expect(getLoginError(state as StateSchema)).toEqual('')
   })
 })

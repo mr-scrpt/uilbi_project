@@ -20,6 +20,7 @@ const MainPage: FC<MainPageProps> = (props) => {
   const clsMainPage = classNames(cls.mainPage, [className], {})
   const clsInner = classNames(cls.inner)
   const clsTitle = classNames(cls.title)
+
   return (
     <div className={clsMainPage}>
       <div className={clsInner}>
@@ -30,6 +31,7 @@ const MainPage: FC<MainPageProps> = (props) => {
             state={InputStateEnum.ERROR}
             name="test"
           />
+
           <Counter />
           {t('page-main-title')}
 

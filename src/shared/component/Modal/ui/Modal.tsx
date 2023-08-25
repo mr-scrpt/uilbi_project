@@ -15,7 +15,7 @@ import cls from './Modal.module.scss'
 export const Modal: FC<ModalProps> = (props) => {
   const { className, children, isOpen, onClose, inElement, closeByEscape } =
     props
-  const overlay = useRef<HTMLDivElement>()
+  const overlay = useRef<HTMLDivElement>(null)
 
   const [isMounted, setIsMounted] = useState(false)
   useEffect(() => {
@@ -48,7 +48,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const onPressEscape = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== 'Escape') return
-    onClose()
+    onClose?.()
   }
 
   if (!isMounted) return null

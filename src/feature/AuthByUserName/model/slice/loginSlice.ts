@@ -9,7 +9,7 @@ const initialState: AuthState = {
     password: '',
   },
   isLoading: false,
-  error: null,
+  error: '',
 }
 
 export const loginSlice = createSlice({
@@ -26,11 +26,11 @@ export const loginSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(loginByUserName.pending, (state) => {
       state.isLoading = true
-      state.error = null
+      state.error = ''
     })
-    builder.addCase(loginByUserName.fulfilled, (state, action) => {
+    builder.addCase(loginByUserName.fulfilled, (state) => {
       state.isLoading = false
-      state.error = null
+      state.error = ''
       // state.data.username = action.payload.username
       // state.data.password = action.payload.password
     })

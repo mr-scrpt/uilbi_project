@@ -8,5 +8,6 @@ export interface ProfileData {
   currency: CurrencyEnum
   country: CountryEnum
   city: string
-  username: string
+  avatar: string
+  role: string
 }

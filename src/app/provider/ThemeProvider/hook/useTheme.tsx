@@ -8,8 +8,8 @@ export const useTheme = (): UseThemeInterface => {
 
   const themeToggle = () => {
     const themeNew = theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK
-    setTheme(themeNew)
+    setTheme?.(themeNew)
   }
 
-  return { theme, themeToggle }
+  return { theme: theme || ThemeEnum.LIGHT, themeToggle }
 }

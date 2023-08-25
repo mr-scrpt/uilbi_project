@@ -1,1 +1,1 @@
-export type ClassModType = Record<string, string | boolean>
+export type ClassModType = Record<string, string | boolean | undefined>

@@ -35,13 +35,13 @@ describe('Login Slice', () => {
     const state: DeepPartial<AuthState> = data
     const result = loginReducer(state as AuthState, action)
     expect(result).toEqual({
-      error: null,
+      error: '',
       isLoading: true,
     })
   })
 
   test('should be error', () => {
-    const error: null = null
+    const error: string = ''
     const action = {
       type: loginByUserName.rejected.type,
       payload: 'some error',

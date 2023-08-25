@@ -1,31 +1,15 @@
-import {
-  AnyAction,
-  Reducer,
-  ReducersMapObject,
-  combineReducers,
-} from '@reduxjs/toolkit'
+import { AnyAction, Reducer, combineReducers } from '@reduxjs/toolkit'
 
 import { ReducerManagerType } from '../type/reducerManager.type'
 import {
-  ReducerPartial,
+  ReducerListMapObject,
   StateSchema,
   StateSchemaKeys,
 } from '../type/state.type'
 
-// import { PreloadeStateType } from '../type/state.type'
-// import { StateSchema, StateSchemaKeys, listReducer } from './rootReducer'
-
-// type ReducerMap = { [key in keyof PreloadeStateType]: Reducer }
-// // type ReducerMap = Record<keyof PreloadeStateType, Reducer>
-// // type ReducerMap = Record<keyof PreloadeStateType, Reducer>
-
 export function createReducerManager(
-  // initialReducers: ReducersMapObject<PreloadeStateType>
-  // initialReducers: Reducer<CombinedState<PreloadeStateType>>
-  // initialReducers: ReducersMapObject<StateSchema>
-  // initialReducers: ReducerMap
-  initialReducers: ReducersMapObject<StateSchema>,
-  asyncReducer: ReducersMapObject<StateSchema>
+  initialReducers: ReducerListMapObject,
+  asyncReducer?: ReducerListMapObject
 ): ReducerManagerType {
   const reducers = { ...initialReducers }
 
@@ -39,9 +23,6 @@ export function createReducerManager(
     reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
-        // for (let key of keysToRemove) {
-        //   delete state[key]
-        // }
         keysToRemove.forEach((key) => {
           delete state[key]
         })

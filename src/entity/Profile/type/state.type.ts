@@ -1,8 +1,8 @@
 import { ProfileData } from './profile.data'
 
 export interface ProfileState {
-  data: ProfileData
+  data?: ProfileData
   isLoading: boolean
-  error: string
+  error?: string
   readonly: boolean
 }
