@@ -35,7 +35,7 @@ describe('Login Slice', () => {
     const state: DeepPartial<AuthState> = data
     const result = loginReducer(state as AuthState, action)
     expect(result).toEqual({
-      error: null,
+      error: '',
       isLoading: true,
     })
   })

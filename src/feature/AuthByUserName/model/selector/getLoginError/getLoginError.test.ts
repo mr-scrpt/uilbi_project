@@ -14,6 +14,6 @@ describe('getLoginError', () => {
 
   test('should work with empty state', () => {
     const state: StateSchemaParital = {}
-    expect(getLoginError(state as StateSchema)).toEqual(null)
+    expect(getLoginError(state as StateSchema)).toEqual('')
   })
 })
