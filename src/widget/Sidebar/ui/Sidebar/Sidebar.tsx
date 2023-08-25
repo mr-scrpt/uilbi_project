@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react'
+import { memo } from 'react'
 import {
   Button,
   ButtonShapeEnum,
@@ -8,11 +8,9 @@ import { IconEnum } from 'shared/component/Icon'
 import { LinkModeEnum } from 'shared/component/LinkApp'
 import { classNames } from 'shared/lib/classNames'
 import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
-import { SidebarListData } from 'widget/Sidebar/model/sidebarList.data'
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 
 import { SidebarProps } from '../../type/props.type'
-import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu'
 import cls from './Sidebar.module.scss'
 
@@ -52,6 +50,7 @@ export const Sidebar = memo((props: SidebarProps) => {
             icon={IconEnum.BURGER}
           />
         </div>
+
         <SidebarMenu mode={linkMode} className={cls.boxNav} />
 
         {/* <LightIcon onClick={handlerClick} /> */}

@@ -11,7 +11,9 @@ import cls from './Counter.module.scss'
 export const Counter: FC = () => {
   const count = useSelector(getCounterValue)
   const dispatch = useAppDispatch()
+
   const increment = () => dispatch(counterAction.increment())
+
   const decrement = () => dispatch(counterAction.decrement())
 
   const { t } = useTranslation()

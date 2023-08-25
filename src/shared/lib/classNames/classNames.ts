@@ -2,7 +2,7 @@ import { ClassModType } from './type'
 
 export const classNames = (
   classMain: string,
-  classOther: string[] = [],
+  classOther: Array<string | undefined> = [],
   classMod: ClassModType = {}
 ): string =>
   [

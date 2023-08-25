@@ -7,7 +7,7 @@ describe('getLoginError', () => {
     const state: StateSchemaParital = {
       login: {
         isLoading: true,
-      },
+      } as StateSchema['login'],
     }
     expect(getLoginLoading(state as StateSchema)).toEqual(true)
   })

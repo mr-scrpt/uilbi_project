@@ -4,5 +4,5 @@ import { getLoginState } from '../getLoginState/getAuthState'
 
 export const getLoginError = createSelector(
   getLoginState,
-  (login) => login?.error || null
+  (login) => login?.error || ''
 )
