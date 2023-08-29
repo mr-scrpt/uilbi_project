@@ -72,9 +72,9 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
   }, [profile, dispatch, setEditable, setUserData])
 
   const onChangeFirstName = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
+    (value: string) => {
       if (profileToEdit) {
-        dispatch(setUserData({ ...profileToEdit, firstname: e.target.value }))
+        dispatch(setUserData({ ...profileToEdit, firstname: value }))
       }
     },
     [dispatch, setUserData, profileToEdit]

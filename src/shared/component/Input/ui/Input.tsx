@@ -89,6 +89,9 @@ export const Input = memo((props: InputProps) => {
     if (stateDisabled) return
     setStateFocused(false)
   }
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value)
+  }
 
   const currentRef = useRef<HTMLInputElement>(null)
 
@@ -108,7 +111,7 @@ export const Input = memo((props: InputProps) => {
           onMouseLeave={onClearStateHover}
           placeholder={placeholder}
           name={name}
-          onChange={onChange}
+          onChange={onChangeHandler}
           value={value}
           ref={currentRef}
           readOnly={readOnly}

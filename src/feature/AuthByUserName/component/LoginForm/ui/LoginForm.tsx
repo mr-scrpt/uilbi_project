@@ -34,15 +34,15 @@ export const LoginForm = memo((props: LoginFormProps) => {
   const clsLoginForm = classNames(cls.form, [className], {})
 
   const onChangeUserName = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      dispatch(setUserName(e.target.value))
+    (value: string) => {
+      dispatch(setUserName(value))
     },
     [setUserName, dispatch]
   )
 
   const onChangePassword = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      dispatch(setPassword(e.target.value))
+    (value: string) => {
+      dispatch(setPassword(value))
     },
     [setPassword, dispatch]
   )

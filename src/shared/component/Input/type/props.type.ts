@@ -18,7 +18,10 @@ import { InputViewEnum } from './view.enum'
 //   autoFocus?: boolean
 //
 // }
-type HTMLCustomInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
+type HTMLCustomInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'size' | 'onChange'
+>
 
 export interface InputProps extends HTMLCustomInputProps {
   className?: string
@@ -31,4 +34,5 @@ export interface InputProps extends HTMLCustomInputProps {
   // onChangeHandler?: (value: string) => void
   // value?: string
   autoFocus?: boolean
+  onChange?: (value: string) => void
 }
