@@ -89,3 +89,13 @@ export const StateSuccess: Story = {
     placeholder: 'Placeholder S',
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    state: InputStateEnum.SUCCESS,
+    name: 'name',
+    children: 'Text',
+    placeholder: 'Placeholder S',
+    disabled: true,
+  },
+}

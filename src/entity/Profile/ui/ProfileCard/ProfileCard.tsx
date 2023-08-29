@@ -29,7 +29,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             value={profile?.firstname}
             name="firstname"
             readOnly={!isEditable}
-            state={isEditable ? InputStateEnum.NORMAL : InputStateEnum.DISABLED}
+            disabled={!isEditable}
             onChange={onChangeFirstName}
           />
           {/* <Input value={profile?.lastname} name="lastname" /> */}

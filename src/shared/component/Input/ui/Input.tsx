@@ -19,7 +19,6 @@ export const Input = memo((props: InputProps) => {
     mode,
     onChange,
     readOnly,
-    // onChangeHandler,
     value,
     autoFocus,
     disabled,
@@ -33,13 +32,13 @@ export const Input = memo((props: InputProps) => {
 
   useEffect(() => {
     if (
-      state === InputStateEnum.DISABLED ||
+      disabled ||
       state === InputStateEnum.ERROR ||
       state === InputStateEnum.SUCCESS
     ) {
       setStateDisabled(true)
     }
-  }, [state, stateDisabled])
+  }, [state, stateDisabled, disabled])
 
   const clsInput = classNames(cls.input, [className], {
     [cls.view_primary]: view === InputViewEnum.PRIMARY,
@@ -50,9 +49,12 @@ export const Input = memo((props: InputProps) => {
     [cls.size_l]: size === InputSizeEnum.L,
     [cls.size_xl]: size === InputSizeEnum.XL,
 
+    // [cls.state_error]: stateLocal === InputStateEnum.ERROR,
+    // [cls.state_success]: stateLocal === InputStateEnum.SUCCESS,
+    // [cls.state_disabled]: stateLocal === InputStateEnum.DISABLED,
     [cls.state_error]: stateLocal === InputStateEnum.ERROR,
     [cls.state_success]: stateLocal === InputStateEnum.SUCCESS,
-    [cls.state_disabled]: stateLocal === InputStateEnum.DISABLED,
+    [cls.state_disabled]: disabled,
 
     [cls.state_hover]: stateHovered,
     [cls.state_focus]: stateFocused,
@@ -63,36 +65,28 @@ export const Input = memo((props: InputProps) => {
   const clsBox = classNames(cls.box)
   const clsControl = classNames(cls.control)
 
-  // const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   onChangeHandler?.(e.target.value)
-  // }
-
   useEffect(() => {
     setStateLocal(state)
   }, [state])
 
   const onHover = () => {
     if (stateDisabled) return
-    // setStateLocal(InputStateEnum.HOVER)
     setStateHovered(true)
   }
 
   const onClearStateHover = () => {
     if (stateDisabled) return
-    // setStateLocal(null)
     setStateHovered(false)
   }
 
   const onFocus = () => {
     if (stateDisabled) return
-    // setStateLocal(InputStateEnum.FOCUS)
     setStateFocused(true)
     setStateHovered(false)
   }
 
   const onClearStateFocus = () => {
     if (stateDisabled) return
-    // setStateLocal(null)
     setStateFocused(false)
   }
 
@@ -103,7 +97,6 @@ export const Input = memo((props: InputProps) => {
     currentRef.current?.focus()
   }, [autoFocus])
 
-  console.log('state', state)
   return (
     <span className={clsInput}>
       <span className={clsBox}>
@@ -113,13 +106,13 @@ export const Input = memo((props: InputProps) => {
           onBlur={onClearStateFocus}
           onMouseOver={onHover}
           onMouseLeave={onClearStateHover}
-          disabled={state === InputStateEnum.DISABLED}
           placeholder={placeholder}
           name={name}
           onChange={onChange}
           value={value}
           ref={currentRef}
           readOnly={readOnly}
+          disabled={disabled}
           // autoFocus={autoFocus}
         />
       </span>

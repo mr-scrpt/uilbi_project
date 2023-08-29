@@ -3,6 +3,6 @@ export enum InputStateEnum {
   HOVER = 'hover',
   ERROR = 'error',
   SUCCESS = 'success',
-  DISABLED = 'disabled',
+  // DISABLED = 'disabled',
   NORMAL = 'normal',
 }
