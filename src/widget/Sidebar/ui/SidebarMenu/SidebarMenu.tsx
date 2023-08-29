@@ -1,4 +1,6 @@
+import { getUserAuthData } from 'entity/User'
 import { FC, memo } from 'react'
+import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames'
 
 import { SidebarListData } from '../../model/sidebarList.data'
@@ -9,9 +11,10 @@ import cls from './SidebarMenu.module.scss'
 export const SidebarMenu: FC<SidebarMenuProps> = memo(
   (props: SidebarMenuProps) => {
     const { className, mode } = props
+    const isAuth = useSelector(getUserAuthData)
 
     const clsSidebarMenu = classNames(cls.sidebarMenu, [className], {})
-    const SidebarList = SidebarListData(mode)
+    const SidebarList = SidebarListData(mode, !!isAuth)
 
     return (
       <div className={clsSidebarMenu}>

@@ -1,12 +1,13 @@
-import { FC } from 'react'
-import { Input, InputStateEnum } from 'shared/component/Input'
+import { memo } from 'react'
+import { Avatar } from 'shared/component/Avatar'
+import { Input } from 'shared/component/Input'
 import { Loader } from 'shared/component/Loader'
 import { classNames } from 'shared/lib/classNames'
 
 import { ProfileCardProps } from '../../type/props.type'
 import cls from './ProfileCard.module.scss'
 
-export const ProfileCard: FC<ProfileCardProps> = (props) => {
+export const ProfileCard = memo((props: ProfileCardProps) => {
   const {
     className,
     profile,
@@ -25,6 +26,13 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
       {!isLoading && !error && (
         <>
+          {profile?.avatar && (
+            <Avatar
+              className={cls.avatar}
+              source={profile.avatar}
+              title={profile?.lastname || ''}
+            />
+          )}
           <Input
             value={profile?.firstname}
             name="firstname"
@@ -41,4 +49,4 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       )}
     </div>
   )
-}
+})

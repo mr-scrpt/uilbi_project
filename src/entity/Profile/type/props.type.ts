@@ -9,5 +9,5 @@ export interface ProfileCardProps extends HTMLAttributes<HTMLDivElement> {
   error: string
   isEditable: boolean
   // onChangeFirstName: (e: ChangeEvent<HTMLInputElement>) => void
-  onChangeFirstName: (value?: string) => void
+  onChangeFirstName?: (value: string) => void
 }
