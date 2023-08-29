@@ -38,6 +38,9 @@
   "page-main-title": "page-main-title",
   "page-not-found-title": "page-not-found-title",
   "page_not_found_title": "page_not_found_title",
+  "profile-edit-button": "profile-edit-button",
+  "profile-reset-button": "profile-reset-button",
+  "profile-save-button": "profile-save-button",
   "side-bar-toggle": "side-bar-toggle",
   "test-content-to-modal": "test-content-to-modal"
 }

@@ -4,4 +4,5 @@ export enum InputStateEnum {
   ERROR = 'error',
   SUCCESS = 'success',
   DISABLED = 'disabled',
+  NORMAL = 'normal',
 }

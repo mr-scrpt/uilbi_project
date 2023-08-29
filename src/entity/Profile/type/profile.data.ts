@@ -4,9 +4,9 @@ import { CurrencyEnum } from 'shared/const/currency.enum'
 export interface ProfileData {
   firstname: string
   lastname: string
-  age: number
-  currency: CurrencyEnum
-  country: CountryEnum
+  age: number | null
+  currency: CurrencyEnum | null
+  country: CountryEnum | null
   city: string
   avatar: string
   role: string

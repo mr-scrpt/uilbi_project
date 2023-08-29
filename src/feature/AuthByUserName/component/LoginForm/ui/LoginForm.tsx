@@ -1,4 +1,4 @@
-import { SyntheticEvent, memo, useCallback } from 'react'
+import { ChangeEvent, SyntheticEvent, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button } from 'shared/component/Button'
@@ -34,18 +34,24 @@ export const LoginForm = memo((props: LoginFormProps) => {
   const clsLoginForm = classNames(cls.form, [className], {})
 
   const onChangeUserName = useCallback(
-    (username: string) => {
-      dispatch(setUserName(username))
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(setUserName(e.target.value))
     },
     [setUserName, dispatch]
   )
 
   const onChangePassword = useCallback(
-    (password: string) => {
-      dispatch(setPassword(password))
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(setPassword(e.target.value))
     },
     [setPassword, dispatch]
   )
+  // const onChangePassword = useCallback(
+  //   (password: string) => {
+  //     dispatch(setPassword(password))
+  //   },
+  //   [setPassword, dispatch]
+  // )
 
   const onSubmit = useCallback(
     (e: SyntheticEvent) => {
@@ -82,7 +88,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
                 placeholder={t('form-field-input-placeholder-login')}
                 name="login"
                 mode={InputModeEnum.WIDTH_AVAILABLE}
-                onChangeHandler={onChangeUserName}
+                onChange={onChangeUserName}
                 autoFocus={setFocus}
                 value={username}
               />
@@ -98,7 +104,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
                 placeholder={t('form-field-input-placeholder-password')}
                 name="password"
                 mode={InputModeEnum.WIDTH_AVAILABLE}
-                onChangeHandler={onChangePassword}
+                onChange={onChangePassword}
                 value={password}
               />
             </label>

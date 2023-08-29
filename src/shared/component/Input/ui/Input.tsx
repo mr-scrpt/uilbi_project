@@ -17,9 +17,12 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     name,
     mode,
-    onChangeHandler,
+    onChange,
+    readOnly,
+    // onChangeHandler,
     value,
     autoFocus,
+    disabled,
   } = props
 
   const [stateLocal, setStateLocal] = useState(state)
@@ -60,9 +63,9 @@ export const Input = memo((props: InputProps) => {
   const clsBox = classNames(cls.box)
   const clsControl = classNames(cls.control)
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChangeHandler?.(e.target.value)
-  }
+  // const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   onChangeHandler?.(e.target.value)
+  // }
 
   useEffect(() => {
     setStateLocal(state)
@@ -100,6 +103,7 @@ export const Input = memo((props: InputProps) => {
     currentRef.current?.focus()
   }, [autoFocus])
 
+  console.log('state', state)
   return (
     <span className={clsInput}>
       <span className={clsBox}>
@@ -115,6 +119,7 @@ export const Input = memo((props: InputProps) => {
           onChange={onChange}
           value={value}
           ref={currentRef}
+          readOnly={readOnly}
           // autoFocus={autoFocus}
         />
       </span>

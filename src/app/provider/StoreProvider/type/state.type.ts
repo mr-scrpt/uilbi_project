@@ -4,6 +4,7 @@ import { ModalState } from 'entity/Modal'
 import { ProfileState } from 'entity/Profile'
 import { UserState } from 'entity/User'
 import { AuthState } from 'feature/AuthByUserName'
+import { ProfileEditorState } from 'feature/ProfileEditor'
 
 // import { rootReducer } from '../config/rootReducer'
 // import { store } from '../config/store'
@@ -20,6 +21,7 @@ export interface StateSchema {
 
   login?: AuthState
   profile?: ProfileState
+  profileEditor?: ProfileEditorState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
 export type ReducerListMapObject = ReducersMapObject<StateSchema>
