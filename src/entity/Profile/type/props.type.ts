@@ -8,6 +8,8 @@ export interface ProfileCardProps extends HTMLAttributes<HTMLDivElement> {
   isLoading: boolean
   error: string
   isEditable: boolean
+  countryList: string[]
   // onChangeFirstName: (e: ChangeEvent<HTMLInputElement>) => void
   onChangeFirstName?: (value: string) => void
+  onChangeCountry?: (value: string) => void
 }

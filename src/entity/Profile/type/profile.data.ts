@@ -6,7 +6,7 @@ export interface ProfileData {
   lastname?: string
   age?: number | null
   currency?: CurrencyEnum | null
-  country?: CountryEnum | null
+  country?: string
   city?: string
   avatar?: string
   role?: string

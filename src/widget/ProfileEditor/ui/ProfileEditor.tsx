@@ -80,6 +80,16 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
     [dispatch, setUserData, profileToEdit]
   )
 
+  const onChangeCountry = useCallback(
+    (value: string) => {
+      console.log('change select', value)
+      if (profileToEdit) {
+        dispatch(setUserData({ ...profileToEdit, country: value }))
+      }
+    },
+    [dispatch, setUserData, profileToEdit]
+  )
+
   const profileData = profileIsEditable ? profileToEdit : profile
 
   return (
@@ -99,6 +109,7 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
               isLoading={isLoading}
               isEditable={profileIsEditable}
               onChangeFirstName={onChangeFirstName}
+              onChangeCountry={onChangeCountry}
             />
             {profileIsEditable && (
               <EditorBar save={buttonSaveHandler} reset={buttonResetHandler} />

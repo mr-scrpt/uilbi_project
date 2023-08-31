@@ -1,4 +1,5 @@
 import { counterReducer } from 'entity/Counter'
+import { countryReducer } from 'entity/Country'
 import { modalReducer } from 'entity/Modal'
 import { userReducer } from 'entity/User'
 
@@ -9,6 +10,7 @@ export const rootReducer: ReducerListMapObject = {
   counter: counterReducer,
   user: userReducer,
   modal: modalReducer,
+  country: countryReducer,
 }
 //
 // export const rootReducer = combineReducers(listReducer)

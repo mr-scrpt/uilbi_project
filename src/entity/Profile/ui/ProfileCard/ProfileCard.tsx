@@ -1,3 +1,4 @@
+import { CountrySelect } from 'feature/CountrySelect/ui/CountrySelect'
 import { memo } from 'react'
 import { Avatar } from 'shared/component/Avatar'
 import { Input } from 'shared/component/Input'
@@ -15,6 +16,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     error,
     isEditable,
     onChangeFirstName,
+    onChangeCountry,
   } = props
 
   const clsProfile = classNames(cls.profile, [className], {})
@@ -40,6 +42,13 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             disabled={!isEditable}
             onChange={onChangeFirstName}
           />
+          {/* <Select onChange={onChangeCountry} options={countryOptionList} /> */}
+          <CountrySelect
+            disabled={!isEditable}
+            onChange={onChangeCountry}
+            countryCurrent={profile?.country || ''}
+          />
+
           {/* <Input value={profile?.lastname} name="lastname" /> */}
           {/* <Input value={profile?.currency} name="currency" /> */}
           {/* <Input value={profile?.city} name="city" /> */}
