@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLAttributes } from 'react'
+import { HTMLAttributes } from 'react'
 
 import { ProfileData } from './profile.data'
 
@@ -12,4 +12,5 @@ export interface ProfileCardProps extends HTMLAttributes<HTMLDivElement> {
   // onChangeFirstName: (e: ChangeEvent<HTMLInputElement>) => void
   onChangeFirstName?: (value: string) => void
   onChangeCountry?: (value: string) => void
+  onChangeCurrency?: (value: string) => void
 }

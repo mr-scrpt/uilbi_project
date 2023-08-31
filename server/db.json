@@ -29,8 +29,8 @@
     "firstname": "User Firstname",
     "lastname": "User Lastname",
     "age": 22,
-    "currency": "",
-    "country": "UK",
+    "currency": "PLN",
+    "country": "USA",
     "city": "",
     "role": "admin",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
@@ -51,6 +51,24 @@
     {
       "name": "United State America",
       "abb": "USA"
+    }
+  ],
+  "currency": [
+    {
+      "name": "Hrivna",
+      "abb": "UAH"
+    },
+    {
+      "name": "Zlotiy",
+      "abb": "PLN"
+    },
+    {
+      "name": "Pound",
+      "abb": "GBP"
+    },
+    {
+      "name": "Dollar",
+      "abb": "USD"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { CountrySelect } from 'feature/CountrySelect/ui/CountrySelect'
+import { CurrencySelect } from 'feature/CurrencySelect/ui/CurrencySelect'
 import { memo } from 'react'
 import { Avatar } from 'shared/component/Avatar'
 import { Input } from 'shared/component/Input'
@@ -17,6 +18,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     isEditable,
     onChangeFirstName,
     onChangeCountry,
+    onChangeCurrency,
   } = props
 
   const clsProfile = classNames(cls.profile, [className], {})
@@ -26,13 +28,13 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
       {isLoading && <Loader />}
       {error && <div>{error}</div>}
 
-      {!isLoading && !error && (
+      {!isLoading && !error && profile && (
         <>
           {profile?.avatar && (
             <Avatar
               className={cls.avatar}
               source={profile.avatar}
-              title={profile?.lastname || ''}
+              title={profile.lastname || ''}
             />
           )}
           <Input
@@ -46,14 +48,13 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           <CountrySelect
             disabled={!isEditable}
             onChange={onChangeCountry}
-            countryCurrent={profile?.country || ''}
+            value={profile.country || ''}
           />
-
-          {/* <Input value={profile?.lastname} name="lastname" /> */}
-          {/* <Input value={profile?.currency} name="currency" /> */}
-          {/* <Input value={profile?.city} name="city" /> */}
-          {/* <Input value={profile?.avatar} name="avatar" /> */}
-          {/* <Input value={profile?.role} name="role" /> */}
+          <CurrencySelect
+            disabled={!isEditable}
+            onChange={onChangeCurrency}
+            value={profile.currency || ''}
+          />
         </>
       )}
     </div>

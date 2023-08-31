@@ -7,7 +7,7 @@ const initialState: ProfileEditorState = {
     firstname: '',
     lastname: '',
     age: null,
-    currency: null,
+    currency: '',
     country: '',
     city: '',
     avatar: '',

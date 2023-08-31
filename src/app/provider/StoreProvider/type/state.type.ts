@@ -1,6 +1,7 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'
+import { CurrencyState } from 'entity/Currency/type/state.type'
 import { ModalState } from 'entity/Modal'
 import { ProfileState } from 'entity/Profile'
 import { UserState } from 'entity/User'
@@ -20,6 +21,7 @@ export interface StateSchema {
   user: UserState
   modal: ModalState
   country: CountryState
+  currency: CurrencyState
 
   login?: AuthState
   profile?: ProfileState

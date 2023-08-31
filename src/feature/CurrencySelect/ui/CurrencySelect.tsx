@@ -1,23 +1,23 @@
-import { fetchCountryData, selector } from 'entity/Country'
-import { FC, memo, useEffect, useMemo, useState } from 'react'
+import { fetchCurrencyData, selector } from 'entity/Currency'
+import { memo, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Loader } from 'shared/component/Loader'
 import { Select } from 'shared/component/Select'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
-import { CountrySelectProps } from '../type/props.type'
-import cls from './CountrySelect.module.scss'
+import { CurrencySelectProps } from '../type/props.type'
+import cls from './CurrencySelect.module.scss'
 
-export const CountrySelect = memo((props: CountrySelectProps) => {
+export const CurrencySelect = memo((props: CurrencySelectProps) => {
   const { className, disabled, onChange, value } = props
 
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(fetchCountryData())
+    dispatch(fetchCurrencyData())
   }, [dispatch])
 
-  const { data, isLoading, error } = useSelector(selector.getCountryData)
+  const { data, isLoading, error } = useSelector(selector.getCurrencyData)
   const optionsList = useMemo(() => {
     if (data) {
       return data.map((country) => ({

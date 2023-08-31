@@ -11,7 +11,7 @@ import {
   profileEditorAction,
   profileEditorReducer,
 } from 'feature/ProfileEditor/model/slice/profileEditorSlice'
-import { ChangeEvent, FC, useCallback, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button } from 'shared/component/Button'
@@ -82,9 +82,16 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
 
   const onChangeCountry = useCallback(
     (value: string) => {
-      console.log('change select', value)
       if (profileToEdit) {
         dispatch(setUserData({ ...profileToEdit, country: value }))
+      }
+    },
+    [dispatch, setUserData, profileToEdit]
+  )
+  const onChangeCurrency = useCallback(
+    (value: string) => {
+      if (profileToEdit) {
+        dispatch(setUserData({ ...profileToEdit, currency: value }))
       }
     },
     [dispatch, setUserData, profileToEdit]
@@ -110,6 +117,7 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
               isEditable={profileIsEditable}
               onChangeFirstName={onChangeFirstName}
               onChangeCountry={onChangeCountry}
+              onChangeCurrency={onChangeCurrency}
             />
             {profileIsEditable && (
               <EditorBar save={buttonSaveHandler} reset={buttonResetHandler} />
