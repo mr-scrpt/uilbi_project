@@ -24,7 +24,6 @@ export const currencySlice = createSlice({
       (state, action: PayloadAction<CountryData[]>) => {
         state.isLoading = false
         state.error = undefined
-        console.log('payload', action.payload)
 
         state.data = action.payload
       }

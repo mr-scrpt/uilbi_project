@@ -1,5 +1,6 @@
 import {
   ProfileCard,
+  ProfileData,
   fetchProfileData,
   profileReducer,
   selector as selectorProfile,
@@ -7,6 +8,8 @@ import {
 } from 'entity/Profile'
 import { EditorBar } from 'feature/EditorBar'
 import { selector as selectorProfileEditor } from 'feature/ProfileEditor'
+import { getProfileEditorErrors } from 'feature/ProfileEditor/model/selector'
+import { validateProfileEditorData } from 'feature/ProfileEditor/model/service/validateProfileEditorData'
 import {
   profileEditorAction,
   profileEditorReducer,
@@ -38,6 +41,7 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
   const profileIsEditable = useSelector(
     selectorProfileEditor.getProfileEditorEditable
   )
+  const validateErrors = useSelector(getProfileEditorErrors)
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -57,12 +61,24 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
     }
   }, [dispatch, setEditable, setUserData, profile])
 
-  const buttonSaveHandler = useCallback(() => {
+  const buttonSaveHandler = useCallback(async () => {
     if (profileToEdit) {
-      dispatch(updateProfileData(profileToEdit))
-      dispatch(setEditable(false))
+      const res = await dispatch(validateProfileEditorData(profileToEdit))
+      console.log('res!!', res)
+      console.log('$$before if validateErrors =>>>', validateErrors)
+      if (!validateErrors) {
+        console.log('$$in validateErrors =>>>', validateErrors)
+        await dispatch(updateProfileData(profileToEdit))
+        dispatch(setEditable(false))
+      }
+      // if (res && !validateErrors) {
+      //   console.log('$$in validateErrors =>>>', validateErrors)
+      //   await dispatch(updateProfileData(profileToEdit))
+      //   dispatch(setEditable(false))
+      // }
     }
-  }, [profileToEdit, dispatch, setEditable])
+  }, [profileToEdit, dispatch, setEditable, validateErrors])
+  console.log('validateErrors after =>>>', validateErrors)
 
   const buttonResetHandler = useCallback(() => {
     if (profile) {
@@ -97,6 +113,12 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
     [dispatch, setUserData, profileToEdit]
   )
 
+  // const onSubmit = useCallback(() => {
+  //   if (profileToEdit) {
+  //     dispatch(validateProfileEditorData(profileToEdit))
+  //   }
+  // }, [dispatch, profileToEdit])
+
   const profileData = profileIsEditable ? profileToEdit : profile
 
   return (
@@ -120,7 +142,11 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
               onChangeCurrency={onChangeCurrency}
             />
             {profileIsEditable && (
-              <EditorBar save={buttonSaveHandler} reset={buttonResetHandler} />
+              <EditorBar
+                save={buttonSaveHandler}
+                reset={buttonResetHandler}
+                // onSubmit={onSubmit}
+              />
             )}
           </>
         )}

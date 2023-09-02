@@ -14862,6 +14862,7 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^4.9.5
     typescript-plugin-css-modules: ^5.0.1
+    valibot: ^0.13.1
     webpack: ^5.88.2
     webpack-bundle-analyzer: ^4.9.0
     webpack-cli: ^5.1.4
@@ -18234,6 +18235,13 @@ react-dom@latest:
     "@types/istanbul-lib-coverage": ^2.0.1
     convert-source-map: ^1.6.0
   checksum: 2069d59ee46cf8d83b4adfd8a5c1a90834caffa9f675e4360f1157ffc8578ef0f763c8f32d128334424159bb6b01f3876acd39cd13297b2769405a9da241f8d1
+  languageName: node
+  linkType: hard
+
+"valibot@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "valibot@npm:0.13.1"
+  checksum: f7c8a1b6dbd2b0cd1a200bfa6d85e5ce0bae3a723e1a691ac89fead3579af5561762a37563b27d9cf22c281b99890dea7cebab47ea579d4d9e1ba47e63b56e32
   languageName: node
   linkType: hard
 

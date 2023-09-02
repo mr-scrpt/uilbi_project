@@ -8,7 +8,7 @@ export const Select = memo((props: SelectProps) => {
   const { className, options, value, onChange, disabled } = props
 
   const clsSelect = classNames(cls.select, [className], {})
-  console.log('value in select', value)
+  // console.log('value in select', value)
 
   const optionsList = useMemo(
     () =>
