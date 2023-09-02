@@ -30,7 +30,7 @@ import cls from './ProfileEditor.module.scss'
 export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
   const { className } = props
   const dispatch = useAppDispatch()
-  const { setUserData, setEditable } = profileEditorAction
+  const { setUserData, setEditable, validateData } = profileEditorAction
   const { t } = useTranslation('profile_editor')
 
   const profile = useSelector(selectorProfile.getProfileData)
@@ -63,8 +63,9 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
 
   const buttonSaveHandler = useCallback(async () => {
     if (profileToEdit) {
-      const res = await dispatch(validateProfileEditorData(profileToEdit))
-      console.log('res!!', res)
+      // await dispatch(validateProfileEditorData(profileToEdit))
+      const res = dispatch(validateData(profileToEdit))
+      console.log('res=>>>>>', res)
       console.log('$$before if validateErrors =>>>', validateErrors)
       if (!validateErrors) {
         console.log('$$in validateErrors =>>>', validateErrors)
