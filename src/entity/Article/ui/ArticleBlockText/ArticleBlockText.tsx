@@ -14,7 +14,7 @@ export const ArticleBlockText = memo((props: ArticleBlockTextProps) => {
       {block.title && <Title>{block.title}</Title>}
 
       {block.paragraphs.map((p) => (
-        <p>{p}</p>
+        <p key={p}>{p}</p>
       ))}
     </div>
   )

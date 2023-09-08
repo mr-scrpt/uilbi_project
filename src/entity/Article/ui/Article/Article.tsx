@@ -45,6 +45,7 @@ export const Article = memo((props: ArticleProps) => {
   const reducers: ReducerList = {
     article: articleReducer,
   }
+
   const blockCollection = {
     [ArticleBlockVariantEnum.CODE]: useCallback(
       (block: ArticleBlockVariantType) => (
@@ -70,7 +71,7 @@ export const Article = memo((props: ArticleProps) => {
     const RenderBlock = blockCollection[block.variant]
 
     if (RenderBlock) {
-      return RenderBlock(block)
+      return <div key={block.id}>{RenderBlock(block)}</div>
     }
 
     return null
@@ -111,7 +112,11 @@ export const Article = memo((props: ArticleProps) => {
             <div className={cls.rowData}>{articleData.createdAt}</div>
           </div>
         </div>
-        <div className="content">{articleData?.blocks.map(renderBlock)}</div>
+        <div className="content">
+          {articleData?.blocks?.map((block) => (
+            <div key={block.id}>{renderBlock(block)}</div>
+          ))}
+        </div>
       </>
     )
   }
