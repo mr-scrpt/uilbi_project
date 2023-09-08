@@ -13,4 +13,5 @@ export interface ProfileCardProps extends HTMLAttributes<HTMLDivElement> {
   onChangeFirstName?: (value: string) => void
   onChangeCountry?: (value: string) => void
   onChangeCurrency?: (value: string) => void
+  errorFirstName: string[] | null
 }

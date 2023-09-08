@@ -1,35 +1,50 @@
 import { getUserAuthData } from 'entity/User'
-import { Suspense, memo, useMemo } from 'react'
+import { Suspense, memo, useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from 'shared/config/configRouter/configRouter'
+import {
+  AppRouterProps,
+  routeConfig,
+} from 'shared/config/configRouter/configRouter'
 import { LoaderContent } from 'widget/LoaderContent'
 
 import { RouterProps } from '../type/props.type'
+import { AuthRoute } from './AuthRoute'
 
 export const AppRouter = memo((props: RouterProps) => {
   const { className } = props
-  const isAuth = useSelector(getUserAuthData)
+  // const isAuth = useSelector(getUserAuthData)
+  //
+  // const routes = useMemo(
+  //   () =>
+  //     Object.values(routeConfig).filter((route) => {
+  //       if (route.authOnly && !isAuth) {
+  //         return false
+  //       }
+  //       return true
+  //     }),
+  //   [isAuth]
+  // )
+  const routeWrapper = useCallback((route: AppRouterProps) => {
+    const elem = (
+      <Suspense fallback={<LoaderContent />}>{route.element}</Suspense>
+    )
 
-  const routes = useMemo(
-    () =>
-      Object.values(routeConfig).filter((route) => {
-        if (route.authOnly && !isAuth) {
-          return false
-        }
-        return true
-      }),
-    [isAuth]
-  )
+    console.log('path', route.path)
+    return (
+      <Route
+        key={route.path}
+        path={route.path}
+        element={route.authOnly ? <AuthRoute>{elem}</AuthRoute> : elem}
+      />
+    )
+  }, [])
+  console.log('routeConfig', routeConfig)
 
   return (
     <div className={className}>
       <Suspense fallback={<LoaderContent />}>
-        <Routes>
-          {routes.map(({ element, path }) => (
-            <Route key={path?.toString()} path={path} element={element} />
-          ))}
-        </Routes>
+        <Routes>{Object.values(routeConfig).map(routeWrapper)}</Routes>
       </Suspense>
     </div>
   )

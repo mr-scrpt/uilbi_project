@@ -19,9 +19,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeFirstName,
     onChangeCountry,
     onChangeCurrency,
+    errorFirstName,
   } = props
 
   const clsProfile = classNames(cls.profile, [className], {})
+  console.log('error in card', errorFirstName)
 
   return (
     <div className={clsProfile}>
@@ -44,6 +46,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             disabled={!isEditable}
             onChange={onChangeFirstName}
           />
+          {errorFirstName && errorFirstName.map((item) => <div>{item}</div>)}
           {/* <Select onChange={onChangeCountry} options={countryOptionList} /> */}
           <CountrySelect
             disabled={!isEditable}

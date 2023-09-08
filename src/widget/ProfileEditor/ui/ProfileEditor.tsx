@@ -9,6 +9,7 @@ import {
 import { EditorBar } from 'feature/EditorBar'
 import { selector as selectorProfileEditor } from 'feature/ProfileEditor'
 import { getProfileEditorErrors } from 'feature/ProfileEditor/model/selector'
+import { validateAndUpdateProfileData } from 'feature/ProfileEditor/model/service/validateAndUpdateProfile'
 import { validateProfileEditorData } from 'feature/ProfileEditor/model/service/validateProfileEditorData'
 import {
   profileEditorAction,
@@ -63,22 +64,10 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
 
   const buttonSaveHandler = useCallback(async () => {
     if (profileToEdit) {
-      const res = await dispatch(validateProfileEditorData(profileToEdit))
-      console.log('res!!', res)
-      console.log('$$before if validateErrors =>>>', validateErrors)
-      if (!validateErrors) {
-        console.log('$$in validateErrors =>>>', validateErrors)
-        await dispatch(updateProfileData(profileToEdit))
-        dispatch(setEditable(false))
-      }
-      // if (res && !validateErrors) {
-      //   console.log('$$in validateErrors =>>>', validateErrors)
-      //   await dispatch(updateProfileData(profileToEdit))
-      //   dispatch(setEditable(false))
-      // }
+      dispatch(validateAndUpdateProfileData(profileToEdit))
+      // dispatch(setEditable(false))
     }
-  }, [profileToEdit, dispatch, setEditable, validateErrors])
-  console.log('validateErrors after =>>>', validateErrors)
+  }, [profileToEdit, dispatch])
 
   const buttonResetHandler = useCallback(() => {
     if (profile) {
@@ -131,6 +120,7 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
             <Button onClick={buttonEditHandler} disabled={profileIsEditable}>
               {t('profile-edit-button')}
             </Button>
+            {validateErrors?.firstname}
             <ProfileCard
               className={clsProfileEditor}
               profile={profileData}
@@ -140,6 +130,7 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
               onChangeFirstName={onChangeFirstName}
               onChangeCountry={onChangeCountry}
               onChangeCurrency={onChangeCurrency}
+              errorFirstName={validateErrors?.firstname}
             />
             {profileIsEditable && (
               <EditorBar

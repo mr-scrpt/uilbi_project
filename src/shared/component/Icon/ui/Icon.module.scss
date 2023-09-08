@@ -83,4 +83,19 @@
     -webkit-mask-image: url('../../../asset/icon/icon-profile.svg');
     mask-image: url('../../../asset/icon/icon-profile.svg');
   }
+
+  &_feed {
+    -webkit-mask-image: url('../../../asset/icon/icon-feed.svg');
+    mask-image: url('../../../asset/icon/icon-feed.svg');
+  }
+}
+
+.icon.icon_eye {
+  -webkit-mask-image: url('../../../asset/icon/icon-eye.svg');
+  mask-image: url('../../../asset/icon/icon-eye.svg');
+}
+
+.icon.icon_calendar {
+  -webkit-mask-image: url('../../../asset/icon/icon-calendar.svg');
+  mask-image: url('../../../asset/icon/icon-calendar.svg');
 }

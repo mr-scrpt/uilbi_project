@@ -1,7 +1,8 @@
 import { useTheme } from 'app/provider/ThemeProvider'
-import { userAction } from 'entity/User'
+import { getUserIsInited, userAction } from 'entity/User'
 import { LoginModal } from 'feature/AuthByUserName'
 import { Suspense, useCallback, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { Navbar } from 'widget/Navbar'
@@ -14,6 +15,7 @@ import clsTheme from './style/theme/index.module.scss'
 
 function App() {
   const { theme } = useTheme()
+  const isInitedUser = useSelector(getUserIsInited)
 
   const [collapsed, setCollapsed] = useState(false)
 
@@ -39,22 +41,24 @@ function App() {
 
   return (
     <div className={clsApp}>
-      <Suspense fallback="transslation">
-        <LoginModal />
+      {isInitedUser && (
+        <Suspense fallback="transslation">
+          <LoginModal />
 
-        <div className={cls.inner}>
-          <Navbar className={cls.boxNavbar} />
-          <div className={cls.boxMain}>
-            <Sidebar
-              className={clsSidebar}
-              collapsed={collapsed}
-              toggleHandler={toggleHandler}
-            />
-            <AppRouter className={cls.boxContent} />
+          <div className={cls.inner}>
+            <Navbar className={cls.boxNavbar} />
+            <div className={cls.boxMain}>
+              <Sidebar
+                className={clsSidebar}
+                collapsed={collapsed}
+                toggleHandler={toggleHandler}
+              />
+              <AppRouter className={cls.boxContent} />
+            </div>
+            <div className={cls.boxFooter}></div>
           </div>
-          <div className={cls.boxFooter}></div>
-        </div>
-      </Suspense>
+        </Suspense>
+      )}
     </div>
   )
 }

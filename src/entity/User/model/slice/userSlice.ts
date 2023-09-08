@@ -3,7 +3,9 @@ import { User } from 'entity/User'
 import { UserState } from 'entity/User/type/state.type'
 import { storageAuthData } from 'shared/lib/storage/LocalStorage'
 
-const initialState: UserState = {}
+const initialState: UserState = {
+  _inited: false,
+}
 
 export const userSlice = createSlice({
   name: 'user',
@@ -14,12 +16,16 @@ export const userSlice = createSlice({
     },
     initAuth: (state) => {
       const user = storageAuthData.getItem()
+      console.log('user', user)
+
       if (user) {
         state.authData = user
       }
+      state._inited = true
     },
     logout: (state) => {
       state.authData = undefined
+      // state._inited = false
       storageAuthData.removeItem()
     },
   },

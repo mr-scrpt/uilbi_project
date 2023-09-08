@@ -1,4 +1,5 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
+import { ArticleState } from 'entity/Article'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'
 import { CurrencyState } from 'entity/Currency/type/state.type'
@@ -26,6 +27,7 @@ export interface StateSchema {
   login?: AuthState
   profile?: ProfileState
   profileEditor?: ProfileEditorState
+  article?: ArticleState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
 export type ReducerListMapObject = ReducersMapObject<StateSchema>

@@ -25,9 +25,11 @@ export const profileEditorSlice = createSlice({
   reducers: {
     setUserData: (state, action: PayloadAction<ProfileData>) => {
       state.data = action.payload
+      state.validationErrors = null
     },
     setEditable: (state, action: PayloadAction<boolean>) => {
       state.editable = action.payload
+      state.validationErrors = null
     },
   },
   extraReducers: (builder) => {

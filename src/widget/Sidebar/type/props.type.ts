@@ -1,7 +1,6 @@
 import { HTMLAttributes } from 'react'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkModeEnum } from 'shared/component/LinkApp'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
 
 export interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
@@ -11,7 +10,7 @@ export interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
 
 export interface SidebarItemProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
-  to: keyof typeof RoutePath
+  to: string
   icon: IconEnum
   text: string
   mode: LinkModeEnum

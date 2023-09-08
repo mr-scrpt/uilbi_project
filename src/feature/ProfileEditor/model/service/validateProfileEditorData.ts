@@ -9,7 +9,7 @@ export const validateProfileEditorData = createAsyncThunk<
   null,
   ProfileData,
   ThunkConfigType<ProfileEditorValidateType>
->('profileEditor/validateData', async (data, thunkAPI) => {
+>('profileEditor/validateAndUpdateData', async (data, thunkAPI) => {
   const { rejectWithValue } = thunkAPI
   try {
     parse(ProfileValidateSchema, data)

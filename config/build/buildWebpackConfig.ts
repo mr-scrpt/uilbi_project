@@ -1,4 +1,5 @@
 import { Configuration } from 'webpack'
+
 import { buildDevServer } from './buildDevServer'
 import { buildLoader } from './buildLoader'
 import { buildPlugin } from './buildPlugin'
@@ -14,6 +15,7 @@ export const buildWebpackConfig = (buildOption: BuildOption): Configuration => {
       filename: '[name].[contenthash].js',
       path: appPath.build,
       clean: true,
+      publicPath: '/',
     },
     plugins: buildPlugin(buildOption),
     module: {

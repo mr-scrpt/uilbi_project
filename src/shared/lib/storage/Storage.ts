@@ -11,11 +11,13 @@ export class StoregeFabric implements StorageCustomType {
   }
 
   setItem(value: any): void {
+    console.log('set item to storage')
     this.storage.setItem(this.key, JSON.stringify(value))
   }
 
   getItem(): any {
     const item = this.storage.getItem(this.key)
+    console.log('====>>get item', item)
     return item ? JSON.parse(item) : null
   }
 

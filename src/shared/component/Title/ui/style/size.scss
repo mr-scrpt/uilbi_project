@@ -14,8 +14,8 @@
 /* Size M */
 .size_m {
   .text {
-    font-size: calc(var(--font-size-m) * var(--title-scale-up-150));
-    line-height: calc(var(--font-line-m) * var(--title-scale-up-150));
+    font-size: calc(var(--font-size-m) * var(--title-scale-up-100));
+    line-height: calc(var(--font-line-m) * var(--title-scale-up-100));
   }
 }
 
@@ -25,7 +25,7 @@
 .size_l {
   .text {
     font-size: calc(var(--font-size-l) * var(--title-scale-up-150));
-    line-height: calc(var(--font-line-l) * var(--title-scale-up-150));
+    line-height: calc(var(--font-line-l) * var(--title-scale-up-100));
   }
 }
 
@@ -35,7 +35,7 @@
 .size_xl {
   .text {
     font-size: calc(var(--font-size-xl) * var(--title-scale-up-150));
-    line-height: calc(var(--font-line-xl) * var(--title-scale-up-150));
+    line-height: calc(var(--font-line-xl) * var(--title-scale-up-100));
   }
 }
 
