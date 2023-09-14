@@ -10,7 +10,10 @@ export const updateProfileData = createAsyncThunk<
 >('profile/updataUpdateData', async (data, thunkAPI) => {
   const { rejectWithValue, extra } = thunkAPI
   try {
-    const response = await extra.api.put<ProfileData>('/profile', data)
+    const response = await extra.api.put<ProfileData>(
+      `/profile/${data.id}`,
+      data
+    )
 
     if (!response.data) {
       throw new Error()

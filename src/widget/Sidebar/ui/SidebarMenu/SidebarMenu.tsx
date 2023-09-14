@@ -14,7 +14,7 @@ export const SidebarMenu: FC<SidebarMenuProps> = memo(
     const isAuth = useSelector(getUserAuthData)
 
     const clsSidebarMenu = classNames(cls.sidebarMenu, [className], {})
-    const SidebarList = SidebarListData(mode, !!isAuth)
+    const SidebarList = SidebarListData(mode, !!isAuth, isAuth?.id)
 
     return (
       <div className={clsSidebarMenu}>

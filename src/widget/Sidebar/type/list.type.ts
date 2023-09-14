@@ -4,5 +4,6 @@ import { SidebarItemProps } from './props.type'
 
 export type SidebarListType = (
   mode: LinkModeEnum,
-  authOnly: boolean
+  authOnly: boolean,
+  userId: string | undefined
 ) => SidebarItemProps[]

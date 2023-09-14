@@ -6,6 +6,7 @@ import { validateProfileEditorData } from '../service/validateProfileEditorData'
 
 const initialState: ProfileEditorState = {
   data: {
+    id: '',
     firstname: '',
     lastname: '',
     age: null,

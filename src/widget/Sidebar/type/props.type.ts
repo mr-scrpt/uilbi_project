@@ -19,4 +19,5 @@ export interface SidebarItemProps extends HTMLAttributes<HTMLDivElement> {
 export interface SidebarMenuProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   mode: LinkModeEnum
+  // userId: string
 }

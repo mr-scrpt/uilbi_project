@@ -23,7 +23,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   } = props
 
   const clsProfile = classNames(cls.profile, [className], {})
-  console.log('error in card', errorFirstName)
 
   return (
     <div className={clsProfile}>

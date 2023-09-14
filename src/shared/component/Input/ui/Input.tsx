@@ -109,9 +109,9 @@ export const Input = memo((props: InputProps) => {
           onBlur={onClearStateFocus}
           onMouseOver={onHover}
           onMouseLeave={onClearStateHover}
+          onChange={onChangeHandler}
           placeholder={placeholder}
           name={name}
-          onChange={onChangeHandler}
           value={value}
           ref={currentRef}
           readOnly={readOnly}

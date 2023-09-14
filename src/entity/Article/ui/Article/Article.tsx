@@ -1,5 +1,4 @@
 import { memo, useCallback, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Icon, IconEnum } from 'shared/component/Icon'
 import { Img } from 'shared/component/Img'
@@ -30,7 +29,6 @@ import cls from './Article.module.scss'
 
 export const Article = memo((props: ArticleProps) => {
   const { className, articleId } = props
-  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const articleData = useSelector(getArticleData)
   const articleError = useSelector(getArticleError)

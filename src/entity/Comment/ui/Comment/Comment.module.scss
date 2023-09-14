@@ -1,0 +1,34 @@
+.comment {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  padding: 10px;
+
+  background-color: var(--color-primary-inverted);
+}
+.avatar {
+  overflow: hidden;
+
+  width: 80px;
+  height: 80px;
+
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.author {
+  width: 100%;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.text {
+  width: 100%;
+  color: var(--color-primary);
+}

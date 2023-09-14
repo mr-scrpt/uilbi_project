@@ -1,0 +1,16 @@
+.commentCreator {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.button {
+  align-self: flex-end;
+}

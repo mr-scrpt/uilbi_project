@@ -1,6 +1,4 @@
-import { getUserAuthData } from 'entity/User'
-import { Suspense, memo, useCallback, useMemo } from 'react'
-import { useSelector } from 'react-redux'
+import { Suspense, memo, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import {
   AppRouterProps,

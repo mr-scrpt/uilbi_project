@@ -1,0 +1,13 @@
+.commentArticleList {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  align-self: flex-end;
+}

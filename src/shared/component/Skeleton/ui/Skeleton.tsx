@@ -5,7 +5,7 @@ import { SkeletonProps } from '../type/props.type'
 import cls from './Skeleton.module.scss'
 
 export const Skeleton: FC<SkeletonProps> = (props) => {
-  const { className, height, width, maxWidth } = props
+  const { className, height, width, maxWidth, children } = props
 
   const clsSkeleton = classNames(cls.skeleton, [className], {})
 
@@ -14,5 +14,9 @@ export const Skeleton: FC<SkeletonProps> = (props) => {
     height,
     maxWidth,
   }
-  return <div className={clsSkeleton} style={styleLine}></div>
+  return (
+    <div className={clsSkeleton} style={styleLine}>
+      {children}
+    </div>
+  )
 }

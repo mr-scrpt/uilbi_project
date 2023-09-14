@@ -21,7 +21,7 @@ export enum RouteApp {
 export const RoutePath: Record<RouteApp, string> = {
   [RouteApp.MAIN]: '/',
   [RouteApp.ABOUT]: '/about',
-  [RouteApp.PROFILE]: '/profile',
+  [RouteApp.PROFILE]: '/profile/',
   [RouteApp.ARTICLE_FEED]: '/article_feed',
   [RouteApp.ARTICLE]: '/article_feed/', // + id
 
@@ -43,7 +43,7 @@ export const routeConfig: Record<RouteApp, AppRouterProps> = {
     element: <NotFoundPage />,
   },
   [RouteApp.PROFILE]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

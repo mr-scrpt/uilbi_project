@@ -1,16 +1,13 @@
 import {
   ProfileCard,
-  ProfileData,
   fetchProfileData,
   profileReducer,
   selector as selectorProfile,
-  updateProfileData,
 } from 'entity/Profile'
 import { EditorBar } from 'feature/EditorBar'
 import { selector as selectorProfileEditor } from 'feature/ProfileEditor'
 import { getProfileEditorErrors } from 'feature/ProfileEditor/model/selector'
 import { validateAndUpdateProfileData } from 'feature/ProfileEditor/model/service/validateAndUpdateProfile'
-import { validateProfileEditorData } from 'feature/ProfileEditor/model/service/validateProfileEditorData'
 import {
   profileEditorAction,
   profileEditorReducer,
@@ -18,6 +15,7 @@ import {
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { Button } from 'shared/component/Button'
 import { Loader } from 'shared/component/Loader'
 import { classNames } from 'shared/lib/classNames'
@@ -43,10 +41,13 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
     selectorProfileEditor.getProfileEditorEditable
   )
   const validateErrors = useSelector(getProfileEditorErrors)
+  const { id } = useParams<{ id: string }>()
 
   useEffect(() => {
-    dispatch(fetchProfileData())
-  }, [dispatch])
+    if (id) {
+      dispatch(fetchProfileData(id))
+    }
+  }, [dispatch, id])
 
   const componentReducerList: ReducerList = {
     profile: profileReducer,

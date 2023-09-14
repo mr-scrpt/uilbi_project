@@ -1,0 +1,24 @@
+.commentList {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+}
