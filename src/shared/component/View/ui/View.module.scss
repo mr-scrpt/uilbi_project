@@ -1,0 +1,16 @@
+.view {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background: var(--color-attantion-400);
+}

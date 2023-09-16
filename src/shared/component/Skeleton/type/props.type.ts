@@ -6,4 +6,5 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   maxWidth?: number | string
   height?: number | string
   maxHeight?: number | string
+  borderRadius?: number | string
 }

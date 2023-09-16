@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { memo } from 'react'
 import { Icon } from 'shared/component/Icon'
 import { classNames } from 'shared/lib/classNames'
 
@@ -20,7 +20,7 @@ export const Button = memo((props: ButtonProps) => {
     icon,
     iconPosition = ButtonIconPositionEnum.LEFT,
     disabled,
-    ...etc
+    ...rest
   } = props
 
   const clsButton = classNames(cls.button, [className], {
@@ -51,7 +51,7 @@ export const Button = memo((props: ButtonProps) => {
   const clsIconButton = classNames(cls.icon, [classIcon])
 
   return (
-    <button type="button" className={clsButton} {...etc} disabled={disabled}>
+    <button type="button" className={clsButton} disabled={disabled} {...rest}>
       {icon && iconPosition === ButtonIconPositionEnum.LEFT && (
         <Icon className={clsIconButton} icon={icon} />
       )}

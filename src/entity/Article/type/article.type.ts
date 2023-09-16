@@ -1,3 +1,5 @@
+import { User } from 'entity/User'
+
 export enum ArticleBlockVariantEnum {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
@@ -39,6 +41,7 @@ export enum ArticleTagEnum {
 
 export interface IArticle {
   id: string
+  user: User
   title: string
   subtitle: string
   img: string

@@ -1,7 +1,7 @@
 import { Skeleton } from 'shared/component/Skeleton'
 import { classNames } from 'shared/lib/classNames'
 
-import cls from './CommentSkeleton.module.scss'
+import cls from './Skeleton.module.scss'
 
 export const CommentSkeleton = () => {
   const clsCommentskeleton = classNames(cls.comment)
