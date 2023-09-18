@@ -25,7 +25,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   const clsCard = classNames(cls.card, [className], {})
 
-  const [isHover, bindHover] = useHover()
+  const [_, bindHover] = useHover()
 
   const { t } = useTranslation()
 
@@ -80,7 +80,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <div
         className={cls.inner}
         onClick={onOpenArticle}
-        tabIndex={0} // Добавьте атрибут tabIndex для деления элемента фокусировки
+        tabIndex={0}
         role="button"
       >
         <div className={cls.imgbox}>

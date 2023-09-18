@@ -24,6 +24,8 @@ export const Icon = memo((props: IconProps) => {
     [cls.icon_menu_about]: icon === IconEnum.MENU_ABOUT,
     [cls.icon_menu_profile]: icon === IconEnum.MENU_PROFILE,
     [cls.icon_menu_feed]: icon === IconEnum.MENU_ARTICLE_FEED,
+    [cls.icon_view_row]: icon === IconEnum.VIEW_ROW,
+    [cls.icon_view_tile]: icon === IconEnum.VIEW_TILE,
   })
 
   return <span className={clsIcon} {...etc} />

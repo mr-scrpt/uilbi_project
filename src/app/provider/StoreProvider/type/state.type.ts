@@ -2,7 +2,7 @@ import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { ArticleState } from 'entity/Article'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'
-import { CurrencyState } from 'entity/Currency/type/state.type'
+import { CurrencyState } from 'entity/Currency'
 import { ModalState } from 'entity/Modal'
 import { ProfileState } from 'entity/Profile'
 import { UserState } from 'entity/User'
@@ -10,14 +10,7 @@ import { AuthState } from 'feature/AuthByUserName'
 import { CommentCreatorState } from 'feature/CommentCreator'
 import { ProfileEditorState } from 'feature/ProfileEditor'
 import { CommentArticleListState } from 'widget/CommentArticleList'
-
-// import { rootReducer } from '../config/rootReducer'
-// import { store } from '../config/store'
-
-// export type RootStateType = ReturnType<typeof store.getState>
-// export type PreloadeStateType = ReturnType<typeof rootReducer>
-// export type PartialStateType = DeepPartial<RootStateType>
-// export type StateKey = keyof PreloadeStateType
+import { FeedArticleState } from 'widget/FeedArticle'
 
 export interface StateSchema {
   counter: CounterState
@@ -32,6 +25,7 @@ export interface StateSchema {
   article?: ArticleState
   commentAticleList?: CommentArticleListState
   commentCreator?: CommentCreatorState
+  feedArticle?: FeedArticleState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
 export type ReducerListMapObject = ReducersMapObject<StateSchema>

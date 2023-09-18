@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+import { FeedArticleView } from 'widget/FeedArticle/type/view.type'
 
 import {
   IArticle,

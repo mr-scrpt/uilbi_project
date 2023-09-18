@@ -1,0 +1,31 @@
+.feedView {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  background: var(--color-primary);
+  &_active {
+    background: var(--color-attantion-400);
+  }
+}
+
+.viewRow {
+  margin: 0;
+  padding: 0;
+  &_active {
+    background: var(--color-secondary);
+  }
+}
+.viewTile {
+  margin: 0;
+  padding: 0;
+  &_active {
+    background: var(--color-secondary);
+  }
+}

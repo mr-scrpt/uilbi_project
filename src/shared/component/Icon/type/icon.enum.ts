@@ -7,4 +7,6 @@ export enum IconEnum {
   MENU_ARTICLE_FEED = 'icon_menu_feed',
   EYE = 'icon_eye',
   CALENDAR = 'icon_calendar',
+  VIEW_TILE = 'icon_view_tile',
+  VIEW_ROW = 'icon_view_row',
 }
