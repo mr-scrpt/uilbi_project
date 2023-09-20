@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { AllHTMLAttributes, HTMLAttributes, RefObject } from 'react'
 import { FeedArticleView } from 'widget/FeedArticle/type/view.type'
 
 import {

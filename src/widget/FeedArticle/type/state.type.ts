@@ -8,4 +8,7 @@ export interface FeedArticleState extends EntityState<IArticle> {
   error?: string
 
   feedView?: FeedArticleView[]
+  page: number
+  limit: number
+  hasMore: boolean
 }

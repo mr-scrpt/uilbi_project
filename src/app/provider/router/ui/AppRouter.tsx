@@ -11,24 +11,11 @@ import { AuthRoute } from './AuthRoute'
 
 export const AppRouter = memo((props: RouterProps) => {
   const { className } = props
-  // const isAuth = useSelector(getUserAuthData)
-  //
-  // const routes = useMemo(
-  //   () =>
-  //     Object.values(routeConfig).filter((route) => {
-  //       if (route.authOnly && !isAuth) {
-  //         return false
-  //       }
-  //       return true
-  //     }),
-  //   [isAuth]
-  // )
   const routeWrapper = useCallback((route: AppRouterProps) => {
     const elem = (
       <Suspense fallback={<LoaderContent />}>{route.element}</Suspense>
     )
 
-    console.log('path', route.path)
     return (
       <Route
         key={route.path}
@@ -37,7 +24,6 @@ export const AppRouter = memo((props: RouterProps) => {
       />
     )
   }, [])
-  console.log('routeConfig', routeConfig)
 
   return (
     <div className={className}>

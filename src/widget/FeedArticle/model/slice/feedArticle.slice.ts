@@ -21,6 +21,9 @@ const initialState = feedArticleAdapter.getInitialState<FeedArticleState>({
   ids: [],
   entities: {},
   feedView: viewData,
+  page: 1,
+  limit: 4,
+  hasMore: true,
 })
 
 export const feedArticleSlice = createSlice({
@@ -37,6 +40,12 @@ export const feedArticleSlice = createSlice({
         })
       }
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload
+    },
+    setLimit: (state, action: PayloadAction<number>) => {
+      state.limit = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -47,8 +56,10 @@ export const feedArticleSlice = createSlice({
       .addCase(
         fetchFeedArticle.fulfilled,
         (state, action: PayloadAction<IArticle[]>) => {
+          console.log('payload', action.payload)
           state.isLoading = false
-          feedArticleAdapter.setAll(state, action.payload)
+          feedArticleAdapter.addMany(state, action.payload)
+          state.hasMore = action.payload.length > 0
         }
       )
       .addCase(fetchFeedArticle.rejected, (state, action) => {
