@@ -1,15 +1,13 @@
 import { PreloadedState, configureStore } from '@reduxjs/toolkit'
 import { $api } from 'shared/api/api'
 
-import { NavigatorType } from '../type/navigator.type'
 import { ReducerListMapObject, StateSchema } from '../type/state.type'
 import { createReducerManager } from './reducerManager'
 import { rootReducer } from './rootReducer'
 
 export const createStore = (
   preloadedState?: PreloadedState<StateSchema>,
-  asyncReducer?: ReducerListMapObject,
-  navigate?: NavigatorType
+  asyncReducer?: ReducerListMapObject
 ) => {
   const reducerManager = createReducerManager(rootReducer, asyncReducer)
 
@@ -24,7 +22,6 @@ export const createStore = (
         thunk: {
           extraArgument: {
             api: $api,
-            navigate,
           },
         },
       }),

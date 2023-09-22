@@ -4,3 +4,21 @@
   margin: 0;
   padding: 0;
 }
+.end {
+  margin-bottom: 20px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  height: 100%;
+}
+
+.view {
+  width: 100%;
+}
+
+.list {
+  flex-grow: 1;
+}

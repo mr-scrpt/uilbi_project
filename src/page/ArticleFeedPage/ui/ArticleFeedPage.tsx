@@ -12,7 +12,7 @@ export const ArticleFeedPage = memo((props: ArticleFeedPageProps) => {
   return (
     <div className={clsArticleFeedPage}>
       <div className={cls.inner}>
-        <FeedArticle />
+        <FeedArticle className={cls.list} />
       </div>
     </div>
   )

@@ -1,8 +1,13 @@
 .articleFeedPage {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .inner {
   display: flex;
+  height: 100%;
+}
+.list {
+  flex-grow: 1;
 }

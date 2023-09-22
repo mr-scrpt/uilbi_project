@@ -2,16 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { IArticle } from 'entity/Article'
 
-import { IFetchArticleData } from '../../type/action.type'
+import { getFeedArticleLimit } from '../selector/getFeedArticleLimit'
+import { getFeedArticlePage } from '../selector/getFeedArticlePage'
 
 export const fetchFeedArticle = createAsyncThunk<
   IArticle[],
-  IFetchArticleData,
+  void,
   ThunkConfigType<string>
->('feedArticle/fetchFeedArticle', async (data, thunkAPI) => {
-  const { extra, rejectWithValue } = thunkAPI
-  const { page, limit } = data
-  console.log('in base fetch action', page, limit)
+>('feedArticle/fetchFeedArticle', async (_, thunkAPI) => {
+  const { extra, rejectWithValue, getState } = thunkAPI
+  const page = getFeedArticlePage(getState())
+  const limit = getFeedArticleLimit(getState())
 
   try {
     const response = await extra.api.get<IArticle[]>('/articles', {
