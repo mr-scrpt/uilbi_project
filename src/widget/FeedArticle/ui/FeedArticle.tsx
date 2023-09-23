@@ -9,24 +9,15 @@ import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/Dy
 import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { useIntersectionObserver } from 'shared/lib/hook/useIntersection/useIntersection'
-import { storageFeedView } from 'shared/lib/storage/LocalStorage'
 
 import { getFeedArticleData } from '../model/selector/getFeedArticleData'
-import { getFeedArticleHasMore } from '../model/selector/getFeedArticleHasMore'
-import { getFeedArticleInited } from '../model/selector/getFeedArticleInited'
 import { getFeedArticleIsLoading } from '../model/selector/getFeedArticleIsLoading'
-import { getFeedArticleLimit } from '../model/selector/getFeedArticleLimit'
-import { getFeedArticlePage } from '../model/selector/getFeedArticlePage'
 import { getFeedArticleView } from '../model/selector/getFeedArticleView'
 import { getFeedArticleViewActive } from '../model/selector/getFeedArticleViewActive'
 import { changeFeedArticleView } from '../model/service/changeFeedArticleView'
-import { fetchFeedArticle } from '../model/service/fetchFeedArticle'
 import { fetchFeedArticleNextPage } from '../model/service/fetchFeedArticleNextPage'
 import { initFeedArticle } from '../model/service/initFeedArticle'
-import {
-  feedArticleAction,
-  feedArticleReducer,
-} from '../model/slice/feedArticle.slice'
+import { feedArticleReducer } from '../model/slice/feedArticle.slice'
 import { FeedArticleProps } from '../type/props.type'
 import cls from './FeedArticle.module.scss'
 
@@ -40,8 +31,6 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const isLoading = useSelector(getFeedArticleIsLoading)
   const view = useSelector(getFeedArticleView)
   const viewActive = useSelector(getFeedArticleViewActive)
-  const hasMore = useSelector(getFeedArticleHasMore)
-  const inited = useSelector(getFeedArticleInited)
 
   const onChangeView = useCallback(
     (view: ArticleViewEnum) => {
@@ -51,14 +40,8 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   )
 
   const onLoadNextPage = useCallback(() => {
-    console.log('before dispatch hasMore', hasMore)
-    console.log('before dispatch isLoading', !isLoading)
-    console.log('before dispatch inited', inited)
-    if (hasMore && !isLoading && inited) {
-      console.log('dispatch', hasMore, !isLoading, inited)
-      dispatch(fetchFeedArticleNextPage())
-    }
-  }, [dispatch, hasMore, isLoading, inited])
+    dispatch(fetchFeedArticleNextPage())
+  }, [dispatch])
 
   useEffect(() => {
     dispatch(initFeedArticle())

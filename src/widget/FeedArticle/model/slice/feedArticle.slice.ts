@@ -78,15 +78,13 @@ export const feedArticleSlice = createSlice({
       })
       .addCase(
         fetchFeedArticleNextPage.fulfilled,
-        (state, action: PayloadAction<IArticle[]>) => {
+        (state, action: PayloadAction<IArticle[] | undefined>) => {
+          if (action.payload) {
+            feedArticleAdapter.addMany(state, action.payload)
+            state.hasMore = action.payload.length > 0
+          }
           state.error = undefined
-          // if (state.hasMore) {
-          feedArticleAdapter.addMany(state, action.payload)
-          state.hasMore = action.payload.length > 0
-          // }
           state.isLoading = false
-          console.log('before loading true', state.isLoading)
-          console.log('after loading true', state.isLoading)
         }
       )
       .addCase(fetchFeedArticleNextPage.rejected, (state, action) => {
