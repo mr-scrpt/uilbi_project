@@ -21,6 +21,7 @@ export const fetchFeedArticleNextPage = createAsyncThunk<
   const pageNext = page + 1
 
   if (hasMore && inited) {
+    console.log('next page =6..')
     try {
       const response = await extra.api.get<IArticle[]>('/articles', {
         params: {

@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { useIntersectionObserver } from 'shared/lib/hook/useIntersection/useIntersection'
 
 import { getFeedArticleData } from '../model/selector/getFeedArticleData'
+import { getFeedArticleHasMore } from '../model/selector/getFeedArticleHasMore'
 import { getFeedArticleIsLoading } from '../model/selector/getFeedArticleIsLoading'
 import { getFeedArticleView } from '../model/selector/getFeedArticleView'
 import { getFeedArticleViewActive } from '../model/selector/getFeedArticleViewActive'
@@ -31,6 +32,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const isLoading = useSelector(getFeedArticleIsLoading)
   const view = useSelector(getFeedArticleView)
   const viewActive = useSelector(getFeedArticleViewActive)
+  const hasMore = useSelector(getFeedArticleHasMore)
 
   const onChangeView = useCallback(
     (view: ArticleViewEnum) => {
@@ -44,13 +46,15 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   }, [dispatch])
 
   useEffect(() => {
+    console.log('before dispatch')
     dispatch(initFeedArticle())
+    console.log('after dispatch')
   }, [dispatch])
 
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>
 
   useIntersectionObserver({
-    targetRef,
+    targetRef: targetRef,
     rootRef: null,
     callback: onLoadNextPage,
   })

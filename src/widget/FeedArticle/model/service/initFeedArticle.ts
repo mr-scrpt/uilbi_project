@@ -20,6 +20,9 @@ export const initFeedArticle = createAsyncThunk<
 
   try {
     const inited = getFeedArticleInited(getState())
+    // console.log('before set page')
+    // dispatch(feedArticleAction.setPage(1))
+    // console.log('after set page')
     if (!inited) {
       const [base] = viewData
       const initView =

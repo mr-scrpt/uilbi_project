@@ -14,19 +14,20 @@ export const changeFeedArticleView = createAsyncThunk<
   void,
   ArticleViewEnum,
   ThunkConfigType<string>
->('feedArticle/initFeedArticle', async (view, thunkAPI) => {
+>('feedArticle/changeView', async (view, thunkAPI) => {
   const { rejectWithValue, dispatch, getState } = thunkAPI
 
   try {
     dispatch(feedArticleAction.setView(view))
+    //   storageFeedView.setItem(view)
 
-    const limit = getFeedArticleLimitBase(getState())
-    if (limit) {
-      dispatch(feedArticleAction.setLimit(limit))
-      dispatch(fetchFeedArticle())
-      storageFeedView.setItem(view)
-      storageFeedLimit.setItem(limit)
-    }
+    // const limit = getFeedArticleLimitBase(getState())
+    // if (limit) {
+    //   dispatch(feedArticleAction.setLimit(limit))
+    //   dispatch(fetchFeedArticle())
+    //   storageFeedView.setItem(view)
+    //   storageFeedLimit.setItem(limit)
+    // }
   } catch (e) {
     rejectWithValue('error')
   }

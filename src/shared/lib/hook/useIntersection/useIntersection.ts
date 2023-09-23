@@ -10,9 +10,9 @@ export const useIntersectionObserver = (params: IIntersectionObserver) => {
 
   useEffect(() => {
     let observer: IntersectionObserver | null = null
-    const target = targetRef.current
+    const target = targetRef.current || null
     const wrapper = rootRef?.current || null
-    if (callback) {
+    if (callback && target) {
       const opt = {
         root: wrapper,
         rootMargin: '0px',
