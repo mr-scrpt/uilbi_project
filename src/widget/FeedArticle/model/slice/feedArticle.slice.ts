@@ -74,7 +74,7 @@ export const feedArticleSlice = createSlice({
 
       .addCase(fetchFeedArticleNextPage.pending, (state) => {
         state.error = undefined
-        // state.isLoading = true
+        state.isLoading = true
       })
       .addCase(
         fetchFeedArticleNextPage.fulfilled,
@@ -84,11 +84,11 @@ export const feedArticleSlice = createSlice({
             state.hasMore = action.payload.length > 0
           }
           state.error = undefined
-          // state.isLoading = false
+          state.isLoading = false
         }
       )
       .addCase(fetchFeedArticleNextPage.rejected, (state, action) => {
-        // state.isLoading = false
+        state.isLoading = false
         state.error = action.payload
       })
   },

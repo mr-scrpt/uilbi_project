@@ -31,7 +31,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   return (
     <div className={clsFeed}>
       <div className={cls.inner}>
-        {!isLoading && articleList ? (
+        {articleList &&
           articleList.map((item) => (
             <ArticleListItem
               view={view}
@@ -39,10 +39,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
               article={item}
               key={item.id}
             />
-          ))
-        ) : (
-          <div>empty</div>
-        )}
+          ))}
         {isLoading && getSkeletons(view, clsItem)}
       </div>
     </div>

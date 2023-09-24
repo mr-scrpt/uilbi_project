@@ -19,15 +19,16 @@ export const changeFeedArticleView = createAsyncThunk<
 
   try {
     dispatch(feedArticleAction.setView(view))
-    //   storageFeedView.setItem(view)
+    storageFeedView.setItem(view)
+    dispatch(feedArticleAction.setPage(1))
 
-    // const limit = getFeedArticleLimitBase(getState())
-    // if (limit) {
-    //   dispatch(feedArticleAction.setLimit(limit))
-    //   dispatch(fetchFeedArticle())
-    //   storageFeedView.setItem(view)
-    //   storageFeedLimit.setItem(limit)
-    // }
+    const limit = getFeedArticleLimitBase(getState())
+    if (limit) {
+      dispatch(feedArticleAction.setLimit(limit))
+      dispatch(fetchFeedArticle())
+      storageFeedView.setItem(view)
+      storageFeedLimit.setItem(limit)
+    }
   } catch (e) {
     rejectWithValue('error')
   }

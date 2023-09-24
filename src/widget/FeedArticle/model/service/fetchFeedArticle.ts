@@ -14,8 +14,6 @@ export const fetchFeedArticle = createAsyncThunk<
   const page = getFeedArticlePage(getState())
   const limit = getFeedArticleLimit(getState())
 
-  console.log('=>', page, limit)
-
   try {
     const response = await extra.api.get<IArticle[]>('/articles', {
       params: {
