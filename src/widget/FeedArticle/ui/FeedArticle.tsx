@@ -32,7 +32,6 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const isLoading = useSelector(getFeedArticleIsLoading)
   const view = useSelector(getFeedArticleView)
   const viewActive = useSelector(getFeedArticleViewActive)
-  const hasMore = useSelector(getFeedArticleHasMore)
 
   const onChangeView = useCallback(
     (view: ArticleViewEnum) => {
@@ -54,7 +53,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>
 
   useIntersectionObserver({
-    targetRef: targetRef,
+    targetRef,
     rootRef: null,
     callback: onLoadNextPage,
   })

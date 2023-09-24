@@ -9,6 +9,7 @@ import { UserState } from 'entity/User'
 import { AuthState } from 'feature/AuthByUserName'
 import { CommentCreatorState } from 'feature/CommentCreator'
 import { ProfileEditorState } from 'feature/ProfileEditor'
+import { ScrollManagerState } from 'feature/ScrollManager'
 import { CommentArticleListState } from 'widget/CommentArticleList'
 import { FeedArticleState } from 'widget/FeedArticle'
 
@@ -18,6 +19,7 @@ export interface StateSchema {
   modal: ModalState
   country: CountryState
   currency: CurrencyState
+  scrollManager: ScrollManagerState
 
   login?: AuthState
   profile?: ProfileState

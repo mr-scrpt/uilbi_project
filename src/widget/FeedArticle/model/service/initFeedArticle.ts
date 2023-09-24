@@ -28,7 +28,7 @@ export const initFeedArticle = createAsyncThunk<
       const initView =
         (storageFeedView.getItem() as ArticleViewEnum) || base.view
 
-      const initLimit = Number(storageFeedLimit.getItem()) || base.limitBase
+      const initLimit = Number(storageFeedLimit.getItem() || base.limitBase)
       dispatch(feedArticleAction.setView(initView))
       dispatch(feedArticleAction.setLimit(initLimit))
       dispatch(fetchFeedArticle())
