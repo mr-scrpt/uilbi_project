@@ -5,9 +5,10 @@ import {
 } from '@reduxjs/toolkit'
 import { IArticle } from 'entity/Article'
 import { ArticleViewEnum } from 'entity/Article/type/view.enum'
-import { storageFeedView } from 'shared/lib/storage/LocalStorage'
-import { FeedArticleState } from 'widget/FeedArticle/type/state.type'
 
+import { OrderDirectionEnum } from '../../type/order.enum'
+import { SortFieldEnum } from '../../type/sort.enum'
+import { FeedArticleState } from '../../type/state.type'
 import { viewData } from '../data/view.data'
 import { fetchFeedArticle } from '../service/fetchFeedArticle'
 import { fetchFeedArticleNextPage } from '../service/fetchFeedArticleNextPage'
@@ -25,6 +26,9 @@ const initialState = feedArticleAdapter.getInitialState<FeedArticleState>({
   page: 1,
   limit: 4,
   hasMore: true,
+  sort: SortFieldEnum.CREATED,
+  order: OrderDirectionEnum.ASC,
+  search: '',
 
   _inited: false,
 })
@@ -51,6 +55,15 @@ export const feedArticleSlice = createSlice({
     },
     setInited: (state) => {
       state._inited = true
+    },
+    setOrder: (state, action: PayloadAction<OrderDirectionEnum>) => {
+      state.order = action.payload
+    },
+    setSort: (state, action: PayloadAction<SortFieldEnum>) => {
+      state.sort = action.payload
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload
     },
   },
   extraReducers: (builder) => {

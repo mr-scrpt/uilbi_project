@@ -1,4 +1,3 @@
-import { getUserAuthData } from 'entity/User'
 import { SyntheticEvent, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'

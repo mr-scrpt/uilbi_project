@@ -1,5 +1,8 @@
 import { ArticleViewEnum } from 'entity/Article/type/view.enum'
 import { ArticleList } from 'entity/Article/ui/ArticleList/ArticleList'
+import { FeedOrderDirection } from 'feature/FeedOrderDirection'
+import { FeedSearch } from 'feature/FeedSearch'
+import { FeedSort } from 'feature/FeedSort'
 import { FeedView } from 'feature/FeedView'
 import { MutableRefObject, memo, useCallback, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
@@ -9,6 +12,7 @@ import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/Dy
 import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { useIntersectionObserver } from 'shared/lib/hook/useIntersection/useIntersection'
+import { FeedArticleContorlBar } from 'widget/FeedArticleContorlBar'
 
 import { getFeedArticleData } from '../model/selector/getFeedArticleData'
 import { getFeedArticleHasMore } from '../model/selector/getFeedArticleHasMore'
@@ -20,6 +24,7 @@ import { fetchFeedArticleNextPage } from '../model/service/fetchFeedArticleNextP
 import { initFeedArticle } from '../model/service/initFeedArticle'
 import { feedArticleReducer } from '../model/slice/feedArticle.slice'
 import { FeedArticleProps } from '../type/props.type'
+import { SortFieldEnum } from '../type/sort.enum'
 import cls from './FeedArticle.module.scss'
 
 const reducersList: ReducerList = {
@@ -32,6 +37,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const isLoading = useSelector(getFeedArticleIsLoading)
   const view = useSelector(getFeedArticleView)
   const viewActive = useSelector(getFeedArticleViewActive)
+  const hasMore = useSelector(getFeedArticleHasMore)
 
   const onChangeView = useCallback(
     (view: ArticleViewEnum) => {
@@ -39,15 +45,18 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
     },
     [dispatch]
   )
+  const onChangeSort = useCallback((sort: SortFieldEnum) => {
+    dispatch()
+  })
 
   const onLoadNextPage = useCallback(() => {
-    dispatch(fetchFeedArticleNextPage())
-  }, [dispatch])
+    if (hasMore) {
+      dispatch(fetchFeedArticleNextPage())
+    }
+  }, [dispatch, hasMore])
 
   useEffect(() => {
-    console.log('before dispatch')
     dispatch(initFeedArticle())
-    console.log('after dispatch')
   }, [dispatch])
 
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -63,13 +72,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
     <DynamicModuleLoader reducerList={reducersList}>
       <div className={clsFeedArticle}>
         <div className={cls.inner}>
-          {view && (
-            <FeedView
-              className={cls.view}
-              view={view}
-              changeView={onChangeView}
-            />
-          )}
+          <FeedArticleContorlBar className={cls.widget} />
           <Button onClick={onLoadNextPage}>Next</Button>
           <ArticleList
             isLoading={isLoading}

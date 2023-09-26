@@ -14,9 +14,17 @@
   // flex-wrap: wrap;
   height: 100%;
 }
+.widget {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
 
 .view {
-  width: 100%;
+  flex-grow: 1;
+}
+.sort {
+  width: 30%;
 }
 
 .list {
