@@ -3,21 +3,20 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit'
-import { IArticle } from 'entity/Article'
-import { ArticleViewEnum } from 'entity/Article/type/view.enum'
+import { ArticleViewEnum, IArticle } from 'entity/Article'
 
-import { OrderDirectionEnum } from '../../type/order.enum'
-import { SortFieldEnum } from '../../type/sort.enum'
-import { FeedArticleState } from '../../type/state.type'
+import { ArticleOrderEnum } from '../../type/order.enum'
+import { ArticleSortFieldEnum } from '../../type/sort.enum'
+import { ArticleFeedState } from '../../type/state.type'
 import { viewData } from '../data/view.data'
-import { fetchFeedArticle } from '../service/fetchFeedArticle'
-import { fetchFeedArticleNextPage } from '../service/fetchFeedArticleNextPage'
+import { fetchArticleFeed } from '../service/fetchArticleFeed'
+import { fetchArticleFeedNextPage } from '../service/fetchArticleFeedNextPage'
 
-export const feedArticleAdapter = createEntityAdapter<IArticle>({
+export const articleFeedAdapter = createEntityAdapter<IArticle>({
   selectId: (article) => article.id,
 })
 
-const initialState = feedArticleAdapter.getInitialState<FeedArticleState>({
+const initialState = articleFeedAdapter.getInitialState<ArticleFeedState>({
   isLoading: false,
   error: undefined,
   ids: [],
@@ -26,14 +25,14 @@ const initialState = feedArticleAdapter.getInitialState<FeedArticleState>({
   page: 1,
   limit: 4,
   hasMore: true,
-  sort: SortFieldEnum.CREATED,
-  order: OrderDirectionEnum.ASC,
+  sort: ArticleSortFieldEnum.CREATED,
+  order: ArticleOrderEnum.ASC,
   search: '',
 
   _inited: false,
 })
 
-export const feedArticleSlice = createSlice({
+export const articleFeedSlice = createSlice({
   name: 'feedArticleSlice',
   initialState,
   reducers: {
@@ -56,10 +55,10 @@ export const feedArticleSlice = createSlice({
     setInited: (state) => {
       state._inited = true
     },
-    setOrder: (state, action: PayloadAction<OrderDirectionEnum>) => {
+    setOrder: (state, action: PayloadAction<ArticleOrderEnum>) => {
       state.order = action.payload
     },
-    setSort: (state, action: PayloadAction<SortFieldEnum>) => {
+    setSort: (state, action: PayloadAction<ArticleSortFieldEnum>) => {
       state.sort = action.payload
     },
     setSearch: (state, action: PayloadAction<string>) => {
@@ -68,44 +67,44 @@ export const feedArticleSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchFeedArticle.pending, (state) => {
+      .addCase(fetchArticleFeed.pending, (state) => {
         state.error = undefined
         state.isLoading = true
       })
       .addCase(
-        fetchFeedArticle.fulfilled,
+        fetchArticleFeed.fulfilled,
         (state, action: PayloadAction<IArticle[]>) => {
-          feedArticleAdapter.setAll(state, action.payload)
+          articleFeedAdapter.setAll(state, action.payload)
           state.isLoading = false
           state.hasMore = action.payload.length > 0
         }
       )
-      .addCase(fetchFeedArticle.rejected, (state, action) => {
+      .addCase(fetchArticleFeed.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload
       })
 
-      .addCase(fetchFeedArticleNextPage.pending, (state) => {
+      .addCase(fetchArticleFeedNextPage.pending, (state) => {
         state.error = undefined
         state.isLoading = true
       })
       .addCase(
-        fetchFeedArticleNextPage.fulfilled,
+        fetchArticleFeedNextPage.fulfilled,
         (state, action: PayloadAction<IArticle[] | undefined>) => {
           if (action.payload) {
-            feedArticleAdapter.addMany(state, action.payload)
+            articleFeedAdapter.addMany(state, action.payload)
             state.hasMore = action.payload.length > 0
           }
           state.error = undefined
           state.isLoading = false
         }
       )
-      .addCase(fetchFeedArticleNextPage.rejected, (state, action) => {
+      .addCase(fetchArticleFeedNextPage.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload
       })
   },
 })
 
-export const { reducer: feedArticleReducer } = feedArticleSlice
-export const { actions: feedArticleAction } = feedArticleSlice
+export const { reducer: articleFeedReducer } = articleFeedSlice
+export const { actions: articleFeedAction } = articleFeedSlice

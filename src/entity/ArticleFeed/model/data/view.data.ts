@@ -1,9 +1,8 @@
-import { ArticleViewEnum } from 'entity/Article/type/view.enum'
+import { ArticleViewEnum } from 'entity/ArticleFeed/type/view.enum'
+import { ArticleFeedView } from 'entity/ArticleFeed/type/view.type'
 import { IconEnum } from 'shared/component/Icon'
 
-import { FeedArticleView } from '../../type/view.type'
-
-export const viewData: FeedArticleView[] = [
+export const viewData: ArticleFeedView[] = [
   {
     view: ArticleViewEnum.ROW,
     limitBase: 4,

@@ -7,11 +7,11 @@ import {
 } from 'shared/lib/storage/LocalStorage'
 
 import { viewData } from '../data/view.data'
-import { getFeedArticleInited } from '../selector/getFeedArticleInited'
-import { feedArticleAction } from '../slice/feedArticle.slice'
-import { fetchFeedArticle } from './fetchFeedArticle'
+import { getArticleFeedInited } from '../selector/getArticleFeedInited'
+import { articleFeedAction } from '../slice/articleFeed.slice'
+import { fetchArticleFeed } from './fetchArticleFeed'
 
-export const initFeedArticle = createAsyncThunk<
+export const initArticleFeed = createAsyncThunk<
   void,
   void,
   ThunkConfigType<string>
@@ -19,7 +19,7 @@ export const initFeedArticle = createAsyncThunk<
   const { rejectWithValue, dispatch, getState } = thunkAPI
 
   try {
-    const inited = getFeedArticleInited(getState())
+    const inited = getArticleFeedInited(getState())
     // console.log('before set page')
     // dispatch(feedArticleAction.setPage(1))
     // console.log('after set page')
@@ -29,10 +29,10 @@ export const initFeedArticle = createAsyncThunk<
         (storageFeedView.getItem() as ArticleViewEnum) || base.view
 
       const initLimit = Number(storageFeedLimit.getItem() || base.limitBase)
-      dispatch(feedArticleAction.setView(initView))
-      dispatch(feedArticleAction.setLimit(initLimit))
-      dispatch(fetchFeedArticle())
-      dispatch(feedArticleAction.setInited())
+      dispatch(articleFeedAction.setView(initView))
+      dispatch(articleFeedAction.setLimit(initLimit))
+      dispatch(fetchArticleFeed())
+      dispatch(articleFeedAction.setInited())
     }
   } catch (e) {
     rejectWithValue('error')

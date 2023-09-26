@@ -3,7 +3,7 @@ import {
   IArticleBlockText,
 } from 'entity/Article/type/article.type'
 import { ArticleListItemProps } from 'entity/Article/type/props.type'
-import { ArticleViewEnum } from 'entity/Article/type/view.enum'
+import { ArticleViewEnum } from 'entity/ArticleFeed'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'

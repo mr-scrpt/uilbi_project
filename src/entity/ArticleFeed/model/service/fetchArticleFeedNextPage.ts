@@ -2,22 +2,22 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { IArticle } from 'entity/Article'
 
-import { getFeedArticleHasMore } from '../selector/getFeedArticleHasMore'
-import { getFeedArticleInited } from '../selector/getFeedArticleInited'
-import { getFeedArticleLimit } from '../selector/getFeedArticleLimit'
-import { getFeedArticlePage } from '../selector/getFeedArticlePage'
-import { feedArticleAction } from '../slice/feedArticle.slice'
+import { getArticleFeedHasMore } from '../selector/getArticleFeedHasMore'
+import { getArticleFeedInited } from '../selector/getArticleFeedInited'
+import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
+import { getArticleFeedPage } from '../selector/getArticleFeedPage'
+import { articleFeedAction } from '../slice/articleFeed.slice'
 
-export const fetchFeedArticleNextPage = createAsyncThunk<
+export const fetchArticleFeedNextPage = createAsyncThunk<
   IArticle[] | undefined,
   void,
   ThunkConfigType<string>
 >('feedArticle/fetchFeedArticleNextPage', async (_, thunkAPI) => {
   const { getState, extra, rejectWithValue, dispatch } = thunkAPI
-  const hasMore = getFeedArticleHasMore(getState())
-  const page = getFeedArticlePage(getState())
-  const limit = getFeedArticleLimit(getState())
-  const inited = getFeedArticleInited(getState())
+  const hasMore = getArticleFeedHasMore(getState())
+  const page = getArticleFeedPage(getState())
+  const limit = getArticleFeedLimit(getState())
+  const inited = getArticleFeedInited(getState())
   const pageNext = page + 1
 
   if (hasMore && inited) {
@@ -34,7 +34,7 @@ export const fetchFeedArticleNextPage = createAsyncThunk<
         throw new Error()
       }
 
-      dispatch(feedArticleAction.setPage(pageNext))
+      dispatch(articleFeedAction.setPage(pageNext))
       return response.data
     } catch (e) {
       return rejectWithValue('error')

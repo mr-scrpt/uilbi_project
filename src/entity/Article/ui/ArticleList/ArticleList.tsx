@@ -1,4 +1,4 @@
-import { ArticleViewEnum } from 'entity/Article/type/view.enum'
+import { ArticleViewEnum } from 'entity/ArticleFeed'
 import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 

@@ -1,4 +1,4 @@
-export enum OrderDirectionEnum {
+export enum ArticleOrderEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

@@ -1,13 +1,12 @@
-import { AllHTMLAttributes, HTMLAttributes, RefObject } from 'react'
-import { FeedArticleView } from 'widget/FeedArticle/type/view.type'
+import { HTMLAttributes } from 'react'
 
+import { ArticleViewEnum } from '../../ArticleFeed/type/view.enum'
 import {
   IArticle,
   IArticleBlockCode,
   IArticleBlockImg,
   IArticleBlockText,
 } from './article.type'
-import { ArticleViewEnum } from './view.enum'
 
 export interface ArticleProps extends HTMLAttributes<HTMLDivElement> {
   className?: string

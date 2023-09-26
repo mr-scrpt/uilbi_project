@@ -1,6 +1,6 @@
-import { SortFieldEnum } from 'widget/FeedArticle/type/sort.enum'
+import { ArticleSortFieldEnum } from 'entity/ArticleFeed'
 
 export interface IFeedSort {
   content: string
-  value: SortFieldEnum
+  value: ArticleSortFieldEnum
 }

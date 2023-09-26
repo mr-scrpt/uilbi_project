@@ -1,5 +1,5 @@
 import { ArticleListItemSkeletonProps } from 'entity/Article/type/props.type'
-import { ArticleViewEnum } from 'entity/Article/type/view.enum'
+import { ArticleViewEnum } from 'entity/ArticleFeed'
 import { memo } from 'react'
 import { Card } from 'shared/component/Card'
 import { Skeleton } from 'shared/component/Skeleton'

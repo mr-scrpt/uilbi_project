@@ -6,11 +6,11 @@ import {
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
 
-import { getFeedArticleLimitBase } from '../selector/getFeedArticleBaseLimit'
-import { feedArticleAction } from '../slice/feedArticle.slice'
-import { fetchFeedArticle } from './fetchFeedArticle'
+import { getArticleFeedLimitBase } from '../selector/getArticleFeedBaseLimit'
+import { articleFeedAction } from '../slice/articleFeed.slice'
+import { fetchArticleFeed } from './fetchArticleFeed'
 
-export const changeFeedArticleView = createAsyncThunk<
+export const changeArticleFeedView = createAsyncThunk<
   void,
   ArticleViewEnum,
   ThunkConfigType<string>
@@ -18,14 +18,14 @@ export const changeFeedArticleView = createAsyncThunk<
   const { rejectWithValue, dispatch, getState } = thunkAPI
 
   try {
-    dispatch(feedArticleAction.setView(view))
+    dispatch(articleFeedAction.setView(view))
     storageFeedView.setItem(view)
-    dispatch(feedArticleAction.setPage(1))
+    dispatch(articleFeedAction.setPage(1))
 
-    const limit = getFeedArticleLimitBase(getState())
+    const limit = getArticleFeedLimitBase(getState())
     if (limit) {
-      dispatch(feedArticleAction.setLimit(limit))
-      dispatch(fetchFeedArticle())
+      dispatch(articleFeedAction.setLimit(limit))
+      dispatch(fetchArticleFeed())
       storageFeedView.setItem(view)
       storageFeedLimit.setItem(limit)
     }

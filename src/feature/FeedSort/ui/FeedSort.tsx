@@ -16,7 +16,7 @@ export const FeedSort = memo((props: FeedSortProps) => {
     <div className={clsFeedSort}>
       <div className={cls.inner}>
         <div className="text">{t('sort-field')}</div>
-        <Select options={feedSortData} value={sort} onChange={onChangeSort} />
+        {/* <Select options={feedSortData} value={sort} onChange={onChangeSort} /> */}
       </div>
     </div>
   )
