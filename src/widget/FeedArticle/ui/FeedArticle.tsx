@@ -1,10 +1,10 @@
-import { getArticleIsLoading } from 'entity/Article'
-import { ArticleList } from 'entity/Article/ui/ArticleList/ArticleList'
 import {
+  ArticleFeed,
   articleFeedReducer,
   fetchFeedArticleNextPage,
   getArticleFeedData,
   getArticleFeedHasMore,
+  getArticleFeedIsLoading,
   getArticleFeedView,
   getArticleViewFeedActive,
 } from 'entity/ArticleFeed'
@@ -17,6 +17,7 @@ import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/Dy
 import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 import { useIntersectionObserver } from 'shared/lib/hook/useIntersection/useIntersection'
+import { FeedArticleContorlBar } from 'widget/FeedArticleContorlBar'
 
 import { FeedArticleProps } from '../type/props.type'
 import cls from './FeedArticle.module.scss'
@@ -28,8 +29,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const { className } = props
   const dispatch = useAppDispatch()
   const articleList = useSelector(getArticleFeedData.selectAll)
-  const isLoading = useSelector(getArticleIsLoading)
-  const view = useSelector(getArticleFeedView)
+  const isLoading = useSelector(getArticleFeedIsLoading)
   const viewActive = useSelector(getArticleViewFeedActive)
   const hasMore = useSelector(getArticleFeedHasMore)
 
@@ -56,9 +56,9 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
     <DynamicModuleLoader reducerList={reducersList}>
       <div className={clsFeedArticle}>
         <div className={cls.inner}>
-          {/* <FeedArticleContorlBar className={cls.widget} /> */}
+          <FeedArticleContorlBar className={cls.widget} />
           <Button onClick={onLoadNextPage}>Next</Button>
-          <ArticleList
+          <ArticleFeed
             isLoading={isLoading}
             articleList={articleList}
             view={viewActive?.view}

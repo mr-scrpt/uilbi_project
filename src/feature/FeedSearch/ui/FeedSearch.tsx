@@ -6,12 +6,12 @@ import { FeedSearchProps } from '../type/props.type'
 import cls from './FeedSearch.module.scss'
 
 export const FeedSearch = memo((props: FeedSearchProps) => {
-  const { className } = props
+  const { className, onChangeSearch, search } = props
 
   const clsFeedSearch = classNames(cls.feedSearch, [className], {})
   return (
     <div className={clsFeedSearch}>
-      <Input />
+      <Input value={search} onChange={onChangeSearch} />
     </div>
   )
 })

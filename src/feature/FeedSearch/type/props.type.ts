@@ -1,5 +1,7 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react'
 
 export interface FeedSearchProps extends HTMLAttributes<HTMLDivElement> {
-  className?: string;
+  className?: string
+  search: string
+  onChangeSearch: (value: string) => void
 }

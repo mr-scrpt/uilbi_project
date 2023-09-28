@@ -3,7 +3,8 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit'
-import { ArticleViewEnum, IArticle } from 'entity/Article'
+import { IArticle } from 'entity/Article'
+import { ArticleViewEnum } from 'entity/ArticleFeed'
 
 import { ArticleOrderEnum } from '../../type/order.enum'
 import { ArticleSortFieldEnum } from '../../type/sort.enum'

@@ -8,7 +8,7 @@ import { FeedOrderDirectionProps } from '../type/props.type'
 import cls from './FeedOrderDirection.module.scss'
 
 export const FeedOrderDirection = memo((props: FeedOrderDirectionProps) => {
-  const { className } = props
+  const { className, onChangeOrder, order } = props
 
   const { t } = useTranslation()
 
@@ -22,7 +22,11 @@ export const FeedOrderDirection = memo((props: FeedOrderDirectionProps) => {
       <div className={cls.inner}>
         <div className="text">{t('sort-field')}</div>
 
-        <Select options={feedOrderDirectionData} />
+        <Select
+          options={feedOrderDirectionData}
+          onChange={onChangeOrder}
+          value={order}
+        />
       </div>
     </div>
   )

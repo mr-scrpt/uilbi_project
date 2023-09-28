@@ -7,8 +7,9 @@ type HTMLCustomSelectProps = Omit<
   'size' | 'onChange'
 >
 
-export interface SelectProps extends HTMLCustomSelectProps {
+export interface SelectProps<T extends string> extends HTMLCustomSelectProps {
   className?: string
-  options: OptionSelect[]
-  onChange?: (value: string) => void
+  options: OptionSelect<T>[]
+  onChange?: (value: T) => void
+  value?: T
 }

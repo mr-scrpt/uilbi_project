@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames'
 import { SelectProps } from '../type/props.type'
 import cls from './Select.module.scss'
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, options, value, onChange, disabled } = props
 
   const clsSelect = classNames(cls.select, [className], {})
@@ -26,7 +26,7 @@ export const Select = memo((props: SelectProps) => {
   )
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value)
+    onChange?.(e.target.value as T)
   }
 
   return (
@@ -39,4 +39,4 @@ export const Select = memo((props: SelectProps) => {
       {optionsList}
     </select>
   )
-})
+}

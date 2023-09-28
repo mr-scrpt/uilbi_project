@@ -5,7 +5,9 @@ import { IArticle } from 'entity/Article'
 import { getArticleFeedHasMore } from '../selector/getArticleFeedHasMore'
 import { getArticleFeedInited } from '../selector/getArticleFeedInited'
 import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
+import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
 import { getArticleFeedPage } from '../selector/getArticleFeedPage'
+import { getArticleFeedSortField } from '../selector/getArticleFeedSortField'
 import { articleFeedAction } from '../slice/articleFeed.slice'
 
 export const fetchArticleFeedNextPage = createAsyncThunk<
@@ -18,16 +20,19 @@ export const fetchArticleFeedNextPage = createAsyncThunk<
   const page = getArticleFeedPage(getState())
   const limit = getArticleFeedLimit(getState())
   const inited = getArticleFeedInited(getState())
+  const sort = getArticleFeedSortField(getState())
+  const order = getArticleFeedOrder(getState())
   const pageNext = page + 1
 
   if (hasMore && inited) {
-    console.log('next page =6..')
     try {
       const response = await extra.api.get<IArticle[]>('/articles', {
         params: {
           _expand: 'user',
-          _page: pageNext,
+          _page: page,
           _limit: limit,
+          _sort: sort,
+          _order: order,
         },
       })
       if (!response.data) {

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ArticleViewEnum } from 'entity/Article'
+import { ArticleViewEnum } from 'entity/ArticleFeed'
 import {
   storageFeedLimit,
   storageFeedView,

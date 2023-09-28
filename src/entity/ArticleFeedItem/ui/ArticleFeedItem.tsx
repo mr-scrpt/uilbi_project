@@ -1,8 +1,4 @@
-import {
-  ArticleBlockVariantEnum,
-  IArticleBlockText,
-} from 'entity/Article/type/article.type'
-import { ArticleListItemProps } from 'entity/Article/type/props.type'
+import { ArticleBlockVariantEnum, IArticleBlockText } from 'entity/Article'
 import { ArticleViewEnum } from 'entity/ArticleFeed'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -17,9 +13,10 @@ import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { useHover } from 'shared/lib'
 import { classNames } from 'shared/lib/classNames'
 
-import cls from './ArticleListItem.module.scss'
+import { ArticleFeedItemProps } from '../type/props.type'
+import cls from './ArticleFeedItem.module.scss'
 
-export const ArticleListItem = memo((props: ArticleListItemProps) => {
+export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
   const { className, view = ArticleViewEnum.TILE, article } = props
   const { user } = article
 

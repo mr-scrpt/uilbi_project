@@ -1,14 +1,14 @@
-import { ArticleListItemSkeletonProps } from 'entity/Article/type/props.type'
 import { ArticleViewEnum } from 'entity/ArticleFeed'
 import { memo } from 'react'
 import { Card } from 'shared/component/Card'
 import { Skeleton } from 'shared/component/Skeleton'
 import { classNames } from 'shared/lib/classNames'
 
-import cls from './ArticleListItem.module.scss'
+import { ArticleFeedItemSkeletonProps } from '../type/props.type'
+import cls from './ArticleFeedItem.module.scss'
 
-export const ArticleListItemSkeleton = memo(
-  (props: ArticleListItemSkeletonProps) => {
+export const ArticleFeedItemSkeleton = memo(
+  (props: ArticleFeedItemSkeletonProps) => {
     const { className, view = ArticleViewEnum.TILE } = props
 
     const clsCard = classNames(cls.card, [className], {})

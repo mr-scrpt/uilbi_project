@@ -1,5 +1,4 @@
-import { ArticleViewEnum } from 'entity/Article'
-import { ArticleFeedView } from 'entity/ArticleFeed'
+import { ArticleFeedView, ArticleViewEnum } from 'entity/ArticleFeed'
 import { HTMLAttributes } from 'react'
 
 export interface FeedViewProps extends HTMLAttributes<HTMLDivElement> {

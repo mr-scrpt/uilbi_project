@@ -22,3 +22,5 @@ export { ArticleFeedView } from './type/view.type'
 export { ArticleSortFieldEnum } from './type/sort.enum'
 export { ArticleViewEnum } from './type/view.enum'
 export { ArticleOrderEnum } from './type/order.enum'
+
+export { ArticleLimitValue } from './model/data/limit.data'
