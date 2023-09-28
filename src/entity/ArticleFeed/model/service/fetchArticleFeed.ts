@@ -5,7 +5,7 @@ import { IArticle } from 'entity/Article'
 import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
 import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
 import { getArticleFeedPage } from '../selector/getArticleFeedPage'
-import { getArticleFeedSortField } from '../selector/getArticleFeedSortField'
+import { getArticleFeedSort } from '../selector/getArticleFeedSort'
 
 export const fetchArticleFeed = createAsyncThunk<
   IArticle[],
@@ -16,7 +16,7 @@ export const fetchArticleFeed = createAsyncThunk<
   const page = getArticleFeedPage(getState())
 
   const limit = getArticleFeedLimit(getState())
-  const sort = getArticleFeedSortField(getState())
+  const sort = getArticleFeedSort(getState())
   const order = getArticleFeedOrder(getState())
 
   try {

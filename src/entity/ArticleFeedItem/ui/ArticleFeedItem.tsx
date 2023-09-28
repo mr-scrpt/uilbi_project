@@ -66,7 +66,7 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
         )}
         <div className={cls.footer}>
           <Button onClick={onOpenArticle}>{t('read-more')}</Button>
-          <View count="5" />
+          <View count={article.views} />
         </div>
       </div>
     )
@@ -87,7 +87,7 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
         <div className={cls.content}>
           <div className={cls.media}>
             <div className={cls.taglist}>{article.type.join(', ')}</div>
-            <View count="5" />
+            <View count={article.views} />
           </div>
 
           <Title className={cls.title}>{article.title}</Title>

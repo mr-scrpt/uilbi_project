@@ -1,7 +1,7 @@
 import {
   ArticleFeed,
   articleFeedReducer,
-  fetchFeedArticleNextPage,
+  fetchArticleFeedNextPage,
   getArticleFeedData,
   getArticleFeedHasMore,
   getArticleFeedIsLoading,
@@ -35,7 +35,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
 
   const onLoadNextPage = useCallback(() => {
     if (hasMore) {
-      dispatch(fetchFeedArticleNextPage())
+      dispatch(fetchArticleFeedNextPage())
     }
   }, [dispatch, hasMore])
 

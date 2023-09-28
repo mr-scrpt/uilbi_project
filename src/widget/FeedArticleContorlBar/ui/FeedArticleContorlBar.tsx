@@ -1,16 +1,15 @@
-import { articleAction } from 'entity/Article/model/slice/articleSlice'
 import {
   ArticleOrderEnum,
   ArticleSortFieldEnum,
   ArticleViewEnum,
   articleFeedAction,
-  changeFeedArticleView,
-  fetchFeedArticle,
+  changeArticleFeedView,
+  getArticleFeedSort,
   getArticleFeedView,
 } from 'entity/ArticleFeed'
 import { getArticleFeedOrder } from 'entity/ArticleFeed/model/selector/getArticleFeedOrder'
 import { getArticleFeedSearch } from 'entity/ArticleFeed/model/selector/getArticleFeedSearch'
-import { getArticleFeedSortField } from 'entity/ArticleFeed/model/selector/getArticleFeedSortField'
+import { changeArticleFeedSort } from 'entity/ArticleFeed/model/service/changeArticleFeedSort'
 import { FeedOrderDirection } from 'feature/FeedOrderDirection'
 import { FeedSearch } from 'feature/FeedSearch'
 import { FeedSort } from 'feature/FeedSort'
@@ -27,7 +26,7 @@ export const FeedArticleContorlBar = memo(
   (props: FeedArticleContorlBarProps) => {
     const { className } = props
     const view = useSelector(getArticleFeedView)
-    const sort = useSelector(getArticleFeedSortField)
+    const sort = useSelector(getArticleFeedSort)
     const order = useSelector(getArticleFeedOrder)
     const search = useSelector(getArticleFeedSearch)
 
@@ -35,13 +34,14 @@ export const FeedArticleContorlBar = memo(
 
     const onChangeView = useCallback(
       (view: ArticleViewEnum) => {
-        dispatch(changeFeedArticleView(view))
+        dispatch(changeArticleFeedView(view))
       },
       [dispatch]
     )
     const onChangeSort = useCallback(
       (sort: ArticleSortFieldEnum) => {
-        dispatch(articleFeedAction.setSort(sort))
+        console.log('change sort', sort)
+        dispatch(changeArticleFeedSort(sort))
       },
       [dispatch]
     )
