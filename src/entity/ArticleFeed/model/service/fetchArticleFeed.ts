@@ -5,6 +5,7 @@ import { IArticle } from 'entity/Article'
 import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
 import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
 import { getArticleFeedPage } from '../selector/getArticleFeedPage'
+import { getArticleFeedSearch } from '../selector/getArticleFeedSearch'
 import { getArticleFeedSort } from '../selector/getArticleFeedSort'
 
 export const fetchArticleFeed = createAsyncThunk<
@@ -18,6 +19,7 @@ export const fetchArticleFeed = createAsyncThunk<
   const limit = getArticleFeedLimit(getState())
   const sort = getArticleFeedSort(getState())
   const order = getArticleFeedOrder(getState())
+  const search = getArticleFeedSearch(getState())
 
   try {
     const response = await extra.api.get<IArticle[]>('/articles', {
@@ -27,6 +29,7 @@ export const fetchArticleFeed = createAsyncThunk<
         _limit: limit,
         _sort: sort,
         _order: order,
+        q: search,
       },
     })
     if (!response.data) {

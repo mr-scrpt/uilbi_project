@@ -10,6 +10,7 @@ import {
 import { getArticleFeedOrder } from 'entity/ArticleFeed/model/selector/getArticleFeedOrder'
 import { getArticleFeedSearch } from 'entity/ArticleFeed/model/selector/getArticleFeedSearch'
 import { changeArticleFeedOrder } from 'entity/ArticleFeed/model/service/changeArticleFeedOrder'
+import { changeArticleFeedSearch } from 'entity/ArticleFeed/model/service/changeArticleFeedSearch'
 import { changeArticleFeedSort } from 'entity/ArticleFeed/model/service/changeArticleFeedSort'
 import { FeedOrderDirection } from 'feature/FeedOrderDirection'
 import { FeedSearch } from 'feature/FeedSearch'
@@ -54,7 +55,7 @@ export const FeedArticleContorlBar = memo(
 
     const onChangeSearch = useCallback(
       (search: string) => {
-        dispatch(articleFeedAction.setSearch(search))
+        dispatch(changeArticleFeedSearch(search))
       },
       [dispatch]
     )
