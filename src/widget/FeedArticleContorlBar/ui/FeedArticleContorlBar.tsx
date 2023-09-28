@@ -9,6 +9,7 @@ import {
 } from 'entity/ArticleFeed'
 import { getArticleFeedOrder } from 'entity/ArticleFeed/model/selector/getArticleFeedOrder'
 import { getArticleFeedSearch } from 'entity/ArticleFeed/model/selector/getArticleFeedSearch'
+import { changeArticleFeedOrder } from 'entity/ArticleFeed/model/service/changeArticleFeedOrder'
 import { changeArticleFeedSort } from 'entity/ArticleFeed/model/service/changeArticleFeedSort'
 import { FeedOrderDirection } from 'feature/FeedOrderDirection'
 import { FeedSearch } from 'feature/FeedSearch'
@@ -40,14 +41,13 @@ export const FeedArticleContorlBar = memo(
     )
     const onChangeSort = useCallback(
       (sort: ArticleSortFieldEnum) => {
-        console.log('change sort', sort)
         dispatch(changeArticleFeedSort(sort))
       },
       [dispatch]
     )
     const onChangeOrder = useCallback(
       (order: ArticleOrderEnum) => {
-        dispatch(articleFeedAction.setOrder(order))
+        dispatch(changeArticleFeedOrder(order))
       },
       [dispatch]
     )

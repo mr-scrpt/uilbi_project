@@ -1,12 +1,12 @@
 import { IArticle } from 'entity/Article'
 import { HTMLAttributes } from 'react'
 
-import { ArticleViewEnum } from './view.enum'
+import { ArticleFeedViewEnum } from './view.enum'
 
 export interface ArticleFeedProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   articleList?: IArticle[]
-  view?: ArticleViewEnum
+  view?: ArticleFeedViewEnum
   isLoading?: boolean
   error?: string
 }

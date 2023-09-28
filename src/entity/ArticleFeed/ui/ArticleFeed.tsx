@@ -3,7 +3,7 @@ import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { ArticleFeedProps } from '../type/props.type'
-import { ArticleViewEnum } from '../type/view.enum'
+import { ArticleFeedViewEnum } from '../type/view.enum'
 import cls from './ArticleFeed.module.scss'
 import { ArticleFeedSkeleton } from './ArticleFeed.skeleton'
 
@@ -12,14 +12,13 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     className,
     articleList,
     isLoading,
-    view = ArticleViewEnum.TILE,
+    view = ArticleFeedViewEnum.TILE,
   } = props
-  console.log('isLoading', isLoading)
 
   const clsFeed = classNames(cls.list, [className], {})
   const clsItem = classNames(cls.item, [cls.item_view], {
-    [cls.item_view_tile]: view === ArticleViewEnum.TILE,
-    [cls.item_view_row]: view === ArticleViewEnum.ROW,
+    [cls.item_view_tile]: view === ArticleFeedViewEnum.TILE,
+    [cls.item_view_row]: view === ArticleFeedViewEnum.ROW,
   })
 
   return (

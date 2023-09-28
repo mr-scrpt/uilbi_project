@@ -3,4 +3,5 @@ export enum StorageNameEnum {
   FEED_VIEW = 'FEED_VIEW',
   FEED_LIMIT = 'FEED_LIMIT',
   FEED_SORT = 'FEED_SORT',
+  FEED_ORDER = 'FEED_ORDER',
 }

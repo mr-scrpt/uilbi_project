@@ -6,8 +6,8 @@ import {
 import { IArticle } from 'entity/Article'
 import { ArticleViewEnum } from 'entity/ArticleFeed'
 
-import { ArticleOrderEnum } from '../../type/order.enum'
-import { ArticleSortFieldEnum } from '../../type/sort.enum'
+import { ArticleFeedOrderEnum } from '../../type/order.enum'
+import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
 import { ArticleFeedState } from '../../type/state.type'
 import { viewData } from '../data/view.data'
 import { fetchArticleFeed } from '../service/fetchArticleFeed'
@@ -26,8 +26,8 @@ const initialState = articleFeedAdapter.getInitialState<ArticleFeedState>({
   page: 1,
   limit: 4,
   hasMore: true,
-  sort: ArticleSortFieldEnum.CREATED,
-  order: ArticleOrderEnum.ASC,
+  sort: ArticleFeedSortFieldEnum.CREATED,
+  order: ArticleFeedOrderEnum.ASC,
   search: '',
 
   _inited: false,
@@ -56,10 +56,10 @@ export const articleFeedSlice = createSlice({
     setInited: (state) => {
       state._inited = true
     },
-    setOrder: (state, action: PayloadAction<ArticleOrderEnum>) => {
+    setOrder: (state, action: PayloadAction<ArticleFeedOrderEnum>) => {
       state.order = action.payload
     },
-    setSort: (state, action: PayloadAction<ArticleSortFieldEnum>) => {
+    setSort: (state, action: PayloadAction<ArticleFeedSortFieldEnum>) => {
       state.sort = action.payload
     },
     setSearch: (state, action: PayloadAction<string>) => {

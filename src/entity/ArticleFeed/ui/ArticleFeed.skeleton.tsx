@@ -3,13 +3,13 @@ import { FC } from 'react'
 
 import { ArticleLimitValue } from '../model/data/limit.data'
 import { ArticleFeedSkeletonProps } from '../type/props.type'
-import { ArticleViewEnum } from '../type/view.enum'
+import { ArticleFeedViewEnum } from '../type/view.enum'
 
 export const ArticleFeedSkeleton: FC<ArticleFeedSkeletonProps> = (props) => {
   const { view, className } = props
 
   const data = new Array(
-    view === ArticleViewEnum.TILE
+    view === ArticleFeedViewEnum.TILE
       ? ArticleLimitValue.TILE
       : ArticleLimitValue.ROW
   ).fill(0)

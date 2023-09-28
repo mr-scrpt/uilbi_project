@@ -5,7 +5,6 @@ import {
   getArticleFeedData,
   getArticleFeedHasMore,
   getArticleFeedIsLoading,
-  getArticleFeedView,
   getArticleViewFeedActive,
 } from 'entity/ArticleFeed'
 import { initArticleFeed } from 'entity/ArticleFeed/model/service/initArticleFeed'

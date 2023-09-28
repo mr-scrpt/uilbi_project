@@ -20,8 +20,8 @@ export { changeArticleFeedView } from './model/service/changeArticleFeedView'
 export { fetchArticleFeedNextPage } from './model/service/fetchArticleFeedNextPage'
 
 export { ArticleFeedView } from './type/view.type'
-export { ArticleSortFieldEnum } from './type/sort.enum'
-export { ArticleViewEnum } from './type/view.enum'
-export { ArticleOrderEnum } from './type/order.enum'
+export { ArticleFeedSortFieldEnum as ArticleSortFieldEnum } from './type/sort.enum'
+export { ArticleFeedViewEnum as ArticleViewEnum } from './type/view.enum'
+export { ArticleFeedOrderEnum as ArticleOrderEnum } from './type/order.enum'
 
 export { ArticleLimitValue } from './model/data/limit.data'

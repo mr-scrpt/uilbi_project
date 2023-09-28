@@ -1,4 +1,4 @@
-export enum ArticleViewEnum {
+export enum ArticleFeedViewEnum {
   TILE = 'TILE',
   ROW = 'ROW',
 }

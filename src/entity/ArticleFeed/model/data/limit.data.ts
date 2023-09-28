@@ -1,6 +1,6 @@
-import { ArticleViewEnum } from '../../type/view.enum'
+import { ArticleFeedViewEnum } from '../../type/view.enum'
 
-export const ArticleLimitValue: Record<ArticleViewEnum, number> = {
-  [ArticleViewEnum.TILE]: 9,
-  [ArticleViewEnum.ROW]: 4,
+export const ArticleLimitValue: Record<ArticleFeedViewEnum, number> = {
+  [ArticleFeedViewEnum.TILE]: 9,
+  [ArticleFeedViewEnum.ROW]: 4,
 }

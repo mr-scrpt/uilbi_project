@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { ArticleSortFieldEnum, ArticleViewEnum } from 'entity/ArticleFeed'
+import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
 import {
   storageFeedLimit,
+  storageFeedOrder,
   storageFeedSort,
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
@@ -31,9 +33,11 @@ export const initArticleFeed = createAsyncThunk<
 
       const initLimit = Number(storageFeedLimit.getItem() || base.limitBase)
       const initSort = storageFeedSort.getItem() || ArticleSortFieldEnum.CREATED
+      const initOrder = storageFeedOrder.getItem() || ArticleFeedOrderEnum.ASC
       dispatch(articleFeedAction.setView(initView))
       dispatch(articleFeedAction.setLimit(initLimit))
       dispatch(articleFeedAction.setSort(initSort))
+      dispatch(articleFeedAction.setOrder(initOrder))
       dispatch(fetchArticleFeed())
       dispatch(articleFeedAction.setInited())
     }

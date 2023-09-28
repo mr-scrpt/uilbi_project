@@ -1,9 +1,9 @@
 import { IconEnum } from 'shared/component/Icon'
 
-import { ArticleViewEnum } from './view.enum'
+import { ArticleFeedViewEnum } from './view.enum'
 
 export interface ArticleFeedView {
-  view: ArticleViewEnum
+  view: ArticleFeedViewEnum
   limitBase: number
   isActive: boolean
   icon: IconEnum

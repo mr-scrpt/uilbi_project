@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-import { ArticleViewEnum } from '../../ArticleFeed/type/view.enum'
+import { ArticleFeedViewEnum } from '../../ArticleFeed/type/view.enum'
 import {
   IArticle,
   IArticleBlockCode,
@@ -31,14 +31,14 @@ export interface ArticleBlockTextProps extends HTMLAttributes<HTMLDivElement> {
 export interface ArticleListProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   articleList?: IArticle[]
-  view?: ArticleViewEnum
+  view?: ArticleFeedViewEnum
   isLoading?: boolean
   error?: string
 }
 
 export interface ArticleListItemProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
-  view?: ArticleViewEnum
+  view?: ArticleFeedViewEnum
   article: IArticle
 }
 

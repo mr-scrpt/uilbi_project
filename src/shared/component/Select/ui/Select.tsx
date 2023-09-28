@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, useMemo } from 'react'
+import { ChangeEvent, useMemo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { SelectProps } from '../type/props.type'
