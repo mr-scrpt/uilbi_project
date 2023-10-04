@@ -16,6 +16,7 @@ export interface ArticleFeedState extends EntityState<IArticle> {
 
   order: ArticleFeedOrderEnum
   sort: ArticleFeedSortFieldEnum
+  tag: string
 
   search: string
   _inited: boolean

@@ -8,6 +8,7 @@ import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
 import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
 import { getArticleFeedPage } from '../selector/getArticleFeedPage'
 import { getArticleFeedSort } from '../selector/getArticleFeedSort'
+import { getArticleFeedTag } from '../selector/getArticleFeedTag'
 import { articleFeedAction } from '../slice/articleFeed.slice'
 
 export const fetchArticleFeedNextPage = createAsyncThunk<
@@ -22,6 +23,7 @@ export const fetchArticleFeedNextPage = createAsyncThunk<
   const inited = getArticleFeedInited(getState())
   const sort = getArticleFeedSort(getState())
   const order = getArticleFeedOrder(getState())
+  const tag = getArticleFeedTag(getState())
   const pageNext = page + 1
 
   if (hasMore && inited) {
@@ -33,6 +35,7 @@ export const fetchArticleFeedNextPage = createAsyncThunk<
           _limit: limit,
           _sort: sort,
           _order: order,
+          tagsId: tag === '' ? undefined : tag,
         },
       })
       if (!response.data) {

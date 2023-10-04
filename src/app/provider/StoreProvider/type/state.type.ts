@@ -6,6 +6,7 @@ import { CountryState } from 'entity/Country'
 import { CurrencyState } from 'entity/Currency'
 import { ModalState } from 'entity/Modal'
 import { ProfileState } from 'entity/Profile'
+import { TagsState } from 'entity/Tags/type/state.type'
 import { UserState } from 'entity/User'
 import { AuthState } from 'feature/AuthByUserName'
 import { CommentCreatorState } from 'feature/CommentCreator'
@@ -28,6 +29,7 @@ export interface StateSchema {
   articleFeed?: ArticleFeedState
   commentAticleList?: CommentArticleListState
   commentCreator?: CommentCreatorState
+  tags?: TagsState
 }
 export type StateSchemaParital = DeepPartial<StateSchema>
 export type ReducerListMapObject = ReducersMapObject<StateSchema>

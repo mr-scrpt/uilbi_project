@@ -4,16 +4,15 @@ import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { articleFeedAction } from '../slice/articleFeed.slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
-export const changeArticleFeedSearch = createAsyncThunk<
+export const changeArticleFeedTag = createAsyncThunk<
   void,
   string,
   ThunkConfigType<string>
->('feedArticle/changeSearch', async (query, thunkAPI) => {
+>('feedArticle/changeTag', async (tag, thunkAPI) => {
   const { rejectWithValue, dispatch } = thunkAPI
 
   try {
-    console.log('search', query)
-    dispatch(articleFeedAction.setSearch(query))
+    dispatch(articleFeedAction.setTag(tag))
     dispatch(articleFeedAction.setPage(1))
     dispatch(fetchArticleFeed())
   } catch (e) {

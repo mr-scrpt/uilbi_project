@@ -29,6 +29,7 @@ const initialState = articleFeedAdapter.getInitialState<ArticleFeedState>({
   sort: ArticleFeedSortFieldEnum.CREATED,
   order: ArticleFeedOrderEnum.ASC,
   search: '',
+  tag: '',
 
   _inited: false,
 })
@@ -65,19 +66,23 @@ export const articleFeedSlice = createSlice({
     setSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload
     },
+    setTag: (state, action: PayloadAction<string>) => {
+      state.tag = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticleFeed.pending, (state) => {
         state.error = undefined
         state.isLoading = true
+        articleFeedAdapter.removeAll(state)
       })
       .addCase(
         fetchArticleFeed.fulfilled,
         (state, action: PayloadAction<IArticle[]>) => {
           articleFeedAdapter.setAll(state, action.payload)
           state.isLoading = false
-          state.hasMore = action.payload.length > 0
+          state.hasMore = action.payload.length >= state.limit
         }
       )
       .addCase(fetchArticleFeed.rejected, (state, action) => {

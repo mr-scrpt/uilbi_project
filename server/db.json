@@ -87,6 +87,14 @@
       "abb": "USD"
     }
   ],
+  "tags": [
+    { "id": "0", "name": "tab-all" },
+    { "id": "1", "name": "tab-it" },
+    { "id": "2", "name": "tab-science" },
+    { "id": "3", "name": "tab-economic" },
+    { "id": "4", "name": "tab-ii" },
+    { "id": "5", "name": "tab-social" }
+  ],
   "articles": [
     {
       "id": "1",
@@ -96,7 +104,7 @@
       "views": 1,
       "createdAt": "26.04.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1", "2", "3"],
       "blocks": [
         {
           "id": "1",
@@ -159,14 +167,14 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 2,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["2"],
       "blocks": [
         {
           "id": "1",
@@ -188,7 +196,7 @@
       "views": 3,
       "createdAt": "26.02.2019",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["3"],
       "blocks": [
         {
           "id": "1",
@@ -210,7 +218,7 @@
       "views": 10222,
       "createdAt": "24.01.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["3", "4"],
       "blocks": [
         {
           "id": "1",
@@ -232,7 +240,7 @@
       "views": 10222,
       "createdAt": "26.02.2020",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["2", "3"],
       "blocks": [
         {
           "id": "1",
@@ -254,7 +262,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1", "4", "5"],
       "blocks": [
         {
           "id": "1",
@@ -276,7 +284,7 @@
       "views": 100,
       "createdAt": "21.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1", "5"],
       "blocks": [
         {
           "id": "1",
@@ -298,7 +306,7 @@
       "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["4", "5"],
       "blocks": [
         {
           "id": "1",
@@ -320,7 +328,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1"],
       "blocks": [
         {
           "id": "1",
@@ -342,7 +350,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1"],
       "blocks": [
         {
           "id": "1",
@@ -364,7 +372,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1"],
       "blocks": [
         {
           "id": "1",
@@ -386,7 +394,7 @@
       "views": 66687,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1"],
       "blocks": [
         {
           "id": "1",
@@ -408,7 +416,7 @@
       "views": 48,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["1", "3"],
       "blocks": [
         {
           "id": "1",
@@ -430,7 +438,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["2", "4"],
       "blocks": [
         {
           "id": "1",
@@ -452,7 +460,7 @@
       "views": 555,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["5"],
       "blocks": [
         {
           "id": "1",
@@ -474,7 +482,7 @@
       "views": 101,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["3", "4"],
       "blocks": [
         {
           "id": "1",
@@ -496,7 +504,7 @@
       "views": 5,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "tagsId": ["4"],
       "blocks": [
         {
           "id": "1",
@@ -518,7 +526,7 @@
       "views": 1111,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["ECONOMICS"],
+      "tagsId": ["2"],
       "blocks": [
         {
           "id": "1",
@@ -540,7 +548,7 @@
       "views": 58,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "tagsId": ["2", "3", "4"],
       "blocks": [
         {
           "id": "1",

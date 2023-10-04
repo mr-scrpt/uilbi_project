@@ -7,6 +7,7 @@ import { Avatar } from 'shared/component/Avatar'
 import { Button } from 'shared/component/Button'
 import { Card } from 'shared/component/Card'
 import { Img } from 'shared/component/Img'
+import { TabList } from 'shared/component/TabList'
 import { Title, TitleSizeEnum } from 'shared/component/Title'
 import { View } from 'shared/component/View'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
@@ -36,6 +37,10 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
     (block) => block.variant === ArticleBlockVariantEnum.TEXT
   ) as IArticleBlockText
 
+  const tabsList = article.tagsId.map((item) => ({
+    value: item,
+    name: item,
+  }))
   let articleContent
 
   if (view === ArticleViewEnum.ROW) {
@@ -55,7 +60,10 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
           <div className={cls.date}>{article.createdAt}</div>
         </div>
         <Title className={cls.title}>{article.title}</Title>
-        <div className={cls.taglist}>{article.type.join(', ')}</div>
+        <div className={cls.taglist}>
+          {/* {article.tagsId && article.tagsId.map((item) => <span>{item}</span>)} */}
+          <TabList tabsList={tabsList} />
+        </div>
         <div className={cls.imgbox}>
           <Img src={article.img} alt={article.title} className={cls.imgrow} />
         </div>
@@ -86,7 +94,10 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
         </div>
         <div className={cls.content}>
           <div className={cls.media}>
-            <div className={cls.taglist}>{article.type.join(', ')}</div>
+            <div className={cls.taglist}>
+              {article.tagsId &&
+                article.tagsId.map((item) => <span>{item}</span>)}
+            </div>
             <View count={article.views} />
           </div>
 

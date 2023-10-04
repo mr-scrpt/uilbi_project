@@ -18,6 +18,7 @@ export { initArticleFeed } from './model/service/initArticleFeed'
 export { fetchArticleFeed } from './model/service/fetchArticleFeed'
 export { changeArticleFeedView } from './model/service/changeArticleFeedView'
 export { fetchArticleFeedNextPage } from './model/service/fetchArticleFeedNextPage'
+export { changeArticleFeedTag } from './model/service/changeArticleFeedTag'
 
 export { ArticleFeedView } from './type/view.type'
 export { ArticleFeedSortFieldEnum as ArticleSortFieldEnum } from './type/sort.enum'

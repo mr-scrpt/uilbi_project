@@ -10,6 +10,7 @@ import {
 import { initArticleFeed } from 'entity/ArticleFeed/model/service/initArticleFeed'
 import { MutableRefObject, memo, useCallback, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 import { Button } from 'shared/component/Button'
 import { classNames } from 'shared/lib/classNames'
 import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
@@ -31,6 +32,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   const isLoading = useSelector(getArticleFeedIsLoading)
   const viewActive = useSelector(getArticleViewFeedActive)
   const hasMore = useSelector(getArticleFeedHasMore)
+  const [searchParams] = useSearchParams()
 
   const onLoadNextPage = useCallback(() => {
     if (hasMore) {
@@ -39,8 +41,8 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
   }, [dispatch, hasMore])
 
   useEffect(() => {
-    dispatch(initArticleFeed())
-  }, [dispatch])
+    dispatch(initArticleFeed(searchParams))
+  }, [dispatch, searchParams])
 
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>
 

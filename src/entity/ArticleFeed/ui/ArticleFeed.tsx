@@ -1,5 +1,6 @@
 import { ArticleFeedItem } from 'entity/ArticleFeedItem'
-import { memo } from 'react'
+import { memo, useTransition } from 'react'
+import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 
 import { ArticleFeedProps } from '../type/props.type'
@@ -21,6 +22,8 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     [cls.item_view_row]: view === ArticleFeedViewEnum.ROW,
   })
 
+  const { t } = useTranslation()
+
   return (
     <div className={clsFeed}>
       <div className={cls.inner}>
@@ -34,6 +37,9 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
             />
           ))}
         {isLoading && <ArticleFeedSkeleton view={view} className={clsItem} />}
+        {!isLoading && !articleList?.length && (
+          <span>{t('not-article-found')}</span>
+        )}
       </div>
     </div>
   )

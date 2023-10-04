@@ -1,0 +1,19 @@
+.tab {
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary-inverted);
+}
+
+.inner {
+  display: flex;
+}
+
+.content {
+  padding: 2px 5px;
+  font-style: italic;
+  background: var(--bg-color-inverted);
+}
+
+.active {
+  color: red;
+}

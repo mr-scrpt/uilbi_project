@@ -42,11 +42,11 @@ export enum ArticleTagEnum {
 export interface IArticle {
   id: string
   user: User
+  tagsId: string[]
   title: string
   subtitle: string
   img: string
   views: number
   createdAt: string
-  type: ArticleTagEnum[]
   blocks: ArticleBlockVariantType[]
 }
