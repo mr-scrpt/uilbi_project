@@ -88,12 +88,30 @@
     }
   ],
   "tags": [
-    { "id": "0", "name": "tab-all" },
-    { "id": "1", "name": "tab-it" },
-    { "id": "2", "name": "tab-science" },
-    { "id": "3", "name": "tab-economic" },
-    { "id": "4", "name": "tab-ii" },
-    { "id": "5", "name": "tab-social" }
+    {
+      "id": "0",
+      "name": "tab-all"
+    },
+    {
+      "id": "1",
+      "name": "tab-it"
+    },
+    {
+      "id": "2",
+      "name": "tab-science"
+    },
+    {
+      "id": "3",
+      "name": "tab-economic"
+    },
+    {
+      "id": "4",
+      "name": "tab-ii"
+    },
+    {
+      "id": "5",
+      "name": "tab-social"
+    }
   ],
   "articles": [
     {
@@ -167,13 +185,13 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 2,
       "createdAt": "26.02.2022",
-      "userId": "1",
+      "userId": "2",
       "tagsId": ["2"],
       "blocks": [
         {
@@ -195,7 +213,7 @@
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 3,
       "createdAt": "26.02.2019",
-      "userId": "1",
+      "userId": "3",
       "tagsId": ["3"],
       "blocks": [
         {
@@ -641,6 +659,18 @@
       "articleId": "5",
       "text": "one",
       "id": "HekLZwt"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "eeeewwwww",
+      "id": "gmjj__c"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "text": "testComment",
+      "id": "vlh_SR2"
     }
   ]
 }

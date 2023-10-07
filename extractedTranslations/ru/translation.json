@@ -1,4 +1,5 @@
 {
+  "Best-site": "Best-site",
   "Login": "Login",
   "Nav": "Nav",
   "Profile-page": "Profile-page",
@@ -54,5 +55,6 @@
   "send-form": "send-form",
   "side-bar-toggle": "side-bar-toggle",
   "sort-field": "sort-field",
-  "test-content-to-modal": "test-content-to-modal"
+  "test-content-to-modal": "test-content-to-modal",
+  "to-create": "to-create"
 }

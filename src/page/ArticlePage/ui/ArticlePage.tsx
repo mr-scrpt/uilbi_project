@@ -1,9 +1,10 @@
 import { Article } from 'entity/Article'
+import { ArticleRecomended } from 'entity/ArticleRecomended'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames'
-import { CommentArticleCreator } from 'widget/CommentArticleCreator'
+import { ArticleBar } from 'widget/ArticleBar'
 import { CommentArticleList } from 'widget/CommentArticleList'
 
 import { ArticlePageProps } from '../type/props.type'
@@ -20,8 +21,9 @@ export const ArticlePage = memo((props: ArticlePageProps) => {
   }
   return (
     <div className={clsArticlePage}>
+      <ArticleBar articleId={id} />
       <Article articleId={id} />
-      <CommentArticleCreator />
+      <ArticleRecomended />
       <CommentArticleList slug={id} />
     </div>
   )

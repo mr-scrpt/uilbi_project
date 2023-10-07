@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { IconEnum } from 'shared/component/Icon'
+import { LinkApp } from 'shared/component/LinkApp'
+import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
@@ -41,6 +43,12 @@ export const Navbar = memo((props: NavbarProps) => {
   return (
     <div className={clsNavbar}>
       <div className={clsInner}>
+        <div className={cls.slogan}>{t('Best-site')}</div>
+        <div className={cls.create}>
+          {authData && (
+            <LinkApp to={RoutePath.article_create}>{t('to-create')}</LinkApp>
+          )}
+        </div>
         <div className={clsMenu}>
           {authData && (
             <Button

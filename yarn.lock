@@ -9284,6 +9284,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-lint-fsd-plugin@npm:0.0.11":
+  version: 0.0.11
+  resolution: "eslint-plugin-lint-fsd-plugin@npm:0.0.11"
+  dependencies:
+    requireindex: ^1.2.0
+  peerDependencies:
+    eslint: ">=7"
+  checksum: e5df32009fd120df8ecd920565ce8a3e855d1a5771faa2092f6eebf0064afa8fd5c47f4d482bc4081d7ea69fee75e8c545398bea80a02c2c35ac1d569bb126c1
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-n@npm:^15.7.0":
   version: 15.7.0
   resolution: "eslint-plugin-n@npm:15.7.0"
@@ -14860,6 +14871,7 @@ __metadata:
     eslint-plugin-i18next: ^6.0.3
     eslint-plugin-import: ^2.27.5
     eslint-plugin-jsx-a11y: ^6.7.1
+    eslint-plugin-lint-fsd-plugin: 0.0.11
     eslint-plugin-n: ^16.0.1
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-promise: ^6.1.1
@@ -15811,6 +15823,13 @@ react-dom@latest:
   version: 1.1.0
   resolution: "requireindex@npm:1.1.0"
   checksum: 397057d97d7f753a3851abf0d6db94c295bd8254536f71f622b896ba08ea8c0d3e3771c8b009a557e6ce602f4245c0588836cdf59c4ce588fff721a7b855d323
+  languageName: node
+  linkType: hard
+
+"requireindex@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "requireindex@npm:1.2.0"
+  checksum: 50d8b10a1ff1fdf6aea7a1870bc7bd238b0fb1917d8d7ca17fd03afc38a65dcd7a8a4eddd031f89128b5f0065833d5c92c4fef67f2c04e8624057fe626c9cf94
   languageName: node
   linkType: hard
 

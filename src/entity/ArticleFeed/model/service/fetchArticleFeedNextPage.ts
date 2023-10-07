@@ -7,6 +7,7 @@ import { getArticleFeedInited } from '../selector/getArticleFeedInited'
 import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
 import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
 import { getArticleFeedPage } from '../selector/getArticleFeedPage'
+import { getArticleFeedSearch } from '../selector/getArticleFeedSearch'
 import { getArticleFeedSort } from '../selector/getArticleFeedSort'
 import { getArticleFeedTag } from '../selector/getArticleFeedTag'
 import { articleFeedAction } from '../slice/articleFeed.slice'
@@ -23,7 +24,11 @@ export const fetchArticleFeedNextPage = createAsyncThunk<
   const inited = getArticleFeedInited(getState())
   const sort = getArticleFeedSort(getState())
   const order = getArticleFeedOrder(getState())
+  const search = getArticleFeedSearch(getState())
   const tag = getArticleFeedTag(getState())
+
+  // if (search) {
+  // controlQueryParams({ search })
   const pageNext = page + 1
 
   if (hasMore && inited) {
@@ -36,6 +41,7 @@ export const fetchArticleFeedNextPage = createAsyncThunk<
           _sort: sort,
           _order: order,
           tagsId: tag === '' ? undefined : tag,
+          q: search,
         },
       })
       if (!response.data) {

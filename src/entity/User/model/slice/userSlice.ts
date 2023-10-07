@@ -16,7 +16,6 @@ export const userSlice = createSlice({
     },
     initAuth: (state) => {
       const user = storageAuthData.getItem()
-      console.log('user', user)
 
       if (user) {
         state.authData = user

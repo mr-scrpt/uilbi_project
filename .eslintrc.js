@@ -26,6 +26,7 @@ module.exports = {
     'prettier',
     'i18next',
     'react-hooks',
+    'lint-fsd-plugin',
   ],
   rules: {
     // 'react/jsx-indent': [2, 4],
@@ -81,6 +82,7 @@ module.exports = {
         depth: 3,
       },
     ],
+    'lint-fsd-plugin/import-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

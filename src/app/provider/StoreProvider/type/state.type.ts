@@ -1,6 +1,7 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { ArticleState } from 'entity/Article'
 import { ArticleFeedState } from 'entity/ArticleFeed/type/state.type'
+import { ArticleRecomendedState } from 'entity/ArticleRecomended'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'
 import { CurrencyState } from 'entity/Currency'
@@ -27,6 +28,7 @@ export interface StateSchema {
   profileEditor?: ProfileEditorState
   article?: ArticleState
   articleFeed?: ArticleFeedState
+  articleRecomended?: ArticleRecomendedState
   commentAticleList?: CommentArticleListState
   commentCreator?: CommentCreatorState
   tags?: TagsState

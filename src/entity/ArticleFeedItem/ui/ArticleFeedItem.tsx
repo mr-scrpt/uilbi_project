@@ -7,6 +7,7 @@ import { Avatar } from 'shared/component/Avatar'
 import { Button } from 'shared/component/Button'
 import { Card } from 'shared/component/Card'
 import { Img } from 'shared/component/Img'
+import { LinkApp } from 'shared/component/LinkApp'
 import { TabList } from 'shared/component/TabList'
 import { Title, TitleSizeEnum } from 'shared/component/Title'
 import { View } from 'shared/component/View'
@@ -27,11 +28,11 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
 
   const { t } = useTranslation()
 
-  const navigate = useNavigate()
-
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.article + article.id)
-  }, [article.id, navigate])
+  // const navigate = useNavigate()
+  //
+  // const onOpenArticle = useCallback(() => {
+  //   navigate(RoutePath.article + article.id)
+  // }, [article.id, navigate])
 
   const text = article.blocks.find(
     (block) => block.variant === ArticleBlockVariantEnum.TEXT
@@ -43,6 +44,7 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
   }))
   let articleContent
 
+  console.log('article id', article.id)
   if (view === ArticleViewEnum.ROW) {
     articleContent = (
       <div className={cls.inner}>
@@ -73,7 +75,9 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
           </div>
         )}
         <div className={cls.footer}>
-          <Button onClick={onOpenArticle}>{t('read-more')}</Button>
+          <LinkApp to={RoutePath.article + article.id}>
+            <Button>{t('read-more')}</Button>
+          </LinkApp>
           <View count={article.views} />
         </div>
       </div>
@@ -82,14 +86,11 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
 
   if (view === ArticleViewEnum.TILE) {
     articleContent = (
-      <div
-        className={cls.inner}
-        onClick={onOpenArticle}
-        tabIndex={0}
-        role="button"
-      >
+      <div className={cls.inner} tabIndex={0} role="button">
         <div className={cls.imgbox}>
-          <Img src={article.img} alt={article.title} />
+          <LinkApp to={RoutePath.article + article.id}>
+            <Img src={article.img} alt={article.title} />
+          </LinkApp>
           <div className={cls.date}>{article.createdAt}</div>
         </div>
         <div className={cls.content}>
@@ -101,7 +102,9 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
             <View count={article.views} />
           </div>
 
-          <Title className={cls.title}>{article.title}</Title>
+          <LinkApp to={RoutePath.article + article.id}>
+            <Title className={cls.title}>{article.title}</Title>
+          </LinkApp>
         </div>
       </div>
     )
