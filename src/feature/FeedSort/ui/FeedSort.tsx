@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Select } from 'shared/component/Select'
 import { classNames } from 'shared/lib/classNames'
@@ -12,11 +12,20 @@ export const FeedSort = memo((props: FeedSortProps) => {
   const { t } = useTranslation()
 
   const clsFeedSort = classNames(cls.feedSort, [className], {})
+  const optionsList = useMemo(() => {
+    if (feedSortData) {
+      return feedSortData.map((item) => ({
+        ...item,
+        disabled: false,
+      }))
+    }
+    return []
+  }, [])
   return (
     <div className={clsFeedSort}>
       <div className={cls.inner}>
         <div className="text">{t('sort-field')}</div>
-        <Select options={feedSortData} value={sort} onChange={onChangeSort} />
+        <Select options={optionsList} value={sort} onChange={onChangeSort} />
       </div>
     </div>
   )

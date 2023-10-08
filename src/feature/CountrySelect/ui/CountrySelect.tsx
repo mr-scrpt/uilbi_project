@@ -1,5 +1,5 @@
 import { fetchCountryData, selector } from 'entity/Country'
-import { FC, memo, useEffect, useMemo, useState } from 'react'
+import { memo, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Loader } from 'shared/component/Loader'
 import { Select } from 'shared/component/Select'
@@ -21,25 +21,31 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   const optionsList = useMemo(() => {
     if (data) {
       return data.map((country) => ({
-        content: country.name,
         value: country.abb,
+        content: country.name,
+        disabled: false,
       }))
     }
     return []
   }, [data])
 
   const clsCountrySelect = classNames(cls.countrySelect, [className], {})
+  // const list = [
+  //   { value: 'test value 1', content: 'content 1', disabled: false },
+  //   { value: 'test value 2', content: 'content 2', disabled: false },
+  //   { value: 'test value 3', content: 'content 1', disabled: true },
+  // ]
   return (
     <>
       {isLoading && <Loader />}
       {error && <div>{error}</div>}
       {!isLoading && !error && (
         <Select
-          options={optionsList}
-          onChange={onChange}
           className={clsCountrySelect}
-          disabled={disabled}
+          list={optionsList}
           value={value}
+          onChange={onChange}
+          disabled={disabled}
         />
       )}
     </>

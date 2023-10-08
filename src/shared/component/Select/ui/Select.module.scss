@@ -1,8 +1,47 @@
+@import 'app/style/mixin';
 .select {
+  position: relative;
   margin: 0;
   padding: 0;
 }
-.option {
-  margin: 0;
-  padding: 0;
+.select_disabled {
+  opacity: 0.5;
+}
+
+.control {
+  padding: 5px 10px;
+  border: 1px solid var(--color-primary);
+}
+.control_disabled {
+  cursor: not-allowed;
+}
+.list {
+  position: absolute;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 100%;
+
+  background-color: var(--color-primary);
+}
+
+.item {
+  @include ts(color, background);
+
+  color: var(--color-primary-inverted);
+}
+.item_disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  background: var(--color-passive-600);
+}
+
+.item_active {
+  background: var(--color-active-400);
+}
+.item_selected {
+  background: var(--color-attantion-400);
 }

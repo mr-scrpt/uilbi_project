@@ -1,15 +1,17 @@
-import { SelectHTMLAttributes } from 'react'
+import { HTMLAttributes } from 'react'
 
-import { OptionSelect } from './option.type'
+import { ISelectItem } from './listItem.type'
 
-type HTMLCustomSelectProps = Omit<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  'size' | 'onChange'
->
-
-export interface SelectProps<T extends string> extends HTMLCustomSelectProps {
+export interface SelectItemProps extends HTMLAttributes<HTMLLIElement> {
   className?: string
-  options: OptionSelect<T>[]
-  onChange?: (value: T) => void
-  value?: T
+  disabled?: boolean
+  value?: string
+}
+export interface SelectProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
+  className?: string
+  list: ISelectItem[]
+  value: string
+  onChange?: (value: string) => void
+  disabled?: boolean
 }

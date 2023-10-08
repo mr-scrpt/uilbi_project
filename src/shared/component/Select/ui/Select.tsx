@@ -1,42 +1,38 @@
-import { ChangeEvent, useMemo } from 'react'
+import { Listbox } from '@headlessui/react'
+import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { SelectProps } from '../type/props.type'
 import cls from './Select.module.scss'
+import { SelectItem } from './SelectItem'
 
-export const Select = <T extends string>(props: SelectProps<T>) => {
-  const { className, options, value, onChange, disabled } = props
+export const Select = memo((props: SelectProps) => {
+  const { className, list, value, onChange, disabled } = props
 
-  const clsSelect = classNames(cls.select, [className], {})
-  // console.log('value in select', value)
+  const clsCSelect = classNames(cls.select, [className], {
+    [cls.select_disabled]: disabled,
+  })
 
-  const optionsList = useMemo(
-    () =>
-      options?.map((opt) => (
-        <option
-          className={cls.option}
-          value={opt.value}
-          key={opt.value}
-          // selected={opt.selected}
-        >
-          {opt.content}
-        </option>
-      )),
-    [options]
-  )
-
-  const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value as T)
-  }
+  const clsControl = classNames(cls.control, [], {
+    [cls.control_disabled]: disabled,
+  })
 
   return (
-    <select
-      className={clsSelect}
-      value={value}
-      onChange={onChangeHandler}
-      disabled={disabled}
-    >
-      {optionsList}
-    </select>
+    <div className={clsCSelect}>
+      <Listbox value={value} onChange={onChange} disabled={disabled}>
+        <Listbox.Button className={clsControl}>{value}</Listbox.Button>
+        <Listbox.Options className={cls.list}>
+          {list.map((item) => (
+            <SelectItem
+              key={item.value}
+              value={item.value}
+              disabled={item.disabled}
+            >
+              {item.value}
+            </SelectItem>
+          ))}
+        </Listbox.Options>
+      </Listbox>
+    </div>
   )
-}
+})

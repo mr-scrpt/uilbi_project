@@ -23,6 +23,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       return data.map((country) => ({
         content: country.name,
         value: country.abb,
+        disabled: false,
       }))
     }
     return []
@@ -35,7 +36,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       {error && <div>{error}</div>}
       {!isLoading && !error && (
         <Select
-          options={optionsList}
+          list={optionsList}
           onChange={onChange}
           className={clsCountrySelect}
           disabled={disabled}
