@@ -1,3 +1,4 @@
+import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed/type/sort.enum'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Select } from 'shared/component/Select'
@@ -25,7 +26,11 @@ export const FeedSort = memo((props: FeedSortProps) => {
     <div className={clsFeedSort}>
       <div className={cls.inner}>
         <div className="text">{t('sort-field')}</div>
-        <Select options={optionsList} value={sort} onChange={onChangeSort} />
+        <Select<ArticleFeedSortFieldEnum>
+          list={optionsList}
+          value={sort}
+          onChange={onChangeSort}
+        />
       </div>
     </div>
   )

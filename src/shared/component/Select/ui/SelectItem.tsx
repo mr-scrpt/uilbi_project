@@ -3,9 +3,9 @@ import { Fragment } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { SelectItemProps } from '../type/props.type'
-import cls from './CSelect.module.scss'
+import cls from './Select.module.scss'
 
-export const SelectItem = (props: SelectItemProps) => {
+export const SelectItem = <T extends string>(props: SelectItemProps<T>) => {
   const { className, disabled, children, value } = props
   return (
     <Listbox.Option value={value} as={Fragment}>

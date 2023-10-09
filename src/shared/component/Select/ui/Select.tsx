@@ -1,12 +1,11 @@
 import { Listbox } from '@headlessui/react'
-import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { SelectProps } from '../type/props.type'
 import cls from './Select.module.scss'
 import { SelectItem } from './SelectItem'
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, list, value, onChange, disabled } = props
 
   const clsCSelect = classNames(cls.select, [className], {
@@ -19,7 +18,11 @@ export const Select = memo((props: SelectProps) => {
 
   return (
     <div className={clsCSelect}>
-      <Listbox value={value} onChange={onChange} disabled={disabled}>
+      <Listbox
+        value={value}
+        onChange={(value) => onChange?.(value as T)}
+        disabled={disabled}
+      >
         <Listbox.Button className={clsControl}>{value}</Listbox.Button>
         <Listbox.Options className={cls.list}>
           {list.map((item) => (
@@ -35,4 +38,4 @@ export const Select = memo((props: SelectProps) => {
       </Listbox>
     </div>
   )
-})
+}

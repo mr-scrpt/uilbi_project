@@ -1,5 +1,4 @@
 import { IconEnum } from 'shared/component/Icon'
-import { LinkModeEnum } from 'shared/component/LinkApp'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 
 import { SidebarListType } from '../type/list.type'
@@ -19,7 +18,7 @@ export const SidebarListData: SidebarListType = (mode, authOnly, userId) =>
       mode,
     },
     {
-      to: `${RoutePath.profile}/${userId}`,
+      to: `${RoutePath.profile}${userId}`,
       icon: IconEnum.MENU_PROFILE,
       text: 'menu-navigation-link-profile',
       authOnly: true,
