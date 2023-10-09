@@ -3,6 +3,7 @@ import { memo, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Loader } from 'shared/component/Loader'
 import { Select } from 'shared/component/Select'
+import { SelectListDerectionEnum } from 'shared/component/Select/type/direction.enum'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
@@ -41,6 +42,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
           className={clsCountrySelect}
           disabled={disabled}
           value={value}
+          direction={SelectListDerectionEnum.REVERS}
         />
       )}
     </>

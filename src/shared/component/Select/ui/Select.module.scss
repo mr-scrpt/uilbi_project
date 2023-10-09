@@ -1,8 +1,12 @@
 @import 'app/style/mixin';
 .select {
-  position: relative;
   margin: 0;
   padding: 0;
+}
+
+.inner {
+  position: relative;
+  display: flex;
 }
 .select_disabled {
   opacity: 0.5;
@@ -18,6 +22,8 @@
 .list {
   position: absolute;
   z-index: 1000;
+  bottom: 0;
+  transform: translateY(100%);
 
   display: flex;
   flex-direction: column;
@@ -26,6 +32,12 @@
   min-width: 100%;
 
   background-color: var(--color-primary);
+}
+.list_reverse {
+  top: 0;
+  bottom: auto;
+  transform: translateY(-100%);
+  flex-direction: column-reverse;
 }
 
 .item {
