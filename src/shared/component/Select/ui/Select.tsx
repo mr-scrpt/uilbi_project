@@ -11,14 +11,15 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
 
   const clsCSelect = classNames(cls.select, [className], {
     [cls.select_disabled]: disabled,
+    [cls.select_reverse]: direction === SelectListDerectionEnum.REVERS,
   })
 
   const clsControl = classNames(cls.control, [], {
-    [cls.control_disabled]: disabled,
+    // [cls.control_disabled]: disabled,
   })
 
   const clsList = classNames(cls.list, [], {
-    [cls.list_reverse]: direction === SelectListDerectionEnum.REVERS,
+    // [cls.list_reverse]: direction === SelectListDerectionEnum.REVERS,
   })
 
   return (

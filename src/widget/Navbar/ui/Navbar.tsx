@@ -1,14 +1,17 @@
 import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { getUserAuthData, userAction } from 'entity/User'
+import { UserMenu } from 'feature/UserMenu'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
+import { DropDown } from 'shared/component/DropDown'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp } from 'shared/component/LinkApp'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
+import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 
 import { NavbarProps } from '../type/props.type'
 import cls from './Navbar.module.scss'
@@ -51,13 +54,12 @@ export const Navbar = memo((props: NavbarProps) => {
         </div>
         <div className={clsMenu}>
           {authData && (
-            <Button
-              onClick={logout}
-              view={ButtonViewEnum.SECONDARY}
-              size={ButtonSizeEnum.S}
-            >
-              {t('menu-main-link-logout')}
-            </Button>
+            <>
+              <UserMenu user={authData} logout={logout} />
+              {/* <DropDownTest list={list}> */}
+              {/*   <Button>text</Button> */}
+              {/* </DropDownTest> */}
+            </>
           )}
           {!authData && (
             <>

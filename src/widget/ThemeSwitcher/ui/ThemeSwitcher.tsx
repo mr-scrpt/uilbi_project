@@ -1,6 +1,6 @@
 import { useTheme } from 'app/provider/ThemeProvider'
 import { ThemeEnum } from 'app/provider/ThemeProvider/type'
-import { FC, memo } from 'react'
+import { memo } from 'react'
 import {
   Button,
   ButtonShapeEnum,

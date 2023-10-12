@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 import { SelectItemProps } from '../type/props.type'
-import cls from './Select.module.scss'
+import cls from './SelectItem.module.scss'
 
 export const SelectItem = <T extends string>(props: SelectItemProps<T>) => {
   const { className, disabled, children, value } = props

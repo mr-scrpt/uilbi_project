@@ -1,5 +1,5 @@
 @import 'app/style/mixin';
-.select {
+.dropDown {
   margin: 0;
   padding: 0;
 }
@@ -29,17 +29,22 @@
 }
 
 // State
-.select.select_disabled {
+.dropDown.select_disabled {
   opacity: 0.5;
   & .control {
     cursor: not-allowed;
   }
 }
-.select.select_reverse {
+.dropDown.select_reverse {
   .list {
     top: 0;
     bottom: auto;
     transform: translateY(-100%);
     flex-direction: column-reverse;
   }
+}
+.item {
+  @include ts(color, background);
+
+  color: var(--color-primary-inverted);
 }

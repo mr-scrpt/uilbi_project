@@ -17,15 +17,15 @@
 
   outline: 0;
 
-  & .text {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: top;
-  }
-
   /* HOVER */
   &:hover {
     cursor: pointer;
   }
+}
+
+.text {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
 }

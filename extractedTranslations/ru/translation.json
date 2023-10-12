@@ -40,6 +40,7 @@
   "menu-top-link-reg": "menu-top-link-reg",
   "message-error-page": "message-error-page",
   "not-article-found": "not-article-found",
+  "open": "open",
   "page-about-title": "page-about-title",
   "page-article": "page-article",
   "page-article-feed": "page-article-feed",
@@ -48,6 +49,7 @@
   "page-not-found": "page-not-found",
   "page-not-found-title": "page-not-found-title",
   "page_not_found_title": "page_not_found_title",
+  "profile": "profile",
   "profile-edit-button": "profile-edit-button",
   "profile-reset-button": "profile-reset-button",
   "profile-save-button": "profile-save-button",
@@ -55,6 +57,7 @@
   "send-form": "send-form",
   "side-bar-toggle": "side-bar-toggle",
   "sort-field": "sort-field",
+  "test open": "test open",
   "test-content-to-modal": "test-content-to-modal",
   "to-create": "to-create"
 }
