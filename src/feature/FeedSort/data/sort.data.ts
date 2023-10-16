@@ -1,19 +1,20 @@
-import { ArticleSortFieldEnum } from 'entity/ArticleFeed'
+// import { SortFieldEnum } from 'widget/FeedArticle/type/sort.enum'
+import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed'
 
 import { IFeedSort } from '../type/sort.type'
 
 export const feedSortData: IFeedSort[] = [
   {
     content: 'sort-by-created',
-    value: ArticleSortFieldEnum.CREATED,
+    value: ArticleFeedSortFieldEnum.CREATED,
   },
 
   {
     content: 'sort-by-title',
-    value: ArticleSortFieldEnum.TITLE,
+    value: ArticleFeedSortFieldEnum.TITLE,
   },
   {
     content: 'sort-by-view',
-    value: ArticleSortFieldEnum.VIEWS,
+    value: ArticleFeedSortFieldEnum.VIEWS,
   },
 ]

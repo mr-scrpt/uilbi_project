@@ -1,8 +1,7 @@
 import { ArticleBlockVariantEnum, IArticleBlockText } from 'entity/Article'
-import { ArticleViewEnum } from 'entity/ArticleFeed'
-import { memo, useCallback } from 'react'
+import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 import { Avatar } from 'shared/component/Avatar'
 import { Button } from 'shared/component/Button'
 import { Card } from 'shared/component/Card'
@@ -19,7 +18,7 @@ import { ArticleFeedItemProps } from '../type/props.type'
 import cls from './ArticleFeedItem.module.scss'
 
 export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
-  const { className, view = ArticleViewEnum.TILE, article } = props
+  const { className, view = ArticleFeedViewEnum.TILE, article } = props
   const { user } = article
 
   const clsCard = classNames(cls.card, [className], {})
@@ -45,7 +44,7 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
   let articleContent
 
   console.log('article id', article.id)
-  if (view === ArticleViewEnum.ROW) {
+  if (view === ArticleFeedViewEnum.ROW) {
     articleContent = (
       <div className={cls.inner}>
         <div className={cls.header}>
@@ -84,7 +83,7 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
     )
   }
 
-  if (view === ArticleViewEnum.TILE) {
+  if (view === ArticleFeedViewEnum.TILE) {
     articleContent = (
       <div className={cls.inner} tabIndex={0} role="button">
         <div className={cls.imgbox}>

@@ -1,4 +1,4 @@
-import { ArticleViewEnum } from 'entity/ArticleFeed'
+import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
 import { memo } from 'react'
 import { Card } from 'shared/component/Card'
 import { Skeleton } from 'shared/component/Skeleton'
@@ -9,13 +9,13 @@ import cls from './ArticleFeedItem.module.scss'
 
 export const ArticleFeedItemSkeleton = memo(
   (props: ArticleFeedItemSkeletonProps) => {
-    const { className, view = ArticleViewEnum.TILE } = props
+    const { className, view = ArticleFeedViewEnum.TILE } = props
 
     const clsCard = classNames(cls.card, [className], {})
 
     let articleContent
 
-    if (view === ArticleViewEnum.ROW) {
+    if (view === ArticleFeedViewEnum.ROW) {
       articleContent = (
         <Skeleton className={cls.inner}>
           <div className={cls.header}>
@@ -48,7 +48,7 @@ export const ArticleFeedItemSkeleton = memo(
       )
     }
 
-    if (view === ArticleViewEnum.TILE) {
+    if (view === ArticleFeedViewEnum.TILE) {
       articleContent = (
         <Skeleton className={cls.inner}>
           <div className={cls.imgbox}>

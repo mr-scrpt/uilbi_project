@@ -1,5 +1,5 @@
 import { ArticleFeedItem } from 'entity/ArticleFeedItem'
-import { memo, useTransition } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 
@@ -14,6 +14,7 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     articleList,
     isLoading,
     view = ArticleFeedViewEnum.TILE,
+    item: Item,
   } = props
 
   const clsFeed = classNames(cls.list, [className], {})
@@ -28,8 +29,9 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     <div className={clsFeed}>
       <div className={cls.inner}>
         {articleList &&
+          Item &&
           articleList.map((item) => (
-            <ArticleFeedItem
+            <Item
               view={view}
               className={clsItem}
               article={item}

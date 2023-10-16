@@ -1,7 +1,7 @@
 import {
-  ArticleOrderEnum,
-  ArticleSortFieldEnum,
-  ArticleViewEnum,
+  ArticleFeedOrderEnum,
+  ArticleFeedSortFieldEnum,
+  ArticleFeedViewEnum,
   articleFeedAction,
   changeArticleFeedTag,
   changeArticleFeedView,
@@ -54,19 +54,19 @@ export const FeedArticleContorlBar = memo(
     }, [dispatch])
 
     const onChangeView = useCallback(
-      (view: ArticleViewEnum) => {
+      (view: ArticleFeedViewEnum) => {
         dispatch(changeArticleFeedView(view))
       },
       [dispatch]
     )
     const onChangeSort = useCallback(
-      (sort: ArticleSortFieldEnum) => {
+      (sort: ArticleFeedSortFieldEnum) => {
         dispatch(changeArticleFeedSort(sort))
       },
       [dispatch]
     )
     const onChangeOrder = useCallback(
-      (order: ArticleOrderEnum) => {
+      (order: ArticleFeedOrderEnum) => {
         dispatch(changeArticleFeedOrder(order))
       },
       [dispatch]

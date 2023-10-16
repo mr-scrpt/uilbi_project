@@ -4,7 +4,7 @@ import {
   createSlice,
 } from '@reduxjs/toolkit'
 import { IArticle } from 'entity/Article'
-import { ArticleViewEnum } from 'entity/ArticleFeed'
+import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
 
 import { ArticleFeedOrderEnum } from '../../type/order.enum'
 import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
@@ -38,7 +38,7 @@ export const articleFeedSlice = createSlice({
   name: 'feedArticleSlice',
   initialState,
   reducers: {
-    setView: (state, action: PayloadAction<ArticleViewEnum>) => {
+    setView: (state, action: PayloadAction<ArticleFeedViewEnum>) => {
       if (state.feedView) {
         state.feedView = state.feedView.map((item) => {
           if (item.view === action.payload) {
@@ -67,7 +67,7 @@ export const articleFeedSlice = createSlice({
       state.search = action.payload
     },
     setTag: (state, action: PayloadAction<string>) => {
-      state.tag = action.payload
+      state.search = action.payload
     },
   },
   extraReducers: (builder) => {

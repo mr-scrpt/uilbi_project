@@ -1,14 +1,14 @@
-import { ArticleOrderEnum } from 'entity/ArticleFeed'
+import { ArticleFeedOrderEnum } from 'entity/ArticleFeed'
 
 import { IFeedOrderDirection } from '../type/order.type'
 
 export const feedOrderDirectionData: IFeedOrderDirection[] = [
   {
     content: 'order-direction-asc',
-    value: ArticleOrderEnum.ASC,
+    value: ArticleFeedOrderEnum.ASC,
   },
   {
     content: 'order-direction-desc',
-    value: ArticleOrderEnum.DESC,
+    value: ArticleFeedOrderEnum.DESC,
   },
 ]

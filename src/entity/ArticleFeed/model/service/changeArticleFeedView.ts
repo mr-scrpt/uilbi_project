@@ -1,18 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ArticleViewEnum } from 'entity/ArticleFeed'
 import {
   storageFeedLimit,
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
 
+import { ArticleFeedViewEnum } from '../../type/view.enum'
 import { getArticleFeedLimitBase } from '../selector/getArticleFeedBaseLimit'
 import { articleFeedAction } from '../slice/articleFeed.slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
 export const changeArticleFeedView = createAsyncThunk<
   void,
-  ArticleViewEnum,
+  ArticleFeedViewEnum,
   ThunkConfigType<string>
 >('feedArticle/changeView', async (view, thunkAPI) => {
   const { rejectWithValue, dispatch, getState } = thunkAPI

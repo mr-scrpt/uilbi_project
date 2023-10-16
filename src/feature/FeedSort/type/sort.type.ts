@@ -1,6 +1,6 @@
-import { ArticleSortFieldEnum } from 'entity/ArticleFeed'
+import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed'
 
 export interface IFeedSort {
   content: string
-  value: ArticleSortFieldEnum
+  value: ArticleFeedSortFieldEnum
 }

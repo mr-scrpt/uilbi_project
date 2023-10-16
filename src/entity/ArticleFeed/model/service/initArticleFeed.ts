@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ArticleSortFieldEnum, ArticleViewEnum } from 'entity/ArticleFeed'
-import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
-import { ArticleFeedSearchParamsEnum } from 'entity/ArticleFeed/type/params.enum'
+// import { ArticleSortFieldEnum, ArticleViewEnum } from 'entity/ArticleFeed'
+// import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
+// import { ArticleFeedSearchParamsEnum } from 'entity/ArticleFeed/type/params.enum'
 import {
   storageFeedLimit,
   storageFeedOrder,
@@ -10,6 +10,10 @@ import {
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
 
+import { ArticleFeedOrderEnum } from '../../type/order.enum'
+import { ArticleFeedSearchParamsEnum } from '../../type/params.enum'
+import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
+import { ArticleFeedViewEnum } from '../../type/view.enum'
 import { viewData } from '../data/view.data'
 import { getArticleFeedInited } from '../selector/getArticleFeedInited'
 import { articleFeedAction } from '../slice/articleFeed.slice'
@@ -27,10 +31,11 @@ export const initArticleFeed = createAsyncThunk<
     if (!inited) {
       const [base] = viewData
       const initView =
-        (storageFeedView.getItem() as ArticleViewEnum) || base.view
+        (storageFeedView.getItem() as ArticleFeedViewEnum) || base.view
 
       const initLimit = Number(storageFeedLimit.getItem() || base.limitBase)
-      const initSort = storageFeedSort.getItem() || ArticleSortFieldEnum.CREATED
+      const initSort =
+        storageFeedSort.getItem() || ArticleFeedSortFieldEnum.CREATED
       const initOrder = storageFeedOrder.getItem() || ArticleFeedOrderEnum.ASC
 
       const urlOrder = searchParams.get(ArticleFeedSearchParamsEnum.ORDER)

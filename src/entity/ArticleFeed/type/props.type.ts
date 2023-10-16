@@ -1,5 +1,7 @@
 import { IArticle } from 'entity/Article'
-import { HTMLAttributes } from 'react'
+import { ArticleProps } from 'entity/Article/type/props.type'
+import { ArticleFeedItemProps } from 'entity/ArticleFeedItem/type/props.type'
+import { ElementType, FC, HTMLAttributes } from 'react'
 
 import { ArticleFeedViewEnum } from './view.enum'
 
@@ -9,6 +11,7 @@ export interface ArticleFeedProps extends HTMLAttributes<HTMLDivElement> {
   view?: ArticleFeedViewEnum
   isLoading?: boolean
   error?: string
+  item?: ElementType<ArticleFeedItemProps>
 }
 
 export interface ArticleFeedSkeletonProps

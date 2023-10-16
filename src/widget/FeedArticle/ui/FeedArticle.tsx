@@ -8,6 +8,7 @@ import {
   getArticleViewFeedActive,
 } from 'entity/ArticleFeed'
 import { initArticleFeed } from 'entity/ArticleFeed/model/service/initArticleFeed'
+import { ArticleFeedItem } from 'entity/ArticleFeedItem'
 import { MutableRefObject, memo, useCallback, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
@@ -64,6 +65,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
             articleList={articleList}
             view={viewActive?.view}
             className={cls.list}
+            item={ArticleFeedItem}
           />
           <div className={cls.end} ref={targetRef}></div>
         </div>

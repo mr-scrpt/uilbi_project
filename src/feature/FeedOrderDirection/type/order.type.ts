@@ -1,6 +1,6 @@
-import { ArticleOrderEnum } from 'entity/ArticleFeed'
+import { ArticleFeedOrderEnum } from 'entity/ArticleFeed'
 
 export interface IFeedOrderDirection {
   content: string
-  value: ArticleOrderEnum
+  value: ArticleFeedOrderEnum
 }
