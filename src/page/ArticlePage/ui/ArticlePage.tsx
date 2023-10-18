@@ -23,7 +23,7 @@ export const ArticlePage = memo((props: ArticlePageProps) => {
     <div className={clsArticlePage}>
       <ArticleBar articleId={id} />
       <Article articleId={id} />
-      <ArticleRecomended />
+      {/* <ArticleRecomended /> */}
       <CommentArticleList slug={id} />
     </div>
   )

@@ -30,3 +30,21 @@
 .list {
   flex-grow: 1;
 }
+
+.item {
+  padding: 0;
+}
+
+.item_view {
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.item_view_tile {
+  width: calc(33.3333% - 30px);
+}
+
+.item_view_row {
+  width: 100%;
+}

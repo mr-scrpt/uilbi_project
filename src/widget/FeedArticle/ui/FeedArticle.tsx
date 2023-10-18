@@ -1,6 +1,8 @@
 import {
   ArticleFeed,
   ArticleFeedItem,
+  ArticleFeedViewEnum,
+  IArticle,
   articleFeedReducer,
   fetchArticleFeedNextPage,
   getArticleFeedData,
@@ -53,6 +55,23 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
     callback: onLoadNextPage,
   })
   const clsFeedArticle = classNames(cls.feedArticle, [className], {})
+  // const clsFeedItem = classNames(cls.feedItem, [], {})
+  const clsItem = classNames(cls.item, [cls.item_view], {
+    [cls.item_view_tile]: viewActive?.view === ArticleFeedViewEnum.TILE,
+    [cls.item_view_row]: viewActive?.view === ArticleFeedViewEnum.ROW,
+  })
+
+  const renderFeed = useCallback(
+    (item: IArticle) => (
+      <ArticleFeedItem
+        view={viewActive?.view}
+        className={clsItem}
+        article={item}
+        key={item.id}
+      />
+    ),
+    [clsItem, viewActive?.view]
+  )
 
   return (
     <DynamicModuleLoader reducerList={reducersList}>
@@ -65,7 +84,7 @@ export const FeedArticle = memo((props: FeedArticleProps) => {
             articleList={articleList}
             view={viewActive?.view}
             className={cls.list}
-            item={ArticleFeedItem}
+            renderFeed={renderFeed}
           />
           <div className={cls.end} ref={targetRef}></div>
         </div>

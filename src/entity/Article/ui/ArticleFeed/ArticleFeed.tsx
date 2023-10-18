@@ -12,31 +12,19 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     articleList,
     isLoading,
     view = ArticleFeedViewEnum.TILE,
-    item: Item,
+    renderFeed,
   } = props
 
   const clsFeed = classNames(cls.list, [className], {})
-  const clsItem = classNames(cls.item, [cls.item_view], {
-    [cls.item_view_tile]: view === ArticleFeedViewEnum.TILE,
-    [cls.item_view_row]: view === ArticleFeedViewEnum.ROW,
-  })
 
   const { t } = useTranslation()
 
   return (
     <div className={clsFeed}>
       <div className={cls.inner}>
-        {articleList &&
-          Item &&
-          articleList.map((item) => (
-            <Item
-              view={view}
-              className={clsItem}
-              article={item}
-              key={item.id}
-            />
-          ))}
-        {isLoading && <ArticleFeedSkeleton view={view} className={clsItem} />}
+        {articleList && articleList.map(renderFeed)}
+
+        {isLoading && <ArticleFeedSkeleton view={view} className={className} />}
         {!isLoading && !articleList?.length && (
           <span>{t('not-article-found')}</span>
         )}

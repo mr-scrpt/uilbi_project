@@ -46,7 +46,6 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
   }))
   let articleContent
 
-  console.log('article id', article.id)
   if (view === ArticleFeedViewEnum.ROW) {
     articleContent = (
       <div className={cls.inner}>

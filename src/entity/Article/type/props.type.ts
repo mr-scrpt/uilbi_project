@@ -1,4 +1,4 @@
-import { ElementType, HTMLAttributes } from 'react'
+import { ElementType, HTMLAttributes, ReactNode } from 'react'
 
 import {
   IArticle,
@@ -60,7 +60,9 @@ export interface ArticleFeedProps extends HTMLAttributes<HTMLDivElement> {
   view?: ArticleFeedViewEnum
   isLoading?: boolean
   error?: string
-  item?: ElementType<ArticleFeedItemProps>
+  // item?: ElementType<ArticleFeedItemProps>
+  // renderFeed: (props: ElementType<ArticleFeedItemProps>) => ReactNode
+  renderFeed: (props: IArticle) => ReactNode
 }
 
 export interface ArticleFeedSkeletonProps

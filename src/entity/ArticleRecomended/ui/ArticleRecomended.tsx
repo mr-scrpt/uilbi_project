@@ -35,11 +35,11 @@ export const ArticleRecomended = memo((props: ArticleRecomendedProps) => {
   }, [dispatch])
   return (
     <DynamicModuleLoader reducerList={reducersList} removeAfterUnmount>
-      <ArticleFeed
-        className={clsArticleRecomended}
-        articleList={articleList}
-        isLoading={isLoading}
-      />
+      {/* <ArticleFeed */}
+      {/*   className={clsArticleRecomended} */}
+      {/*   articleList={articleList} */}
+      {/*   isLoading={isLoading} */}
+      {/* /> */}
     </DynamicModuleLoader>
   )
 })
