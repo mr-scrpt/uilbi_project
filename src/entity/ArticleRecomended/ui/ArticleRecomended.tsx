@@ -1,4 +1,4 @@
-import { ArticleFeed } from 'entity/ArticleFeed'
+import { ArticleFeed } from 'entity/Article'
 import { memo, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames'

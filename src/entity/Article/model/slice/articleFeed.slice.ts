@@ -3,19 +3,25 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit'
-import { IArticle } from 'entity/Article'
-import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
 
-import { ArticleFeedOrderEnum } from '../../type/order.enum'
-import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
-import { ArticleFeedState } from '../../type/state.type'
+import {
+  ArticleFeedOrderEnum,
+  ArticleFeedSortFieldEnum,
+  ArticleFeedState,
+  ArticleFeedViewEnum,
+  IArticle,
+} from '../../type'
 import { viewData } from '../data/view.data'
-import { fetchArticleFeed } from '../service/fetchArticleFeed'
-import { fetchArticleFeedNextPage } from '../service/fetchArticleFeedNextPage'
+import {
+  fetchArticleFeed,
+  fetchArticleFeedNextPage,
+} from '../service/articleFeed'
 
 export const articleFeedAdapter = createEntityAdapter<IArticle>({
   selectId: (article) => article.id,
 })
+
+console.log('adapter =>>>>>', articleFeedAdapter)
 
 const initialState = articleFeedAdapter.getInitialState<ArticleFeedState>({
   isLoading: false,
@@ -73,6 +79,7 @@ export const articleFeedSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticleFeed.pending, (state) => {
+        console.log('in pending')
         state.error = undefined
         state.isLoading = true
         articleFeedAdapter.removeAll(state)
@@ -80,6 +87,7 @@ export const articleFeedSlice = createSlice({
       .addCase(
         fetchArticleFeed.fulfilled,
         (state, action: PayloadAction<IArticle[]>) => {
+          console.log('in fulfilled')
           articleFeedAdapter.setAll(state, action.payload)
           state.isLoading = false
           state.hasMore = action.payload.length >= state.limit
@@ -98,6 +106,7 @@ export const articleFeedSlice = createSlice({
         fetchArticleFeedNextPage.fulfilled,
         (state, action: PayloadAction<IArticle[] | undefined>) => {
           if (action.payload) {
+            console.log('in reducer', action.payload)
             articleFeedAdapter.addMany(state, action.payload)
             state.hasMore = action.payload.length > 0
           }

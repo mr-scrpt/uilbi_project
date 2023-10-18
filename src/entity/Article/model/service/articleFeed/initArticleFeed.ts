@@ -10,13 +10,15 @@ import {
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
 
-import { ArticleFeedOrderEnum } from '../../type/order.enum'
-import { ArticleFeedSearchParamsEnum } from '../../type/params.enum'
-import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
-import { ArticleFeedViewEnum } from '../../type/view.enum'
-import { viewData } from '../data/view.data'
-import { getArticleFeedInited } from '../selector/getArticleFeedInited'
-import { articleFeedAction } from '../slice/articleFeed.slice'
+import {
+  ArticleFeedOrderEnum,
+  ArticleFeedSearchParamsEnum,
+  ArticleFeedSortFieldEnum,
+  ArticleFeedViewEnum,
+} from '../../../type'
+import { viewData } from '../../data/view.data'
+import { getArticleFeedInited } from '../../selector/articleFeed'
+import { articleFeedAction } from '../../slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
 export const initArticleFeed = createAsyncThunk<
@@ -25,6 +27,7 @@ export const initArticleFeed = createAsyncThunk<
   ThunkConfigType<string>
 >('feedArticle/initFeedArticle', async (searchParams, thunkAPI) => {
   const { rejectWithValue, dispatch, getState } = thunkAPI
+  console.log('init thunk')
 
   try {
     const inited = getArticleFeedInited(getState())

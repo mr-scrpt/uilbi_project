@@ -1,10 +1,9 @@
-import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
 import { memo } from 'react'
 import { Card } from 'shared/component/Card'
 import { Skeleton } from 'shared/component/Skeleton'
 import { classNames } from 'shared/lib/classNames'
 
-import { ArticleFeedItemSkeletonProps } from '../type/props.type'
+import { ArticleFeedItemSkeletonProps, ArticleFeedViewEnum } from '../../type'
 import cls from './ArticleFeedItem.module.scss'
 
 export const ArticleFeedItemSkeleton = memo(

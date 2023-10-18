@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
 import { storageFeedSort } from 'shared/lib/storage/LocalStorage'
 
-import { ArticleFeedSortFieldEnum } from '../../type/sort.enum'
-import { articleFeedAction } from '../slice/articleFeed.slice'
+import { ArticleFeedSortFieldEnum } from '../../../type/sort.enum'
+import { articleFeedAction } from '../../slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
 export const changeArticleFeedSort = createAsyncThunk<

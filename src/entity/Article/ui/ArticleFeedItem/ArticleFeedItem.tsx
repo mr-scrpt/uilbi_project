@@ -1,5 +1,3 @@
-import { ArticleBlockVariantEnum, IArticleBlockText } from 'entity/Article'
-import { ArticleFeedViewEnum } from 'entity/ArticleFeed/type/view.enum'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Avatar } from 'shared/component/Avatar'
@@ -14,7 +12,12 @@ import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { useHover } from 'shared/lib'
 import { classNames } from 'shared/lib/classNames'
 
-import { ArticleFeedItemProps } from '../type/props.type'
+import {
+  ArticleBlockVariantEnum,
+  ArticleFeedItemProps,
+  ArticleFeedViewEnum,
+  IArticleBlockText,
+} from '../../type'
 import cls from './ArticleFeedItem.module.scss'
 
 export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
@@ -48,16 +51,18 @@ export const ArticleFeedItem = memo((props: ArticleFeedItemProps) => {
     articleContent = (
       <div className={cls.inner}>
         <div className={cls.header}>
-          {user.avatar && (
-            <Avatar
-              source={user.avatar}
-              title={user.username}
-              className={cls.avatar}
-            />
+          {user && user.avatar && (
+            <>
+              <Avatar
+                source={user.avatar}
+                title={user.username}
+                className={cls.avatar}
+              />
+              <Title size={TitleSizeEnum.M} className={cls.author}>
+                {user.username}
+              </Title>
+            </>
           )}
-          <Title size={TitleSizeEnum.M} className={cls.author}>
-            {user.username}
-          </Title>
           <div className={cls.date}>{article.createdAt}</div>
         </div>
         <Title className={cls.title}>{article.title}</Title>

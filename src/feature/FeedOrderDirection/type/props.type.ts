@@ -1,4 +1,4 @@
-import { ArticleFeedOrderEnum } from 'entity/ArticleFeed'
+import { ArticleFeedOrderEnum } from 'entity/Article'
 import { HTMLAttributes } from 'react'
 
 export interface FeedOrderDirectionProps

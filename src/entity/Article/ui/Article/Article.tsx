@@ -1,3 +1,4 @@
+import { articleReducer } from 'entity/Article/model/slice/article.slice'
 import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Icon, IconEnum } from 'shared/component/Icon'
@@ -9,18 +10,19 @@ import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/Dy
 import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
 
-import { getArticleData } from '../../model/selector/getArticleData'
-import { getArticleError } from '../../model/selector/getArticleError'
-import { getArticleIsLoading } from '../../model/selector/getArticleIsLoading'
-import { fetchArticleData } from '../../model/service/fethcAritcleData'
-import { articleReducer } from '../../model/slice/articleSlice'
+import {
+  getArticleData,
+  getArticleError,
+  getArticleIsLoading,
+} from '../../model/selector/article'
+import { fetchArticleData } from '../../model/service/article'
 import {
   ArticleBlockVariantEnum,
   ArticleBlockVariantType,
   IArticleBlockCode,
   IArticleBlockImg,
   IArticleBlockText,
-} from '../../type/article.type'
+} from '../../type'
 import { ArticleProps } from '../../type/props.type'
 import { ArticleBlockCode } from '../ArticleBlockCode/ArticleBlockCode'
 import { ArticleBlockImg } from '../ArticleBlockImg/ArticleBlockImg'

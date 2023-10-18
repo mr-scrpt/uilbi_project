@@ -3,17 +3,23 @@ import {
   ArticleFeedSortFieldEnum,
   ArticleFeedViewEnum,
   articleFeedAction,
+  changeArticleFeedOrder,
+  changeArticleFeedSearch,
+  changeArticleFeedSort,
   changeArticleFeedTag,
   changeArticleFeedView,
+  getArticleFeedOrder,
+  getArticleFeedSearch,
   getArticleFeedSort,
+  getArticleFeedTag,
   getArticleFeedView,
-} from 'entity/ArticleFeed'
-import { getArticleFeedOrder } from 'entity/ArticleFeed/model/selector/getArticleFeedOrder'
-import { getArticleFeedSearch } from 'entity/ArticleFeed/model/selector/getArticleFeedSearch'
-import { getArticleFeedTag } from 'entity/ArticleFeed/model/selector/getArticleFeedTag'
-import { changeArticleFeedOrder } from 'entity/ArticleFeed/model/service/changeArticleFeedOrder'
-import { changeArticleFeedSearch } from 'entity/ArticleFeed/model/service/changeArticleFeedSearch'
-import { changeArticleFeedSort } from 'entity/ArticleFeed/model/service/changeArticleFeedSort'
+} from 'entity/Article'
+// import { getArticleFeedOrder } from 'entity/ArticleFeed/model/selector/getArticleFeedOrder'
+// import { getArticleFeedSearch } from 'entity/ArticleFeed/model/selector/getArticleFeedSearch'
+// import { getArticleFeedTag } from 'entity/ArticleFeed/model/selector/getArticleFeedTag'
+// import { changeArticleFeedOrder } from 'entity/ArticleFeed/model/service/changeArticleFeedOrder'
+// import { changeArticleFeedSearch } from 'entity/ArticleFeed/model/service/changeArticleFeedSearch'
+// import { changeArticleFeedSort } from 'entity/ArticleFeed/model/service/changeArticleFeedSort'
 import { getTagsData } from 'entity/Tags'
 import { fetchTagsData } from 'entity/Tags/model/service/fetchTagsData'
 import { FeedOrderDirection } from 'feature/FeedOrderDirection'

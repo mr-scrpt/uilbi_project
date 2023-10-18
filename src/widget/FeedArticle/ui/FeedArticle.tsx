@@ -1,14 +1,14 @@
 import {
   ArticleFeed,
+  ArticleFeedItem,
   articleFeedReducer,
   fetchArticleFeedNextPage,
   getArticleFeedData,
   getArticleFeedHasMore,
   getArticleFeedIsLoading,
   getArticleViewFeedActive,
-} from 'entity/ArticleFeed'
-import { initArticleFeed } from 'entity/ArticleFeed/model/service/initArticleFeed'
-import { ArticleFeedItem } from 'entity/ArticleFeedItem'
+  initArticleFeed,
+} from 'entity/Article'
 import { MutableRefObject, memo, useCallback, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'

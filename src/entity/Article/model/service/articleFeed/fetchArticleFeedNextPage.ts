@@ -1,16 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { IArticle } from 'entity/Article'
 
-import { getArticleFeedHasMore } from '../selector/getArticleFeedHasMore'
-import { getArticleFeedInited } from '../selector/getArticleFeedInited'
-import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
-import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
-import { getArticleFeedPage } from '../selector/getArticleFeedPage'
-import { getArticleFeedSearch } from '../selector/getArticleFeedSearch'
-import { getArticleFeedSort } from '../selector/getArticleFeedSort'
-import { getArticleFeedTag } from '../selector/getArticleFeedTag'
-import { articleFeedAction } from '../slice/articleFeed.slice'
+import { IArticle } from '../../../type'
+import {
+  getArticleFeedHasMore,
+  getArticleFeedInited,
+  getArticleFeedLimit,
+  getArticleFeedOrder,
+  getArticleFeedPage,
+  getArticleFeedSearch,
+  getArticleFeedSort,
+  getArticleFeedTag,
+} from '../../selector/articleFeed'
+import { articleFeedAction } from '../../slice'
 
 export const fetchArticleFeedNextPage = createAsyncThunk<
   IArticle[] | undefined,

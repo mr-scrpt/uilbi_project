@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
 import { storageFeedOrder } from 'shared/lib/storage/LocalStorage'
 
-import { articleFeedAction } from '../slice/articleFeed.slice'
+import { ArticleFeedOrderEnum } from '../../../type'
+import { articleFeedAction } from '../../slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
 export const changeArticleFeedOrder = createAsyncThunk<

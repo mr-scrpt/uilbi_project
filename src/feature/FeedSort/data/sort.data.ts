@@ -1,5 +1,4 @@
-// import { SortFieldEnum } from 'widget/FeedArticle/type/sort.enum'
-import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed'
+import { ArticleFeedSortFieldEnum } from 'entity/Article'
 
 import { IFeedSort } from '../type/sort.type'
 

@@ -1,6 +1,5 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
-import { ArticleState } from 'entity/Article'
-import { ArticleFeedState } from 'entity/ArticleFeed/type/state.type'
+import { ArticleFeedState, ArticleState } from 'entity/Article'
 import { ArticleRecomendedState } from 'entity/ArticleRecomended'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'

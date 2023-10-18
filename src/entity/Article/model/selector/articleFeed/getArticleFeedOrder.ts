@@ -1,5 +1,6 @@
 import { StateSchema } from 'app/provider/StoreProvider'
-import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
+
+import { ArticleFeedOrderEnum } from '../../../type'
 
 export const getArticleFeedOrder = (state: StateSchema) =>
   state.articleFeed?.order ?? ArticleFeedOrderEnum.ASC

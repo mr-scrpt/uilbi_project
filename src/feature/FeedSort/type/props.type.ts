@@ -1,4 +1,4 @@
-import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed'
+import { ArticleFeedSortFieldEnum } from 'entity/Article'
 import { HTMLAttributes } from 'react'
 
 export interface FeedSortProps extends HTMLAttributes<HTMLDivElement> {

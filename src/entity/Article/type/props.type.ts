@@ -1,12 +1,12 @@
-import { HTMLAttributes } from 'react'
+import { ElementType, HTMLAttributes } from 'react'
 
-import { ArticleFeedViewEnum } from '../../ArticleFeed/type/view.enum'
 import {
   IArticle,
   IArticleBlockCode,
   IArticleBlockImg,
   IArticleBlockText,
 } from './article.type'
+import { ArticleFeedViewEnum } from './view.enum'
 
 export interface ArticleProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
@@ -44,3 +44,24 @@ export interface ArticleListItemProps extends HTMLAttributes<HTMLDivElement> {
 
 export interface ArticleListItemSkeletonProps
   extends Omit<ArticleListItemProps, 'article'> {}
+
+export interface ArticleFeedItemProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string
+  view?: ArticleFeedViewEnum
+  article: IArticle
+}
+
+export interface ArticleFeedItemSkeletonProps
+  extends Omit<ArticleFeedItemProps, 'article'> {}
+
+export interface ArticleFeedProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string
+  articleList?: IArticle[]
+  view?: ArticleFeedViewEnum
+  isLoading?: boolean
+  error?: string
+  item?: ElementType<ArticleFeedItemProps>
+}
+
+export interface ArticleFeedSkeletonProps
+  extends Pick<ArticleFeedProps, 'className' | 'view'> {}

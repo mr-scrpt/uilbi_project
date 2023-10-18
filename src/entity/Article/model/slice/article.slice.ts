@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { IArticle } from 'entity/Article/type/article.type'
 
+import { IArticle } from '../../type'
 import { ArticleState } from '../../type/state.type'
-import { fetchArticleData } from '../service/fethcAritcleData'
+import { fetchArticleData } from '../service/article'
 
 const initialState: ArticleState = {
   data: undefined,

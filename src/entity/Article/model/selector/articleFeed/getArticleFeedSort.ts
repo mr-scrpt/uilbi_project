@@ -1,5 +1,6 @@
 import { StateSchema } from 'app/provider/StoreProvider'
-import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed/type/sort.enum'
+
+import { ArticleFeedSortFieldEnum } from '../../../type'
 
 export const getArticleFeedSort = (state: StateSchema) =>
   state.articleFeed?.sort ?? ArticleFeedSortFieldEnum.CREATED

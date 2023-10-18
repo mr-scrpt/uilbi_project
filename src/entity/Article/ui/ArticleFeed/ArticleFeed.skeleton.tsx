@@ -1,9 +1,8 @@
-import { ArticleFeedItemSkeleton } from 'entity/ArticleFeedItem/ui/ArticleFeedItem.skeleton'
 import { FC } from 'react'
 
-import { ArticleLimitValue } from '../model/data/limit.data'
-import { ArticleFeedSkeletonProps } from '../type/props.type'
-import { ArticleFeedViewEnum } from '../type/view.enum'
+import { ArticleLimitValue } from '../../model/data/limit.data'
+import { ArticleFeedSkeletonProps, ArticleFeedViewEnum } from '../../type'
+import { ArticleFeedItemSkeleton } from '../ArticleFeedItem/ArticleFeedItem.skeleton'
 
 export const ArticleFeedSkeleton: FC<ArticleFeedSkeletonProps> = (props) => {
   const { view, className } = props

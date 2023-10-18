@@ -5,9 +5,9 @@ import {
   storageFeedView,
 } from 'shared/lib/storage/LocalStorage'
 
-import { ArticleFeedViewEnum } from '../../type/view.enum'
-import { getArticleFeedLimitBase } from '../selector/getArticleFeedBaseLimit'
-import { articleFeedAction } from '../slice/articleFeed.slice'
+import { ArticleFeedViewEnum } from '../../../type/view.enum'
+import { getArticleFeedLimitBase } from '../../selector/articleFeed'
+import { articleFeedAction } from '../../slice'
 import { fetchArticleFeed } from './fetchArticleFeed'
 
 export const changeArticleFeedView = createAsyncThunk<

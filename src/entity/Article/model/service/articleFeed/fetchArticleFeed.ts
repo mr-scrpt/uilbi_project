@@ -1,14 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { IArticle } from 'entity/Article'
 import { controlQueryParams } from 'shared/lib/queryParams/controlQueryParams'
 
-import { getArticleFeedLimit } from '../selector/getArticleFeedLimit'
-import { getArticleFeedOrder } from '../selector/getArticleFeedOrder'
-import { getArticleFeedPage } from '../selector/getArticleFeedPage'
-import { getArticleFeedSearch } from '../selector/getArticleFeedSearch'
-import { getArticleFeedSort } from '../selector/getArticleFeedSort'
-import { getArticleFeedTag } from '../selector/getArticleFeedTag'
+import { IArticle } from '../../../type'
+import {
+  getArticleFeedLimit,
+  getArticleFeedOrder,
+  getArticleFeedPage,
+  getArticleFeedSearch,
+  getArticleFeedSort,
+  getArticleFeedTag,
+} from '../../selector/articleFeed'
 
 export const fetchArticleFeed = createAsyncThunk<
   IArticle[],

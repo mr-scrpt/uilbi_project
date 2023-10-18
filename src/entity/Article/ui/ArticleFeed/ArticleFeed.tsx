@@ -1,10 +1,8 @@
-import { ArticleFeedItem } from 'entity/ArticleFeedItem'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames'
 
-import { ArticleFeedProps } from '../type/props.type'
-import { ArticleFeedViewEnum } from '../type/view.enum'
+import { ArticleFeedProps, ArticleFeedViewEnum } from '../../type'
 import cls from './ArticleFeed.module.scss'
 import { ArticleFeedSkeleton } from './ArticleFeed.skeleton'
 

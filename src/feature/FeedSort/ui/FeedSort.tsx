@@ -1,4 +1,4 @@
-import { ArticleFeedSortFieldEnum } from 'entity/ArticleFeed/type/sort.enum'
+import { ArticleFeedSortFieldEnum } from 'entity/Article'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Select } from 'shared/component/Select'
