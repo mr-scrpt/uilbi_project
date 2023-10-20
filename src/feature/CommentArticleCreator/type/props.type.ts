@@ -1,8 +1,8 @@
 import { HTMLAttributes } from 'react'
 
-export interface CommentArticleListProps
+export interface CommentArticleCreatorProps
   extends HTMLAttributes<HTMLDivElement> {
   className?: string
   slug: string
-  userId?: string | undefined
+  userId: string
 }

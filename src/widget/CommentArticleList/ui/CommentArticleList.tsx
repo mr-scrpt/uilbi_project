@@ -1,4 +1,5 @@
 import { CommentList } from 'entity/Comment'
+import { CommentArticleCreator } from 'feature/CommentArticleCreator'
 import { memo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -7,7 +8,6 @@ import { classNames } from 'shared/lib/classNames'
 import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
 import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
-import { CommentArticleCreator } from 'widget/CommentArticleCreator'
 
 import { getCommentsArticleList } from '../model/selector/getCommentArticleListData'
 import { getCommentArticleListError } from '../model/selector/getCommentArticleListError'
@@ -22,7 +22,7 @@ const reducerList: ReducerList = {
 }
 
 export const CommentArticleList = memo((props: CommentArticleListProps) => {
-  const { className, slug } = props
+  const { className, slug, userId } = props
   const { t } = useTranslation()
 
   const commentList = useSelector(getCommentsArticleList.selectAll)
@@ -44,7 +44,11 @@ export const CommentArticleList = memo((props: CommentArticleListProps) => {
         {error && <div>{t('error')}</div>}
         <Title size={TitleSizeEnum.M}>{t('comment-title')}</Title>
         <CommentList commentList={commentList} isLoading={isLoading} />
-        <CommentArticleCreator />
+        {userId ? (
+          <CommentArticleCreator slug={slug} userId={userId} />
+        ) : (
+          <div>{t('not-registered-user')}</div>
+        )}
       </div>
     </DynamicModuleLoader>
   )

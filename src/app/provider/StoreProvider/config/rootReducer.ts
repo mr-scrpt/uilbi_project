@@ -4,6 +4,7 @@ import { currencyReducer } from 'entity/Currency'
 import { modalReducer } from 'entity/Modal'
 import { userReducer } from 'entity/User'
 import { scrollManagerReducer } from 'feature/ScrollManager'
+import { rtkApi } from 'shared/api/rtkApi'
 
 import { ReducerListMapObject } from '../type/state.type'
 
@@ -15,6 +16,7 @@ export const rootReducer: ReducerListMapObject = {
   country: countryReducer,
   currency: currencyReducer,
   scrollManager: scrollManagerReducer,
+  [rtkApi.reducerPath]: rtkApi.reducer,
 }
 //
 // export const rootReducer = combineReducers(listReducer)

@@ -11,6 +11,7 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     className,
     articleList,
     isLoading,
+    error,
     view = ArticleFeedViewEnum.TILE,
     renderFeed,
   } = props
@@ -23,6 +24,7 @@ export const ArticleFeed = memo((props: ArticleFeedProps) => {
     <div className={clsFeed}>
       <div className={cls.inner}>
         {articleList && articleList.map(renderFeed)}
+        {error && <div>{error}</div>}
 
         {isLoading && <ArticleFeedSkeleton view={view} className={className} />}
         {!isLoading && !articleList?.length && (

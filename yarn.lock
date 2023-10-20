@@ -12158,6 +12158,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jest-html-reporters@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "jest-html-reporters@npm:3.1.4"
+  dependencies:
+    fs-extra: ^10.0.0
+    open: ^8.0.3
+  checksum: 248e6362a34c25528b2fd6c126eef3144501a46447cbd8c4e86996a3b437b4ae6be05be0d0148b1916fd5b9f069286b20c24b2e732568834b0c2cd033605f172
+  languageName: node
+  linkType: hard
+
 "jest-leak-detector@npm:^29.6.1":
   version: 29.6.1
   resolution: "jest-leak-detector@npm:29.6.1"
@@ -14069,7 +14079,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.0.4, open@npm:^8.0.9, open@npm:^8.4.0":
+"open@npm:^8.0.3, open@npm:^8.0.4, open@npm:^8.0.9, open@npm:^8.4.0":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:
@@ -14907,6 +14917,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest: ^29.6.1
     jest-environment-jsdom: ^29.6.1
+    jest-html-reporters: ^3.1.4
     json-server: ^0.17.3
     loki: ^0.32.0
     mini-css-extract-plugin: ^2.7.6

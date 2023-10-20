@@ -1,6 +1,6 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { ArticleFeedState, ArticleState } from 'entity/Article'
-import { ArticleRecomendedState } from 'entity/ArticleRecomended'
+// import { ArticleRecomendedState } from 'entity/ArticleRecomended'
 import { CounterState } from 'entity/Counter'
 import { CountryState } from 'entity/Country'
 import { CurrencyState } from 'entity/Currency'
@@ -12,6 +12,7 @@ import { AuthState } from 'feature/AuthByUserName'
 import { CommentCreatorState } from 'feature/CommentCreator'
 import { ProfileEditorState } from 'feature/ProfileEditor'
 import { ScrollManagerState } from 'feature/ScrollManager'
+import { rtkApi } from 'shared/api/rtkApi'
 import { CommentArticleListState } from 'widget/CommentArticleList'
 
 export interface StateSchema {
@@ -21,13 +22,14 @@ export interface StateSchema {
   country: CountryState
   currency: CurrencyState
   scrollManager: ScrollManagerState
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   login?: AuthState
   profile?: ProfileState
   profileEditor?: ProfileEditorState
   article?: ArticleState
   articleFeed?: ArticleFeedState
-  articleRecomended?: ArticleRecomendedState
+  // articleRecomended?: ArticleRecomendedState
   commentAticleList?: CommentArticleListState
   commentCreator?: CommentCreatorState
   tags?: TagsState
