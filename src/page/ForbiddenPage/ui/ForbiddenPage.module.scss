@@ -1,0 +1,16 @@
+.forbiddenPage {
+  margin: 0;
+  padding: 0;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+}

@@ -14,23 +14,37 @@
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "SuperUser",
       "password": "123",
-      "role": "ADMIN",
+      "role": [
+        "ADMIN",
+        "MANAGER"
+      ],
       "avatar": "https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "SimpleUser",
       "password": "123",
-      "role": "USER",
+      "role": [
+        "USER"
+      ],
       "avatar": "https://media.istockphoto.com/id/1152537185/photo/hacker-working-on-laptop-in-the-dark.jpg?s=612x612&w=0&k=20&c=S9odRE1_R0xaSQyjwY13tr410NKiJhJFiLRBX-X8c44="
+    },
+    {
+      "id": "3",
+      "username": "Manager",
+      "password": "123",
+      "role": [
+        "MANAGER"
+      ],
+      "avatar": "data:image/jpeg;base64,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"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "firstname": "esssd",
+      "firstname": "esssdd",
       "lastname": "User Lastname",
       "age": 22,
       "currency": "PLN",

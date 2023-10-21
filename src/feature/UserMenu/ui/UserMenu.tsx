@@ -1,9 +1,10 @@
-import { memo, useMemo } from 'react'
+import { memo, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { DropDown } from 'shared/component/DropDown'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { classNames } from 'shared/lib/classNames'
+import { RoleEnum } from 'shared/type/role/role.enum'
 import { ThemeSwitcher } from 'widget/ThemeSwitcher'
 
 import { UserMenuProps } from '../type/props.type'
@@ -16,11 +17,22 @@ export const UserMenu = memo((props: UserMenuProps) => {
 
   const { t } = useTranslation()
 
+  const isAdminPanelShow = user.role.includes(RoleEnum.ADMIN)
+
   const list = useMemo(
     () => [
-      { id: 1, title: 'Profile', href: `${RoutePath.profile}${user.id}` },
+      ...(isAdminPanelShow
+        ? [
+            {
+              id: 1,
+              title: t('Админка'),
+              href: RoutePath.admin,
+            },
+          ]
+        : []),
+      { id: 2, title: 'Profile', href: `${RoutePath.profile}${user.id}` },
       {
-        id: 2,
+        id: 3,
         Component: (
           <Button
             onClick={logout}
@@ -31,10 +43,11 @@ export const UserMenu = memo((props: UserMenuProps) => {
           </Button>
         ),
       },
-      { id: 3, Component: <ThemeSwitcher /> },
+      { id: 4, Component: <ThemeSwitcher /> },
     ],
-    [logout, t, user]
+    [logout, t, isAdminPanelShow, user]
   )
+
   return (
     <div className={clsUserMenu}>
       <DropDown list={list}>

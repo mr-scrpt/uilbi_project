@@ -103,12 +103,6 @@ export const ProfileEditor: FC<ProfileEditorProps> = (props) => {
     [dispatch, setUserData, profileToEdit]
   )
 
-  // const onSubmit = useCallback(() => {
-  //   if (profileToEdit) {
-  //     dispatch(validateProfileEditorData(profileToEdit))
-  //   }
-  // }, [dispatch, profileToEdit])
-
   const profileData = profileIsEditable ? profileToEdit : profile
 
   return (

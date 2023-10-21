@@ -2,6 +2,7 @@ import axios from 'axios'
 import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { userAction } from 'entity/User'
 import { AsyncThunk } from 'shared/lib/test'
+import { RoleEnum } from 'shared/type/role/role.enum'
 
 import { loginByUserName } from './login.thunk'
 
@@ -64,7 +65,7 @@ describe('getLoginError', () => {
   })
 
   test('should been called dispatch inside thunk => set auth data', async () => {
-    const userData = { username: 'test', id: '123' }
+    const userData = { username: 'test', id: '123', role: [RoleEnum.USER] }
     const thunk = new AsyncThunk(loginByUserName)
     thunk.api.post.mockResolvedValue(
       Promise.resolve({

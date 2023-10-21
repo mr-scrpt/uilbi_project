@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 
-export const AuthRoute = ({ children }: { children: JSX.Element }) => {
+import { AuthRouteProps } from '../type/props.type'
+
+export const AuthRoute = ({ children }: AuthRouteProps) => {
   const auth = useSelector(getUserAuthData)
   const location = useLocation()
   if (!auth) {

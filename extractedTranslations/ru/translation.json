@@ -43,9 +43,11 @@
   "not-registered-user": "not-registered-user",
   "open": "open",
   "page-about-title": "page-about-title",
+  "page-admin-title": "page-admin-title",
   "page-article": "page-article",
   "page-article-feed": "page-article-feed",
   "page-error-reloade": "page-error-reloade",
+  "page-forbidden-title": "page-forbidden-title",
   "page-main-title": "page-main-title",
   "page-not-found": "page-not-found",
   "page-not-found-title": "page-not-found-title",
@@ -60,5 +62,6 @@
   "sort-field": "sort-field",
   "test open": "test open",
   "test-content-to-modal": "test-content-to-modal",
-  "to-create": "to-create"
+  "to-create": "to-create",
+  "Админка": "Админка"
 }
