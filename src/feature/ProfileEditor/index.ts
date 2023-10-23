@@ -4,7 +4,7 @@ import {
   getProfileEditorErrors,
 } from './model/selector'
 
-export { ProfileEditorState } from './type/state.type'
+export type { ProfileEditorState } from './type/state.type'
 export { profileEditorAction } from './model/slice/profileEditorSlice'
 
 export const selector = {

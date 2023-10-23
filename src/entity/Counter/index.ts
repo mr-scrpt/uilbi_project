@@ -4,4 +4,4 @@ export {
   counterSlice,
   counterAction,
 } from './model/slice/counterSlice'
-export { CounterState } from './type/state.type'
+export type { CounterState } from './type/state.type'

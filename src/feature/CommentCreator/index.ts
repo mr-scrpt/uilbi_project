@@ -1,2 +1,2 @@
 export { CommentCreator } from './ui/CommentCreator'
-export { CommentCreatorState } from './type/state.type'
+export type { CommentCreatorState } from './type/state.type'

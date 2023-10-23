@@ -1,5 +1,5 @@
 import { Counter } from 'entity/Counter'
-import { BugButton } from 'feature/ButButton/ui/BugButton'
+import { BugButton } from 'feature/BugButton'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import {

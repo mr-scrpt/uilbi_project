@@ -1,2 +1,2 @@
 export { CommentArticleList } from './ui/CommentArticleList'
-export { CommentArticleListState } from './type/state.type'
+export type { CommentArticleListState } from './type/state.type'

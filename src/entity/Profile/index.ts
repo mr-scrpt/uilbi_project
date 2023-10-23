@@ -1,6 +1,6 @@
 export { ProfileCardAsync as ProfileCard } from './ui/ProfileCard/ProfileCard.async'
-export { ProfileState } from './type/state.type'
-export { ProfileData } from './type/profile.data'
+export type { ProfileState } from './type/state.type'
+export type { ProfileData } from './type/profile.data'
 export { profileAction, profileReducer } from './model/slice/profileSlice'
 export { fetchProfileData } from './model/service/fetchProfileData/fetchProfileData'
 export { updateProfileData } from './model/service/updateProfileData/updateProfileData'

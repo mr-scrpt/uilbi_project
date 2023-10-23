@@ -1,3 +1,3 @@
 export { Comment } from './ui/Comment/Comment'
-export { CommentType } from './type/comment.type'
+export type { CommentType } from './type/comment.type'
 export { CommentList } from './ui/CommentList/CommentList'
