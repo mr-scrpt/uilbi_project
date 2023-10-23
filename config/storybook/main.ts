@@ -14,6 +14,7 @@ const config: StorybookConfig = {
     '@storybook/addon-viewport',
     'storybook-react-context',
     'storybook-react-i18next',
+    'storybook-addon-mock',
   ],
   framework: {
     name: '@storybook/react-webpack5',

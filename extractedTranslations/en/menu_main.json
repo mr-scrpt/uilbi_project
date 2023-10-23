@@ -1,4 +1,5 @@
 {
+  "Best-site": "",
   "Login": "",
   "menu-main-link-login": "",
   "menu-main-link-logout": "",
@@ -6,5 +7,6 @@
   "menu-navigation-link-about": "",
   "menu-navigation-link-main": "",
   "menu-top-link-login": "",
-  "menu-top-link-reg": ""
+  "menu-top-link-reg": "",
+  "to-create": ""
 }

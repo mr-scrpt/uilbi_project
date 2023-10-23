@@ -33,10 +33,17 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   rules?.push(svgLoader)
 
-  config.plugins?.push(
+  // config.plugins?.push(
+  //   new DefinePlugin({
+  //     __IS_DEV__: true,
+  //     __API_URL__: 'http://test.ua',
+  //   })
+  // )
+  config!.plugins!.push(
     new DefinePlugin({
-      __IS_DEV__: true,
-      __API_URL__: '',
+      __IS_DEV__: JSON.stringify(true),
+      __API_URL__: JSON.stringify('https://testapi.ua'),
+      __PROJECT__: JSON.stringify('storybook'),
     })
   )
 
