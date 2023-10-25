@@ -1,4 +1,4 @@
-export const babelLoader = {
+export const babelLoader = ({ isTsx }: { isTsx: boolean }) => ({
   test: /\.(js|jsx|ts|tsx)$/,
   exclude: /node_modules/,
   use: {
@@ -13,7 +13,14 @@ export const babelLoader = {
             keyAsDefaultValue: true,
           },
         ],
+        [
+          '@babel/plugin-transform-typescript',
+          {
+            isTsx,
+          },
+        ],
+        '@babel/plugin-transform-runtime',
       ],
     },
   },
-}
+})

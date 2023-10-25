@@ -1,0 +1,19 @@
+.notification {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  width: 100%;
+}
+
+.paragraph {
+  width: 100%;
+  color: var(--color-primary-inverted);
+}

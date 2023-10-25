@@ -4,8 +4,8 @@
 /* Size S */
 .size_s {
   .text {
-    font-size: calc(var(--font-size-s) * var(--title-scale-up-150));
-    line-height: calc(var(--font-line-s) * var(--title-scale-up-150));
+    font-size: calc(var(--font-size-s) * var(--title-scale-up-50));
+    line-height: calc(var(--font-line-s) * var(--title-scale-up-50));
   }
 }
 

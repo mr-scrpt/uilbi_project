@@ -3,4 +3,21 @@
   margin: 0;
   padding: 0;
 }
+*::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+  height: 8px;
+}
 
+*::-webkit-scrollbar-track {
+  background: var(--color-passive-500); /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-attantion-300); /* цвет плашки */
+  border: 2px solid var(--primary-color); /* padding вокруг плашки */
+  border-radius: 20px; /* закругления плашки */
+  // background: red;
+}
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }

@@ -2,6 +2,8 @@
 .link {
   @include ts(background);
 
+  position: relative;
+
   display: flex;
   gap: 0.5em;
   align-items: center;
@@ -17,12 +19,12 @@
   @include ts(background);
 }
 
-
 .text {
   @include ts(color);
 }
 
 .hovered.link {
+  cursor: pointer;
   background: var(--bg-color);
 }
 

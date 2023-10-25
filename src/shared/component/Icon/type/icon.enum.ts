@@ -9,4 +9,5 @@ export enum IconEnum {
   CALENDAR = 'icon_calendar',
   VIEW_TILE = 'icon_view_tile',
   VIEW_ROW = 'icon_view_row',
+  NOTIFY = 'icon_notify',
 }

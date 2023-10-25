@@ -1,0 +1,60 @@
+@import 'app/style/mixin';
+.popover {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  position: absolute;
+  z-index: 1000;
+
+  overflow: hidden;
+  // transform: translateY(100%);
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 200px;
+  // min-width: 100%;
+
+  background-color: var(--color-primary);
+  border-radius: var(--radius-size-l);
+  &.left_bottom {
+    top: 100%;
+    right: 0;
+  }
+  &.left_top {
+    right: 0;
+    bottom: 100%;
+  }
+  &.right_bottom {
+    top: 100%;
+    left: 0;
+  }
+  &.right_top {
+    bottom: 100%;
+    left: 0;
+  }
+}
+
+// State
+.dropDown.select_disabled {
+  opacity: 0.5;
+  & .control {
+    cursor: not-allowed;
+  }
+}
+.dropDown.select_reverse {
+  .list {
+    top: 0;
+    bottom: auto;
+    transform: translateY(-100%);
+    flex-direction: column-reverse;
+  }
+}
+.item {
+  @include ts(color, background);
+
+  color: var(--color-primary-inverted);
+}

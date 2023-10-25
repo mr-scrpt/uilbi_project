@@ -8,6 +8,13 @@
   }
 }
 
+.view_primary.inverted {
+  .text {
+    font-weight: 500;
+    color: var(--color-primary-inverted);
+  }
+}
+
 /* View primary END */
 
 /* View secondary */
@@ -15,6 +22,12 @@
   .text {
     font-weight: 600;
     color: var(--color-secondary);
+  }
+}
+.view_secondary.inverted {
+  .text {
+    font-weight: 600;
+    color: var(--color-secondary-inverted);
   }
 }
 

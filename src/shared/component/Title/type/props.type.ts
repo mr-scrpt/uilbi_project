@@ -7,4 +7,5 @@ export interface TitleProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string
   view?: TitleViewEnum
   size?: TitleSizeEnum
+  inverted?: boolean
 }

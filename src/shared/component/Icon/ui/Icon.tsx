@@ -12,6 +12,7 @@ export const Icon = memo((props: IconProps) => {
     [cls.icon_theme]: icon === IconEnum.THEME,
     [cls.icon_eye]: icon === IconEnum.EYE,
     [cls.icon_calendar]: icon === IconEnum.CALENDAR,
+    [cls.icon_notify]: icon === IconEnum.NOTIFY,
 
     [cls.icon_burger]: icon === IconEnum.BURGER,
 

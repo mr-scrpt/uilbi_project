@@ -12,12 +12,14 @@ export const Title = memo((props: TitleProps) => {
     children,
     view = TitleViewEnum.PRIMARY,
     size = TitleSizeEnum.L,
+    inverted = false,
   } = props
 
   const clsTitle = classNames(cls.title, [className], {
     [cls.view_primary]: view === TitleViewEnum.PRIMARY,
 
     [cls.view_secondary]: view === TitleViewEnum.SECONDARY,
+    [cls.inverted]: inverted,
     [cls.size_l]: size === TitleSizeEnum.L,
     [cls.size_m]: size === TitleSizeEnum.M,
     [cls.size_s]: size === TitleSizeEnum.S,

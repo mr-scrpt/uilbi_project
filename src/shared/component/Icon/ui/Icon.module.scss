@@ -45,8 +45,9 @@
 /* и позволяет легко задавать цвет для hover */
 /* и использовать иконки разных цветов в разных местах*/
 
-.icon.icon_twitter {
-  // background-image: url('/img/regular/icon/icon_twitter.svg');
+.icon.icon_notify {
+  -webkit-mask-image: url('../../../asset/icon/icon-notify.svg');
+  mask-image: url('../../../asset/icon/icon-notify.svg');
 }
 
 .icon.icon_theme {

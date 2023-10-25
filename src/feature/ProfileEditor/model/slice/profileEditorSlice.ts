@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ProfileData } from 'entity/Profile'
-import { ProfileEditorState } from 'feature/ProfileEditor/type/state.type'
 
+import { ProfileEditorState } from '../../type/state.type'
 import { validateProfileEditorData } from '../service/validateProfileEditorData'
 
 const initialState: ProfileEditorState = {

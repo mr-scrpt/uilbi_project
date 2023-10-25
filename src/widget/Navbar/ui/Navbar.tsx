@@ -1,5 +1,6 @@
 import { ModalNameEnum, modalAction } from 'entity/Modal'
 import { getUserAuthData, userAction } from 'entity/User'
+import { ProfileNotify } from 'feature/ProfileNotify'
 import { UserMenu } from 'feature/UserMenu'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -8,6 +9,8 @@ import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
 import { DropDown } from 'shared/component/DropDown'
 import { IconEnum } from 'shared/component/Icon'
 import { LinkApp } from 'shared/component/LinkApp'
+import { Popover } from 'shared/component/Popover'
+import { PopoverPositionEnum } from 'shared/component/Popover/type/position.enum'
 import { RoutePath } from 'shared/config/configRouter/configRouter'
 import { classNames } from 'shared/lib/classNames'
 import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
@@ -56,9 +59,7 @@ export const Navbar = memo((props: NavbarProps) => {
           {authData && (
             <>
               <UserMenu user={authData} logout={logout} />
-              {/* <DropDownTest list={list}> */}
-              {/*   <Button>text</Button> */}
-              {/* </DropDownTest> */}
+              <ProfileNotify />
             </>
           )}
           {!authData && (

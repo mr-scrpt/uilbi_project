@@ -1,5 +1,5 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react'
 
 export interface ArticleRecomendedProps extends HTMLAttributes<HTMLDivElement> {
-  className?: string;
+  className?: string
 }
