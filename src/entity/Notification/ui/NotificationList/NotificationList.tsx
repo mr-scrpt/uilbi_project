@@ -16,7 +16,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
         {isLoading && <NotificationListSkeleton />}
         {isError && <div>Error..</div>}
         {data.map((item) => (
-          <NotificationItem data={item} className={cls.item} />
+          <NotificationItem data={item} className={cls.item} key={item.id} />
         ))}
       </div>
     </div>

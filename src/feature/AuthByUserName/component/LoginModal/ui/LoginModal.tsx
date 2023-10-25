@@ -32,13 +32,8 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
         name: ModalNameEnum.LOGIN,
       })
     )
-  // const closeModal = () => {}
 
   const isOpen = useSelector(isModalOpen(ModalNameEnum.LOGIN))
-
-  // useEffect(() => {
-  //   dispatch(modalAction.openModal({ name: ModalNameEnum.LOGIN }))
-  // }, [dispatch])
 
   const clsLoginModal = classNames(cls.modal, [className], {})
 
@@ -48,6 +43,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
       isOpen={isOpen}
       onClose={closeModal}
       closeByEscape={false}
+      animationDelay={500}
     >
       <Suspense fallback={<LoaderContent />}>
         <LoginFormAsync setFocus={isOpen} />

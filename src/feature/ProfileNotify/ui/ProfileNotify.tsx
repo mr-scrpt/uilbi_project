@@ -1,6 +1,8 @@
 import { NotificationList } from 'entity/Notification'
-import { memo } from 'react'
+import { memo, useState } from 'react'
+import { BrowserView, MobileView } from 'react-device-detect'
 import { Button, ButtonSizeEnum, ButtonViewEnum } from 'shared/component/Button'
+import { Drawer } from 'shared/component/Drawer'
 import { IconEnum } from 'shared/component/Icon'
 import { Popover } from 'shared/component/Popover'
 import { PopoverPositionEnum } from 'shared/component/Popover/type/position.enum'
@@ -17,27 +19,47 @@ export const ProfileNotify = memo((props: ProfileNotifyProps) => {
   const { data, isError, isLoading } = useNotification(null, {
     pollingInterval: 5000,
   })
+  const [openDrawer, setOpenDrawer] = useState(false)
   return (
     <div className={clsProfileNotify}>
       <div className={cls.inner}>
-        <Popover
-          position={PopoverPositionEnum.TO_LEFT_BOTTOM}
-          control={
-            <Button
-              icon={IconEnum.NOTIFY}
-              size={ButtonSizeEnum.S}
-              view={ButtonViewEnum.TRANSPARENT}
-            />
-          }
-        >
-          {data && (
-            <NotificationList
-              data={data}
-              isLoading={isLoading}
-              isError={isError}
-            />
-          )}
-        </Popover>
+        <BrowserView>
+          <Popover
+            position={PopoverPositionEnum.TO_LEFT_BOTTOM}
+            control={
+              <Button
+                icon={IconEnum.NOTIFY}
+                size={ButtonSizeEnum.S}
+                view={ButtonViewEnum.TRANSPARENT}
+              />
+            }
+          >
+            {data && (
+              <NotificationList
+                data={data}
+                isLoading={isLoading}
+                isError={isError}
+              />
+            )}
+          </Popover>
+        </BrowserView>
+        <MobileView>
+          <Button
+            icon={IconEnum.NOTIFY}
+            size={ButtonSizeEnum.S}
+            view={ButtonViewEnum.TRANSPARENT}
+            onClick={() => setOpenDrawer(true)}
+          />
+          <Drawer isOpen={openDrawer} onClose={() => setOpenDrawer(false)}>
+            {data && (
+              <NotificationList
+                data={data}
+                isLoading={isLoading}
+                isError={isError}
+              />
+            )}
+          </Drawer>
+        </MobileView>
       </div>
     </div>
   )

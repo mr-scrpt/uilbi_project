@@ -1,11 +1,11 @@
 @import 'app/style/mixin';
-.modal {
+.drawer {
   @include ts(opacity);
 
   pointer-events: none;
 
   position: fixed;
-  // z-index: var(--level-2);
+  // z-index: var(--level-b1);
   top: 0;
   right: 0;
   bottom: 0;
@@ -13,10 +13,9 @@
 
   &_opened {
     pointer-events: auto;
-    // z-index: var(--level-5);
     opacity: 1;
     & .box {
-      transform: scale(1);
+      transform: translateY(0);
     }
   }
 
@@ -26,14 +25,17 @@
 
   &_closing {
     & .box {
-      transform: scale(0.3);
+      transform: translateY(100%);
     }
   }
 }
 
 .inner {
+  position: relative;
+  // z-index: var(--level-1);
+
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 
   width: 100%;
@@ -45,14 +47,10 @@
 
   position: relative;
   z-index: var(--level-2);
-  transform: scale(0.3);
+  transform: translateY(100%);
 
   width: 100%;
-  max-width: 600px;
-  padding: 20px;
+  height: 50%;
 
-  // opacity: 0;
   background: var(--bg-color-inverted);
-  border-radius: var(--radius-size-l);
-  box-shadow: var(--shadow-primary);
 }
