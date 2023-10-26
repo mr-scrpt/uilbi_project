@@ -13,7 +13,7 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/": ["./src/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "isolatedModules": true
