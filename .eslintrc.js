@@ -5,11 +5,11 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-    'prettier',
-    'plugin:storybook/recommended',
+    // 'plugin:react/recommended',
+    // 'airbnb',
+    // 'plugin:i18next/recommended',
+    // 'prettier',
+    // 'plugin:storybook/recommended',
   ],
   // Pretter must be the last one
   parser: '@typescript-eslint/parser',
@@ -88,14 +88,14 @@ module.exports = {
     __IS_DEV__: true,
     __API_URL__: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
+  // settings: {
+  //   'import/resolver': {
+  //     node: {
+  //       paths: ['src'],
+  //       extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  //     },
+  //   },
+  // },
   overrides: [
     {
       files: ['**/src/**/*.test.{ts,tsx}'],
