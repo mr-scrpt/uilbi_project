@@ -56,6 +56,7 @@ export const ProfileNotify = memo((props: ProfileNotifyProps) => {
                 data={data}
                 isLoading={isLoading}
                 isError={isError}
+                className={cls.list}
               />
             )}
           </Drawer>
