@@ -1,4 +1,4 @@
-import { IconEnum } from 'shared/component/Icon'
+import { IconEnum } from '@/shared/component/Icon'
 
 import { ArticleFeedViewEnum } from './view.enum'
 

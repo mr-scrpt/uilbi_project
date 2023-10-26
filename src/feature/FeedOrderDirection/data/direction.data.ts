@@ -1,4 +1,4 @@
-import { ArticleFeedOrderEnum } from 'entity/Article'
+import { ArticleFeedOrderEnum } from '@/entity/Article'
 
 import { IFeedOrderDirection } from '../type/order.type'
 

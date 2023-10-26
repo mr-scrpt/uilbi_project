@@ -1,4 +1,4 @@
-import { PartialRecord } from 'shared/type/partionalRecord'
+import { PartialRecord } from '@/shared/type/partionalRecord'
 
 export const getQueryParams = (params: PartialRecord<string, string>) => {
   const searchParams = new URLSearchParams(window.location.search)

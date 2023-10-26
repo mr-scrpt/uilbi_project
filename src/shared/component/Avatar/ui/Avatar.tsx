@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { AvatarProps } from '../type/props.type'
 import cls from './Avatar.module.scss'

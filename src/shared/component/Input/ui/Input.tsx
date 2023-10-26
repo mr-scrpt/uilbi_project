@@ -1,5 +1,5 @@
 import { ChangeEvent, memo, useEffect, useRef, useState } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { InputModeEnum } from '../type/mode.enum'
 import { InputProps } from '../type/props.type'

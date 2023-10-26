@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconEnum } from 'shared/component/Icon'
+import { IconEnum } from '@/shared/component/Icon'
 
 import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
 import { ButtonShapeEnum } from '../type/shape.enum'

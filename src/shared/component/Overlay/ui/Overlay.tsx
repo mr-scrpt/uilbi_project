@@ -1,5 +1,5 @@
 import { Ref, forwardRef } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { OverlayProps } from '../type/props.type'
 import cls from './Overlay.module.scss'

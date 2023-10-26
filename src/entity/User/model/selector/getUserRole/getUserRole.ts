@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-import { RoleEnum } from 'shared/type/role/role.enum'
+import { RoleEnum } from '@/shared/type/role/role.enum'
 
 import { getUserAuthData } from '../getUserAuthData/getUserAuthData'
 

@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, RefObject } from 'react'
-import { IconEnum } from 'shared/component/Icon'
+import { IconEnum } from '@/shared/component/Icon'
 
 import { ButtonIconPositionEnum } from './buttonIconPosition.enum'
 import { ButtonShapeEnum } from './shape.enum'

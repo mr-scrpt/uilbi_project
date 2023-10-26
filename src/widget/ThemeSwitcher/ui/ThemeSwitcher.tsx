@@ -1,14 +1,14 @@
-import { useTheme } from 'app/provider/ThemeProvider'
-import { ThemeEnum } from 'app/provider/ThemeProvider/type'
+import { useTheme } from '@/app/provider/ThemeProvider'
+import { ThemeEnum } from '@/app/provider/ThemeProvider/type'
 import { memo } from 'react'
 import {
   Button,
   ButtonShapeEnum,
   ButtonSizeEnum,
   ButtonViewEnum,
-} from 'shared/component/Button'
-import { IconEnum } from 'shared/component/Icon/type/icon.enum'
-import { classNames } from 'shared/lib/classNames'
+} from '@/shared/component/Button'
+import { IconEnum } from '@/shared/component/Icon/type/icon.enum'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ThemeSwitcherProps } from '../type/props.type'
 import cls from './ThemeSwitcher.module.scss'

@@ -1,6 +1,6 @@
-import { CommentCreator } from 'feature/CommentCreator'
+import { CommentCreator } from '@/feature/CommentCreator'
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { CommentArticleCreatorProps } from '../type/props.type'
 import cls from './CommentArticleCreator.module.scss'

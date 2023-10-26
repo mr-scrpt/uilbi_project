@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { CommentListProps } from '../../type/props.type'
 import { Comment } from '../Comment/Comment'

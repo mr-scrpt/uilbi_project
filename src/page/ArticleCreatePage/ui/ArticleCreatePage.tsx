@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ArticleCreatePageProps } from '../type/props.type'
 import cls from './ArticleCreatePage.module.scss'

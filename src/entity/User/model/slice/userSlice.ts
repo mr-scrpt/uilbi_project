@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { User } from 'entity/User'
-import { UserState } from 'entity/User/type/state.type'
-import { storageAuthData } from 'shared/lib/storage/LocalStorage'
+import { User } from '@/entity/User'
+import { UserState } from '@/entity/User/type/state.type'
+import { storageAuthData } from '@/shared/lib/storage/LocalStorage'
 
 const initialState: UserState = {
   _inited: false,

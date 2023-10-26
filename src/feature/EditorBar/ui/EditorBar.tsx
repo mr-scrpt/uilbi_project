@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, ButtonViewEnum } from 'shared/component/Button'
-import { classNames } from 'shared/lib/classNames'
+import { Button, ButtonViewEnum } from '@/shared/component/Button'
+import { classNames } from '@/shared/lib/classNames'
 
 import { EditorBarProps } from '../type/props.type'
 import cls from './EditorBar.module.scss'

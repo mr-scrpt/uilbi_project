@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { CountryData } from 'entity/Country/type/country.type'
+import { CountryData } from '@/entity/Country/type/country.type'
 
 import { CurrencyState } from '../../type/state.type'
 import { fetchCurrencyData } from '../service/fetchCurrencyData/fetchCurrencyData'

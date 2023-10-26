@@ -1,5 +1,5 @@
-import { Counter } from 'entity/Counter'
-import { BugButton } from 'feature/BugButton'
+import { Counter } from '@/entity/Counter'
+import { BugButton } from '@/feature/BugButton'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -7,8 +7,8 @@ import {
   InputSizeEnum,
   InputStateEnum,
   InputViewEnum,
-} from 'shared/component/Input'
-import { classNames } from 'shared/lib/classNames'
+} from '@/shared/component/Input'
+import { classNames } from '@/shared/lib/classNames'
 
 import { MainPageProps } from '../type/props.type'
 import cls from './MainPage.module.scss'

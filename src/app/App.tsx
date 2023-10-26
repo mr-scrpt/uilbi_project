@@ -1,18 +1,18 @@
-import { useTheme } from 'app/provider/ThemeProvider'
-import { getUserIsInited, userAction } from 'entity/User'
-import { LoginModal } from 'feature/AuthByUserName'
+import { useTheme } from '@/app/provider/ThemeProvider'
+import { getUserIsInited, userAction } from '@/entity/User'
+import { LoginModal } from '@/feature/AuthByUserName'
 import {
   getScrollManagerPosition,
   scrollManagerAction,
-} from 'feature/ScrollManager'
+} from '@/feature/ScrollManager'
 import { Suspense, useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { ScrollRestoration, useLocation } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames'
-import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
-import { useThrottle } from 'shared/lib/hook/useThrottle/useThrottle'
-import { Navbar } from 'widget/Navbar'
-import { Sidebar } from 'widget/Sidebar'
+import { classNames } from '@/shared/lib/classNames'
+import { useAppDispatch } from '@/shared/lib/component/useAppDispatch'
+import { useThrottle } from '@/shared/lib/hook/useThrottle/useThrottle'
+import { Navbar } from '@/widget/Navbar'
+import { Sidebar } from '@/widget/Sidebar'
 
 import cls from './App.module.scss'
 import { StateSchema } from './provider/StoreProvider'

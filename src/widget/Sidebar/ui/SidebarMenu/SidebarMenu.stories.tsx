@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { LinkModeEnum } from 'shared/component/LinkApp'
-import { RouterDecorator } from 'shared/config/storybook/decorator'
+import { LinkModeEnum } from '@/shared/component/LinkApp'
+import { RouterDecorator } from '@/shared/config/storybook/decorator'
 
 import { SidebarMenu } from './SidebarMenu'
 

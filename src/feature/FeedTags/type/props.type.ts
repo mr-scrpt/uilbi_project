@@ -1,6 +1,6 @@
-import { ITag } from 'entity/Tags'
+import { ITag } from '@/entity/Tags'
 import { HTMLAttributes } from 'react'
-import { ITab } from 'shared/component/Tab'
+import { ITab } from '@/shared/component/Tab'
 
 export interface FeedTagsProps extends HTMLAttributes<HTMLDivElement> {
   className?: string

@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import {
   AppRouterProps,
   routeConfig,
-} from 'shared/config/configRouter/configRouter'
-import { LoaderContent } from 'widget/LoaderContent'
+} from '@/shared/config/configRouter/configRouter'
+import { LoaderContent } from '@/widget/LoaderContent'
 
 import { RouterProps } from '../type/props.type'
 import { AuthRoute } from './AuthRoute'

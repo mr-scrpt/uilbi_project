@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Icon, IconEnum } from 'shared/component/Icon'
-import { classNames } from 'shared/lib/classNames'
+import { Icon, IconEnum } from '@/shared/component/Icon'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ViewProps } from '../type/props.type'
 import cls from './View.module.scss'

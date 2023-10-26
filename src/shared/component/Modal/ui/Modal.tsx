@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { Overlay } from 'shared/component/Overlay'
-import { Portal } from 'shared/component/Portal'
-import { classNames } from 'shared/lib/classNames'
-import { useModal } from 'shared/lib/hook/useModal/useModal'
+import { Overlay } from '@/shared/component/Overlay'
+import { Portal } from '@/shared/component/Portal'
+import { classNames } from '@/shared/lib/classNames'
+import { useModal } from '@/shared/lib/hook/useModal/useModal'
 
 import { ModalProps } from '../type/props.type'
 import cls from './Modal.module.scss'

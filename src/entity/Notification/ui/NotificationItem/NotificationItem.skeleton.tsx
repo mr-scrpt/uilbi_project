@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Skeleton } from 'shared/component/Skeleton'
-import { classNames } from 'shared/lib/classNames'
+import { Skeleton } from '@/shared/component/Skeleton'
+import { classNames } from '@/shared/lib/classNames'
 
 import { NotificationItemSkeletonProps } from '../../type/props.type'
 import cls from './NotificationItem.module.scss'

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { controlQueryParams } from 'shared/lib/queryParams/controlQueryParams'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
+import { controlQueryParams } from '@/shared/lib/queryParams/controlQueryParams'
 
 import { IArticle } from '../../../type'
 import {

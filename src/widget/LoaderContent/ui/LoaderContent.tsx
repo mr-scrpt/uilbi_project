@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Loader } from 'shared/component/Loader'
-import { classNames } from 'shared/lib/classNames'
+import { Loader } from '@/shared/component/Loader'
+import { classNames } from '@/shared/lib/classNames'
 import { LoaderContentProps } from '../type/props.type'
 import cls from './LoaderContent.module.scss'
 

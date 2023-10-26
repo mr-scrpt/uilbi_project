@@ -3,8 +3,8 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit'
-import { CommentType } from 'entity/Comment'
-import { CommentArticleListState } from 'widget/CommentArticleList/type/state.type'
+import { CommentType } from '@/entity/Comment'
+import { CommentArticleListState } from '@/widget/CommentArticleList/type/state.type'
 
 import { fetchCommentArticleListById } from '../service/fetchCommentArticleList'
 

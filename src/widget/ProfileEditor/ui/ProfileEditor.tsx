@@ -3,25 +3,25 @@ import {
   fetchProfileData,
   profileReducer,
   selector as selectorProfile,
-} from 'entity/Profile'
-import { EditorBar } from 'feature/EditorBar'
-import { selector as selectorProfileEditor } from 'feature/ProfileEditor'
-import { getProfileEditorErrors } from 'feature/ProfileEditor/model/selector'
-import { validateAndUpdateProfileData } from 'feature/ProfileEditor/model/service/validateAndUpdateProfile'
+} from '@/entity/Profile'
+import { EditorBar } from '@/feature/EditorBar'
+import { selector as selectorProfileEditor } from '@/feature/ProfileEditor'
+import { getProfileEditorErrors } from '@/feature/ProfileEditor/model/selector'
+import { validateAndUpdateProfileData } from '@/feature/ProfileEditor/model/service/validateAndUpdateProfile'
 import {
   profileEditorAction,
   profileEditorReducer,
-} from 'feature/ProfileEditor/model/slice/profileEditorSlice'
+} from '@/feature/ProfileEditor/model/slice/profileEditorSlice'
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Button } from 'shared/component/Button'
-import { Loader } from 'shared/component/Loader'
-import { classNames } from 'shared/lib/classNames'
-import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
-import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
-import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
+import { Button } from '@/shared/component/Button'
+import { Loader } from '@/shared/component/Loader'
+import { classNames } from '@/shared/lib/classNames'
+import { DynamicModuleLoader } from '@/shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
+import { ReducerList } from '@/shared/lib/component/DynamicModuleLoader/type/props.type'
+import { useAppDispatch } from '@/shared/lib/component/useAppDispatch'
 
 import { ProfileEditorProps } from '../type/props.type'
 import cls from './ProfileEditor.module.scss'

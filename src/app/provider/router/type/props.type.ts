@@ -1,5 +1,5 @@
 import { HTMLAttributes, JSX } from 'react'
-import { RoleEnum } from 'shared/type/role/role.enum'
+import { RoleEnum } from '@/shared/type/role/role.enum'
 
 export interface RouterProps extends HTMLAttributes<HTMLDivElement> {
   classRouter?: string

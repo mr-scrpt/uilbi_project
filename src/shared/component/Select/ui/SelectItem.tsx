@@ -1,6 +1,6 @@
 import { Listbox } from '@headlessui/react'
 import { Fragment } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { SelectItemProps } from '../type/props.type'
 import cls from './SelectItem.module.scss'

@@ -1,5 +1,5 @@
 import { Decorator } from '@storybook/react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import cls from '../../../../app/App.module.scss'
 

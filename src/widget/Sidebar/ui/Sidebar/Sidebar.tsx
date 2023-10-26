@@ -3,12 +3,12 @@ import {
   Button,
   ButtonShapeEnum,
   ButtonViewEnum,
-} from 'shared/component/Button'
-import { IconEnum } from 'shared/component/Icon'
-import { LinkModeEnum } from 'shared/component/LinkApp'
-import { classNames } from 'shared/lib/classNames'
-import { LangSwitcher, LangSwitcherViewEnum } from 'widget/LangSwitcher'
-import { ThemeSwitcher } from 'widget/ThemeSwitcher'
+} from '@/shared/component/Button'
+import { IconEnum } from '@/shared/component/Icon'
+import { LinkModeEnum } from '@/shared/component/LinkApp'
+import { classNames } from '@/shared/lib/classNames'
+import { LangSwitcher, LangSwitcherViewEnum } from '@/widget/LangSwitcher'
+import { ThemeSwitcher } from '@/widget/ThemeSwitcher'
 
 import { SidebarProps } from '../../type/props.type'
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu'

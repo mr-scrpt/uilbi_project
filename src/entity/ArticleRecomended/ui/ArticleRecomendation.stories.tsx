@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StateSchema } from 'app/provider/StoreProvider'
-import { IArticle } from 'entity/Article/type'
+import { StateSchema } from '@/app/provider/StoreProvider'
+import { IArticle } from '@/entity/Article/type'
 import {
   RouterDecorator,
   StoreDecorator,
-} from 'shared/config/storybook/decorator'
-import { RoleEnum } from 'shared/type/role/role.enum'
+} from '@/shared/config/storybook/decorator'
+import { RoleEnum } from '@/shared/type/role/role.enum'
 
 // import withMock from 'storybook-addon-mock'
 import { ArticleRecomended } from './ArticleRecomended'

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { TagsState } from 'entity/Tags/type/state.type'
-import { ITag } from 'entity/Tags/type/tag.type'
+import { TagsState } from '@/entity/Tags/type/state.type'
+import { ITag } from '@/entity/Tags/type/tag.type'
 
 import { fetchTagsData } from '../service/fetchTagsData'
 

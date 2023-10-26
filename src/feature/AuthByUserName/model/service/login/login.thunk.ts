@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ModalNameEnum, modalAction } from 'entity/Modal'
-import { User, userAction } from 'entity/User'
-import { storageAuthData } from 'shared/lib/storage/LocalStorage'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
+import { ModalNameEnum, modalAction } from '@/entity/Modal'
+import { User, userAction } from '@/entity/User'
+import { storageAuthData } from '@/shared/lib/storage/LocalStorage'
 
 import { LoginDataType } from './login.type'
 

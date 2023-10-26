@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { CountryData } from 'entity/Country/type/country.type'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
+import { CountryData } from '@/entity/Country/type/country.type'
 
 export const fetchCountryData = createAsyncThunk<
   CountryData[],

@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react'
 import { Fragment, HTMLAttributes, ReactNode } from 'react'
-import { Button } from 'shared/component/Button'
-import { LinkApp } from 'shared/component/LinkApp'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Button } from '@/shared/component/Button'
+import { LinkApp } from '@/shared/component/LinkApp'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import { IDropDownItem } from '../type/item.type'
 import { DropDownProps } from '../type/props.type'

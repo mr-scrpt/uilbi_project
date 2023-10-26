@@ -1,4 +1,4 @@
-import { PartialRecord } from 'shared/type/partionalRecord'
+import { PartialRecord } from '@/shared/type/partionalRecord'
 
 import { getQueryParams } from './getQueryParams'
 

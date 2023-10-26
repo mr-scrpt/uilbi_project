@@ -1,8 +1,8 @@
-import { GoEditArticleButton } from 'feature/GoEditArticleButton'
-import { GoFeedButton } from 'feature/GoFeedButton'
+import { GoEditArticleButton } from '@/feature/GoEditArticleButton'
+import { GoFeedButton } from '@/feature/GoFeedButton'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { canEditArticle } from '../model/selector/canEditArticle'
 import { ArticleBarProps } from '../type/props.type'

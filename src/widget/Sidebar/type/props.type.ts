@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
-import { IconEnum } from 'shared/component/Icon'
-import { LinkModeEnum } from 'shared/component/LinkApp'
+import { IconEnum } from '@/shared/component/Icon'
+import { LinkModeEnum } from '@/shared/component/LinkApp'
 
 export interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
   className?: string

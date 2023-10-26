@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { StateSchema } from 'app/provider/StoreProvider'
-import { StoreDecorator } from 'shared/config/storybook/decorator'
+import { StateSchema } from '@/app/provider/StoreProvider'
+import { StoreDecorator } from '@/shared/config/storybook/decorator'
 
 import { LoginForm } from './LoginForm'
 

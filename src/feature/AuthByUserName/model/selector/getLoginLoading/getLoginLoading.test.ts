@@ -1,4 +1,4 @@
-import { StateSchema, StateSchemaParital } from 'app/provider/StoreProvider'
+import { StateSchema, StateSchemaParital } from '@/app/provider/StoreProvider'
 
 import { getLoginLoading } from './getLoginLoading'
 

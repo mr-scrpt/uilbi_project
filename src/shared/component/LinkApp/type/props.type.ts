@@ -1,5 +1,5 @@
 import { LinkProps } from 'react-router-dom'
-import { IconEnum } from 'shared/component/Icon'
+import { IconEnum } from '@/shared/component/Icon'
 
 import { LinkModeEnum } from './mode.enum'
 import { LinkSizeEnum } from './size.enum'

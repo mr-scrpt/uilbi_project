@@ -1,3 +1,3 @@
-import { StateSchema } from 'app/provider/StoreProvider'
+import { StateSchema } from '@/app/provider/StoreProvider'
 
 export const getCurrencyData = (state: StateSchema) => state.currency

@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Input } from 'shared/component/Input'
-import { classNames } from 'shared/lib/classNames'
+import { Input } from '@/shared/component/Input'
+import { classNames } from '@/shared/lib/classNames'
 
 import { FeedSearchProps } from '../type/props.type'
 import cls from './FeedSearch.module.scss'

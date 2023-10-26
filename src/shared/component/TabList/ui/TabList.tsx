@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Tab } from 'shared/component/Tab/ui/Tab'
-import { classNames } from 'shared/lib/classNames'
+import { Tab } from '@/shared/component/Tab/ui/Tab'
+import { classNames } from '@/shared/lib/classNames'
 
 import { TabListProps } from '../type/props.type'
 import cls from './TabList.module.scss'

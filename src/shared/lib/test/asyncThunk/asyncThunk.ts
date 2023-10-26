@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/provider/StoreProvider'
+import { StateSchema } from '@/app/provider/StoreProvider'
 import axios, { AxiosStatic } from 'axios'
 
 import { ActionCreatorType } from './type/action.type'

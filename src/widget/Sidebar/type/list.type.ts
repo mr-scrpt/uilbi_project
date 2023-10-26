@@ -1,4 +1,4 @@
-import { LinkModeEnum } from 'shared/component/LinkApp'
+import { LinkModeEnum } from '@/shared/component/LinkApp'
 
 import { SidebarItemProps } from './props.type'
 

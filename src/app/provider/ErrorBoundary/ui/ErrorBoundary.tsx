@@ -1,5 +1,5 @@
 import { Component, ErrorInfo, Suspense } from 'react'
-import { ErrorPage } from 'page/ErrorPage'
+import { ErrorPage } from '@/page/ErrorPage'
 import { ErrorBoundryProps } from '../type/props.type'
 import { ErrorBoundryState } from '../type/state.type'
 

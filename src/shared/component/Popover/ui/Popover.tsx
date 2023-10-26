@@ -1,6 +1,6 @@
 import { Popover as PopoverUi } from '@headlessui/react'
 import { Fragment, memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { PopoverPositionEnum } from '../type/position.enum'
 import { PopoverProps } from '../type/props.type'

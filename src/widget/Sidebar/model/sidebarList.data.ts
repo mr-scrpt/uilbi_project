@@ -1,5 +1,5 @@
-import { IconEnum } from 'shared/component/Icon'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
+import { IconEnum } from '@/shared/component/Icon'
+import { RoutePath } from '@/shared/config/configRouter/configRouter'
 
 import { SidebarListType } from '../type/list.type'
 

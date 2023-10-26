@@ -1,6 +1,6 @@
 import { userEvent } from '@storybook/testing-library'
 import { fireEvent, screen } from '@testing-library/react'
-import { RenderComopletedComponent } from 'shared/lib/test/renderCompletedComponent'
+import { RenderComopletedComponent } from '@/shared/lib/test/renderCompletedComponent'
 
 import { Sidebar } from './Sidebar'
 import cls from './Sidebar.module.scss'

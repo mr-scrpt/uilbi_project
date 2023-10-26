@@ -10,17 +10,17 @@ import {
   getArticleFeedIsLoading,
   getArticleViewFeedActive,
   initArticleFeed,
-} from 'entity/Article'
+} from '@/entity/Article'
 import { MutableRefObject, memo, useCallback, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
-import { Button } from 'shared/component/Button'
-import { classNames } from 'shared/lib/classNames'
-import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
-import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
-import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
-import { useIntersectionObserver } from 'shared/lib/hook/useIntersection/useIntersection'
-import { FeedArticleContorlBar } from 'widget/FeedArticleContorlBar'
+import { Button } from '@/shared/component/Button'
+import { classNames } from '@/shared/lib/classNames'
+import { DynamicModuleLoader } from '@/shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
+import { ReducerList } from '@/shared/lib/component/DynamicModuleLoader/type/props.type'
+import { useAppDispatch } from '@/shared/lib/component/useAppDispatch'
+import { useIntersectionObserver } from '@/shared/lib/hook/useIntersection/useIntersection'
+import { FeedArticleContorlBar } from '@/widget/FeedArticleContorlBar'
 
 import { FeedArticleProps } from '../type/props.type'
 import cls from './FeedArticle.module.scss'

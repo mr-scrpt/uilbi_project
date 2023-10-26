@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
-import { FeedArticle } from 'widget/FeedArticle'
+import { classNames } from '@/shared/lib/classNames'
+import { FeedArticle } from '@/widget/FeedArticle'
 
 import { ArticleFeedPageProps } from '../type/props.type'
 import cls from './ArticleFeedPage.module.scss'

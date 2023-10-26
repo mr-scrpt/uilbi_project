@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { RouterDecorator } from 'shared/config/storybook/decorator'
-import { classNames } from 'shared/lib/classNames'
+import { RouterDecorator } from '@/shared/config/storybook/decorator'
+import { classNames } from '@/shared/lib/classNames'
 
 import cls from '../../../../app/App.module.scss'
 import { Sidebar } from './Sidebar'

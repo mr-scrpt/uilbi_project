@@ -1,7 +1,7 @@
-import { getUserAuthData } from 'entity/User'
+import { getUserAuthData } from '@/entity/User'
 import { FC, memo } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { SidebarListData } from '../../model/sidebarList.data'
 import { SidebarMenuProps } from '../../type/props.type'

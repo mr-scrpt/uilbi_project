@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import { Card } from 'shared/component/Card'
-import { Skeleton } from 'shared/component/Skeleton'
-import { classNames } from 'shared/lib/classNames'
+import { Card } from '@/shared/component/Card'
+import { Skeleton } from '@/shared/component/Skeleton'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ArticleFeedItemSkeletonProps, ArticleFeedViewEnum } from '../../type'
 import cls from './ArticleFeedItem.module.scss'

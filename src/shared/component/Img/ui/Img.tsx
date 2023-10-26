@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ImgProps } from '../type/props.type'
 import cls from './Img.module.scss'

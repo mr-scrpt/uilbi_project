@@ -1,4 +1,4 @@
-import { ArticleFeedSortFieldEnum } from 'entity/Article'
+import { ArticleFeedSortFieldEnum } from '@/entity/Article'
 
 import { IFeedSort } from '../type/sort.type'
 

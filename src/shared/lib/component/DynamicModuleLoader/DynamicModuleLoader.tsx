@@ -1,5 +1,5 @@
-import { StateSchemaKeys } from 'app/provider/StoreProvider'
-import { ReduxStoreWithManager } from 'app/provider/StoreProvider/type/store.type'
+import { StateSchemaKeys } from '@/app/provider/StoreProvider'
+import { ReduxStoreWithManager } from '@/app/provider/StoreProvider/type/store.type'
 import { memo, useEffect } from 'react'
 import { useStore } from 'react-redux'
 

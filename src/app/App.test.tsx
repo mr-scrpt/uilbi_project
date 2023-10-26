@@ -1,4 +1,4 @@
-import { RenderComopletedComponent } from 'shared/lib/test/renderCompletedComponent'
+import { RenderComopletedComponent } from '@/shared/lib/test/renderCompletedComponent'
 
 import App from './App'
 

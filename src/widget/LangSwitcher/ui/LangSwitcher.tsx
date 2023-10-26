@@ -4,8 +4,8 @@ import {
   Button,
   ButtonShapeEnum,
   ButtonViewEnum,
-} from 'shared/component/Button'
-import { classNames } from 'shared/lib/classNames'
+} from '@/shared/component/Button'
+import { classNames } from '@/shared/lib/classNames'
 
 import { LangSwitcherProps } from '../type/props.type'
 import { LangSwitcherViewEnum } from '../type/view.enum'

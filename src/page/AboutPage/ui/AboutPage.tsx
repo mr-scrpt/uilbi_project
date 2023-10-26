@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
 import { AboutPageProps } from '../type/props.type'
 import cls from './AboutPage.module.scss'

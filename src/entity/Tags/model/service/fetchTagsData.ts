@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ITag } from 'entity/Tags/type/tag.type'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
+import { ITag } from '@/entity/Tags/type/tag.type'
 
 export const fetchTagsData = createAsyncThunk<
   ITag[],

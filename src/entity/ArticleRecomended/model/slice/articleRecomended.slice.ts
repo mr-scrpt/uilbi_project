@@ -3,8 +3,8 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit'
-import { IArticle } from 'entity/Article'
-import { ArticleRecomendedState } from 'entity/ArticleRecomended/type/state.type'
+import { IArticle } from '@/entity/Article'
+import { ArticleRecomendedState } from '@/entity/ArticleRecomended/type/state.type'
 
 import { fetchArticleRecomended } from '../service/fetchArticleRecomended'
 

@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { ModalNameEnum, modalAction } from 'entity/Modal'
-import { userAction } from 'entity/User'
-import { AsyncThunk } from 'shared/lib/test'
-import { RoleEnum } from 'shared/type/role/role.enum'
+import { ModalNameEnum, modalAction } from '@/entity/Modal'
+import { userAction } from '@/entity/User'
+import { AsyncThunk } from '@/shared/lib/test'
+import { RoleEnum } from '@/shared/type/role/role.enum'
 
 import { loginByUserName } from './login.thunk'
 

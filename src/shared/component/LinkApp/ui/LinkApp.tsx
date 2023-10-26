@@ -1,7 +1,7 @@
 import { Ref, forwardRef, memo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Icon } from 'shared/component/Icon'
-import { classNames } from 'shared/lib/classNames'
+import { Icon } from '@/shared/component/Icon'
+import { classNames } from '@/shared/lib/classNames'
 
 import { LinkModeEnum } from '../type/mode.enum'
 import { LinkAppProps } from '../type/props.type'

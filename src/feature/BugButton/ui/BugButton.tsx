@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
-import { ButtonViewEnum } from 'shared/component/Button/type/view.enum'
-import { classNames } from 'shared/lib/classNames'
-import { Button } from 'shared/component/Button'
+import { ButtonViewEnum } from '@/shared/component/Button/type/view.enum'
+import { classNames } from '@/shared/lib/classNames'
+import { Button } from '@/shared/component/Button'
 import { useTranslation } from 'react-i18next'
 import { BugButtonProps } from '../type/props.type'
 

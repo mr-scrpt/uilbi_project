@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/provider/StoreProvider'
+import { StateSchema } from '@/app/provider/StoreProvider'
 
 import { articleFeedAdapter } from '../../slice'
 

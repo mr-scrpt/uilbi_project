@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
-import { ProfileEditor } from 'widget/ProfileEditor/ui/ProfileEditor'
+import { classNames } from '@/shared/lib/classNames'
+import { ProfileEditor } from '@/widget/ProfileEditor/ui/ProfileEditor'
 
 import { ProfilePageProps } from '../type/props.type'
 import cls from './ProfilePage.module.scss'

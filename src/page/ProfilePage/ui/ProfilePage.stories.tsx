@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StateSchema } from 'app/provider/StoreProvider'
-import { CountryEnum } from 'shared/const/country.enum'
-import { CurrencyEnum } from 'shared/const/currency.enum'
-import { RoleEnum } from 'shared/type/role/role.enum'
+import { StateSchema } from '@/app/provider/StoreProvider'
+import { CountryEnum } from '@/shared/const/country.enum'
+import { CurrencyEnum } from '@/shared/const/currency.enum'
+import { RoleEnum } from '@/shared/type/role/role.enum'
 
 import {
   RouterDecorator,

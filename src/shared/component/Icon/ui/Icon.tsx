@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { IconEnum } from '../type/icon.enum'
 import { IconProps } from '../type/icon.props'

@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Img } from 'shared/component/Img'
-import { classNames } from 'shared/lib/classNames'
+import { Img } from '@/shared/component/Img'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ArticleBlockImgProps } from '../../type/props.type'
 import cls from './ArticleBlockImg.module.scss'

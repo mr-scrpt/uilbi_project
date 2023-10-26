@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ProfileData } from 'entity/Profile'
+import { ProfileData } from '@/entity/Profile'
 
 import { ProfileEditorState } from '../../type/state.type'
 import { validateProfileEditorData } from '../service/validateProfileEditorData'

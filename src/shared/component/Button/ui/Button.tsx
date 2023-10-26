@@ -1,6 +1,6 @@
 import { Ref, forwardRef, memo } from 'react'
-import { Icon } from 'shared/component/Icon'
-import { classNames } from 'shared/lib/classNames'
+import { Icon } from '@/shared/component/Icon'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ButtonIconPositionEnum } from '../type/buttonIconPosition.enum'
 import { ButtonProps } from '../type/props.type'

@@ -1,5 +1,5 @@
-import { Skeleton } from 'shared/component/Skeleton'
-import { classNames } from 'shared/lib/classNames'
+import { Skeleton } from '@/shared/component/Skeleton'
+import { classNames } from '@/shared/lib/classNames'
 
 import cls from './Skeleton.module.scss'
 

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { MessageErrorProps } from '../type/props.type'
 import cls from './MessageError.module.scss'

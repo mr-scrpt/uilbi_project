@@ -1,6 +1,6 @@
 import { PreloadedState, configureStore } from '@reduxjs/toolkit'
-import { $api } from 'shared/api/api'
-import { rtkApi } from 'shared/api/rtkApi'
+import { $api } from '@/shared/api/api'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 import { ReducerListMapObject, StateSchema } from '../type/state.type'
 import { createReducerManager } from './reducerManager'

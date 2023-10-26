@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { TitleProps } from '../type/props.type'
 import { TitleSizeEnum } from '../type/size.enum'

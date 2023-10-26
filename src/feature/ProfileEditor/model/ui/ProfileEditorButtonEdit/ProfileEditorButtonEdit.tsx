@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/component/Button'
-import { classNames } from 'shared/lib/classNames'
+import { Button } from '@/shared/component/Button'
+import { classNames } from '@/shared/lib/classNames'
 
 import { ProfileEditorButtonEditProps } from '../../../type/props.type'
 import cls from './ProfileEditorButtonEdit.module.scss'

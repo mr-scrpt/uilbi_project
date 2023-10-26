@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
-import { ProfileData, updateProfileData } from 'entity/Profile'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
+import { ProfileData, updateProfileData } from '@/entity/Profile'
 
 import { profileEditorAction } from '../slice/profileEditorSlice'
 import { validateProfileEditorData } from './validateProfileEditorData'

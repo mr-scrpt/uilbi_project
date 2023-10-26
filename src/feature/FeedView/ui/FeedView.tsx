@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { Button, ButtonViewEnum } from 'shared/component/Button'
-import { classNames } from 'shared/lib/classNames'
+import { Button, ButtonViewEnum } from '@/shared/component/Button'
+import { classNames } from '@/shared/lib/classNames'
 
 import { FeedViewProps } from '../type/props.type'
 import cls from './FeedView.module.scss'

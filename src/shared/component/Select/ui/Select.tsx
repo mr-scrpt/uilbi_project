@@ -1,5 +1,5 @@
 import { Listbox } from '@headlessui/react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { SelectListDerectionEnum } from '../type/direction.enum'
 import { SelectProps } from '../type/props.type'

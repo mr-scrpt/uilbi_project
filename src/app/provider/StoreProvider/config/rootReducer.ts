@@ -1,10 +1,10 @@
-import { counterReducer } from 'entity/Counter'
-import { countryReducer } from 'entity/Country'
-import { currencyReducer } from 'entity/Currency'
-import { modalReducer } from 'entity/Modal'
-import { userReducer } from 'entity/User'
-import { scrollManagerReducer } from 'feature/ScrollManager'
-import { rtkApi } from 'shared/api/rtkApi'
+import { counterReducer } from '@/entity/Counter'
+import { countryReducer } from '@/entity/Country'
+import { currencyReducer } from '@/entity/Currency'
+import { modalReducer } from '@/entity/Modal'
+import { userReducer } from '@/entity/User'
+import { scrollManagerReducer } from '@/feature/ScrollManager'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 import { ReducerListMapObject } from '../type/state.type'
 

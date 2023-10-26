@@ -3,9 +3,9 @@ import {
   ArticleFeedItem,
   ArticleFeedViewEnum,
   IArticle,
-} from 'entity/Article'
+} from '@/entity/Article'
 import { memo, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { useArticleRecomended } from '../api/articleRecomended.api'
 import { ArticleRecomendedProps } from '../type/props.type'

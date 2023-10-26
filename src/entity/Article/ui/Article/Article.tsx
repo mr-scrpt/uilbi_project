@@ -1,14 +1,14 @@
-import { articleReducer } from 'entity/Article/model/slice/article.slice'
+import { articleReducer } from '@/entity/Article/model/slice/article.slice'
 import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Icon, IconEnum } from 'shared/component/Icon'
-import { Img } from 'shared/component/Img'
-import { Skeleton } from 'shared/component/Skeleton'
-import { Title, TitleSizeEnum } from 'shared/component/Title'
-import { classNames } from 'shared/lib/classNames'
-import { DynamicModuleLoader } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
-import { ReducerList } from 'shared/lib/component/DynamicModuleLoader/type/props.type'
-import { useAppDispatch } from 'shared/lib/component/useAppDispatch'
+import { Icon, IconEnum } from '@/shared/component/Icon'
+import { Img } from '@/shared/component/Img'
+import { Skeleton } from '@/shared/component/Skeleton'
+import { Title, TitleSizeEnum } from '@/shared/component/Title'
+import { classNames } from '@/shared/lib/classNames'
+import { DynamicModuleLoader } from '@/shared/lib/component/DynamicModuleLoader/DynamicModuleLoader'
+import { ReducerList } from '@/shared/lib/component/DynamicModuleLoader/type/props.type'
+import { useAppDispatch } from '@/shared/lib/component/useAppDispatch'
 
 import {
   getArticleData,

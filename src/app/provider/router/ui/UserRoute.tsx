@@ -1,7 +1,7 @@
-import { getUserAuthData } from 'entity/User'
+import { getUserAuthData } from '@/entity/User'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation, useParams } from 'react-router-dom'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
+import { RoutePath } from '@/shared/config/configRouter/configRouter'
 
 import { AdminRouteProps } from '../type/props.type'
 

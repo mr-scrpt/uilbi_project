@@ -1,8 +1,8 @@
 import { FC, Suspense } from 'react'
-import { LoaderContent } from 'widget/LoaderContent'
-import { classNames } from 'shared/lib/classNames'
-import { MessageError } from 'shared/component/MessageError'
-import { Button } from 'shared/component/Button'
+import { LoaderContent } from '@/widget/LoaderContent'
+import { classNames } from '@/shared/lib/classNames'
+import { MessageError } from '@/shared/component/MessageError'
+import { Button } from '@/shared/component/Button'
 import { useTranslation } from 'react-i18next'
 import { ErrorPageProps } from '../type/props.type'
 

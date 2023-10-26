@@ -1,8 +1,8 @@
-import { getUserRole } from 'entity/User'
+import { getUserRole } from '@/entity/User'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
+import { RoutePath } from '@/shared/config/configRouter/configRouter'
 
 import { AdminRouteProps } from '../type/props.type'
 

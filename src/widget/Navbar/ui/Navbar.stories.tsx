@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StateSchema } from 'app/provider/StoreProvider'
-import { classNames } from 'shared/lib/classNames'
+import { StateSchema } from '@/app/provider/StoreProvider'
+import { classNames } from '@/shared/lib/classNames'
 
 import cls from '../../../app/App.module.scss'
 import {

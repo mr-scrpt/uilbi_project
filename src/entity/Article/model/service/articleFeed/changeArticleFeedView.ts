@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
 import {
   storageFeedLimit,
   storageFeedView,
-} from 'shared/lib/storage/LocalStorage'
+} from '@/shared/lib/storage/LocalStorage'
 
 import { ArticleFeedViewEnum } from '../../../type/view.enum'
 import { getArticleFeedLimitBase } from '../../selector/articleFeed'

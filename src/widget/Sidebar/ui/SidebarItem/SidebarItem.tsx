@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LinkApp, LinkSizeEnum, LinkViewEnum } from 'shared/component/LinkApp'
+import { LinkApp, LinkSizeEnum, LinkViewEnum } from '@/shared/component/LinkApp'
 
 import { SidebarItemProps } from '../../type/props.type'
 

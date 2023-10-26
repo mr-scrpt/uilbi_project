@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfigType } from 'app/provider/StoreProvider'
+import { ThunkConfigType } from '@/app/provider/StoreProvider'
 // import { ArticleSortFieldEnum, ArticleViewEnum } from 'entity/ArticleFeed'
 // import { ArticleFeedOrderEnum } from 'entity/ArticleFeed/type/order.enum'
 // import { ArticleFeedSearchParamsEnum } from 'entity/ArticleFeed/type/params.enum'
@@ -8,7 +8,7 @@ import {
   storageFeedOrder,
   storageFeedSort,
   storageFeedView,
-} from 'shared/lib/storage/LocalStorage'
+} from '@/shared/lib/storage/LocalStorage'
 
 import {
   ArticleFeedOrderEnum,

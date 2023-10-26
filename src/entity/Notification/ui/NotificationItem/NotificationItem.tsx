@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import { LinkApp } from 'shared/component/LinkApp'
-import { Title, TitleSizeEnum } from 'shared/component/Title'
-import { classNames } from 'shared/lib/classNames'
+import { LinkApp } from '@/shared/component/LinkApp'
+import { Title, TitleSizeEnum } from '@/shared/component/Title'
+import { classNames } from '@/shared/lib/classNames'
 
 import { NotificationItemProps } from '../../type/props.type'
 import cls from './NotificationItem.module.scss'

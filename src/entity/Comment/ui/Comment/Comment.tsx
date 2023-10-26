@@ -1,8 +1,8 @@
 import { memo } from 'react'
-import { Avatar } from 'shared/component/Avatar'
-import { LinkApp } from 'shared/component/LinkApp'
-import { RoutePath } from 'shared/config/configRouter/configRouter'
-import { classNames } from 'shared/lib/classNames'
+import { Avatar } from '@/shared/component/Avatar'
+import { LinkApp } from '@/shared/component/LinkApp'
+import { RoutePath } from '@/shared/config/configRouter/configRouter'
+import { classNames } from '@/shared/lib/classNames'
 
 import { CommentProps } from '../../type/props.type'
 import cls from './Comment.module.scss'

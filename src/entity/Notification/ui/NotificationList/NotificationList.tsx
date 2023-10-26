@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from '@/shared/lib/classNames'
 
 import { NotificationListProps } from '../../type/props.type'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
