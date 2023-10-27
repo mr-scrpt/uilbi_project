@@ -9,12 +9,19 @@ import cls from './StarLine.module.scss'
 
 export const StarLine = memo((props: StarLineProps) => {
   const { className, starCount = 5, size = StarSizeEnum.L, onSelected } = props
+  const [currentStarsHovered, setCurrentStarsHoverd] = useState(0)
   const [currentStarsSelected, setCurrentStarsSelected] = useState(0)
   const [isValueSelected, setIsValueSelected] = useState(false)
 
   const onHover = (starsCount: number) => () => {
     if (!isValueSelected) {
-      setCurrentStarsSelected(starsCount)
+      setCurrentStarsHoverd(starsCount)
+    }
+  }
+
+  const onLeav = () => {
+    if (!isValueSelected) {
+      setCurrentStarsHoverd(currentStarsSelected)
     }
   }
 
@@ -22,6 +29,7 @@ export const StarLine = memo((props: StarLineProps) => {
     setIsValueSelected((state) => !state)
     console.log('is Selecetd', isValueSelected)
     setCurrentStarsSelected(starsCount)
+    setCurrentStarsHoverd(starsCount)
     if (!isValueSelected) {
       onSelected?.(currentStarsSelected)
     }
@@ -41,7 +49,8 @@ export const StarLine = memo((props: StarLineProps) => {
             key={star}
             className={clsStar}
             onMouseEnter={onHover(star)}
-            isSelected={currentStarsSelected >= star}
+            onMouseLeave={onLeav}
+            isSelected={currentStarsHovered >= star}
             onClick={() => onClickHandler(star)}
             size={size}
           />
