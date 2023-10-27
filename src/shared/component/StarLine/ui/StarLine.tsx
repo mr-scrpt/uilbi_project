@@ -48,8 +48,7 @@ export const StarLine = memo((props: StarLineProps) => {
             className={clsStar}
             onMouseEnter={() => onEnter(star)}
             onMouseLeave={onLeav}
-            isSelected={starSelected >= star}
-            isHovered={starHovered >= star}
+            isActive={starHovered >= star || starSelected >= star}
             onClick={() => onClickHandler(star)}
             size={size}
           />

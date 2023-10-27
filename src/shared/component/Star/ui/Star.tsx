@@ -9,13 +9,14 @@ import cls from './Star.module.scss'
 export const Star = memo((props: StarProps) => {
   const {
     className,
-    isSelected = false,
-    isHovered = false,
+    // isSelected = false,
+    // isHovered = false,
+    isActive = false,
     size = StarSizeEnum.L,
     ...rest
   } = props
 
-  const icon = isSelected || isHovered ? IconEnum.STAR_SELECTED : IconEnum.STAR
+  const icon = isActive ? IconEnum.STAR_SELECTED : IconEnum.STAR
   const clsStar = classNames(cls.star, [className], {
     [cls.size_l]: size === StarSizeEnum.L,
     [cls.size_m]: size === StarSizeEnum.M,
