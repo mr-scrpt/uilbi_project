@@ -1,0 +1,19 @@
+.starLine {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  display: flex;
+}
+
+.star {
+  // width: 20px;
+  // height: 20px;
+  cursor: pointer;
+  background: red;
+}
+
+.star.star_selected {
+  background: yellowgreen;
+}

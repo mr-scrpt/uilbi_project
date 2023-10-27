@@ -1,5 +1,5 @@
-import { memo } from 'react'
 import { classNames } from '@/shared/lib/classNames'
+import { memo } from 'react'
 
 import { IconEnum } from '../type/icon.enum'
 import { IconProps } from '../type/icon.props'
@@ -13,6 +13,8 @@ export const Icon = memo((props: IconProps) => {
     [cls.icon_eye]: icon === IconEnum.EYE,
     [cls.icon_calendar]: icon === IconEnum.CALENDAR,
     [cls.icon_notify]: icon === IconEnum.NOTIFY,
+    [cls.icon_star]: icon === IconEnum.STAR,
+    [cls.icon_star_selected]: icon === IconEnum.STAR_SELECTED,
 
     [cls.icon_burger]: icon === IconEnum.BURGER,
 

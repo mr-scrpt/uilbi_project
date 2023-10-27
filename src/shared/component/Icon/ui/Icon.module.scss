@@ -101,6 +101,15 @@
   mask-image: url('../../../asset/icon/icon-calendar.svg');
 }
 
+.icon.icon_star {
+  -webkit-mask-image: url('../../../asset/icon/icon-star.svg');
+  mask-image: url('../../../asset/icon/icon-star.svg');
+  &_selected {
+    -webkit-mask-image: url('../../../asset/icon/icon-star_active.svg');
+    mask-image: url('../../../asset/icon/icon-star_active.svg');
+  }
+}
+
 .icon.icon_view_row {
   -webkit-mask-image: url('../../../asset/icon/icon-view-row.svg');
   mask-image: url('../../../asset/icon/icon-view-row.svg');

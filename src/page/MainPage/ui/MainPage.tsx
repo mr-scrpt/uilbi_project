@@ -1,14 +1,16 @@
 import { Counter } from '@/entity/Counter'
 import { BugButton } from '@/feature/BugButton'
-import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
 import {
   Input,
   InputSizeEnum,
   InputStateEnum,
   InputViewEnum,
 } from '@/shared/component/Input'
+import { StarLine } from '@/shared/component/StarLine'
+import { StarSizeEnum } from '@/shared/component/StarLine/type/size.enum'
 import { classNames } from '@/shared/lib/classNames'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { MainPageProps } from '../type/props.type'
 import cls from './MainPage.module.scss'
@@ -25,16 +27,18 @@ const MainPage: FC<MainPageProps> = (props) => {
     <div className={clsMainPage}>
       <div className={clsInner}>
         <div className={clsTitle}>
+          <StarLine
+            size={StarSizeEnum.XL}
+            onSelected={(value) => console.log('my selecetd rate', value)}
+          />
           <Input
             view={InputViewEnum.PRIMARY}
             size={InputSizeEnum.L}
             state={InputStateEnum.ERROR}
             name="test"
           />
-
           <Counter />
           {t('page-main-title')}
-
           <BugButton />
         </div>
       </div>
