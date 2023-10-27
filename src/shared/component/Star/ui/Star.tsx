@@ -10,17 +10,17 @@ export const Star = memo((props: StarProps) => {
   const {
     className,
     isSelected = false,
+    isHovered = false,
     size = StarSizeEnum.L,
     ...rest
   } = props
 
-  const icon = isSelected ? IconEnum.STAR_SELECTED : IconEnum.STAR
+  const icon = isSelected || isHovered ? IconEnum.STAR_SELECTED : IconEnum.STAR
   const clsStar = classNames(cls.star, [className], {
     [cls.size_l]: size === StarSizeEnum.L,
     [cls.size_m]: size === StarSizeEnum.M,
     [cls.size_s]: size === StarSizeEnum.S,
     [cls.size_xl]: size === StarSizeEnum.XL,
-    [cls.selected]: isSelected,
   })
   return <Icon className={clsStar} icon={icon} {...rest} />
 })

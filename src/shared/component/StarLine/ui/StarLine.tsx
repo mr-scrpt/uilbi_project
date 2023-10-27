@@ -9,48 +9,47 @@ import cls from './StarLine.module.scss'
 
 export const StarLine = memo((props: StarLineProps) => {
   const { className, starCount = 5, size = StarSizeEnum.L, onSelected } = props
-  const [currentStarsHovered, setCurrentStarsHoverd] = useState(0)
-  const [currentStarsSelected, setCurrentStarsSelected] = useState(0)
-  const [isValueSelected, setIsValueSelected] = useState(false)
+  const [starHovered, setStarHoverd] = useState(0)
+  const [starSelected, setStarSelected] = useState(0)
+  const [isSelectedMode, setIsSelectedMode] = useState(false)
 
-  const onHover = (starsCount: number) => () => {
-    if (!isValueSelected) {
-      setCurrentStarsHoverd(starsCount)
-    }
+  const onEnter = (starOrder: number) => {
+    setStarHoverd(starOrder)
   }
 
   const onLeav = () => {
-    if (!isValueSelected) {
-      setCurrentStarsHoverd(currentStarsSelected)
-    }
+    setStarHoverd(0)
   }
 
-  const onClickHandler = (starsCount: number) => {
-    setIsValueSelected((state) => !state)
-    console.log('is Selecetd', isValueSelected)
-    setCurrentStarsSelected(starsCount)
-    setCurrentStarsHoverd(starsCount)
-    if (!isValueSelected) {
-      onSelected?.(currentStarsSelected)
-    }
+  const onClickHandler = (starOrder: number) => {
+    setIsSelectedMode((state) => {
+      if (state) {
+        setStarSelected(0)
+      } else {
+        onSelected?.(starOrder)
+      }
+      return !state
+    })
+    setStarSelected(starOrder)
   }
 
   const clsStarLine = classNames(cls.starLine, [className], {})
   const clsStar = classNames(cls.star, [], {
-    [cls.star_selected]: isValueSelected,
+    [cls.star_selected]: isSelectedMode,
   })
 
   const stars = arrayLenGen(starCount)
   return (
     <div className={clsStarLine}>
       <div className={cls.inner}>
-        {stars.map((star, idx) => (
+        {stars.map((star) => (
           <Star
             key={star}
             className={clsStar}
-            onMouseEnter={onHover(star)}
+            onMouseEnter={() => onEnter(star)}
             onMouseLeave={onLeav}
-            isSelected={currentStarsHovered >= star}
+            isSelected={starSelected >= star}
+            isHovered={starHovered >= star}
             onClick={() => onClickHandler(star)}
             size={size}
           />
